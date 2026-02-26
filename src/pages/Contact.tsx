@@ -1,0 +1,153 @@
+import { useState } from "react";
+import { Phone, Mail, MapPin, Send } from "lucide-react";
+import Layout from "@/components/Layout";
+import ScrollReveal from "@/components/ScrollReveal";
+import { toast } from "sonner";
+
+const Contact = () => {
+  const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast.success("Thank you! We'll get back to you shortly.");
+    setForm({ name: "", phone: "", email: "", message: "" });
+  };
+
+  return (
+    <Layout>
+      <section className="pt-32 pb-20 navy-gradient">
+        <div className="container mx-auto section-padding text-center">
+          <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Get In Touch</p>
+          <h1 className="text-4xl md:text-6xl font-heading font-bold text-gold-light mb-6">
+            Contact <span className="text-gold-gradient">Us</span>
+          </h1>
+          <p className="text-gold-light/60 font-body text-lg max-w-2xl mx-auto">
+            Reach out for a free consultation and let us engineer the perfect elevator solution for you.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-24 bg-background">
+        <div className="container mx-auto section-padding">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Form */}
+            <ScrollReveal>
+              <div className="glass-card rounded-lg p-10">
+                <h2 className="text-2xl font-heading font-bold text-foreground mb-6">Send Us a Message</h2>
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div>
+                    <label className="block text-sm font-body font-medium text-foreground mb-1.5">Full Name</label>
+                    <input
+                      type="text"
+                      required
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      className="w-full px-4 py-3 rounded-sm border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow"
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                      <label className="block text-sm font-body font-medium text-foreground mb-1.5">Phone</label>
+                      <input
+                        type="tel"
+                        required
+                        value={form.phone}
+                        onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                        className="w-full px-4 py-3 rounded-sm border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow"
+                        placeholder="+91 98765 43210"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-body font-medium text-foreground mb-1.5">Email</label>
+                      <input
+                        type="email"
+                        required
+                        value={form.email}
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                        className="w-full px-4 py-3 rounded-sm border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow"
+                        placeholder="you@company.com"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-body font-medium text-foreground mb-1.5">Message</label>
+                    <textarea
+                      required
+                      rows={5}
+                      value={form.message}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      className="w-full px-4 py-3 rounded-sm border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow resize-none"
+                      placeholder="Tell us about your project requirements..."
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="gold-gradient text-navy-dark font-body font-semibold px-8 py-3.5 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2 w-full justify-center"
+                  >
+                    <Send size={16} /> Send Message
+                  </button>
+                </form>
+              </div>
+            </ScrollReveal>
+
+            {/* Contact Info */}
+            <ScrollReveal delay={200}>
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-2xl font-heading font-bold text-foreground mb-6">Contact Information</h2>
+                  <p className="text-muted-foreground font-body leading-relaxed mb-8">
+                    We're here to help you with all your elevator needs. Reach out to us through any of the channels below.
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                      <MapPin className="text-accent" size={20} />
+                    </div>
+                    <div>
+                      <h4 className="font-body font-semibold text-foreground text-sm">Office Address</h4>
+                      <p className="text-muted-foreground font-body text-sm mt-1">123 Engineering Drive, Business District, Mumbai 400001, India</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                      <Phone className="text-accent" size={20} />
+                    </div>
+                    <div>
+                      <h4 className="font-body font-semibold text-foreground text-sm">Phone</h4>
+                      <p className="text-muted-foreground font-body text-sm mt-1">+91 98765 43210</p>
+                      <p className="text-muted-foreground font-body text-sm">+91 22 2345 6789</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                      <Mail className="text-accent" size={20} />
+                    </div>
+                    <div>
+                      <h4 className="font-body font-semibold text-foreground text-sm">Email</h4>
+                      <p className="text-muted-foreground font-body text-sm mt-1">info@linkwelengineers.com</p>
+                      <p className="text-muted-foreground font-body text-sm">sales@linkwelengineers.com</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Map placeholder */}
+                <div className="rounded-lg overflow-hidden border border-border h-64 bg-muted flex items-center justify-center">
+                  <div className="text-center">
+                    <MapPin className="text-muted-foreground mx-auto mb-2" size={32} />
+                    <p className="text-muted-foreground font-body text-sm">Google Maps Integration</p>
+                    <p className="text-muted-foreground/60 font-body text-xs">Mumbai, India</p>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default Contact;
