@@ -35,10 +35,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between section-padding">
         <Link to="/" className="flex items-center gap-2">
           <span className="text-2xl font-heading font-bold text-gold">
-            Linkwel
-          </span>
-          <span className="text-lg font-body font-light tracking-widest text-gold-light uppercase">
-            Engineers
+            LE
           </span>
         </Link>
 
