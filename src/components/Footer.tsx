@@ -9,8 +9,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <Link to="/" className="inline-block mb-4">
-              <span className="text-2xl font-heading font-bold text-gold">Linkwel</span>
-              <span className="text-lg font-body font-light tracking-widest text-gold-light uppercase ml-2">Engineers</span>
+              <span className="text-2xl font-heading font-bold text-gold">LE</span>
             </Link>
             <p className="text-sm leading-relaxed opacity-70">
               Elevating standards and engineering trust since inception. A premier elevator solutions provider committed to safety, quality, and innovation.
