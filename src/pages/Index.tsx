@@ -11,7 +11,7 @@ import proj3 from "@/assets/project-3.jpg";
 
 const stats = [
   { value: "500+", label: "Projects Completed" },
-  { value: "15+", label: "Years Experience" },
+  { value: "35+", label: "Years Experience" },
   { value: "200+", label: "Happy Clients" },
   { value: "24/7", label: "Support Available" },
 ];
@@ -69,7 +69,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-gold-light leading-tight mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-gold-light leading-tight mb-4"
           >
             Elevating Standards,
             <br />
@@ -78,10 +78,18 @@ const Index = () => {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-gold font-heading text-xl md:text-2xl italic tracking-wide mb-6"
+          >
+            "Sky Is the Limit."
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-gold-light/60 font-body text-lg md:text-xl max-w-2xl mx-auto mb-10"
           >
-            Premier elevator solutions backed by decades of engineering excellence. 
+            Premier elevator solutions backed by over 35 years of engineering excellence.
             Installation, maintenance, and modernization you can trust.
           </motion.p>
           <motion.div
@@ -170,8 +178,8 @@ const Index = () => {
                   Engineering Excellence, Delivered
                 </h2>
                 <p className="text-muted-foreground font-body leading-relaxed mb-8">
-                  At Linkwel Engineers, we combine cutting-edge technology with decades of industry expertise 
-                  to deliver elevator solutions that exceed expectations. Our commitment to safety, innovation, 
+                  Since 1989, Linkwel Engineers has combined cutting-edge technology with deep industry expertise
+                  to deliver elevator and crane solutions that exceed expectations. Our commitment to safety, innovation,
                   and client satisfaction sets us apart.
                 </p>
                 <div className="space-y-4">
@@ -198,7 +206,7 @@ const Index = () => {
                   className="rounded-lg premium-shadow w-full"
                 />
                 <div className="absolute -bottom-6 -left-6 bg-accent text-accent-foreground p-6 rounded-lg">
-                  <p className="text-3xl font-heading font-bold">15+</p>
+                  <p className="text-3xl font-heading font-bold">35+</p>
                   <p className="text-sm font-body">Years of Trust</p>
                 </div>
               </div>

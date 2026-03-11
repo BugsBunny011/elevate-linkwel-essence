@@ -13,7 +13,7 @@ const Footer = () => {
               <img src={logo} alt="Linkwel Engineers" className="h-14 w-auto" />
             </Link>
             <p className="text-sm leading-relaxed opacity-70">
-              Elevating standards and engineering trust since inception. A premier elevator solutions provider committed to safety, quality, and innovation.
+              Elevating standards and engineering trust since 1989. A premier elevator and crane solutions provider committed to safety, quality, and innovation.
             </p>
           </div>
 
@@ -51,15 +51,18 @@ const Footer = () => {
             <div className="flex flex-col gap-4 text-sm">
               <div className="flex items-start gap-3">
                 <MapPin size={16} className="text-gold mt-0.5 shrink-0" />
-                <span>123 Engineering Drive, Business District, City 400001</span>
+                <span>62, DSIDC Complex, Okhla<br />Okhla Phase I, ND-20<br />New Delhi, Delhi 110020</span>
               </div>
-              <div className="flex items-center gap-3">
-                <Phone size={16} className="text-gold shrink-0" />
-                <span>+91 98765 43210</span>
+              <div className="flex items-start gap-3">
+                <Phone size={16} className="text-gold mt-0.5 shrink-0" />
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+919818511177" className="hover:text-gold transition-colors">+91 9818511177</a>
+                  <a href="tel:+919810371220" className="hover:text-gold transition-colors">+91 9810371220</a>
+                </div>
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={16} className="text-gold shrink-0" />
-                <span>info@linkwelengineers.com</span>
+                <a href="mailto:linkwelengineers@gmail.com" className="hover:text-gold transition-colors">linkwelengineers@gmail.com</a>
               </div>
             </div>
           </div>
@@ -70,7 +73,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Linkwel Engineers. All rights reserved.
           </p>
           <div className="flex gap-6">
-            {["LinkedIn", "Facebook", "Instagram"].map((social) => (
+            {["LinkedIn", "Facebook"].map((social) => (
               <a key={social} href="#" className="text-xs hover:text-gold transition-colors">
                 {social}
               </a>
