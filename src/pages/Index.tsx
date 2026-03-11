@@ -41,9 +41,18 @@ const Index = () => {
       {/* Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="Premium elevator interior" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-navy-dark/70" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-transparent to-navy-dark/40" />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+            poster={heroImg}
+          >
+            <source src="https://assets.mixkit.co/videos/49806/49806-720.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-navy-dark/65" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-transparent to-navy-dark/30" />
         </div>
 
         <div className="relative z-10 text-center section-padding max-w-4xl mx-auto">
