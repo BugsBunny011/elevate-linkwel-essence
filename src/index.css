@@ -6,43 +6,43 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 220 20% 10%;
+    --background: 220 25% 97%;
+    --foreground: 222 30% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
+    --card-foreground: 222 30% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --popover-foreground: 222 30% 12%;
 
-    --primary: 220 60% 15%;
-    --primary-foreground: 45 60% 70%;
+    --primary: 222 72% 30%;
+    --primary-foreground: 210 40% 96%;
 
-    --secondary: 220 15% 94%;
-    --secondary-foreground: 220 20% 10%;
+    --secondary: 220 20% 93%;
+    --secondary-foreground: 222 30% 12%;
 
-    --muted: 220 15% 94%;
-    --muted-foreground: 220 10% 50%;
+    --muted: 220 18% 93%;
+    --muted-foreground: 220 12% 48%;
 
-    --accent: 42 70% 55%;
-    --accent-foreground: 220 60% 15%;
+    --accent: 215 55% 48%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 42 70% 55%;
+    --border: 220 18% 88%;
+    --input: 220 18% 88%;
+    --ring: 215 55% 48%;
 
     --radius: 0.5rem;
 
-    --gold: 42 70% 55%;
-    --gold-light: 42 80% 75%;
-    --gold-dark: 42 60% 40%;
-    --navy: 220 60% 15%;
-    --navy-light: 220 40% 25%;
-    --navy-dark: 220 70% 8%;
-    --surface: 220 20% 97%;
+    --gold: 215 55% 48%;
+    --gold-light: 210 40% 75%;
+    --gold-dark: 218 55% 35%;
+    --navy: 222 72% 22%;
+    --navy-light: 222 50% 32%;
+    --navy-dark: 222 80% 10%;
+    --surface: 220 25% 96%;
     --surface-elevated: 0 0% 100%;
 
     --sidebar-background: 0 0% 98%;
@@ -56,25 +56,25 @@
   }
 
   .dark {
-    --background: 220 70% 5%;
-    --foreground: 210 40% 98%;
-    --card: 220 60% 8%;
-    --card-foreground: 210 40% 98%;
-    --popover: 220 60% 8%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 42 70% 55%;
-    --primary-foreground: 220 60% 15%;
-    --secondary: 220 40% 15%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 220 40% 15%;
+    --background: 222 75% 5%;
+    --foreground: 210 40% 96%;
+    --card: 222 65% 8%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 65% 8%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 215 55% 48%;
+    --primary-foreground: 222 72% 12%;
+    --secondary: 222 45% 15%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 222 45% 15%;
     --muted-foreground: 215 20% 65%;
-    --accent: 42 70% 55%;
-    --accent-foreground: 220 60% 15%;
+    --accent: 215 55% 48%;
+    --accent-foreground: 222 72% 12%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 220 40% 15%;
-    --input: 220 40% 15%;
-    --ring: 42 70% 55%;
+    --border: 222 45% 15%;
+    --input: 222 45% 15%;
+    --ring: 215 55% 48%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -106,7 +106,7 @@
   }
 
   .gold-gradient {
-    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-light)) 50%, hsl(var(--gold)) 100%);
+    background: linear-gradient(135deg, hsl(215 55% 48%) 0%, hsl(210 60% 58%) 50%, hsl(215 55% 48%) 100%);
   }
 
   .navy-gradient {

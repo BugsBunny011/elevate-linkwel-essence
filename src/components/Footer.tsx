@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
+import logo from "@/assets/linkwel-logo.png";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <Link to="/" className="inline-block mb-4">
-              <span className="text-2xl font-heading font-bold text-gold">LE</span>
+              <img src={logo} alt="Linkwel Engineers" className="h-14 w-auto" />
             </Link>
             <p className="text-sm leading-relaxed opacity-70">
               Elevating standards and engineering trust since inception. A premier elevator solutions provider committed to safety, quality, and innovation.

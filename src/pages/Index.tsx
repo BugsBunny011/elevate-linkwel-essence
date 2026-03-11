@@ -83,7 +83,7 @@ const Index = () => {
           >
             <Link
               to="/services"
-              className="gold-gradient text-navy-dark font-body font-semibold px-8 py-3.5 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2"
+              className="gold-gradient text-white font-body font-semibold px-8 py-3.5 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2"
             >
               Our Services <ArrowRight size={16} />
             </Link>
@@ -280,7 +280,7 @@ const Index = () => {
             </p>
             <Link
               to="/contact"
-              className="gold-gradient text-navy-dark font-body font-semibold px-10 py-4 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2"
+              className="gold-gradient text-white font-body font-semibold px-10 py-4 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2"
             >
               <Phone size={16} /> Contact Us Today
             </Link>
