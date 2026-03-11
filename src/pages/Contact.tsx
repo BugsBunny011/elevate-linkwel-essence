@@ -55,7 +55,7 @@ const Contact = () => {
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
                         className="w-full px-4 py-3 rounded-sm border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow"
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 98185 11177"
                       />
                     </div>
                     <div>
@@ -97,7 +97,7 @@ const Contact = () => {
                 <div>
                   <h2 className="text-2xl font-heading font-bold text-foreground mb-6">Contact Information</h2>
                   <p className="text-muted-foreground font-body leading-relaxed mb-8">
-                    We're here to help you with all your elevator needs. Reach out to us through any of the channels below.
+                    We're here to help you with all your elevator and crane needs. Reach out to us through any of the channels below.
                   </p>
                 </div>
 
@@ -108,7 +108,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-body font-semibold text-foreground text-sm">Office Address</h4>
-                      <p className="text-muted-foreground font-body text-sm mt-1">123 Engineering Drive, Business District, Mumbai 400001, India</p>
+                      <p className="text-muted-foreground font-body text-sm mt-1">62, DSIDC Complex, Okhla<br />Okhla Phase I, ND-20<br />New Delhi, Delhi 110020</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -117,8 +117,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-body font-semibold text-foreground text-sm">Phone</h4>
-                      <p className="text-muted-foreground font-body text-sm mt-1">+91 98765 43210</p>
-                      <p className="text-muted-foreground font-body text-sm">+91 22 2345 6789</p>
+                      <a href="tel:+919818511177" className="text-muted-foreground font-body text-sm mt-1 block hover:text-accent transition-colors">+91 9818511177</a>
+                      <a href="tel:+919810371220" className="text-muted-foreground font-body text-sm block hover:text-accent transition-colors">+91 9810371220</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -127,8 +127,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-body font-semibold text-foreground text-sm">Email</h4>
-                      <p className="text-muted-foreground font-body text-sm mt-1">info@linkwelengineers.com</p>
-                      <p className="text-muted-foreground font-body text-sm">sales@linkwelengineers.com</p>
+                      <a href="mailto:linkwelengineers@gmail.com" className="text-muted-foreground font-body text-sm mt-1 block hover:text-accent transition-colors">linkwelengineers@gmail.com</a>
                     </div>
                   </div>
                 </div>
@@ -138,7 +137,7 @@ const Contact = () => {
                   <div className="text-center">
                     <MapPin className="text-muted-foreground mx-auto mb-2" size={32} />
                     <p className="text-muted-foreground font-body text-sm">Google Maps Integration</p>
-                    <p className="text-muted-foreground/60 font-body text-xs">Mumbai, India</p>
+                    <p className="text-muted-foreground/60 font-body text-xs">Okhla Phase I, New Delhi</p>
                   </div>
                 </div>
               </div>
