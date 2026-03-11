@@ -82,7 +82,7 @@ const Services = () => {
             </p>
             <Link
               to="/contact"
-              className="gold-gradient text-navy-dark font-body font-semibold px-10 py-4 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2"
+              className="gold-gradient text-white font-body font-semibold px-10 py-4 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2"
             >
               Get a Free Quote <ArrowRight size={16} />
             </Link>

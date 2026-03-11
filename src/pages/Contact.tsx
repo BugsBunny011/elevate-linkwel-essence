@@ -83,7 +83,7 @@ const Contact = () => {
                   </div>
                   <button
                     type="submit"
-                    className="gold-gradient text-navy-dark font-body font-semibold px-8 py-3.5 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2 w-full justify-center"
+                    className="gold-gradient text-white font-body font-semibold px-8 py-3.5 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2 w-full justify-center"
                   >
                     <Send size={16} /> Send Message
                   </button>
