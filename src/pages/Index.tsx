@@ -49,7 +49,7 @@ const Index = () => {
             className="w-full h-full object-cover"
             poster={heroImg}
           >
-            <source src="https://assets.mixkit.co/videos/49806/49806-720.mp4" type="video/mp4" />
+            <source src="https://assets.mixkit.co/videos/30544/30544-720.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-navy-dark/65" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-transparent to-navy-dark/30" />
