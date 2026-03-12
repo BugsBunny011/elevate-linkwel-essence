@@ -29,7 +29,7 @@ const projects = [
 ];
 
 const testimonials = [
-  { name: "Rajesh Patel", role: "Director, Skyline Group", text: "Linkwel Engineers delivered exceptional elevator installations across our 40-story commercial tower. Their professionalism and attention to detail were outstanding." },
+  { name: "Rajesh Patel", role: "Director, Skyline Group", text: "Linkwel Engineers delivered exceptional elevator installations across our building. Their professionalism, reliability, and attention to detail were truly outstanding." },
   { name: "Priya Sharma", role: "Facility Manager, Grand Hotels", text: "The maintenance service from Linkwel is unparalleled. Our elevators run flawlessly and their response time is incredibly fast." },
   { name: "Amit Desai", role: "CEO, Metro Developments", text: "We've trusted Linkwel Engineers for over a decade. Their modernization work transformed our aging elevators into state-of-the-art systems." },
 ];
