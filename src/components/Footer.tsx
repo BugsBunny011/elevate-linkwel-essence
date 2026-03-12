@@ -51,7 +51,10 @@ const Footer = () => {
             <div className="flex flex-col gap-4 text-sm">
               <div className="flex items-start gap-3">
                 <MapPin size={16} className="text-gold mt-0.5 shrink-0" />
-                <span>62, DSIDC Complex, Okhla<br />Okhla Phase I, ND-20<br />New Delhi, Delhi 110020</span>
+                <div>
+                  <span>62, DSIDC Complex, Okhla<br />Okhla Phase I, ND-20<br />New Delhi, Delhi 110020</span>
+                  <a href="https://maps.app.goo.gl/CQTwV2ASCZBMGX6W6" target="_blank" rel="noopener noreferrer" className="block text-gold text-xs mt-1 hover:underline">View on Google Maps →</a>
+                </div>
               </div>
               <div className="flex items-start gap-3">
                 <Phone size={16} className="text-gold mt-0.5 shrink-0" />

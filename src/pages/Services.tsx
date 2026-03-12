@@ -22,7 +22,7 @@ const services = [
   {
     icon: Settings,
     title: "Repair Services",
-    desc: "Fast, reliable repair services with 24/7 emergency response. Our expert technicians diagnose and resolve issues quickly to minimize downtime.",
+    desc: "Fast, reliable repair services with rapid emergency response. Our expert technicians diagnose and resolve issues quickly to minimize downtime.",
   },
   {
     icon: FileCheck,

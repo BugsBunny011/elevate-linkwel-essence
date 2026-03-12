@@ -235,9 +235,7 @@ const Index = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/90 via-navy-dark/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <span className="text-gold text-xs font-body uppercase tracking-wider">{proj.type}</span>
-                    <h3 className="text-gold-light font-heading text-xl font-semibold mt-1">{proj.name}</h3>
-                    <p className="text-gold-light/60 font-body text-sm">{proj.location}</p>
+                    <h3 className="text-gold-light font-heading text-xl font-semibold">{proj.name}</h3>
                   </div>
                 </div>
               </ScrollReveal>
