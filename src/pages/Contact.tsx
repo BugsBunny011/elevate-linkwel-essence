@@ -62,6 +62,7 @@ const Contact = () => {
                     <label className="block text-sm font-body font-medium text-foreground mb-1.5">Full Name</label>
                     <input
                       type="text"
+                      name="name"
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
