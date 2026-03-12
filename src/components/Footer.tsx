@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Download } from "lucide-react";
 import logo from "@/assets/linkwel-logo.png";
 
 const Footer = () => {
@@ -75,12 +75,20 @@ const Footer = () => {
           <p className="text-xs opacity-60">
             © {new Date().getFullYear()} Linkwel Engineers. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            {["LinkedIn", "Facebook"].map((social) => (
-              <a key={social} href="#" className="text-xs hover:text-gold transition-colors">
-                {social}
-              </a>
-            ))}
+          <div className="flex items-center gap-6">
+            <a
+              href="/Linkwel-Product-Catalogue.pdf"
+              download
+              className="text-xs hover:text-gold transition-colors inline-flex items-center gap-1.5"
+            >
+              <Download size={12} /> Product Catalogue
+            </a>
+            <a href="https://www.linkedin.com/company/linkwel-engineers-le/" target="_blank" rel="noopener noreferrer" className="text-xs hover:text-gold transition-colors">
+              LinkedIn
+            </a>
+            <a href="https://www.instagram.com/linkwelengineers?igsh=MTl0M2drbmdlZmVieg==" target="_blank" rel="noopener noreferrer" className="text-xs hover:text-gold transition-colors">
+              Instagram
+            </a>
           </div>
         </div>
       </div>
