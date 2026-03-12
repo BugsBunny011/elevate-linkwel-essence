@@ -5,9 +5,9 @@ import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import heroImg from "@/assets/hero-elevator.jpg";
 import installImg from "@/assets/elevator-installation.jpg";
-import proj1 from "@/assets/project-1.jpg";
-import proj2 from "@/assets/project-2.jpg";
-import proj3 from "@/assets/project-3.jpg";
+import catVillas from "@/assets/category-villas.jpg";
+import catApartments from "@/assets/category-apartments.jpg";
+import catCorporate from "@/assets/category-corporate.jpg";
 
 const stats = [
   { value: "500+", label: "Projects Completed" },
