@@ -5,28 +5,27 @@ import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import heroImg from "@/assets/hero-elevator.jpg";
 import installImg from "@/assets/elevator-installation.jpg";
-import proj1 from "@/assets/project-1.jpg";
-import proj2 from "@/assets/project-2.jpg";
-import proj3 from "@/assets/project-3.jpg";
+import catVillas from "@/assets/category-villas.jpg";
+import catApartments from "@/assets/category-apartments.jpg";
+import catCorporate from "@/assets/category-corporate.jpg";
 
 const stats = [
   { value: "500+", label: "Projects Completed" },
   { value: "35+", label: "Years Experience" },
   { value: "200+", label: "Happy Clients" },
-  { value: "24/7", label: "Support Available" },
 ];
 
 const expertise = [
   { icon: Building2, title: "Commercial Elevators", desc: "State-of-the-art elevator solutions for commercial buildings and offices." },
   { icon: Shield, title: "Safety First", desc: "Rigorous safety standards and compliance with international regulations." },
   { icon: Wrench, title: "Expert Maintenance", desc: "Proactive maintenance programs ensuring peak performance at all times." },
-  { icon: Award, title: "Certified Excellence", desc: "ISO certified processes with best-in-class engineering practices." },
+  { icon: Award, title: "Certified Excellence", desc: "Industry-leading engineering practices with rigorous quality standards." },
 ];
 
 const projects = [
-  { img: proj1, name: "Skyline Tower", location: "Mumbai", type: "Commercial" },
-  { img: proj2, name: "Grand Residences", location: "Delhi", type: "Residential" },
-  { img: proj3, name: "City Hospital Complex", location: "Bangalore", type: "Healthcare" },
+  { img: catVillas, name: "Private Villas & Independent Homes" },
+  { img: catApartments, name: "Residential Apartment Buildings" },
+  { img: catCorporate, name: "Corporate Offices & Commercial Buildings" },
 ];
 
 const testimonials = [
@@ -128,7 +127,7 @@ const Index = () => {
       {/* Stats */}
       <section className="navy-gradient py-16">
         <div className="container mx-auto section-padding">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-3 gap-8">
             {stats.map((stat, i) => (
               <ScrollReveal key={i} delay={i * 100}>
                 <div className="text-center">
@@ -183,7 +182,7 @@ const Index = () => {
                   and client satisfaction sets us apart.
                 </p>
                 <div className="space-y-4">
-                  {["ISO 9001:2015 Certified Company", "24/7 Emergency Support & Service", "Comprehensive Annual Maintenance Contracts", "State-of-the-art Technology Solutions"].map((item, i) => (
+                  {["Comprehensive Annual Maintenance Contracts", "State-of-the-art Technology Solutions", "Trusted by 200+ Clients Across India", "Expert Installation & Modernization"].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
                       <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
                       <span className="text-foreground font-body text-sm">{item}</span>
@@ -236,9 +235,7 @@ const Index = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/90 via-navy-dark/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <span className="text-gold text-xs font-body uppercase tracking-wider">{proj.type}</span>
-                    <h3 className="text-gold-light font-heading text-xl font-semibold mt-1">{proj.name}</h3>
-                    <p className="text-gold-light/60 font-body text-sm">{proj.location}</p>
+                    <h3 className="text-gold-light font-heading text-xl font-semibold">{proj.name}</h3>
                   </div>
                 </div>
               </ScrollReveal>

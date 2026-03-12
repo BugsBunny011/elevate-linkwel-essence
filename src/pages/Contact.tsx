@@ -137,6 +137,7 @@ const Contact = () => {
                     <div>
                       <h4 className="font-body font-semibold text-foreground text-sm">Office Address</h4>
                       <p className="text-muted-foreground font-body text-sm mt-1">62, DSIDC Complex, Okhla<br />Okhla Phase I, ND-20<br />New Delhi, Delhi 110020</p>
+                      <a href="https://maps.app.goo.gl/CQTwV2ASCZBMGX6W6" target="_blank" rel="noopener noreferrer" className="text-accent font-body text-xs mt-1 inline-block hover:underline">View on Google Maps →</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
