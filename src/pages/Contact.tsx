@@ -56,7 +56,8 @@ const Contact = () => {
             <ScrollReveal>
               <div className="glass-card rounded-lg p-10">
                 <h2 className="text-2xl font-heading font-bold text-foreground mb-6">Send Us a Message</h2>
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-5">
+                  <input type="hidden" name="form-name" value="contact" />
                   <div>
                     <label className="block text-sm font-body font-medium text-foreground mb-1.5">Full Name</label>
                     <input
