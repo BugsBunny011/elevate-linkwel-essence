@@ -46,7 +46,7 @@ const Index = () => {
             loop
             playsInline
             className="w-full h-full object-cover"
-            poster={heroImg}
+            poster={heroFallback}
           >
             <source src="https://assets.mixkit.co/videos/30544/30544-720.mp4" type="video/mp4" />
           </video>
