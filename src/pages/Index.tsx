@@ -19,7 +19,7 @@ const expertise = [
   { icon: Building2, title: "Commercial Elevators", desc: "State-of-the-art elevator solutions for commercial buildings and offices." },
   { icon: Shield, title: "Safety First", desc: "Rigorous safety standards and compliance with international regulations." },
   { icon: Wrench, title: "Expert Maintenance", desc: "Proactive maintenance programs ensuring peak performance at all times." },
-  { icon: Award, title: "Certified Excellence", desc: "ISO certified processes with best-in-class engineering practices." },
+  { icon: Award, title: "Certified Excellence", desc: "Industry-leading engineering practices with rigorous quality standards." },
 ];
 
 const projects = [
