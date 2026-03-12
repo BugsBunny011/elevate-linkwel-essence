@@ -7,10 +7,32 @@ import { toast } from "sonner";
 const Contact = () => {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thank you! We'll get back to you shortly.");
-    setForm({ name: "", phone: "", email: "", message: "" });
+    setSubmitting(true);
+    try {
+      const formData = new URLSearchParams();
+      formData.append("form-name", "contact");
+      formData.append("name", form.name);
+      formData.append("phone", form.phone);
+      formData.append("email", form.email);
+      formData.append("message", form.message);
+
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formData.toString(),
+      });
+
+      toast.success("Thank you! We'll get back to you shortly.");
+      setForm({ name: "", phone: "", email: "", message: "" });
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -34,11 +56,13 @@ const Contact = () => {
             <ScrollReveal>
               <div className="glass-card rounded-lg p-10">
                 <h2 className="text-2xl font-heading font-bold text-foreground mb-6">Send Us a Message</h2>
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-5">
+                  <input type="hidden" name="form-name" value="contact" />
                   <div>
                     <label className="block text-sm font-body font-medium text-foreground mb-1.5">Full Name</label>
                     <input
                       type="text"
+                      name="name"
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -51,6 +75,7 @@ const Contact = () => {
                       <label className="block text-sm font-body font-medium text-foreground mb-1.5">Phone</label>
                       <input
                         type="tel"
+                        name="phone"
                         required
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
@@ -62,6 +87,7 @@ const Contact = () => {
                       <label className="block text-sm font-body font-medium text-foreground mb-1.5">Email</label>
                       <input
                         type="email"
+                        name="email"
                         required
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -73,6 +99,7 @@ const Contact = () => {
                   <div>
                     <label className="block text-sm font-body font-medium text-foreground mb-1.5">Message</label>
                     <textarea
+                      name="message"
                       required
                       rows={5}
                       value={form.message}
@@ -83,9 +110,10 @@ const Contact = () => {
                   </div>
                   <button
                     type="submit"
-                    className="gold-gradient text-white font-body font-semibold px-8 py-3.5 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2 w-full justify-center"
+                    disabled={submitting}
+                    className="gold-gradient text-white font-body font-semibold px-8 py-3.5 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2 w-full justify-center disabled:opacity-60"
                   >
-                    <Send size={16} /> Send Message
+                    <Send size={16} /> {submitting ? "Sending..." : "Send Message"}
                   </button>
                 </form>
               </div>
