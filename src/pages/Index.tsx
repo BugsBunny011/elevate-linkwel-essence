@@ -268,13 +268,11 @@ const Index = () => {
                 <div className="bg-navy-light/30 backdrop-blur border border-gold/10 rounded-lg p-8">
                   <Quote className="text-gold/30 mb-4" size={32} />
                   <p className="text-gold-light/70 font-body text-sm leading-relaxed mb-6">"{t.text}"</p>
-                  <div className="flex items-center gap-1 mb-3">
+                  <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, j) => (
                       <Star key={j} size={14} className="text-gold fill-gold" />
                     ))}
                   </div>
-                  <p className="text-gold font-body font-semibold text-sm">{t.name}</p>
-                  <p className="text-gold-light/50 font-body text-xs">{t.role}</p>
                 </div>
               </ScrollReveal>
             ))}
