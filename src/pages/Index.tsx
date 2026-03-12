@@ -182,7 +182,7 @@ const Index = () => {
                   and client satisfaction sets us apart.
                 </p>
                 <div className="space-y-4">
-                  {["Comprehensive Annual Maintenance Contracts", "State-of-the-art Technology Solutions", "Trusted by 200+ Clients Across India", "Expert Installation & Modernization"].map((item, i) => (
+                  {["Comprehensive Annual Maintenance Contracts", "State-of-the-art Technology Solutions", "Trusted by 500+ Clients Across India", "Expert Installation & Modernization"].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
                       <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
                       <span className="text-foreground font-body text-sm">{item}</span>
