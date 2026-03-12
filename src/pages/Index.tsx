@@ -12,7 +12,7 @@ import catCorporate from "@/assets/category-corporate.jpg";
 const stats = [
   { value: "500+", label: "Projects Completed" },
   { value: "35+", label: "Years Experience" },
-  { value: "200+", label: "Happy Clients" },
+  { value: "500+", label: "Happy Clients" },
 ];
 
 const expertise = [
