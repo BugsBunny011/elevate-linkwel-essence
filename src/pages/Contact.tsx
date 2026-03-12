@@ -99,6 +99,7 @@ const Contact = () => {
                   <div>
                     <label className="block text-sm font-body font-medium text-foreground mb-1.5">Message</label>
                     <textarea
+                      name="message"
                       required
                       rows={5}
                       value={form.message}
