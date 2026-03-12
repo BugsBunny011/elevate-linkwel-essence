@@ -110,9 +110,10 @@ const Contact = () => {
                   </div>
                   <button
                     type="submit"
-                    className="gold-gradient text-white font-body font-semibold px-8 py-3.5 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2 w-full justify-center"
+                    disabled={submitting}
+                    className="gold-gradient text-white font-body font-semibold px-8 py-3.5 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2 w-full justify-center disabled:opacity-60"
                   >
-                    <Send size={16} /> Send Message
+                    <Send size={16} /> {submitting ? "Sending..." : "Send Message"}
                   </button>
                 </form>
               </div>
