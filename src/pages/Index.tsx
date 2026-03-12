@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Shield, Award, Wrench, Building2, Star, Quote, ChevronRight, Phone } from "lucide-react";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
-import heroImg from "@/assets/hero-elevator.jpg";
+import heroFallback from "@/assets/hero-fallback.jpg";
 import installImg from "@/assets/elevator-installation.jpg";
 import catVillas from "@/assets/category-villas.jpg";
 import catApartments from "@/assets/category-apartments.jpg";
@@ -46,7 +46,7 @@ const Index = () => {
             loop
             playsInline
             className="w-full h-full object-cover"
-            poster={heroImg}
+            poster={heroFallback}
           >
             <source src="https://assets.mixkit.co/videos/30544/30544-720.mp4" type="video/mp4" />
           </video>
