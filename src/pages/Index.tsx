@@ -13,7 +13,6 @@ const stats = [
   { value: "500+", label: "Projects Completed" },
   { value: "35+", label: "Years Experience" },
   { value: "200+", label: "Happy Clients" },
-  { value: "24/7", label: "Support Available" },
 ];
 
 const expertise = [
