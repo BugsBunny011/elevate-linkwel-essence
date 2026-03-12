@@ -75,6 +75,7 @@ const Contact = () => {
                       <label className="block text-sm font-body font-medium text-foreground mb-1.5">Phone</label>
                       <input
                         type="tel"
+                        name="phone"
                         required
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
