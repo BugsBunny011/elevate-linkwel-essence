@@ -23,9 +23,9 @@ const expertise = [
 ];
 
 const projects = [
-  { img: proj1, name: "Skyline Tower", location: "Mumbai", type: "Commercial" },
-  { img: proj2, name: "Grand Residences", location: "Delhi", type: "Residential" },
-  { img: proj3, name: "City Hospital Complex", location: "Bangalore", type: "Healthcare" },
+  { img: catVillas, name: "Private Villas & Independent Homes" },
+  { img: catApartments, name: "Residential Apartment Buildings" },
+  { img: catCorporate, name: "Corporate Offices & Commercial Buildings" },
 ];
 
 const testimonials = [
