@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Shield, Award, Wrench, Building2, Star, Quote, ChevronRight, Phone } from "lucide-react";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
-import heroImg from "@/assets/hero-elevator.jpg";
+import heroFallback from "@/assets/hero-fallback.jpg";
 import installImg from "@/assets/elevator-installation.jpg";
 import catVillas from "@/assets/category-villas.jpg";
 import catApartments from "@/assets/category-apartments.jpg";
