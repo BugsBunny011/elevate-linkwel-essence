@@ -127,7 +127,7 @@ const Index = () => {
       {/* Stats */}
       <section className="navy-gradient py-16">
         <div className="container mx-auto section-padding">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-3 gap-8">
             {stats.map((stat, i) => (
               <ScrollReveal key={i} delay={i * 100}>
                 <div className="text-center">
