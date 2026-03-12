@@ -7,10 +7,32 @@ import { toast } from "sonner";
 const Contact = () => {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thank you! We'll get back to you shortly.");
-    setForm({ name: "", phone: "", email: "", message: "" });
+    setSubmitting(true);
+    try {
+      const formData = new URLSearchParams();
+      formData.append("form-name", "contact");
+      formData.append("name", form.name);
+      formData.append("phone", form.phone);
+      formData.append("email", form.email);
+      formData.append("message", form.message);
+
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formData.toString(),
+      });
+
+      toast.success("Thank you! We'll get back to you shortly.");
+      setForm({ name: "", phone: "", email: "", message: "" });
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
