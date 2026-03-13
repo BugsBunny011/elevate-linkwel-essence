@@ -43,7 +43,7 @@ const Products = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-gold-light/60 font-body text-lg max-w-3xl mx-auto"
           >
-            Discover our comprehensive range of elevators and lifts — engineered for safety,
+            Discover our comprehensive range of elevators and lifts, engineered for safety,
             efficiency, and elegance by one of the best elevator manufacturers in India.
           </motion.p>
         </div>
