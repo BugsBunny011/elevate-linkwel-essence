@@ -38,6 +38,19 @@ const testimonials = [
 const Index = () => {
   return (
     <Layout>
+      <Helmet>
+        <title>Linkwel Engineers | Best Elevator Manufacturers in India</title>
+        <meta name="description" content="Linkwel Engineers — leading elevator manufacturers in India. Premium passenger, home, goods & capsule lifts. Installation, maintenance & modernization services in Delhi." />
+        <meta name="keywords" content="elevator manufacturers in India, lifts near me, lift manufacturers in Delhi, best lifts in India, elevator company in India, lift installation services" />
+        <link rel="canonical" href="https://linkwelengineers.com/" />
+        <meta property="og:title" content="Linkwel Engineers | Best Elevator Manufacturers in India" />
+        <meta property="og:description" content="Leading elevator manufacturers in India. Premium lifts for residential, commercial & industrial buildings." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://linkwelengineers.com/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Linkwel Engineers | Best Elevator Manufacturers in India" />
+        <meta name="twitter:description" content="Leading elevator manufacturers in India offering premium lift solutions." />
+      </Helmet>
       {/* Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
