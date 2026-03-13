@@ -93,7 +93,7 @@ const Products = () => {
               Looking for the Best Lifts in India?
             </h2>
             <p className="text-gold-light/60 font-body text-lg max-w-2xl mx-auto mb-8">
-              Whether you need a passenger lift, home elevator, or industrial goods lift — Linkwel
+              Whether you need a passenger lift, home elevator, or industrial goods lift, Linkwel
               Engineers has the perfect solution. Contact us for a free consultation and quote.
             </p>
             <Link
