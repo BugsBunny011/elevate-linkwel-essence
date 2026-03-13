@@ -144,7 +144,7 @@ const About = () => {
                           <li className="flex items-start gap-3">
                             <div className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0" />
                             <p className="text-muted-foreground font-body leading-relaxed">
-                              In the <strong>early 2000s</strong>, Linkwel expanded into complete elevator systems and full crane manufacturing, responding to India's rapid infrastructure growth.
+                               In the <strong>early 2000s</strong>, Linkwel expanded into complete elevator systems and full crane manufacturing, responding to India's rapid infrastructure growth.
                             </p>
                           </li>
                           <li className="flex items-start gap-3">
