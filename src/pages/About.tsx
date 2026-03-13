@@ -75,7 +75,7 @@ const About = () => {
                           Brief History
                         </h4>
                         <p className="text-muted-foreground font-body leading-relaxed">
-                          Established in <strong>1989 in Okhla, New Delhi</strong>, Linkwel was founded by visionary entrepreneur <strong>Mr. Suresh Bagga</strong>. Starting as a specialist in crane component manufacturing, the company has since expanded into a comprehensive provider of elevators, cranes, and precision-engineered components — driven by decades of engineering innovation and deep industry expertise.
+                          Established in <strong>1989 in Okhla, New Delhi</strong>, Linkwel was founded by visionary entrepreneur <strong>Mr. Suresh Bagga</strong>. Starting as a specialist in crane component manufacturing, the company has since expanded into a comprehensive provider of elevators, cranes, and precision-engineered components, driven by decades of engineering innovation and deep industry expertise.
                         </p>
                       </div>
 
