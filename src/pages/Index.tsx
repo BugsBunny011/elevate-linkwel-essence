@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, Award, Wrench, Building2, Star, Quote, ChevronRight, Phone } from "lucide-react";
 import Layout from "@/components/Layout";
