@@ -150,7 +150,7 @@ const About = () => {
                           <li className="flex items-start gap-3">
                             <div className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0" />
                             <p className="text-muted-foreground font-body leading-relaxed">
-                              Under the leadership of <strong>CEO Mr. Sunit Bagga</strong>, the company has continued to innovate — embracing modern technology, expanding its service portfolio, and strengthening client relationships across India.
+                              Under the leadership of <strong>CEO Mr. Sunit Bagga</strong>, the company has continued to innovate, embracing modern technology, expanding its service portfolio, and strengthening client relationships across India.
                             </p>
                           </li>
                           <li className="flex items-start gap-3">

@@ -257,8 +257,8 @@ const ProductDetail = () => {
               Interested in {product.title}?
             </h2>
             <p className="text-gold-light/60 font-body text-lg max-w-2xl mx-auto mb-8">
-              Get in touch with Linkwel Engineers — one of the best elevator manufacturers in India
-              — for a customised quote and free site consultation.
+              Get in touch with Linkwel Engineers, one of the best elevator manufacturers in India,
+              for a customised quote and free site consultation.
             </p>
             <Link
               to="/contact"

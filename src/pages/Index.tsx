@@ -40,7 +40,7 @@ const Index = () => {
     <Layout>
       <Helmet>
         <title>Linkwel Engineers | Best Elevator Manufacturers in India</title>
-        <meta name="description" content="Linkwel Engineers — leading elevator manufacturers in India. Premium passenger, home, goods & capsule lifts. Installation, maintenance & modernization services in Delhi." />
+        <meta name="description" content="Linkwel Engineers - leading elevator manufacturers in India. Premium passenger, home, goods & capsule lifts. Installation, maintenance & modernization services in Delhi." />
         <meta name="keywords" content="elevator manufacturers in India, lifts near me, lift manufacturers in Delhi, best lifts in India, elevator company in India, lift installation services" />
         <link rel="canonical" href="https://linkwelengineers.com/" />
         <meta property="og:title" content="Linkwel Engineers | Best Elevator Manufacturers in India" />
