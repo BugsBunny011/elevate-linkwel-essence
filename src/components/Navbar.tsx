@@ -7,6 +7,7 @@ import logo from "@/assets/linkwel-logo.png";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
+  { name: "Products", path: "/products" },
   { name: "Services", path: "/services" },
   { name: "Projects", path: "/projects" },
   { name: "Contact", path: "/contact" },
