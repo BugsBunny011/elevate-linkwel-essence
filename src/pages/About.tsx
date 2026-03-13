@@ -1,4 +1,5 @@
 import { Target, Eye, Shield, Lightbulb, Award, Heart } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import installImg from "@/assets/elevator-installation.jpg";
