@@ -104,7 +104,7 @@ const ProductDetail = () => {
             >
               <img
                 src={product.image}
-                alt={`${product.title} — Linkwel Engineers, elevator manufacturers in India`}
+                alt={`${product.title} - Linkwel Engineers, elevator manufacturers in India`}
                 className="w-full h-[400px] object-cover rounded-lg premium-shadow"
               />
               <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-navy-dark/30 to-transparent" />
@@ -186,7 +186,7 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Applications & Benefits — side by side */}
+      {/* Applications & Benefits */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto section-padding">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -257,8 +257,8 @@ const ProductDetail = () => {
               Interested in {product.title}?
             </h2>
             <p className="text-gold-light/60 font-body text-lg max-w-2xl mx-auto mb-8">
-              Get in touch with Linkwel Engineers — one of the best elevator manufacturers in India
-              — for a customised quote and free site consultation.
+              Get in touch with Linkwel Engineers, one of the best elevator manufacturers in India,
+              for a customised quote and free site consultation.
             </p>
             <Link
               to="/contact"

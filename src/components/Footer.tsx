@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Download } from "lucide-react";
 import logo from "@/assets/linkwel-logo.png";
+import { products } from "@/data/products";
 
 const Footer = () => {
   return (
     <footer className="navy-gradient text-gold-light/80">
       <div className="container mx-auto section-padding py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand */}
-          <div>
+          <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
               <img src={logo} alt="Linkwel Engineers" className="h-14 w-auto" />
             </Link>
@@ -21,13 +22,36 @@ const Footer = () => {
           <div>
             <h4 className="text-gold font-heading text-lg mb-4">Quick Links</h4>
             <div className="flex flex-col gap-3">
-              {["Home", "About", "Services", "Projects", "Contact"].map((item) => (
+              {[
+                { name: "Home", path: "/" },
+                { name: "About", path: "/about" },
+                { name: "Products", path: "/products" },
+                { name: "Services", path: "/services" },
+                { name: "Projects", path: "/projects" },
+                { name: "Contact", path: "/contact" },
+              ].map((item) => (
                 <Link
-                  key={item}
-                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  key={item.name}
+                  to={item.path}
                   className="text-sm hover:text-gold transition-colors duration-300"
                 >
-                  {item}
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Products */}
+          <div>
+            <h4 className="text-gold font-heading text-lg mb-4">Our Products</h4>
+            <div className="flex flex-col gap-3">
+              {products.map((product) => (
+                <Link
+                  key={product.slug}
+                  to={`/products/${product.slug}`}
+                  className="text-sm hover:text-gold transition-colors duration-300"
+                >
+                  {product.title}
                 </Link>
               ))}
             </div>

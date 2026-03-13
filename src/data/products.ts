@@ -78,23 +78,23 @@ export const products: Product[] = [
     ],
     metaTitle: "Passenger Elevators | Best Passenger Lift Manufacturers in India – Linkwel",
     metaDesc:
-      "Linkwel Engineers – leading passenger lift manufacturers in India. Premium passenger elevators for commercial & residential buildings. Get a free quote today.",
+      "Linkwel Engineers - leading passenger lift manufacturers in India. Premium passenger elevators for commercial & residential buildings. Get a free quote today.",
   },
   {
     slug: "home-elevators",
     title: "Home Elevators",
     shortDesc:
-      "Elegant and compact home lifts designed for modern Indian residences, villas, and bungalows — blending luxury with convenience.",
+      "Elegant and compact home lifts designed for modern Indian residences, villas, and bungalows, blending luxury with convenience.",
     image: homeImg,
     heroDesc:
-      "Transform your home with a premium home elevator from Linkwel Engineers — one of the most trusted home lift manufacturers in India.",
+      "Transform your home with a premium home elevator from Linkwel Engineers, one of the most trusted home lift manufacturers in India.",
     description:
       "Our home elevators are specifically designed for private residences, offering a perfect blend of luxury, convenience, and space optimisation. Whether it's a villa, bungalow, or duplex apartment, our home lifts add value and accessibility to your living space. As a top home lift manufacturer, we offer compact designs that require minimal pit depth and headroom, making them ideal for both new constructions and existing homes.",
     features: [
       "Compact design requiring minimal shaft space",
       "Whisper-quiet operation for home environments",
       "Battery backup for uninterrupted operation",
-      "Premium cabin finishes — wood, glass, and steel options",
+      "Premium cabin finishes in wood, glass, and steel options",
       "Machine-room-less (MRL) technology",
       "Remote monitoring and diagnostics",
       "Automatic landing and door operations",
@@ -120,7 +120,7 @@ export const products: Product[] = [
       "Adds significant property value",
       "Enables aging-in-place for elderly family members",
       "Minimal structural modifications required",
-      "Low energy consumption — runs on single-phase power",
+      "Low energy consumption, runs on single-phase power",
       "Elegant designs complement home interiors",
       "Quick installation within 3–5 days",
     ],
@@ -134,13 +134,13 @@ export const products: Product[] = [
     ],
     metaTitle: "Home Elevators | Best Home Lift Manufacturers in India – Linkwel Engineers",
     metaDesc:
-      "Premium home elevators by Linkwel Engineers — India's trusted home lift manufacturer. Compact, elegant lifts for villas, bungalows & residences. Get a quote now.",
+      "Premium home elevators by Linkwel Engineers, India's trusted home lift manufacturer. Compact, elegant lifts for villas, bungalows & residences. Get a quote now.",
   },
   {
     slug: "goods-elevators",
     title: "Freight / Goods Elevators",
     shortDesc:
-      "Heavy-duty goods lifts built for industrial and commercial applications — reliable freight elevator solutions from a top lift manufacturer in India.",
+      "Heavy-duty goods lifts built for industrial and commercial applications. Reliable freight elevator solutions from a top lift manufacturer in India.",
     image: goodsImg,
     heroDesc:
       "Linkwel Engineers manufactures robust freight and goods elevators designed for heavy loads, harsh environments, and non-stop industrial operations.",
@@ -255,15 +255,15 @@ export const products: Product[] = [
     slug: "capsule-elevators",
     title: "Capsule / Glass Elevators",
     shortDesc:
-      "Stunning panoramic capsule lifts with full glass cabins — the perfect architectural statement for malls, hotels, and premium buildings.",
+      "Stunning panoramic capsule lifts with full glass cabins, the perfect architectural statement for malls, hotels, and premium buildings.",
     image: capsuleImg,
     heroDesc:
-      "Make a bold architectural statement with Linkwel Engineers' panoramic capsule elevators — designed for visual impact and premium experiences.",
+      "Make a bold architectural statement with Linkwel Engineers' panoramic capsule elevators, designed for visual impact and premium experiences.",
     description:
       "Our capsule and glass elevators are designed to be architectural centrepieces, offering breathtaking panoramic views while providing smooth vertical transportation. Ideal for shopping malls, luxury hotels, corporate headquarters, and landmark buildings, these elevators combine engineering excellence with stunning aesthetics. As a leading capsule lift manufacturer in India, Linkwel Engineers creates custom designs that transform ordinary spaces into extraordinary experiences.",
     features: [
       "Full panoramic glass cabin with 270° views",
-      "Customisable cabin shapes — round, semi-circular, square",
+      "Customisable cabin shapes: round, semi-circular, square",
       "LED ambient lighting with colour options",
       "Architectural-grade glass and steel construction",
       "Weather-resistant design for outdoor installation",
@@ -297,7 +297,7 @@ export const products: Product[] = [
       "Weather-resistant for outdoor applications",
     ],
     safety: [
-      "Laminated safety glass — shatter-proof",
+      "Laminated safety glass, shatter-proof",
       "Automatic Rescue Device (ARD)",
       "Over-speed governor and safety gear",
       "Emergency lighting and communication",
@@ -313,7 +313,7 @@ export const products: Product[] = [
     slug: "car-elevators",
     title: "Car Elevators",
     shortDesc:
-      "Robust automobile lifts for multi-level parking, showrooms, and residential complexes — engineered by a top lift manufacturer in Delhi.",
+      "Robust automobile lifts for multi-level parking, showrooms, and residential complexes, engineered by a top lift manufacturer in Delhi.",
     image: carImg,
     heroDesc:
       "Linkwel Engineers designs and installs powerful car elevators that optimise parking space and provide seamless vehicle transportation.",
@@ -365,6 +365,6 @@ export const products: Product[] = [
     ],
     metaTitle: "Car Elevators | Automobile Lift Manufacturers in India – Linkwel Engineers",
     metaDesc:
-      "Car elevators & automobile lifts by Linkwel Engineers — leading lift manufacturer in Delhi & India. Solutions for parking, showrooms & residences. Get a quote.",
+      "Car elevators & automobile lifts by Linkwel Engineers, leading lift manufacturer in Delhi & India. Solutions for parking, showrooms & residences. Get a quote.",
   },
 ];

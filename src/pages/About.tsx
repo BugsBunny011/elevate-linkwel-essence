@@ -23,7 +23,7 @@ const About = () => {
     <Layout>
       <Helmet>
         <title>About Linkwel Engineers | Elevator Company in India</title>
-        <meta name="description" content="Learn about Linkwel Engineers — a trusted elevator company in India since 1989. 500+ projects, expert lift installation & maintenance services in Delhi & across India." />
+        <meta name="description" content="Learn about Linkwel Engineers - a trusted elevator company in India since 1989. 500+ projects, expert lift installation & maintenance services in Delhi & across India." />
         <meta name="keywords" content="elevator company in India, lift manufacturer near me, elevator manufacturers in India, best lifts in India" />
         <link rel="canonical" href="https://linkwelengineers.com/about" />
         <meta property="og:title" content="About Linkwel Engineers | Elevator Company in India" />
@@ -47,7 +47,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Company Overview & Our Story — Accordion Sections */}
+      {/* Company Overview & Our Story */}
       <section className="py-24 bg-background">
         <div className="container mx-auto section-padding">
           <ScrollReveal>
@@ -75,7 +75,7 @@ const About = () => {
                           Brief History
                         </h4>
                         <p className="text-muted-foreground font-body leading-relaxed">
-                          Established in <strong>1989 in Okhla, New Delhi</strong>, Linkwel was founded by visionary entrepreneur <strong>Mr. Suresh Bagga</strong>. Starting as a specialist in crane component manufacturing, the company has since expanded into a comprehensive provider of elevators, cranes, and precision-engineered components — driven by decades of engineering innovation and deep industry expertise.
+                          Established in <strong>1989 in Okhla, New Delhi</strong>, Linkwel was founded by visionary entrepreneur <strong>Mr. Suresh Bagga</strong>. Starting as a specialist in crane component manufacturing, the company has since expanded into a comprehensive provider of elevators, cranes, and precision-engineered components, driven by decades of engineering innovation and deep industry expertise.
                         </p>
                       </div>
 
@@ -97,7 +97,7 @@ const About = () => {
                           Mission Statement
                         </h4>
                         <p className="text-muted-foreground font-body leading-relaxed">
-                          To design and manufacture high-quality crane components, elevators, and cranes that enhance safety, efficiency, and reliability in material handling and vertical transportation — while exceeding customer expectations through innovative solutions and exceptional service.
+                          To design and manufacture high-quality crane components, elevators, and cranes that enhance safety, efficiency, and reliability in material handling and vertical transportation, while exceeding customer expectations through innovative solutions and exceptional service.
                         </p>
                       </div>
 
@@ -108,7 +108,7 @@ const About = () => {
                           Vision Statement
                         </h4>
                         <p className="text-muted-foreground font-body leading-relaxed">
-                          To deliver precision-engineered elevators, cranes, and components known for safety, efficiency, and reliability — while driving innovation and providing solutions that move industries forward.
+                          To deliver precision-engineered elevators, cranes, and components known for safety, efficiency, and reliability, while driving innovation and providing solutions that move industries forward.
                         </p>
                       </div>
                     </div>
@@ -144,13 +144,13 @@ const About = () => {
                           <li className="flex items-start gap-3">
                             <div className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0" />
                             <p className="text-muted-foreground font-body leading-relaxed">
-                              In the <strong>early 2000s</strong>, Linkwel expanded into complete elevator systems and full crane manufacturing, responding to India's rapid infrastructure growth.
+                               In the <strong>early 2000s</strong>, Linkwel expanded into complete elevator systems and full crane manufacturing, responding to India's rapid infrastructure growth.
                             </p>
                           </li>
                           <li className="flex items-start gap-3">
                             <div className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0" />
                             <p className="text-muted-foreground font-body leading-relaxed">
-                              Under the leadership of <strong>CEO Mr. Sunit Bagga</strong>, the company has continued to innovate — embracing modern technology, expanding its service portfolio, and strengthening client relationships across India.
+                              Under the leadership of <strong>CEO Mr. Sunit Bagga</strong>, the company has continued to innovate, embracing modern technology, expanding its service portfolio, and strengthening client relationships across India.
                             </p>
                           </li>
                           <li className="flex items-start gap-3">

@@ -22,7 +22,7 @@ const Projects = () => {
     <Layout>
       <Helmet>
         <title>Our Projects | Elevator Installations Across India</title>
-        <meta name="description" content="View Linkwel Engineers' portfolio — premium elevator installations in villas, apartments, hospitals, corporate offices & parking facilities across India." />
+        <meta name="description" content="View Linkwel Engineers' portfolio - premium elevator installations in villas, apartments, hospitals, corporate offices & parking facilities across India." />
         <meta name="keywords" content="elevator installations India, lift projects, commercial elevator suppliers, elevator company in India" />
         <link rel="canonical" href="https://linkwelengineers.com/projects" />
         <meta property="og:title" content="Our Projects | Elevator Installations Across India" />

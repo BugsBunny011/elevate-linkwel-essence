@@ -13,7 +13,7 @@ const Products = () => {
         <title>Elevator Products | Best Lift Manufacturers in India – Linkwel Engineers</title>
         <meta
           name="description"
-          content="Explore premium elevators & lifts by Linkwel Engineers — passenger, home, goods, hospital, capsule & car elevators. Leading elevator manufacturers in India."
+          content="Explore premium elevators & lifts by Linkwel Engineers - passenger, home, goods, hospital, capsule & car elevators. Leading elevator manufacturers in India."
         />
         <link rel="canonical" href="https://linkwelengineers.com/products" />
       </Helmet>
@@ -43,7 +43,7 @@ const Products = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-gold-light/60 font-body text-lg max-w-3xl mx-auto"
           >
-            Discover our comprehensive range of elevators and lifts — engineered for safety,
+            Discover our comprehensive range of elevators and lifts, engineered for safety,
             efficiency, and elegance by one of the best elevator manufacturers in India.
           </motion.p>
         </div>
@@ -60,7 +60,7 @@ const Products = () => {
                     <div className="relative overflow-hidden">
                       <img
                         src={product.image}
-                        alt={`${product.title} by Linkwel Engineers — leading lift manufacturer in India`}
+                        alt={`${product.title} by Linkwel Engineers - leading lift manufacturer in India`}
                         className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
                         loading="lazy"
                       />
@@ -93,7 +93,7 @@ const Products = () => {
               Looking for the Best Lifts in India?
             </h2>
             <p className="text-gold-light/60 font-body text-lg max-w-2xl mx-auto mb-8">
-              Whether you need a passenger lift, home elevator, or industrial goods lift — Linkwel
+              Whether you need a passenger lift, home elevator, or industrial goods lift, Linkwel
               Engineers has the perfect solution. Contact us for a free consultation and quote.
             </p>
             <Link
