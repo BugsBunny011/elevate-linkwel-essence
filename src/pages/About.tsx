@@ -108,7 +108,7 @@ const About = () => {
                           Vision Statement
                         </h4>
                         <p className="text-muted-foreground font-body leading-relaxed">
-                          To deliver precision-engineered elevators, cranes, and components known for safety, efficiency, and reliability — while driving innovation and providing solutions that move industries forward.
+                          To deliver precision-engineered elevators, cranes, and components known for safety, efficiency, and reliability, while driving innovation and providing solutions that move industries forward.
                         </p>
                       </div>
                     </div>
