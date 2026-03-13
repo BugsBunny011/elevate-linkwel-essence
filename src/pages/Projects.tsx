@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import catVillas from "@/assets/category-villas.jpg";
@@ -19,6 +20,19 @@ const projects = [
 const Projects = () => {
   return (
     <Layout>
+      <Helmet>
+        <title>Our Projects | Elevator Installations Across India</title>
+        <meta name="description" content="View Linkwel Engineers' portfolio — premium elevator installations in villas, apartments, hospitals, corporate offices & parking facilities across India." />
+        <meta name="keywords" content="elevator installations India, lift projects, commercial elevator suppliers, elevator company in India" />
+        <link rel="canonical" href="https://linkwelengineers.com/projects" />
+        <meta property="og:title" content="Our Projects | Elevator Installations Across India" />
+        <meta property="og:description" content="Premium elevator installations in villas, apartments, hospitals & commercial buildings." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://linkwelengineers.com/projects" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Projects | Elevator Installations Across India" />
+        <meta name="twitter:description" content="Premium elevator installations across India by Linkwel Engineers." />
+      </Helmet>
       <section className="pt-32 pb-20 navy-gradient">
         <div className="container mx-auto section-padding text-center">
           <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Our Portfolio</p>

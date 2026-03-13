@@ -1,5 +1,6 @@
 import { Building2, Wrench, RefreshCw, Settings, FileCheck, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -34,6 +35,19 @@ const services = [
 const Services = () => {
   return (
     <Layout>
+      <Helmet>
+        <title>Elevator Services | Lift Installation & Maintenance India</title>
+        <meta name="description" content="Expert elevator installation, maintenance, modernization & AMC services by Linkwel Engineers. Leading lift installation services across Delhi & India." />
+        <meta name="keywords" content="lift installation services, elevator maintenance, elevator modernization, AMC elevator, commercial elevator suppliers" />
+        <link rel="canonical" href="https://linkwelengineers.com/services" />
+        <meta property="og:title" content="Elevator Services | Lift Installation & Maintenance India" />
+        <meta property="og:description" content="Expert elevator installation, maintenance & modernization services across India." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://linkwelengineers.com/services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Elevator Services | Lift Installation & Maintenance India" />
+        <meta name="twitter:description" content="Expert lift installation and maintenance services across India." />
+      </Helmet>
       <section className="pt-32 pb-20 navy-gradient">
         <div className="container mx-auto section-padding text-center">
           <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">What We Offer</p>

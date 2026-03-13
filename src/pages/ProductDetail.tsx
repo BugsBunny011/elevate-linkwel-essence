@@ -27,7 +27,27 @@ const ProductDetail = () => {
       <Helmet>
         <title>{product.metaTitle}</title>
         <meta name="description" content={product.metaDesc} />
+        <meta name="keywords" content={`${product.title}, elevator manufacturers in India, lift manufacturers in Delhi, best lifts in India, ${product.title.toLowerCase()} manufacturer`} />
         <link rel="canonical" href={`https://linkwelengineers.com/products/${product.slug}`} />
+        <meta property="og:title" content={product.metaTitle} />
+        <meta property="og:description" content={product.metaDesc} />
+        <meta property="og:type" content="product" />
+        <meta property="og:url" content={`https://linkwelengineers.com/products/${product.slug}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={product.metaTitle} />
+        <meta name="twitter:description" content={product.metaDesc} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": product.title,
+            "description": product.description,
+            "brand": { "@type": "Brand", "name": "Linkwel Engineers" },
+            "manufacturer": { "@type": "Organization", "name": "Linkwel Engineers" },
+            "url": `https://linkwelengineers.com/products/${product.slug}`,
+            "category": "Elevators & Lifts"
+          })}
+        </script>
       </Helmet>
 
       {/* Breadcrumb */}

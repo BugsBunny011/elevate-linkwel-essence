@@ -1,4 +1,5 @@
 import { Target, Eye, Shield, Lightbulb, Award, Heart } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import installImg from "@/assets/elevator-installation.jpg";
@@ -20,6 +21,19 @@ const values = [
 const About = () => {
   return (
     <Layout>
+      <Helmet>
+        <title>About Linkwel Engineers | Elevator Company in India</title>
+        <meta name="description" content="Learn about Linkwel Engineers — a trusted elevator company in India since 1989. 500+ projects, expert lift installation & maintenance services in Delhi & across India." />
+        <meta name="keywords" content="elevator company in India, lift manufacturer near me, elevator manufacturers in India, best lifts in India" />
+        <link rel="canonical" href="https://linkwelengineers.com/about" />
+        <meta property="og:title" content="About Linkwel Engineers | Elevator Company in India" />
+        <meta property="og:description" content="Trusted elevator company in India since 1989 with 500+ projects completed." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://linkwelengineers.com/about" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Linkwel Engineers | Elevator Company in India" />
+        <meta name="twitter:description" content="Trusted elevator company in India since 1989." />
+      </Helmet>
       {/* Hero */}
       <section className="pt-32 pb-20 navy-gradient">
         <div className="container mx-auto section-padding text-center">
