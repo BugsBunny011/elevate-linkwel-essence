@@ -186,7 +186,7 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Applications & Benefits — side by side */}
+      {/* Applications & Benefits */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto section-padding">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">

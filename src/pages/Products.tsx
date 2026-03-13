@@ -60,7 +60,7 @@ const Products = () => {
                     <div className="relative overflow-hidden">
                       <img
                         src={product.image}
-                        alt={`${product.title} by Linkwel Engineers — leading lift manufacturer in India`}
+                        alt={`${product.title} by Linkwel Engineers - leading lift manufacturer in India`}
                         className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
                         loading="lazy"
                       />

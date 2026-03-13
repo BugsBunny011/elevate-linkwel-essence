@@ -47,7 +47,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Company Overview & Our Story — Accordion Sections */}
+      {/* Company Overview & Our Story */}
       <section className="py-24 bg-background">
         <div className="container mx-auto section-padding">
           <ScrollReveal>
