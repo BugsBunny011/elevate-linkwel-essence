@@ -97,7 +97,7 @@ const About = () => {
                           Mission Statement
                         </h4>
                         <p className="text-muted-foreground font-body leading-relaxed">
-                          To design and manufacture high-quality crane components, elevators, and cranes that enhance safety, efficiency, and reliability in material handling and vertical transportation — while exceeding customer expectations through innovative solutions and exceptional service.
+                          To design and manufacture high-quality crane components, elevators, and cranes that enhance safety, efficiency, and reliability in material handling and vertical transportation, while exceeding customer expectations through innovative solutions and exceptional service.
                         </p>
                       </div>
 
