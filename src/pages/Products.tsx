@@ -13,7 +13,7 @@ const Products = () => {
         <title>Elevator Products | Best Lift Manufacturers in India – Linkwel Engineers</title>
         <meta
           name="description"
-          content="Explore premium elevators & lifts by Linkwel Engineers — passenger, home, goods, hospital, capsule & car elevators. Leading elevator manufacturers in India."
+          content="Explore premium elevators & lifts by Linkwel Engineers - passenger, home, goods, hospital, capsule & car elevators. Leading elevator manufacturers in India."
         />
         <link rel="canonical" href="https://linkwelengineers.com/products" />
       </Helmet>
