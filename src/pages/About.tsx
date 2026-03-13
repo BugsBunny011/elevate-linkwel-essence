@@ -23,7 +23,7 @@ const About = () => {
     <Layout>
       <Helmet>
         <title>About Linkwel Engineers | Elevator Company in India</title>
-        <meta name="description" content="Learn about Linkwel Engineers — a trusted elevator company in India since 1989. 500+ projects, expert lift installation & maintenance services in Delhi & across India." />
+        <meta name="description" content="Learn about Linkwel Engineers - a trusted elevator company in India since 1989. 500+ projects, expert lift installation & maintenance services in Delhi & across India." />
         <meta name="keywords" content="elevator company in India, lift manufacturer near me, elevator manufacturers in India, best lifts in India" />
         <link rel="canonical" href="https://linkwelengineers.com/about" />
         <meta property="og:title" content="About Linkwel Engineers | Elevator Company in India" />
