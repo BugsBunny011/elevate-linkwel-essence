@@ -88,12 +88,6 @@ const ProductDetail = () => {
                 >
                   Get a Quote
                 </Link>
-                <a
-                  href="tel:+919999999999"
-                  className="border border-gold/30 text-gold font-body font-semibold text-sm px-8 py-3 rounded-sm uppercase tracking-wider hover:bg-gold/10 transition-colors inline-block"
-                >
-                  Call Now
-                </a>
               </div>
             </motion.div>
             <motion.div
