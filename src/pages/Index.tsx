@@ -19,7 +19,7 @@ const stats = [
 
 const expertise = [
   { icon: Building2, title: "Elevator Solutions", desc: "State-of-the-art elevator and lift solutions for commercial, residential, and industrial buildings." },
-  { icon: Crane, title: "Industrial Cranes", desc: "EOT, gantry, and jib cranes engineered for precision material handling across industries." },
+  { icon: Settings, title: "Industrial Cranes", desc: "EOT, gantry, and jib cranes engineered for precision material handling across industries." },
   { icon: Shield, title: "Safety First", desc: "Rigorous safety standards and compliance with international regulations." },
   { icon: Award, title: "Certified Excellence", desc: "Industry-leading engineering practices with rigorous quality standards." },
 ];
