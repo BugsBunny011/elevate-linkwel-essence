@@ -225,6 +225,56 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Lift Highlight Section */}
+      <section className="py-24 bg-surface">
+        <div className="container mx-auto section-padding">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <ScrollReveal delay={200}>
+              <div className="relative">
+                <img
+                  src={installImg}
+                  alt="Elevator installation by Linkwel Engineers - lift manufacturers in India"
+                  className="rounded-lg premium-shadow w-full"
+                />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal>
+              <div>
+                <p className="text-accent font-body text-sm tracking-[0.3em] uppercase mb-3">Lift Manufacturing</p>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+                  Advanced Elevators Designed for Safety & Efficiency
+                </h2>
+                <p className="text-muted-foreground font-body leading-relaxed mb-6">
+                  Building on our engineering expertise, Linkwel Engineers offers a complete range of elevators
+                  designed for smooth performance, reliability, and modern infrastructure needs. As trusted
+                  lift manufacturers in India, we deliver solutions tailored for residential, commercial, and
+                  industrial applications.
+                </p>
+                <div className="space-y-3 mb-8">
+                  {[
+                    "Passenger Elevators – residential & commercial use",
+                    "Home Elevators – compact villa solutions",
+                    "Goods Elevators – industrial material handling",
+                    "Capsule Elevators – panoramic glass lifts",
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
+                      <span className="text-foreground font-body text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+                <Link
+                  to="/products#lifts"
+                  className="inline-flex items-center gap-2 text-accent font-body font-semibold text-sm uppercase tracking-wider hover:gap-3 transition-all"
+                >
+                  Explore Our Lifts <ArrowRight size={16} />
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-24 bg-surface">
         <div className="container mx-auto section-padding">
