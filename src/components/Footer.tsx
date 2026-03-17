@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Download } from "lucide-react";
 import logo from "@/assets/linkwel-logo.png";
-import { products } from "@/data/products";
+import { liftProducts, craneProducts } from "@/data/products";
 
 const Footer = () => {
   return (
@@ -41,11 +41,11 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Products */}
+          {/* Products - Lifts */}
           <div>
-            <h4 className="text-gold font-heading text-lg mb-4">Our Products</h4>
+            <h4 className="text-gold font-heading text-lg mb-4">Our Lifts</h4>
             <div className="flex flex-col gap-3">
-              {products.map((product) => (
+              {liftProducts.map((product) => (
                 <Link
                   key={product.slug}
                   to={`/products/${product.slug}`}
@@ -57,15 +57,25 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Products - Cranes + Services */}
           <div>
+            <h4 className="text-gold font-heading text-lg mb-4">Our Cranes</h4>
+            <div className="flex flex-col gap-3 mb-6">
+              {craneProducts.map((product) => (
+                <Link
+                  key={product.slug}
+                  to={`/products/${product.slug}`}
+                  className="text-sm hover:text-gold transition-colors duration-300"
+                >
+                  {product.title}
+                </Link>
+              ))}
+            </div>
             <h4 className="text-gold font-heading text-lg mb-4">Our Services</h4>
             <div className="flex flex-col gap-3 text-sm">
               <span>Elevator Installation</span>
-              <span>Elevator Maintenance</span>
-              <span>Elevator Modernization</span>
-              <span>Repair Services</span>
-              <span>AMC Contracts</span>
+              <span>Crane Manufacturing</span>
+              <span>Maintenance & AMC</span>
             </div>
           </div>
 
