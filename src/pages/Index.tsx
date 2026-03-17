@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { ArrowRight, Shield, Award, Wrench, Building2, Star, Quote, ChevronRight, Phone } from "lucide-react";
+import { ArrowRight, Shield, Award, Wrench, Building2, Star, Quote, ChevronRight, Phone, Crane } from "lucide-react";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import heroFallback from "@/assets/hero-fallback.jpg";
@@ -9,6 +9,7 @@ import installImg from "@/assets/elevator-installation.jpg";
 import catVillas from "@/assets/category-villas.jpg";
 import catApartments from "@/assets/category-apartments.jpg";
 import catCorporate from "@/assets/category-corporate.jpg";
+import eotCraneImg from "@/assets/product-eot-crane.jpg";
 
 const stats = [
   { value: "500+", label: "Projects Completed" },
@@ -17,9 +18,9 @@ const stats = [
 ];
 
 const expertise = [
-  { icon: Building2, title: "Commercial Elevators", desc: "State-of-the-art elevator solutions for commercial buildings and offices." },
+  { icon: Building2, title: "Elevator Solutions", desc: "State-of-the-art elevator and lift solutions for commercial, residential, and industrial buildings." },
+  { icon: Crane, title: "Industrial Cranes", desc: "EOT, gantry, and jib cranes engineered for precision material handling across industries." },
   { icon: Shield, title: "Safety First", desc: "Rigorous safety standards and compliance with international regulations." },
-  { icon: Wrench, title: "Expert Maintenance", desc: "Proactive maintenance programs ensuring peak performance at all times." },
   { icon: Award, title: "Certified Excellence", desc: "Industry-leading engineering practices with rigorous quality standards." },
 ];
 
@@ -39,17 +40,17 @@ const Index = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Linkwel Engineers | Best Elevator Manufacturers in India</title>
-        <meta name="description" content="Linkwel Engineers - leading elevator manufacturers in India. Premium passenger, home, goods & capsule lifts. Installation, maintenance & modernization services in Delhi." />
-        <meta name="keywords" content="elevator manufacturers in India, lifts near me, lift manufacturers in Delhi, best lifts in India, elevator company in India, lift installation services" />
+        <title>Linkwel Engineers | Elevator & Crane Manufacturers in India</title>
+        <meta name="description" content="Linkwel Engineers - leading elevator & crane manufacturers in India. Premium lifts, EOT cranes, gantry cranes. Installation, maintenance & manufacturing in Delhi." />
+        <meta name="keywords" content="elevator manufacturers in India, crane manufacturers in India, lift manufacturers in Delhi, EOT crane manufacturers, gantry crane suppliers, best lifts in India" />
         <link rel="canonical" href="https://linkwelengineers.com/" />
-        <meta property="og:title" content="Linkwel Engineers | Best Elevator Manufacturers in India" />
-        <meta property="og:description" content="Leading elevator manufacturers in India. Premium lifts for residential, commercial & industrial buildings." />
+        <meta property="og:title" content="Linkwel Engineers | Elevator & Crane Manufacturers in India" />
+        <meta property="og:description" content="Leading elevator & crane manufacturers in India. Premium lifts and industrial cranes for all applications." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://linkwelengineers.com/" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Linkwel Engineers | Best Elevator Manufacturers in India" />
-        <meta name="twitter:description" content="Leading elevator manufacturers in India offering premium lift solutions." />
+        <meta name="twitter:title" content="Linkwel Engineers | Elevator & Crane Manufacturers in India" />
+        <meta name="twitter:description" content="Leading elevator & crane manufacturers in India offering premium lift and crane solutions." />
       </Helmet>
       {/* Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -75,7 +76,7 @@ const Index = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <p className="text-gold font-body text-sm md:text-base tracking-[0.3em] uppercase mb-4">
-              Linkwel Engineers
+              Elevator & Crane Manufacturers in India
             </p>
           </motion.div>
           <motion.h1
@@ -102,8 +103,8 @@ const Index = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-gold-light/60 font-body text-lg md:text-xl max-w-2xl mx-auto mb-10"
           >
-            Premier elevator solutions backed by over 35 years of engineering excellence.
-            Installation, maintenance, and modernization you can trust.
+            Premier elevator and crane solutions backed by over 35 years of engineering excellence.
+            Lifts, cranes, installation, and maintenance you can trust.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -112,10 +113,10 @@ const Index = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Link
-              to="/services"
+              to="/products"
               className="gold-gradient text-white font-body font-semibold px-8 py-3.5 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2"
             >
-              Our Services <ArrowRight size={16} />
+              Our Products <ArrowRight size={16} />
             </Link>
             <Link
               to="/contact"
@@ -180,6 +181,50 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Crane Highlight Section */}
+      <section className="py-24 navy-gradient">
+        <div className="container mx-auto section-padding">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <ScrollReveal>
+              <div>
+                <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Crane Manufacturing</p>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-gold-light mb-6">
+                  Industrial Cranes Built for Performance
+                </h2>
+                <p className="text-gold-light/60 font-body leading-relaxed mb-6">
+                  From our roots in crane component manufacturing, Linkwel Engineers has grown into a trusted
+                  name among crane manufacturers in India. Our EOT cranes, gantry cranes, and jib cranes are
+                  engineered for precision, durability, and safety in demanding industrial environments.
+                </p>
+                <div className="space-y-3 mb-8">
+                  {["EOT Cranes – up to 100-ton capacity", "Gantry Cranes – for outdoor & heavy-duty operations", "Jib Cranes – compact solutions for workstations"].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-gold shrink-0" />
+                      <span className="text-gold-light/80 font-body text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+                <Link
+                  to="/products#cranes"
+                  className="inline-flex items-center gap-2 text-gold font-body font-semibold text-sm uppercase tracking-wider hover:gap-3 transition-all"
+                >
+                  Explore Our Cranes <ArrowRight size={16} />
+                </Link>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <div className="relative">
+                <img
+                  src={eotCraneImg}
+                  alt="EOT crane by Linkwel Engineers - crane manufacturers in India"
+                  className="rounded-lg premium-shadow w-full"
+                />
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-24 bg-surface">
         <div className="container mx-auto section-padding">
@@ -215,7 +260,7 @@ const Index = () => {
               <div className="relative">
                 <img
                   src={installImg}
-                  alt="Elevator installation engineers"
+                  alt="Elevator installation engineers at Linkwel Engineers"
                   className="rounded-lg premium-shadow w-full"
                 />
                 <div className="absolute -bottom-6 -left-6 bg-accent text-accent-foreground p-6 rounded-lg">
@@ -299,10 +344,10 @@ const Index = () => {
         <div className="container mx-auto section-padding text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-              Ready to Elevate Your Building?
+              Ready to Elevate Your Project?
             </h2>
             <p className="text-muted-foreground font-body max-w-xl mx-auto mb-8">
-              Get in touch with our experts for a free consultation and quote tailored to your requirements.
+              Get in touch with our experts for a free consultation and quote for lifts, cranes, or any material handling solution.
             </p>
             <Link
               to="/contact"

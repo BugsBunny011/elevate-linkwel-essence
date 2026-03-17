@@ -4,6 +4,11 @@ import goodsImg from "@/assets/product-goods-elevator.jpg";
 import hospitalImg from "@/assets/product-hospital-elevator.jpg";
 import capsuleImg from "@/assets/product-capsule-elevator.jpg";
 import carImg from "@/assets/product-car-elevator.jpg";
+import eotCraneImg from "@/assets/product-eot-crane.jpg";
+import gantryCraneImg from "@/assets/product-gantry-crane.jpg";
+import jibCraneImg from "@/assets/product-jib-crane.jpg";
+
+export type ProductCategory = "lifts" | "cranes";
 
 export interface Product {
   slug: string;
@@ -19,12 +24,14 @@ export interface Product {
   safety: string[];
   metaTitle: string;
   metaDesc: string;
+  category: ProductCategory;
 }
 
 export const products: Product[] = [
   {
     slug: "passenger-elevators",
     title: "Passenger Elevators",
+    category: "lifts",
     shortDesc:
       "Premium passenger lifts engineered for smooth, safe, and silent vertical transportation in commercial and residential buildings across India.",
     image: passengerImg,
@@ -83,6 +90,7 @@ export const products: Product[] = [
   {
     slug: "home-elevators",
     title: "Home Elevators",
+    category: "lifts",
     shortDesc:
       "Elegant and compact home lifts designed for modern Indian residences, villas, and bungalows, blending luxury with convenience.",
     image: homeImg,
@@ -139,6 +147,7 @@ export const products: Product[] = [
   {
     slug: "goods-elevators",
     title: "Freight / Goods Elevators",
+    category: "lifts",
     shortDesc:
       "Heavy-duty goods lifts built for industrial and commercial applications. Reliable freight elevator solutions from a top lift manufacturer in India.",
     image: goodsImg,
@@ -196,6 +205,7 @@ export const products: Product[] = [
   {
     slug: "hospital-elevators",
     title: "Hospital Elevators",
+    category: "lifts",
     shortDesc:
       "Spacious, hygienic, and reliable hospital lifts engineered for smooth stretcher and bed transportation in healthcare facilities.",
     image: hospitalImg,
@@ -254,6 +264,7 @@ export const products: Product[] = [
   {
     slug: "capsule-elevators",
     title: "Capsule / Glass Elevators",
+    category: "lifts",
     shortDesc:
       "Stunning panoramic capsule lifts with full glass cabins, the perfect architectural statement for malls, hotels, and premium buildings.",
     image: capsuleImg,
@@ -312,6 +323,7 @@ export const products: Product[] = [
   {
     slug: "car-elevators",
     title: "Car Elevators",
+    category: "lifts",
     shortDesc:
       "Robust automobile lifts for multi-level parking, showrooms, and residential complexes, engineered by a top lift manufacturer in Delhi.",
     image: carImg,
@@ -361,10 +373,187 @@ export const products: Product[] = [
       "Toe guards and safety barriers",
       "Hydraulic check valves to prevent free fall",
       "Warning lights and alarms during operation",
-      "Anti-skid platform surface",
     ],
-    metaTitle: "Car Elevators | Automobile Lift Manufacturers in India – Linkwel Engineers",
+    metaTitle: "Car Elevators | Vehicle Lift Manufacturers in India – Linkwel Engineers",
     metaDesc:
-      "Car elevators & automobile lifts by Linkwel Engineers, leading lift manufacturer in Delhi & India. Solutions for parking, showrooms & residences. Get a quote.",
+      "Heavy-duty car elevators by Linkwel Engineers. Automobile lifts for parking, showrooms & residential complexes in India. Request a free quote today.",
+  },
+  // ===== CRANES =====
+  {
+    slug: "eot-cranes",
+    title: "EOT Cranes",
+    category: "cranes",
+    shortDesc:
+      "Heavy-duty Electric Overhead Travelling cranes for factories, workshops, and warehouses. Trusted EOT crane manufacturers in India.",
+    image: eotCraneImg,
+    heroDesc:
+      "Linkwel Engineers manufactures robust EOT cranes engineered for precision material handling in industrial environments across India.",
+    description:
+      "Our Electric Overhead Travelling (EOT) cranes are designed for efficient and safe material handling in factories, workshops, steel plants, and warehouses. Built with high-grade structural steel and precision-engineered components, our EOT cranes deliver reliable performance under demanding industrial conditions. As one of the leading crane manufacturers in India, Linkwel Engineers provides single and double girder EOT cranes customised to your specific lifting requirements.",
+    features: [
+      "Single and double girder configurations",
+      "High-grade structural steel construction",
+      "Precision-machined wheels and gears",
+      "Variable frequency drive (VFD) for smooth operation",
+      "Long travel, cross travel, and hoist motions",
+      "Anti-sway and load-limiting technology",
+      "Low headroom designs for space optimisation",
+      "Remote and pendant control options",
+    ],
+    specifications: [
+      { label: "Capacity", value: "1 ton to 100 tons" },
+      { label: "Span", value: "6 metres to 30 metres" },
+      { label: "Lift Height", value: "Up to 20 metres" },
+      { label: "Hoist Speed", value: "1 m/min to 12 m/min" },
+      { label: "Travel Speed", value: "Up to 40 m/min" },
+      { label: "Girder Type", value: "Single / Double Girder" },
+      { label: "Power Supply", value: "3 Phase, 415V, 50 Hz" },
+    ],
+    applications: [
+      "Manufacturing plants and factories",
+      "Steel and metal processing units",
+      "Warehouses and storage yards",
+      "Power plants and substations",
+      "Automobile assembly lines",
+      "Heavy engineering workshops",
+    ],
+    benefits: [
+      "High lifting capacity for heavy industrial loads",
+      "Smooth and precise material handling",
+      "Reduces manual labour and improves productivity",
+      "Customisable span and capacity for any facility",
+      "Long service life with minimal maintenance",
+      "Compliant with IS and international standards",
+    ],
+    safety: [
+      "Overload protection and limit switches",
+      "Emergency stop on all controls",
+      "Anti-collision systems for multi-crane setups",
+      "Audible and visual warning alarms",
+      "Fail-safe braking on all motions",
+      "Regular load testing and certification",
+    ],
+    metaTitle: "EOT Cranes | Overhead Crane Manufacturers in India – Linkwel",
+    metaDesc:
+      "Heavy-duty EOT cranes by Linkwel Engineers, leading crane manufacturers in India. Single & double girder overhead cranes for factories. Get a quote.",
+  },
+  {
+    slug: "gantry-cranes",
+    title: "Gantry Cranes",
+    category: "cranes",
+    shortDesc:
+      "Versatile gantry cranes for outdoor yards, shipyards, and construction sites. Leading gantry crane suppliers in India.",
+    image: gantryCraneImg,
+    heroDesc:
+      "Linkwel Engineers delivers high-performance gantry cranes built for heavy lifting in outdoor and semi-outdoor industrial environments.",
+    description:
+      "Our gantry cranes are engineered for heavy-duty material handling in open yards, shipyards, construction sites, and logistics hubs. Available in full gantry and semi-gantry configurations, these cranes operate on ground-level rails, eliminating the need for overhead runway structures. As trusted gantry crane suppliers in India, Linkwel Engineers provides customised solutions that maximise productivity and safety in demanding environments.",
+    features: [
+      "Full gantry and semi-gantry configurations",
+      "Rail-mounted or rubber-tyred mobility",
+      "Weather-resistant outdoor design",
+      "High wind load resistance",
+      "Motorised or manual travel options",
+      "Adjustable span and height",
+      "Heavy-duty steel structure",
+      "VFD-controlled smooth operations",
+    ],
+    specifications: [
+      { label: "Capacity", value: "5 tons to 200 tons" },
+      { label: "Span", value: "10 metres to 40 metres" },
+      { label: "Lift Height", value: "Up to 25 metres" },
+      { label: "Travel Type", value: "Rail-mounted / Rubber-tyred" },
+      { label: "Hoist Speed", value: "1 m/min to 10 m/min" },
+      { label: "Configuration", value: "Full Gantry / Semi-Gantry" },
+      { label: "Power Supply", value: "3 Phase, 415V, 50 Hz" },
+    ],
+    applications: [
+      "Shipyards and ports",
+      "Construction sites",
+      "Open storage yards",
+      "Precast concrete plants",
+      "Railway maintenance depots",
+      "Heavy fabrication workshops",
+    ],
+    benefits: [
+      "No overhead runway structure needed",
+      "Ideal for outdoor and open-area operations",
+      "High lifting capacity and wide span coverage",
+      "Customisable to site-specific requirements",
+      "Robust construction for harsh environments",
+      "Cost-effective alternative to overhead cranes",
+    ],
+    safety: [
+      "Storm anchoring and wind speed monitoring",
+      "Limit switches on all motions",
+      "Emergency braking system",
+      "Anti-collision and buffer stops",
+      "Load indicators and overload protection",
+      "Audible travel alarms",
+    ],
+    metaTitle: "Gantry Cranes | Gantry Crane Suppliers in India – Linkwel Engineers",
+    metaDesc:
+      "High-performance gantry cranes by Linkwel Engineers, leading crane manufacturers in Delhi. Full & semi-gantry cranes for yards & construction. Contact us.",
+  },
+  {
+    slug: "jib-cranes",
+    title: "Jib Cranes",
+    category: "cranes",
+    shortDesc:
+      "Compact and efficient jib cranes for workstations, workshops, and loading bays. Reliable crane manufacturers in Delhi.",
+    image: jibCraneImg,
+    heroDesc:
+      "Linkwel Engineers manufactures high-quality jib cranes perfect for localised lifting operations in workshops and production floors.",
+    description:
+      "Our jib cranes provide efficient and flexible material handling for individual workstations, assembly lines, and loading docks. Available in wall-mounted, pillar-mounted, and free-standing configurations, these cranes offer 180° to 360° rotation for maximum coverage. As experienced crane manufacturers in Delhi, Linkwel Engineers designs compact jib cranes that improve workflow and productivity without occupying valuable floor space.",
+    features: [
+      "Wall-mounted, pillar-mounted, and free-standing options",
+      "180° to 360° rotation arc",
+      "Manual or motorised slewing",
+      "Electric chain hoist or wire rope hoist",
+      "Compact footprint for tight spaces",
+      "Articulating arm option for extended reach",
+      "Hot-rolled steel boom construction",
+      "Quick installation and low maintenance",
+    ],
+    specifications: [
+      { label: "Capacity", value: "250 kg to 10 tons" },
+      { label: "Arm Length", value: "2 metres to 8 metres" },
+      { label: "Rotation", value: "180° to 360°" },
+      { label: "Mounting", value: "Wall / Pillar / Free-standing" },
+      { label: "Hoist Type", value: "Electric Chain / Wire Rope" },
+      { label: "Slewing", value: "Manual / Motorised" },
+      { label: "Power Supply", value: "3 Phase, 415V, 50 Hz" },
+    ],
+    applications: [
+      "Individual workstations and assembly lines",
+      "Loading and unloading bays",
+      "Machine tool shops",
+      "Maintenance workshops",
+      "Small warehouses and stores",
+      "Foundries and forging shops",
+    ],
+    benefits: [
+      "Space-efficient design for localised lifting",
+      "Improves individual workstation productivity",
+      "Easy to install with minimal structural modifications",
+      "Low investment with high operational value",
+      "Flexible rotation for complete area coverage",
+      "Minimal maintenance requirements",
+    ],
+    safety: [
+      "Hoist limit switches (upper and lower)",
+      "Overload protection",
+      "Emergency stop button",
+      "Rotation limit stops",
+      "Safety latches on hooks",
+      "Regular inspection and load testing",
+    ],
+    metaTitle: "Jib Cranes | Crane Manufacturers in Delhi – Linkwel Engineers",
+    metaDesc:
+      "Compact jib cranes by Linkwel Engineers, trusted crane manufacturers in Delhi. Wall, pillar & free-standing jib cranes for workshops. Request a quote.",
   },
 ];
+
+export const liftProducts = products.filter((p) => p.category === "lifts");
+export const craneProducts = products.filter((p) => p.category === "cranes");
