@@ -10,10 +10,10 @@ const Products = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Elevators & Cranes | Lift & Crane Manufacturers – Linkwel</title>
+        <title>Elevators & Cranes | Manufacturers in India – Linkwel</title>
         <meta
           name="description"
-          content="Explore premium elevators, lifts & cranes by Linkwel Engineers. Passenger, home, hospital lifts + EOT, gantry & jib cranes. Leading manufacturers in India."
+          content="Explore premium elevators, lifts & industrial cranes by Linkwel Engineers. Passenger, home, hospital lifts + EOT, gantry, goliath & jib cranes. Manufacturers in Delhi, India."
         />
         <link rel="canonical" href="https://linkwelengineers.com/products" />
       </Helmet>
@@ -44,7 +44,7 @@ const Products = () => {
             className="text-gold-light/60 font-body text-lg max-w-3xl mx-auto"
           >
             Discover our comprehensive range of elevators, lifts, and industrial cranes,
-            engineered for safety, efficiency, and performance by one of the best manufacturers in India.
+            engineered for safety, efficiency, and performance. Serving Delhi, Noida, Gurgaon and across India.
           </motion.p>
         </div>
       </section>
@@ -67,7 +67,7 @@ const Products = () => {
                     <div className="relative overflow-hidden">
                       <img
                         src={product.image}
-                        alt={`${product.title} by Linkwel Engineers - leading lift manufacturer in India`}
+                        alt={`${product.title} by Linkwel Engineers - lift manufacturers in Delhi, India`}
                         className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
                         loading="lazy"
                       />
@@ -110,7 +110,7 @@ const Products = () => {
                     <div className="relative overflow-hidden">
                       <img
                         src={product.image}
-                        alt={`${product.title} by Linkwel Engineers - leading crane manufacturers in India`}
+                        alt={`${product.title} by Linkwel Engineers - crane manufacturers in India`}
                         className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
                         loading="lazy"
                       />
@@ -142,9 +142,12 @@ const Products = () => {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-gold-light mb-4">
               Looking for Lifts or Cranes in India?
             </h2>
-            <p className="text-gold-light/60 font-body text-lg max-w-2xl mx-auto mb-8">
+            <p className="text-gold-light/60 font-body text-lg max-w-2xl mx-auto mb-4">
               Whether you need a passenger lift, industrial crane, or custom material handling solution,
               Linkwel Engineers has you covered. Contact us for a free consultation and quote.
+            </p>
+            <p className="text-gold-light/40 font-body text-sm mb-8">
+              Serving Delhi, Noida, Gurgaon and across India
             </p>
             <Link
               to="/contact"

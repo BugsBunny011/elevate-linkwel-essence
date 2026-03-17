@@ -61,7 +61,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between section-padding">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Linkwel Engineers" className="h-12 w-auto" />
+          <img src={logo} alt="Linkwel Engineers - Elevator & Crane Manufacturers" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop nav */}
