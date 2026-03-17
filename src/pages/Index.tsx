@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { ArrowRight, Shield, Award, Wrench, Building2, Star, Quote, ChevronRight, Phone, Crane } from "lucide-react";
+import { ArrowRight, Shield, Award, Wrench, Building2, Star, Quote, ChevronRight, Phone, Settings } from "lucide-react";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import heroFallback from "@/assets/hero-fallback.jpg";
