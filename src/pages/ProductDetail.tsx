@@ -9,10 +9,18 @@ import {
   Award,
   ArrowRight,
   ChevronRight,
+  Factory,
+  HelpCircle,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import { products } from "@/data/products";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const ProductDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -20,14 +28,34 @@ const ProductDetail = () => {
 
   if (!product) return <Navigate to="/products" replace />;
 
-  const otherProducts = products.filter((p) => p.slug !== slug).slice(0, 3);
+  // Smart related products: mix of same category + cross-category
+  const sameCategoryProducts = products.filter((p) => p.slug !== slug && p.category === product.category).slice(0, 2);
+  const crossCategoryProducts = products.filter((p) => p.category !== product.category).slice(0, 1);
+  const otherProducts = [...sameCategoryProducts, ...crossCategoryProducts];
+
+  const isCrane = product.category === "cranes";
+  const categoryLabel = isCrane ? "Industrial Cranes" : "Elevators & Lifts";
+
+  // FAQ Schema JSON-LD
+  const faqSchema = product.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": product.faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
+      },
+    })),
+  } : null;
 
   return (
     <Layout>
       <Helmet>
         <title>{product.metaTitle}</title>
         <meta name="description" content={product.metaDesc} />
-        <meta name="keywords" content={`${product.title}, elevator manufacturers in India, lift manufacturers in Delhi, best lifts in India, ${product.title.toLowerCase()} manufacturer`} />
+        <meta name="keywords" content={`${product.title}, ${isCrane ? 'crane manufacturers in India, crane manufacturers near me, crane manufacturers in Delhi, industrial crane manufacturers' : 'elevator manufacturers in India, lift manufacturers near me, lift manufacturers in Delhi, best lifts in India'}, ${product.title.toLowerCase()} manufacturer`} />
         <link rel="canonical" href={`https://linkwelengineers.com/products/${product.slug}`} />
         <meta property="og:title" content={product.metaTitle} />
         <meta property="og:description" content={product.metaDesc} />
@@ -45,9 +73,14 @@ const ProductDetail = () => {
             "brand": { "@type": "Brand", "name": "Linkwel Engineers" },
             "manufacturer": { "@type": "Organization", "name": "Linkwel Engineers" },
             "url": `https://linkwelengineers.com/products/${product.slug}`,
-            "category": "Elevators & Lifts"
+            "category": categoryLabel,
           })}
         </script>
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
       </Helmet>
 
       {/* Breadcrumb */}
@@ -57,6 +90,8 @@ const ProductDetail = () => {
             <Link to="/" className="hover:text-gold transition-colors">Home</Link>
             <ChevronRight size={14} />
             <Link to="/products" className="hover:text-gold transition-colors">Products</Link>
+            <ChevronRight size={14} />
+            <Link to={`/products#${isCrane ? 'cranes' : 'lifts'}`} className="hover:text-gold transition-colors">{isCrane ? 'Cranes' : 'Lifts'}</Link>
             <ChevronRight size={14} />
             <span className="text-gold">{product.title}</span>
           </nav>
@@ -88,6 +123,12 @@ const ProductDetail = () => {
                 >
                   Get a Quote
                 </Link>
+                <Link
+                  to={`/products#${isCrane ? 'cranes' : 'lifts'}`}
+                  className="border border-gold/40 text-gold font-body font-medium text-sm px-8 py-3 rounded-sm uppercase tracking-wider hover:bg-gold/10 transition-colors inline-block"
+                >
+                  All {isCrane ? 'Cranes' : 'Lifts'}
+                </Link>
               </div>
             </motion.div>
             <motion.div
@@ -98,7 +139,7 @@ const ProductDetail = () => {
             >
               <img
                 src={product.image}
-                alt={`${product.title} - Linkwel Engineers, elevator manufacturers in India`}
+                alt={`${product.title} - Linkwel Engineers, ${isCrane ? 'crane manufacturers in India' : 'elevator manufacturers in India'}`}
                 className="w-full h-[400px] object-cover rounded-lg premium-shadow"
               />
               <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-navy-dark/30 to-transparent" />
@@ -180,7 +221,7 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Applications & Benefits */}
+      {/* Applications, Industries & Benefits */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto section-padding">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -213,6 +254,28 @@ const ProductDetail = () => {
               </ul>
             </ScrollReveal>
           </div>
+
+          {/* Used In Industries */}
+          {product.industries && product.industries.length > 0 && (
+            <ScrollReveal delay={200}>
+              <div className="max-w-6xl mx-auto mt-12">
+                <div className="flex items-center gap-3 mb-6">
+                  <Factory className="text-primary" size={24} />
+                  <h2 className="text-2xl font-heading font-bold text-foreground">Used In Industries</h2>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {product.industries.map((industry, i) => (
+                    <span
+                      key={i}
+                      className="glass-card rounded-full px-5 py-2 text-sm font-body text-foreground font-medium"
+                    >
+                      {industry}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          )}
         </div>
       </section>
 
@@ -243,6 +306,42 @@ const ProductDetail = () => {
         </div>
       </section>
 
+      {/* FAQs */}
+      {product.faqs.length > 0 && (
+        <section className="py-20 bg-muted/30">
+          <div className="container mx-auto section-padding">
+            <ScrollReveal>
+              <div className="max-w-4xl mx-auto">
+                <div className="flex items-center gap-3 mb-8">
+                  <HelpCircle className="text-primary" size={28} />
+                  <h2 className="text-3xl font-heading font-bold text-foreground">
+                    Frequently Asked Questions
+                  </h2>
+                </div>
+                <Accordion type="single" collapsible className="space-y-3">
+                  {product.faqs.map((faq, i) => (
+                    <AccordionItem
+                      key={i}
+                      value={`faq-${i}`}
+                      className="border border-border rounded-lg px-6 bg-background"
+                    >
+                      <AccordionTrigger className="text-left font-body font-semibold text-foreground hover:no-underline py-5 text-sm md:text-base">
+                        {faq.question}
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <p className="text-muted-foreground font-body text-sm leading-relaxed pb-2">
+                          {faq.answer}
+                        </p>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+      )}
+
       {/* CTA */}
       <section className="py-20 navy-gradient">
         <div className="container mx-auto section-padding text-center">
@@ -250,9 +349,11 @@ const ProductDetail = () => {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-gold-light mb-4">
               Interested in {product.title}?
             </h2>
-            <p className="text-gold-light/60 font-body text-lg max-w-2xl mx-auto mb-8">
-              Get in touch with Linkwel Engineers, one of the best elevator manufacturers in India,
-              for a customised quote and free site consultation.
+            <p className="text-gold-light/60 font-body text-lg max-w-2xl mx-auto mb-4">
+              Get in touch with Linkwel Engineers for a customised quote and free site consultation.
+            </p>
+            <p className="text-gold-light/40 font-body text-sm mb-8">
+              Serving Delhi, Noida, Gurgaon and across India
             </p>
             <Link
               to="/contact"
@@ -264,13 +365,16 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Related Products */}
+      {/* Related Products - Cross-linked */}
       <section className="py-20 bg-background">
         <div className="container mx-auto section-padding">
           <ScrollReveal>
-            <h2 className="text-3xl font-heading font-bold text-foreground text-center mb-12">
+            <h2 className="text-3xl font-heading font-bold text-foreground text-center mb-4">
               Explore More Products
             </h2>
+            <p className="text-muted-foreground font-body text-center text-sm mb-12">
+              Discover our complete range of {isCrane ? 'cranes and elevators' : 'elevators and industrial cranes'}
+            </p>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {otherProducts.map((p, i) => (
@@ -279,12 +383,15 @@ const ProductDetail = () => {
                   <div className="glass-card rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                     <img
                       src={p.image}
-                      alt={p.title}
+                      alt={`${p.title} by Linkwel Engineers`}
                       className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
                     <div className="p-5">
-                      <h3 className="font-heading font-semibold text-foreground text-lg group-hover:text-primary transition-colors">
+                      <span className="text-xs font-body text-primary uppercase tracking-wider">
+                        {p.category === "cranes" ? "Crane" : "Lift"}
+                      </span>
+                      <h3 className="font-heading font-semibold text-foreground text-lg group-hover:text-primary transition-colors mt-1">
                         {p.title}
                       </h3>
                     </div>

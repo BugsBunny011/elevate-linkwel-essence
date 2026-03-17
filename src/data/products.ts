@@ -5,10 +5,19 @@ import hospitalImg from "@/assets/product-hospital-elevator.jpg";
 import capsuleImg from "@/assets/product-capsule-elevator.jpg";
 import carImg from "@/assets/product-car-elevator.jpg";
 import eotCraneImg from "@/assets/product-eot-crane.jpg";
+import singleGirderImg from "@/assets/product-single-girder-crane.jpg";
+import doubleGirderImg from "@/assets/product-double-girder-crane.jpg";
 import gantryCraneImg from "@/assets/product-gantry-crane.jpg";
+import goliathCraneImg from "@/assets/product-goliath-crane.jpg";
 import jibCraneImg from "@/assets/product-jib-crane.jpg";
+import electricHoistImg from "@/assets/product-electric-hoist.jpg";
 
 export type ProductCategory = "lifts" | "cranes";
+
+export interface FAQ {
+  question: string;
+  answer: string;
+}
 
 export interface Product {
   slug: string;
@@ -22,6 +31,8 @@ export interface Product {
   applications: string[];
   benefits: string[];
   safety: string[];
+  industries?: string[];
+  faqs: FAQ[];
   metaTitle: string;
   metaDesc: string;
   category: ProductCategory;
@@ -83,9 +94,15 @@ export const products: Product[] = [
       "Anti-nuisance call feature",
       "Seismic detection and response system",
     ],
-    metaTitle: "Passenger Elevators | Best Passenger Lift Manufacturers in India – Linkwel",
+    faqs: [
+      { question: "Who are the best passenger lift manufacturers near me in Delhi?", answer: "Linkwel Engineers is a leading passenger lift manufacturer based in Delhi with over 35 years of experience. We serve clients across Delhi, Noida, Gurgaon, and all of India with premium passenger elevator solutions." },
+      { question: "How much does a passenger elevator cost in India?", answer: "The cost of a passenger elevator depends on capacity, speed, travel height, and cabin finishes. Linkwel Engineers provides customised quotes based on your requirements. Contact us for a free consultation and competitive pricing." },
+      { question: "What is the maintenance schedule for passenger lifts?", answer: "We recommend quarterly preventive maintenance for passenger elevators. Linkwel Engineers offers comprehensive Annual Maintenance Contracts (AMCs) to ensure your lift runs safely and efficiently year-round." },
+      { question: "Which elevator manufacturers in India offer the best quality?", answer: "Linkwel Engineers is among the most trusted elevator manufacturers in India, known for premium quality, safety compliance, and reliable after-sales service across Delhi NCR and pan-India." },
+    ],
+    metaTitle: "Passenger Elevators | Lift Manufacturers in Delhi – Linkwel",
     metaDesc:
-      "Linkwel Engineers - leading passenger lift manufacturers in India. Premium passenger elevators for commercial & residential buildings. Get a free quote today.",
+      "Linkwel Engineers - leading passenger lift manufacturers in Delhi & India. Premium passenger elevators for commercial & residential buildings. Get a free quote.",
   },
   {
     slug: "home-elevators",
@@ -140,9 +157,14 @@ export const products: Product[] = [
       "Overload protection sensor",
       "Phone/intercom in cabin",
     ],
-    metaTitle: "Home Elevators | Best Home Lift Manufacturers in India – Linkwel Engineers",
+    faqs: [
+      { question: "Can a home elevator be installed in an existing house?", answer: "Yes, Linkwel Engineers specialises in retrofitting home elevators into existing residences. Our compact designs require minimal pit depth (as low as 50 mm) and headroom, making them ideal for older homes and villas." },
+      { question: "How much space is needed for a home lift?", answer: "A home elevator typically requires a shaft area as small as 4×4 feet. Our engineers conduct a free site survey to recommend the best configuration for your space." },
+      { question: "Are home elevators safe for elderly and children?", answer: "Absolutely. Our home lifts feature child-safe controls, non-slip flooring, emergency lowering, and overload protection, making them perfectly safe for all family members." },
+    ],
+    metaTitle: "Home Elevators | Home Lift Manufacturers in India – Linkwel",
     metaDesc:
-      "Premium home elevators by Linkwel Engineers, India's trusted home lift manufacturer. Compact, elegant lifts for villas, bungalows & residences. Get a quote now.",
+      "Premium home elevators by Linkwel Engineers, India's trusted home lift manufacturer. Compact, elegant lifts for villas & residences. Get a quote now.",
   },
   {
     slug: "goods-elevators",
@@ -198,9 +220,14 @@ export const products: Product[] = [
       "Slack rope / chain detection",
       "Phase reversal and single-phasing protection",
     ],
-    metaTitle: "Goods Elevators | Freight Lift Manufacturers in India – Linkwel Engineers",
+    faqs: [
+      { question: "What is the maximum load capacity of goods elevators?", answer: "Linkwel Engineers manufactures goods elevators with capacities ranging from 500 kg to 10,000 kg, fully customisable to your warehouse or factory requirements." },
+      { question: "Are freight lifts suitable for 24/7 industrial use?", answer: "Yes, our goods elevators are built with industrial-grade components designed for continuous 24/7 operation in demanding factory and warehouse environments." },
+      { question: "Where can I find goods lift manufacturers near me in Delhi?", answer: "Linkwel Engineers is based in Okhla, New Delhi, and serves clients across Delhi, Noida, Gurgaon, and pan-India. Contact us for a free site survey and quote." },
+    ],
+    metaTitle: "Goods Elevators | Freight Lift Manufacturers India – Linkwel",
     metaDesc:
-      "Industrial goods elevators & freight lifts by Linkwel Engineers. Heavy-duty lift manufacturer in India for warehouses, factories & logistics. Contact us today.",
+      "Industrial goods elevators & freight lifts by Linkwel Engineers. Heavy-duty lift manufacturer in India for warehouses & factories. Contact us today.",
   },
   {
     slug: "hospital-elevators",
@@ -257,9 +284,14 @@ export const products: Product[] = [
       "Battery backup for power failure evacuation",
       "Earthquake detection system",
     ],
-    metaTitle: "Hospital Elevators | Medical Lift Manufacturers in India – Linkwel Engineers",
+    faqs: [
+      { question: "What makes hospital elevators different from regular lifts?", answer: "Hospital elevators feature extra-wide cabins for stretcher access, anti-bacterial interiors, vibration-free rides, and priority call functions specifically designed for critical healthcare environments." },
+      { question: "Do hospital lifts have battery backup?", answer: "Yes, all our hospital elevators come with battery backup and Automatic Rescue Device (ARD) to ensure uninterrupted patient transportation during power failures." },
+      { question: "Which elevator manufacturers in India specialise in hospital lifts?", answer: "Linkwel Engineers is a trusted manufacturer of hospital elevators in India, serving healthcare facilities across Delhi, Noida, Gurgaon, and nationwide with specialised medical lift solutions." },
+    ],
+    metaTitle: "Hospital Elevators | Medical Lift Manufacturers – Linkwel",
     metaDesc:
-      "Specialised hospital elevators by Linkwel Engineers. Hygienic, spacious medical lifts for hospitals & healthcare facilities in India. Request a quote.",
+      "Specialised hospital elevators by Linkwel Engineers. Hygienic, spacious medical lifts for hospitals & healthcare in India. Request a quote.",
   },
   {
     slug: "capsule-elevators",
@@ -316,9 +348,14 @@ export const products: Product[] = [
       "Fire-rated landing doors",
       "Seismic sensors",
     ],
-    metaTitle: "Capsule Elevators | Glass Lift Manufacturers in India – Linkwel Engineers",
+    faqs: [
+      { question: "Can capsule elevators be installed outdoors?", answer: "Yes, our capsule elevators feature weather-resistant and wind-load-rated designs, making them suitable for both indoor and outdoor installations in malls, hotels, and commercial buildings." },
+      { question: "What glass is used in panoramic lifts?", answer: "We use laminated safety glass with UV-coating and anti-reflective properties, ensuring safety, clarity, and protection against sun exposure." },
+      { question: "Where can I find glass lift manufacturers near me?", answer: "Linkwel Engineers manufactures premium capsule and glass elevators from our facility in Delhi, serving clients across Delhi NCR, Noida, Gurgaon, and all of India." },
+    ],
+    metaTitle: "Capsule Elevators | Glass Lift Manufacturers – Linkwel",
     metaDesc:
-      "Premium capsule & glass elevators by Linkwel Engineers. Panoramic lifts for malls, hotels & commercial buildings in India. Get a custom design quote.",
+      "Premium capsule & glass elevators by Linkwel Engineers. Panoramic lifts for malls, hotels & buildings in India. Get a custom quote.",
   },
   {
     slug: "car-elevators",
@@ -374,14 +411,19 @@ export const products: Product[] = [
       "Hydraulic check valves to prevent free fall",
       "Warning lights and alarms during operation",
     ],
-    metaTitle: "Car Elevators | Vehicle Lift Manufacturers in India – Linkwel Engineers",
+    faqs: [
+      { question: "What is the capacity of car elevators?", answer: "Our car elevators support vehicles weighing up to 5000 kg with customisable platform sizes to accommodate sedans, SUVs, and larger vehicles." },
+      { question: "Can car lifts be installed in existing buildings?", answer: "Yes, Linkwel Engineers specialises in retrofitting car elevators into existing parking structures and residential basements with minimal structural modifications." },
+      { question: "Who are the best car lift manufacturers near me in Delhi?", answer: "Linkwel Engineers, based in Okhla, New Delhi, is a trusted car elevator manufacturer serving Delhi, Noida, Gurgaon, and across India." },
+    ],
+    metaTitle: "Car Elevators | Vehicle Lift Manufacturers Delhi – Linkwel",
     metaDesc:
-      "Heavy-duty car elevators by Linkwel Engineers. Automobile lifts for parking, showrooms & residential complexes in India. Request a free quote today.",
+      "Heavy-duty car elevators by Linkwel Engineers. Automobile lifts for parking & showrooms in India. Request a free quote today.",
   },
   // ===== CRANES =====
   {
-    slug: "eot-cranes",
-    title: "EOT Cranes",
+    slug: "overhead-cranes",
+    title: "Overhead Cranes (EOT Cranes)",
     category: "cranes",
     shortDesc:
       "Heavy-duty Electric Overhead Travelling cranes for factories, workshops, and warehouses. Trusted EOT crane manufacturers in India.",
@@ -389,7 +431,7 @@ export const products: Product[] = [
     heroDesc:
       "Linkwel Engineers manufactures robust EOT cranes engineered for precision material handling in industrial environments across India.",
     description:
-      "Our Electric Overhead Travelling (EOT) cranes are designed for efficient and safe material handling in factories, workshops, steel plants, and warehouses. Built with high-grade structural steel and precision-engineered components, our EOT cranes deliver reliable performance under demanding industrial conditions. As one of the leading crane manufacturers in India, Linkwel Engineers provides single and double girder EOT cranes customised to your specific lifting requirements.",
+      "Our Electric Overhead Travelling (EOT) cranes are designed for efficient and safe material handling in factories, workshops, steel plants, and warehouses. Built with high-grade structural steel and precision-engineered components, our EOT cranes deliver reliable performance under demanding industrial conditions. As one of the leading EOT crane manufacturers in India, Linkwel Engineers provides single and double girder overhead cranes customised to your specific lifting requirements. Serving Delhi, Noida, Gurgaon and across India.",
     features: [
       "Single and double girder configurations",
       "High-grade structural steel construction",
@@ -417,6 +459,13 @@ export const products: Product[] = [
       "Automobile assembly lines",
       "Heavy engineering workshops",
     ],
+    industries: [
+      "Steel plants",
+      "Manufacturing & engineering",
+      "Power plants",
+      "Automobile industry",
+      "Warehousing & logistics",
+    ],
     benefits: [
       "High lifting capacity for heavy industrial loads",
       "Smooth and precise material handling",
@@ -433,9 +482,155 @@ export const products: Product[] = [
       "Fail-safe braking on all motions",
       "Regular load testing and certification",
     ],
-    metaTitle: "EOT Cranes | Overhead Crane Manufacturers in India – Linkwel",
+    faqs: [
+      { question: "What is an EOT crane and where is it used?", answer: "An EOT (Electric Overhead Travelling) crane is an overhead crane that runs on rails along the length of a factory. It's used in steel plants, manufacturing units, warehouses, and power plants for heavy material handling." },
+      { question: "Who are the best EOT crane manufacturers in India?", answer: "Linkwel Engineers is a trusted EOT crane manufacturer in India with 35+ years of experience, serving industries across Delhi, Noida, Gurgaon, and nationwide." },
+      { question: "What capacity EOT cranes does Linkwel manufacture?", answer: "We manufacture EOT cranes ranging from 1 ton to 100 tons, with customisable spans up to 30 metres to suit your factory or warehouse layout." },
+      { question: "Where can I find crane manufacturers near me in Delhi?", answer: "Linkwel Engineers is based in Okhla, New Delhi, and is one of the leading crane manufacturers in Delhi NCR, serving clients in Delhi, Noida, Gurgaon, and across India." },
+    ],
+    metaTitle: "EOT Cranes | Overhead Crane Manufacturers India – Linkwel",
     metaDesc:
-      "Heavy-duty EOT cranes by Linkwel Engineers, leading crane manufacturers in India. Single & double girder overhead cranes for factories. Get a quote.",
+      "Heavy-duty EOT cranes by Linkwel Engineers, leading crane manufacturers in India. Overhead cranes for factories & warehouses. Get a quote.",
+  },
+  {
+    slug: "single-girder-cranes",
+    title: "Single Girder Cranes",
+    category: "cranes",
+    shortDesc:
+      "Cost-effective single girder overhead cranes for light to medium-duty material handling in workshops and factories across India.",
+    image: singleGirderImg,
+    heroDesc:
+      "Linkwel Engineers delivers efficient single girder cranes optimised for cost-effective lifting in factories, workshops, and production lines.",
+    description:
+      "Our single girder cranes are the ideal solution for light to medium-duty material handling needs. Designed with a single bridge beam, these cranes offer excellent performance at a lower cost compared to double girder variants. Perfect for workshops, production floors, and warehouses where headroom is a constraint. As experienced crane manufacturers in Delhi, Linkwel Engineers provides customised single girder cranes built for reliability and efficiency.",
+    features: [
+      "Lightweight yet robust single beam design",
+      "Electric wire rope or chain hoist options",
+      "Low headroom design maximises working space",
+      "Smooth VFD-controlled operations",
+      "Pendant or radio remote control",
+      "Easy installation and low maintenance",
+      "Compatible with existing runway structures",
+      "Powder-coated finish for corrosion resistance",
+    ],
+    specifications: [
+      { label: "Capacity", value: "1 ton to 20 tons" },
+      { label: "Span", value: "6 metres to 25 metres" },
+      { label: "Lift Height", value: "Up to 15 metres" },
+      { label: "Hoist Speed", value: "2 m/min to 10 m/min" },
+      { label: "Travel Speed", value: "Up to 30 m/min" },
+      { label: "Hoist Type", value: "Electric Wire Rope / Chain" },
+      { label: "Power Supply", value: "3 Phase, 415V, 50 Hz" },
+    ],
+    applications: [
+      "Small to medium factories",
+      "Production and assembly lines",
+      "Maintenance workshops",
+      "Warehouses with limited headroom",
+      "Tool rooms and machine shops",
+      "Loading and unloading bays",
+    ],
+    industries: [
+      "Manufacturing",
+      "Automotive workshops",
+      "Warehousing",
+      "Food processing",
+      "Packaging industries",
+    ],
+    benefits: [
+      "Lower initial investment than double girder cranes",
+      "Space-efficient with low headroom design",
+      "Quick installation and commissioning",
+      "Reliable performance for everyday lifting",
+      "Low operating and maintenance costs",
+      "Ideal for retrofitting existing buildings",
+    ],
+    safety: [
+      "Overload protection and limit switches",
+      "Emergency stop buttons",
+      "Fail-safe electromagnetic brakes",
+      "Audible warning during crane travel",
+      "Safety latches on hooks",
+      "Regular load testing and certification",
+    ],
+    faqs: [
+      { question: "What is the difference between single girder and double girder cranes?", answer: "Single girder cranes use one bridge beam and are ideal for lighter loads (up to 20 tons) with lower headroom. Double girder cranes use two beams for heavier loads and greater spans. Single girder cranes are more cost-effective for most workshop applications." },
+      { question: "What is the maximum capacity of a single girder crane?", answer: "Linkwel Engineers manufactures single girder cranes with capacities from 1 ton to 20 tons, suitable for most light to medium industrial applications." },
+      { question: "Where can I find single girder crane manufacturers near me?", answer: "Linkwel Engineers is a leading crane manufacturer based in Delhi, providing single girder cranes across Delhi, Noida, Gurgaon, and all major industrial hubs in India." },
+    ],
+    metaTitle: "Single Girder Cranes | Crane Manufacturers Delhi – Linkwel",
+    metaDesc:
+      "Cost-effective single girder overhead cranes by Linkwel Engineers. Leading crane manufacturers in Delhi & India for workshops & factories. Get a quote.",
+  },
+  {
+    slug: "double-girder-cranes",
+    title: "Double Girder Cranes",
+    category: "cranes",
+    shortDesc:
+      "High-capacity double girder overhead cranes for heavy-duty industrial lifting in steel plants, power plants, and large factories.",
+    image: doubleGirderImg,
+    heroDesc:
+      "Linkwel Engineers manufactures heavy-duty double girder cranes engineered for maximum lifting capacity and precision in demanding industrial environments.",
+    description:
+      "Our double girder cranes are designed for heavy-duty material handling where high capacity, long spans, and precise control are essential. With twin bridge beams and a crab-mounted hoist, these cranes offer superior lifting performance for steel plants, power plants, and large manufacturing facilities. As one of the top crane manufacturers in India, Linkwel Engineers builds double girder cranes with precision engineering and robust construction for decades of reliable service.",
+    features: [
+      "Twin bridge beams for maximum strength",
+      "Crab-mounted hoist for heavy loads",
+      "High lifting height with operator cabin option",
+      "VFD-controlled precise speed regulation",
+      "Anti-sway and load-limiting technology",
+      "Maintenance walkway on bridge girders",
+      "Heavy-duty end carriages with forged wheels",
+      "Remote, pendant, or cabin control options",
+    ],
+    specifications: [
+      { label: "Capacity", value: "10 tons to 200 tons" },
+      { label: "Span", value: "10 metres to 35 metres" },
+      { label: "Lift Height", value: "Up to 25 metres" },
+      { label: "Hoist Speed", value: "1 m/min to 8 m/min" },
+      { label: "Travel Speed", value: "Up to 40 m/min" },
+      { label: "Control", value: "Pendant / Radio Remote / Cabin" },
+      { label: "Power Supply", value: "3 Phase, 415V, 50 Hz" },
+    ],
+    applications: [
+      "Steel plants and foundries",
+      "Power plants and substations",
+      "Heavy engineering and fabrication",
+      "Shipbuilding yards",
+      "Cement and mining industries",
+      "Large manufacturing facilities",
+    ],
+    industries: [
+      "Steel & metals",
+      "Power generation",
+      "Heavy engineering",
+      "Mining & cement",
+      "Shipbuilding",
+    ],
+    benefits: [
+      "Superior load capacity for heavy industrial use",
+      "Greater lifting height and span coverage",
+      "Operator cabin option for precise control",
+      "Built for continuous heavy-duty operation",
+      "Maintenance walkway ensures easy servicing",
+      "Compliant with IS 3177 and IS 807 standards",
+    ],
+    safety: [
+      "Overload protection and limit switches",
+      "Anti-collision systems for multiple cranes",
+      "Emergency braking on all motions",
+      "Storm anchoring for outdoor installations",
+      "Load indicators and weighing systems",
+      "Audible and visual warning systems",
+    ],
+    faqs: [
+      { question: "When should I choose a double girder crane over single girder?", answer: "Choose a double girder crane when you need lifting capacity above 20 tons, longer spans, greater lifting heights, or an operator cabin. They're ideal for steel plants, power plants, and heavy manufacturing." },
+      { question: "What is the maximum capacity of double girder cranes?", answer: "Linkwel Engineers manufactures double girder cranes with capacities from 10 tons to 200 tons, customised for your specific industrial requirements." },
+      { question: "Who are the best double girder crane manufacturers in India?", answer: "Linkwel Engineers is among India's most trusted crane manufacturers, building double girder cranes for steel plants, power plants, and heavy industries across Delhi, Noida, Gurgaon, and nationwide." },
+    ],
+    metaTitle: "Double Girder Cranes | Crane Manufacturers India – Linkwel",
+    metaDesc:
+      "Heavy-duty double girder cranes by Linkwel Engineers. Leading crane manufacturers in India for steel plants & heavy industries. Contact us today.",
   },
   {
     slug: "gantry-cranes",
@@ -447,7 +642,7 @@ export const products: Product[] = [
     heroDesc:
       "Linkwel Engineers delivers high-performance gantry cranes built for heavy lifting in outdoor and semi-outdoor industrial environments.",
     description:
-      "Our gantry cranes are engineered for heavy-duty material handling in open yards, shipyards, construction sites, and logistics hubs. Available in full gantry and semi-gantry configurations, these cranes operate on ground-level rails, eliminating the need for overhead runway structures. As trusted gantry crane suppliers in India, Linkwel Engineers provides customised solutions that maximise productivity and safety in demanding environments.",
+      "Our gantry cranes are engineered for heavy-duty material handling in open yards, shipyards, construction sites, and logistics hubs. Available in full gantry and semi-gantry configurations, these cranes operate on ground-level rails, eliminating the need for overhead runway structures. As trusted gantry crane suppliers in India, Linkwel Engineers provides customised solutions that maximise productivity and safety. Serving Delhi, Noida, Gurgaon and across India.",
     features: [
       "Full gantry and semi-gantry configurations",
       "Rail-mounted or rubber-tyred mobility",
@@ -475,6 +670,13 @@ export const products: Product[] = [
       "Railway maintenance depots",
       "Heavy fabrication workshops",
     ],
+    industries: [
+      "Ports & shipping",
+      "Construction",
+      "Railways",
+      "Precast concrete",
+      "Heavy fabrication",
+    ],
     benefits: [
       "No overhead runway structure needed",
       "Ideal for outdoor and open-area operations",
@@ -491,9 +693,84 @@ export const products: Product[] = [
       "Load indicators and overload protection",
       "Audible travel alarms",
     ],
-    metaTitle: "Gantry Cranes | Gantry Crane Suppliers in India – Linkwel Engineers",
+    faqs: [
+      { question: "What is the difference between gantry cranes and overhead cranes?", answer: "Gantry cranes run on ground-level rails with their own support legs, while overhead cranes run on elevated runway beams. Gantry cranes are ideal for outdoor operations where building a runway structure isn't feasible." },
+      { question: "Can gantry cranes be used outdoors?", answer: "Yes, our gantry cranes are specifically designed for outdoor use with weather-resistant components, wind load resistance, and storm anchoring systems." },
+      { question: "Where can I find gantry crane suppliers near me?", answer: "Linkwel Engineers is a leading gantry crane manufacturer based in Delhi, serving clients across Delhi, Noida, Gurgaon, and throughout India." },
+    ],
+    metaTitle: "Gantry Cranes | Gantry Crane Suppliers India – Linkwel",
     metaDesc:
       "High-performance gantry cranes by Linkwel Engineers, leading crane manufacturers in Delhi. Full & semi-gantry cranes for yards & construction. Contact us.",
+  },
+  {
+    slug: "goliath-cranes",
+    title: "Goliath Cranes",
+    category: "cranes",
+    shortDesc:
+      "Extra-heavy-duty goliath cranes for shipyards, power plants, and large-scale infrastructure projects. Industrial crane manufacturers in India.",
+    image: goliathCraneImg,
+    heroDesc:
+      "Linkwel Engineers builds massive goliath cranes engineered for the heaviest lifting requirements in shipyards, power plants, and mega infrastructure projects.",
+    description:
+      "Our goliath cranes are designed for the most demanding heavy-lifting applications where extreme capacity and large spans are required. These ground-running cranes feature massive steel structures capable of handling loads that exceed standard gantry crane capacities. Ideal for shipyards, power plants, and infrastructure projects, our goliath cranes are engineered with precision for maximum safety and reliability. As experienced industrial crane manufacturers in India, Linkwel Engineers delivers goliath crane solutions across Delhi, Noida, Gurgaon, and nationwide.",
+    features: [
+      "Extra-heavy-duty steel construction",
+      "Capacities exceeding standard gantry cranes",
+      "Large span coverage for open yards",
+      "Rail-mounted with precision travel",
+      "Operator cabin with full controls",
+      "Storm-rated for outdoor installation",
+      "Multiple hoist configurations",
+      "Advanced load monitoring systems",
+    ],
+    specifications: [
+      { label: "Capacity", value: "20 tons to 500 tons" },
+      { label: "Span", value: "15 metres to 60 metres" },
+      { label: "Lift Height", value: "Up to 30 metres" },
+      { label: "Travel Type", value: "Rail-mounted" },
+      { label: "Hoist Speed", value: "0.5 m/min to 8 m/min" },
+      { label: "Control", value: "Operator Cabin / Radio Remote" },
+      { label: "Power Supply", value: "3 Phase, 415V, 50 Hz" },
+    ],
+    applications: [
+      "Shipyards and dock yards",
+      "Power plant equipment handling",
+      "Large infrastructure projects",
+      "Precast yard operations",
+      "Heavy steel fabrication",
+      "Nuclear and defence installations",
+    ],
+    industries: [
+      "Shipbuilding & marine",
+      "Power generation",
+      "Infrastructure & construction",
+      "Defence",
+      "Steel fabrication",
+    ],
+    benefits: [
+      "Handles the heaviest industrial loads",
+      "Massive span coverage without building support",
+      "Built for extreme weather and harsh conditions",
+      "Precision control for safe heavy lifting",
+      "Long service life with robust engineering",
+      "Compliant with international crane standards",
+    ],
+    safety: [
+      "Storm anchoring and wind monitoring",
+      "Anti-collision for multi-crane operations",
+      "Emergency stop and braking systems",
+      "Load weighing and overload protection",
+      "Fail-safe mechanisms on all motions",
+      "Comprehensive load testing and certification",
+    ],
+    faqs: [
+      { question: "What is a goliath crane and how is it different from a gantry crane?", answer: "A goliath crane is an extra-heavy-duty version of a gantry crane, designed for much higher capacities (up to 500 tons) and larger spans. It's used in shipyards, power plants, and large infrastructure projects where extreme lifting is required." },
+      { question: "What industries use goliath cranes?", answer: "Goliath cranes are used in shipbuilding, power generation, nuclear installations, defence projects, and large-scale infrastructure construction where heavy equipment and materials need to be lifted." },
+      { question: "Who manufactures goliath cranes in India?", answer: "Linkwel Engineers is an experienced industrial crane manufacturer in India building goliath cranes for major infrastructure projects. We serve clients across Delhi NCR and nationwide." },
+    ],
+    metaTitle: "Goliath Cranes | Industrial Crane Manufacturers – Linkwel",
+    metaDesc:
+      "Extra-heavy-duty goliath cranes by Linkwel Engineers. Industrial crane manufacturers in India for shipyards, power plants & infrastructure. Get a quote.",
   },
   {
     slug: "jib-cranes",
@@ -505,7 +782,7 @@ export const products: Product[] = [
     heroDesc:
       "Linkwel Engineers manufactures high-quality jib cranes perfect for localised lifting operations in workshops and production floors.",
     description:
-      "Our jib cranes provide efficient and flexible material handling for individual workstations, assembly lines, and loading docks. Available in wall-mounted, pillar-mounted, and free-standing configurations, these cranes offer 180° to 360° rotation for maximum coverage. As experienced crane manufacturers in Delhi, Linkwel Engineers designs compact jib cranes that improve workflow and productivity without occupying valuable floor space.",
+      "Our jib cranes provide efficient and flexible material handling for individual workstations, assembly lines, and loading docks. Available in wall-mounted, pillar-mounted, and free-standing configurations, these cranes offer 180° to 360° rotation for maximum coverage. As experienced crane manufacturers in Delhi, Linkwel Engineers designs compact jib cranes that improve workflow and productivity without occupying valuable floor space. Serving Delhi, Noida, Gurgaon and across India.",
     features: [
       "Wall-mounted, pillar-mounted, and free-standing options",
       "180° to 360° rotation arc",
@@ -533,6 +810,13 @@ export const products: Product[] = [
       "Small warehouses and stores",
       "Foundries and forging shops",
     ],
+    industries: [
+      "Manufacturing workshops",
+      "Automotive service",
+      "Machine shops",
+      "Foundries",
+      "Logistics bays",
+    ],
     benefits: [
       "Space-efficient design for localised lifting",
       "Improves individual workstation productivity",
@@ -549,9 +833,84 @@ export const products: Product[] = [
       "Safety latches on hooks",
       "Regular inspection and load testing",
     ],
-    metaTitle: "Jib Cranes | Crane Manufacturers in Delhi – Linkwel Engineers",
+    faqs: [
+      { question: "What is a jib crane used for?", answer: "Jib cranes are used for localised lifting at individual workstations, loading bays, and assembly lines. They offer 180° to 360° rotation, making them ideal for repetitive lifting tasks in workshops and factories." },
+      { question: "What types of jib cranes are available?", answer: "Linkwel Engineers offers wall-mounted, pillar-mounted, and free-standing jib cranes with capacities from 250 kg to 10 tons, suitable for various industrial applications." },
+      { question: "Where can I find jib crane manufacturers near me in Delhi?", answer: "Linkwel Engineers is a trusted jib crane manufacturer based in Delhi, serving clients across Delhi, Noida, Gurgaon, and all major cities in India." },
+    ],
+    metaTitle: "Jib Cranes | Crane Manufacturers in Delhi – Linkwel",
     metaDesc:
       "Compact jib cranes by Linkwel Engineers, trusted crane manufacturers in Delhi. Wall, pillar & free-standing jib cranes for workshops. Request a quote.",
+  },
+  {
+    slug: "electric-hoists",
+    title: "Electric Hoists",
+    category: "cranes",
+    shortDesc:
+      "Reliable electric chain and wire rope hoists for precise lifting operations. Essential material handling equipment by leading manufacturers in India.",
+    image: electricHoistImg,
+    heroDesc:
+      "Linkwel Engineers supplies high-performance electric hoists designed for safe, efficient, and precise lifting in industrial and commercial settings.",
+    description:
+      "Our electric hoists are essential components for any material handling system, providing reliable and precise lifting in factories, workshops, warehouses, and construction sites. Available in electric chain hoist and electric wire rope hoist configurations, these hoists are designed for durability, safety, and ease of operation. As experienced crane manufacturers in India, Linkwel Engineers provides electric hoists that integrate seamlessly with overhead cranes, monorails, and jib cranes. Serving Delhi, Noida, Gurgaon and across India.",
+    features: [
+      "Electric chain hoist and wire rope hoist options",
+      "Compact and lightweight design",
+      "Dual-speed lifting for precision control",
+      "Enclosed gearing for dust-proof operation",
+      "Low headroom designs available",
+      "Easy integration with cranes and monorails",
+      "Pendant or radio remote control",
+      "IP55-rated motor for harsh environments",
+    ],
+    specifications: [
+      { label: "Capacity", value: "250 kg to 20 tons" },
+      { label: "Lift Height", value: "3 metres to 30 metres" },
+      { label: "Hoist Speed", value: "1 m/min to 12 m/min" },
+      { label: "Type", value: "Electric Chain / Wire Rope" },
+      { label: "Duty Class", value: "M3 to M6 (FEM classification)" },
+      { label: "Motor Protection", value: "IP55" },
+      { label: "Power Supply", value: "3 Phase, 415V, 50 Hz" },
+    ],
+    applications: [
+      "Overhead crane lifting mechanisms",
+      "Monorail material handling systems",
+      "Jib crane hoisting units",
+      "Workshop and garage lifting",
+      "Construction site material handling",
+      "Assembly line lifting operations",
+    ],
+    industries: [
+      "Manufacturing & engineering",
+      "Construction",
+      "Automotive",
+      "Warehousing",
+      "General industry",
+    ],
+    benefits: [
+      "Versatile lifting solution for diverse applications",
+      "Compact size minimises space requirements",
+      "Dual-speed option for load positioning precision",
+      "Low maintenance with enclosed gearing",
+      "Cost-effective material handling solution",
+      "Seamless integration with existing crane systems",
+    ],
+    safety: [
+      "Upper and lower limit switches",
+      "Overload clutch protection",
+      "Fail-safe electromagnetic brakes",
+      "Emergency stop button",
+      "Safety latch on hook",
+      "Thermal motor protection",
+    ],
+    faqs: [
+      { question: "What is the difference between chain hoists and wire rope hoists?", answer: "Chain hoists are compact, lighter, and ideal for lower capacity lifting (up to 5 tons). Wire rope hoists handle heavier loads, offer higher lift heights, and are more suitable for continuous industrial use." },
+      { question: "Can electric hoists be used with existing cranes?", answer: "Yes, our electric hoists are designed for easy integration with overhead cranes, jib cranes, monorails, and gantry cranes. Linkwel Engineers provides complete hoist and crane solutions." },
+      { question: "Where can I buy electric hoists near me in Delhi?", answer: "Linkwel Engineers supplies high-quality electric hoists from our facility in Delhi, serving clients across Delhi, Noida, Gurgaon, and throughout India." },
+    ],
+    metaTitle: "Electric Hoists | Hoist Manufacturers India – Linkwel",
+    metaDesc:
+      "Reliable electric chain & wire rope hoists by Linkwel Engineers. Leading hoist manufacturers in India for factories & workshops. Get a quote.",
   },
 ];
 

@@ -49,7 +49,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://linkwelengineers.com/products/eot-cranes</loc>
+    <loc>https://linkwelengineers.com/products/overhead-cranes</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://linkwelengineers.com/products/single-girder-cranes</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://linkwelengineers.com/products/double-girder-cranes</loc>
     <lastmod>2026-03-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -61,7 +73,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://linkwelengineers.com/products/goliath-cranes</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://linkwelengineers.com/products/jib-cranes</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://linkwelengineers.com/products/electric-hoists</loc>
     <lastmod>2026-03-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

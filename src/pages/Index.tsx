@@ -193,11 +193,11 @@ const Index = () => {
                 </h2>
                 <p className="text-gold-light/60 font-body leading-relaxed mb-6">
                   From our roots in crane component manufacturing, Linkwel Engineers has grown into a trusted
-                  name among crane manufacturers in India. Our EOT cranes, gantry cranes, and jib cranes are
-                  engineered for precision, durability, and safety in demanding industrial environments.
+                  name among crane manufacturers in India. Our overhead cranes, gantry cranes, goliath cranes,
+                  jib cranes, and electric hoists are engineered for precision, durability, and safety in demanding industrial environments.
                 </p>
                 <div className="space-y-3 mb-8">
-                  {["EOT Cranes – up to 100-ton capacity", "Gantry Cranes – for outdoor & heavy-duty operations", "Jib Cranes – compact solutions for workstations"].map((item, i) => (
+                  {["Overhead Cranes (EOT) – single & double girder, up to 200-ton capacity", "Gantry & Goliath Cranes – for outdoor & heavy-duty operations", "Jib Cranes & Electric Hoists – compact solutions for workstations"].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
                       <div className="w-2 h-2 rounded-full bg-gold shrink-0" />
                       <span className="text-gold-light/80 font-body text-sm">{item}</span>
