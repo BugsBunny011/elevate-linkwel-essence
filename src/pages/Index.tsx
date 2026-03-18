@@ -226,7 +226,7 @@ const Index = () => {
       </section>
 
       {/* Lift Highlight Section */}
-      <section className="py-24 bg-surface">
+      <section className="py-24 bg-background">
         <div className="container mx-auto section-padding">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal delay={200}>
@@ -259,12 +259,12 @@ const Index = () => {
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
                       <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
-                      <span className="text-foreground font-body text-sm">{item}</span>
+                      <span className="text-muted-foreground font-body text-sm">{item}</span>
                     </div>
                   ))}
                 </div>
                 <Link
-                  to="/products#lifts"
+                  to="/products/lifts"
                   className="inline-flex items-center gap-2 text-accent font-body font-semibold text-sm uppercase tracking-wider hover:gap-3 transition-all"
                 >
                   Explore Our Lifts <ArrowRight size={16} />
