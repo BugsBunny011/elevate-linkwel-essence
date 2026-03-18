@@ -205,7 +205,7 @@ const Index = () => {
                   ))}
                 </div>
                 <Link
-                  to="/products#cranes"
+                  to="/products/cranes"
                   className="inline-flex items-center gap-2 text-gold font-body font-semibold text-sm uppercase tracking-wider hover:gap-3 transition-all"
                 >
                   Explore Our Cranes <ArrowRight size={16} />

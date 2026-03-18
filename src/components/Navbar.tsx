@@ -12,8 +12,8 @@ const navLinks = [
     path: "/products",
     children: [
       { name: "All Products", path: "/products" },
-      { name: "Lifts / Elevators", path: "/products#lifts" },
-      { name: "Cranes", path: "/products#cranes" },
+      { name: "Lifts / Elevators", path: "/products/lifts" },
+      { name: "Cranes", path: "/products/cranes" },
     ],
   },
   { name: "Services", path: "/services" },

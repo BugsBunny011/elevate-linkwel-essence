@@ -13,6 +13,8 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import Products from "./pages/Products";
+import ProductsLifts from "./pages/ProductsLifts";
+import ProductsCranes from "./pages/ProductsCranes";
 import ProductDetail from "./pages/ProductDetail";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
