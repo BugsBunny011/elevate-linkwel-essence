@@ -57,10 +57,10 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Products - Cranes + Services */}
+          {/* Products - Cranes */}
           <div>
             <h4 className="text-gold font-heading text-lg mb-4">Our Cranes</h4>
-            <div className="flex flex-col gap-3 mb-6">
+            <div className="flex flex-col gap-3">
               {craneProducts.map((product) => (
                 <Link
                   key={product.slug}
@@ -70,12 +70,6 @@ const Footer = () => {
                   {product.title}
                 </Link>
               ))}
-            </div>
-            <h4 className="text-gold font-heading text-lg mb-4">Our Services</h4>
-            <div className="flex flex-col gap-3 text-sm">
-              <span>Elevator Installation</span>
-              <span>Crane Manufacturing</span>
-              <span>Maintenance & AMC</span>
             </div>
           </div>
 
