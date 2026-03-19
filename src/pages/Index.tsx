@@ -6,6 +6,7 @@ import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import heroFallback from "@/assets/hero-fallback.jpg";
 import installImg from "@/assets/elevator-installation.jpg";
+import elevatorLobbyImg from "@/assets/elevator-lobby.jpg";
 import catVillas from "@/assets/category-villas.jpg";
 import catApartments from "@/assets/category-apartments.jpg";
 import catCorporate from "@/assets/category-corporate.jpg";
@@ -235,8 +236,8 @@ const Index = () => {
             <ScrollReveal delay={200}>
               <div className="relative">
                 <img
-                  src={installImg}
-                  alt="Elevator installation by Linkwel Engineers - lift manufacturers in India"
+                  src={elevatorLobbyImg}
+                  alt="Modern passenger elevator by Linkwel Engineers - lift manufacturers in India"
                   className="rounded-lg premium-shadow w-full"
                 />
               </div>
