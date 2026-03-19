@@ -75,8 +75,11 @@ const Index = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="text-gold font-body text-sm md:text-base tracking-[0.3em] uppercase mb-4">
+            <p className="text-gold-light/50 font-body text-xs md:text-sm tracking-[0.4em] uppercase mb-2">
               Elevator & Crane Manufacturers in India
+            </p>
+            <p className="text-gold font-heading text-2xl md:text-3xl font-semibold tracking-wider mb-4">
+              Linkwel Engineers
             </p>
           </motion.div>
           <motion.h1
