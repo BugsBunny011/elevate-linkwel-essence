@@ -236,8 +236,8 @@ const Index = () => {
             <ScrollReveal delay={200}>
               <div className="relative">
                 <img
-                  src={installImg}
-                  alt="Elevator installation by Linkwel Engineers - lift manufacturers in India"
+                  src={elevatorLobbyImg}
+                  alt="Modern passenger elevator by Linkwel Engineers - lift manufacturers in India"
                   className="rounded-lg premium-shadow w-full"
                 />
               </div>
