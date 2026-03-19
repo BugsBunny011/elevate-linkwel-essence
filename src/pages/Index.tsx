@@ -6,6 +6,7 @@ import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import heroFallback from "@/assets/hero-fallback.jpg";
 import installImg from "@/assets/elevator-installation.jpg";
+import elevatorLobbyImg from "@/assets/elevator-lobby.jpg";
 import catVillas from "@/assets/category-villas.jpg";
 import catApartments from "@/assets/category-apartments.jpg";
 import catCorporate from "@/assets/category-corporate.jpg";
