@@ -74,6 +74,15 @@ const ProductDetail = () => {
             "manufacturer": { "@type": "Organization", "name": "Linkwel Engineers" },
             "url": `https://linkwelengineers.com/products/${product.slug}`,
             "category": categoryLabel,
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "INR",
+              "price": "0",
+              "priceValidUntil": "2027-12-31",
+              "availability": "https://schema.org/InStock",
+              "seller": { "@type": "Organization", "name": "Linkwel Engineers" },
+              "url": `https://linkwelengineers.com/contact`,
+            },
           })}
         </script>
         {faqSchema && (
