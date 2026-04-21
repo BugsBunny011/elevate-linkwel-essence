@@ -93,11 +93,18 @@ let success = 0;
 const failures = [];
 
 for (const url of routes) {
+  console.log(`[generate] Rendering: ${url}`);
   try {
     const { html, helmet } = render(url);
 
+    if (!html || html.length < 50) {
+      throw new Error(
+        `Rendered HTML for ${url} is empty or suspiciously short (length=${html?.length ?? 0}).`
+      );
+    }
+
     let page = template.replace(
-      '<div id="root"></div>',
+      /<div id="root"><\/div>/,
       `<div id="root">${html}</div>`
     );
 
@@ -107,15 +114,13 @@ for (const url of routes) {
       .join("\n    ");
 
     if (headInjection) {
-      // Strip the static <title> so Helmet's title wins.
-      page = page.replace(/<title>[\s\S]*?<\/title>\s*/i, "");
       page = page.replace("</head>", `    ${headInjection}\n  </head>`);
     }
 
     // Decide output file path:
-    //   "/"          -> dist/index.html
-    //   "/about"     -> dist/about.html
-    //   "/products/jib-cranes" -> dist/products/jib-cranes.html
+    //   "/"                       -> dist/index.html
+    //   "/about"                  -> dist/about.html
+    //   "/products/jib-cranes"    -> dist/products/jib-cranes.html
     let outPath;
     if (url === "/") {
       outPath = path.join(distDir, "index.html");
@@ -126,10 +131,12 @@ for (const url of routes) {
 
     await fs.mkdir(path.dirname(outPath), { recursive: true });
     await fs.writeFile(outPath, page, "utf-8");
-    console.log(`[generate] ✓ ${url}  ->  ${path.relative(distDir, outPath)}`);
+    console.log(
+      `[generate] ✓ Rendered: ${url}  ->  ${path.relative(distDir, outPath)} (${html.length} chars)`
+    );
     success++;
   } catch (err) {
-    console.error(`[generate] ✗ ${url}`);
+    console.error(`[generate] ✗ Failed: ${url}`);
     console.error(err);
     failures.push({ url, error: err });
   }
