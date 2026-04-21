@@ -21,17 +21,17 @@ const Projects = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Our Projects | Elevator Installations Across India</title>
-        <meta name="description" content="View Linkwel Engineers' portfolio - premium elevator installations in villas, apartments, hospitals, corporate offices & parking facilities across India." />
-        <meta name="keywords" content="elevator installations India, lift projects, commercial elevator suppliers, elevator company in India" />
+        <title>Our Projects | Lift & Crane Installations Across India</title>
+        <meta name="description" content="Explore Linkwel Engineers' portfolio of premium elevator and industrial crane installations in villas, apartments, hospitals, factories and corporate buildings across India." />
+        <meta name="keywords" content="elevator installations India, lift projects, EOT crane installations, gantry crane projects, industrial crane suppliers, elevator and crane company in India" />
         <link rel="canonical" href="https://linkwelengineers.com/projects" />
-        <meta property="og:title" content="Our Projects | Elevator Installations Across India" />
-        <meta property="og:description" content="Premium elevator installations in villas, apartments, hospitals & commercial buildings." />
+        <meta property="og:title" content="Our Projects | Lift & Crane Installations Across India" />
+        <meta property="og:description" content="Premium elevator and industrial crane installations across villas, apartments, hospitals, factories and commercial buildings in India." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://linkwelengineers.com/projects" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Our Projects | Elevator Installations Across India" />
-        <meta name="twitter:description" content="Premium elevator installations across India by Linkwel Engineers." />
+        <meta name="twitter:title" content="Our Projects | Lift & Crane Installations Across India" />
+        <meta name="twitter:description" content="Premium elevator and industrial crane installations across India by Linkwel Engineers." />
       </Helmet>
       <section className="pt-32 pb-20 navy-gradient">
         <div className="container mx-auto section-padding text-center">

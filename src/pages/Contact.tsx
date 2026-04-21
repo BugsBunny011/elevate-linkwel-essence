@@ -39,17 +39,17 @@ const Contact = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Contact Linkwel Engineers | Get a Free Elevator Quote</title>
-        <meta name="description" content="Contact Linkwel Engineers for a free elevator consultation & quote. Best lift manufacturers in Delhi offering passenger, home & goods lifts across India." />
-        <meta name="keywords" content="lifts near me, lift manufacturer near me, elevator manufacturers in India, lift manufacturers in Delhi, elevator company in India" />
+        <title>Contact Linkwel Engineers | Free Lift & Crane Quote in India</title>
+        <meta name="description" content="Contact Linkwel Engineers for a free quote on elevators, lifts and industrial cranes. Trusted lift & crane manufacturers in Delhi NCR serving clients across India." />
+        <meta name="keywords" content="lifts near me, crane manufacturers near me, lift manufacturer in Delhi, elevator manufacturers in India, EOT crane manufacturers in India, contact elevator and crane company" />
         <link rel="canonical" href="https://linkwelengineers.com/contact" />
-        <meta property="og:title" content="Contact Linkwel Engineers | Get a Free Elevator Quote" />
-        <meta property="og:description" content="Get a free consultation and quote from top elevator manufacturers in India." />
+        <meta property="og:title" content="Contact Linkwel Engineers | Free Lift & Crane Quote in India" />
+        <meta property="og:description" content="Get a free quote and consultation from top elevator and industrial crane manufacturers in India." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://linkwelengineers.com/contact" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Linkwel Engineers | Get a Free Elevator Quote" />
-        <meta name="twitter:description" content="Get a free elevator consultation and quote from Linkwel Engineers." />
+        <meta name="twitter:title" content="Contact Linkwel Engineers | Free Lift & Crane Quote in India" />
+        <meta name="twitter:description" content="Free quote and consultation for elevators, lifts and industrial cranes from Linkwel Engineers." />
       </Helmet>
       <section className="pt-32 pb-20 navy-gradient">
         <div className="container mx-auto section-padding text-center">

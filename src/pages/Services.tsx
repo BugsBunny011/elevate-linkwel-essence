@@ -36,17 +36,17 @@ const Services = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Elevator Services | Lift Installation & Maintenance India</title>
-        <meta name="description" content="Expert elevator installation, maintenance, modernization & AMC services by Linkwel Engineers. Leading lift installation services across Delhi & India." />
-        <meta name="keywords" content="lift installation services, elevator maintenance, elevator modernization, AMC elevator, commercial elevator suppliers" />
+        <title>Lift & Crane Services in India | Installation, AMC, Modernization</title>
+        <meta name="description" content="Linkwel Engineers offers expert installation, maintenance, modernization & AMC services for elevators, lifts and industrial cranes across Delhi NCR & India." />
+        <meta name="keywords" content="lift installation services, elevator maintenance, crane installation services, EOT crane maintenance, elevator modernization, AMC elevator and crane, industrial crane services India" />
         <link rel="canonical" href="https://linkwelengineers.com/services" />
-        <meta property="og:title" content="Elevator Services | Lift Installation & Maintenance India" />
-        <meta property="og:description" content="Expert elevator installation, maintenance & modernization services across India." />
+        <meta property="og:title" content="Lift & Crane Services in India | Installation, AMC, Modernization" />
+        <meta property="og:description" content="Installation, maintenance, modernization & AMC for elevators, lifts and industrial cranes across India since 1989." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://linkwelengineers.com/services" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Elevator Services | Lift Installation & Maintenance India" />
-        <meta name="twitter:description" content="Expert lift installation and maintenance services across India." />
+        <meta name="twitter:title" content="Lift & Crane Services in India | Installation, AMC, Modernization" />
+        <meta name="twitter:description" content="Expert installation, maintenance & AMC services for lifts and industrial cranes across India." />
       </Helmet>
       <section className="pt-32 pb-20 navy-gradient">
         <div className="container mx-auto section-padding text-center">

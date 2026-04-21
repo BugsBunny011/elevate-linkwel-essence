@@ -44,17 +44,17 @@ const Index = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Linkwel Engineers | Elevator & Crane Manufacturers in India</title>
-        <meta name="description" content="Linkwel Engineers - leading elevator & crane manufacturers in India. Premium lifts, EOT cranes, gantry cranes. Installation, maintenance & manufacturing in Delhi." />
-        <meta name="keywords" content="elevator manufacturers in India, crane manufacturers in India, lift manufacturers in Delhi, EOT crane manufacturers, gantry crane suppliers, best lifts in India" />
+        <title>Linkwel Engineers | Lift & Industrial Crane Manufacturers in India</title>
+        <meta name="description" content="Linkwel Engineers - leading manufacturer of elevators, lifts and industrial cranes in India. Premium passenger lifts, EOT, gantry, goliath & jib cranes. 35+ years in Delhi NCR." />
+        <meta name="keywords" content="elevator manufacturers in India, lift manufacturers in Delhi, crane manufacturers in India, EOT crane manufacturers, gantry crane suppliers, jib crane manufacturers, industrial crane company Delhi NCR" />
         <link rel="canonical" href="https://linkwelengineers.com/" />
-        <meta property="og:title" content="Linkwel Engineers | Elevator & Crane Manufacturers in India" />
-        <meta property="og:description" content="Leading elevator & crane manufacturers in India. Premium lifts and industrial cranes for all applications." />
+        <meta property="og:title" content="Linkwel Engineers | Lift & Industrial Crane Manufacturers in India" />
+        <meta property="og:description" content="Leading manufacturer of elevators, lifts and industrial cranes in India. Premium solutions for residential, commercial and industrial applications." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://linkwelengineers.com/" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Linkwel Engineers | Elevator & Crane Manufacturers in India" />
-        <meta name="twitter:description" content="Leading elevator & crane manufacturers in India offering premium lift and crane solutions." />
+        <meta name="twitter:title" content="Linkwel Engineers | Lift & Industrial Crane Manufacturers in India" />
+        <meta name="twitter:description" content="Leading manufacturer of elevators, lifts and industrial cranes in India - premium solutions for every application." />
       </Helmet>
       {/* Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">

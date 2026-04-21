@@ -22,17 +22,17 @@ const About = () => {
   return (
     <Layout>
       <Helmet>
-        <title>About Linkwel Engineers | Elevator & Crane Company India</title>
-        <meta name="description" content="Linkwel Engineers - trusted elevator & crane manufacturers in India since 1989. 500+ projects, expert lift & crane solutions in Delhi & across India." />
-        <meta name="keywords" content="elevator company in India, crane manufacturers in India, lift manufacturer near me, elevator manufacturers in India, EOT crane manufacturers" />
+        <title>About Linkwel Engineers | Lift & Crane Manufacturers Since 1989</title>
+        <meta name="description" content="Founded in 1989 in New Delhi, Linkwel Engineers is a trusted manufacturer of elevators, lifts and industrial cranes. 35+ years of engineering excellence and 500+ projects across India." />
+        <meta name="keywords" content="elevator and crane company in India, lift manufacturers in Delhi since 1989, crane manufacturers near me, industrial crane company India, elevator manufacturers Delhi NCR" />
         <link rel="canonical" href="https://linkwelengineers.com/about" />
-        <meta property="og:title" content="About Linkwel Engineers | Elevator & Crane Company India" />
-        <meta property="og:description" content="Trusted elevator & crane company in India since 1989 with 500+ projects completed." />
+        <meta property="og:title" content="About Linkwel Engineers | Lift & Crane Manufacturers Since 1989" />
+        <meta property="og:description" content="Trusted elevator, lift and industrial crane manufacturer in India since 1989 with 500+ projects completed." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://linkwelengineers.com/about" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Linkwel Engineers | Elevator & Crane Company India" />
-        <meta name="twitter:description" content="Trusted elevator & crane company in India since 1989." />
+        <meta name="twitter:title" content="About Linkwel Engineers | Lift & Crane Manufacturers Since 1989" />
+        <meta name="twitter:description" content="Trusted elevator, lift and industrial crane manufacturer in India since 1989." />
       </Helmet>
       {/* Hero */}
       <section className="pt-32 pb-20 navy-gradient">
