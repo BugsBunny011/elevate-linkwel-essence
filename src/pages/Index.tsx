@@ -38,6 +38,9 @@ const testimonials = [
 ];
 
 const Index = () => {
+  const isSSR = typeof window === "undefined";
+  const heroInitial = isSSR ? false : { opacity: 0, y: 30 };
+
   return (
     <Layout>
       <Helmet>
@@ -72,7 +75,7 @@ const Index = () => {
 
         <div className="relative z-10 text-center section-padding max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={heroInitial}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
@@ -84,7 +87,7 @@ const Index = () => {
             </p>
           </motion.div>
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={heroInitial}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-gold-light leading-tight mb-4"
@@ -94,7 +97,7 @@ const Index = () => {
             <span className="text-gold-gradient">Engineering Trust</span>
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={heroInitial}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-gold font-heading text-xl md:text-2xl italic tracking-wide mb-6"
@@ -102,7 +105,7 @@ const Index = () => {
             "Sky Is the Limit."
           </motion.p>
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={heroInitial}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-gold-light/60 font-body text-lg md:text-xl max-w-2xl mx-auto mb-10"
@@ -111,7 +114,7 @@ const Index = () => {
             Lifts, cranes, installation, and maintenance you can trust.
           </motion.p>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={heroInitial}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
