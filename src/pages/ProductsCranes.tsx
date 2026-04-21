@@ -10,12 +10,20 @@ const ProductsCranes = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Industrial Cranes | Crane Manufacturers in India – Linkwel</title>
+        <title>Industrial Cranes in India | EOT, Gantry, Goliath, Jib Cranes</title>
         <meta
           name="description"
-          content="Explore industrial cranes by Linkwel Engineers. EOT, single & double girder, gantry, goliath, jib cranes & electric hoists. Crane manufacturers in Delhi, India."
+          content="Industrial cranes by Linkwel Engineers - EOT overhead, single & double girder, gantry, goliath, jib cranes and electric hoists. Trusted crane manufacturers in Delhi NCR & India."
         />
+        <meta name="keywords" content="crane manufacturers in India, EOT crane manufacturers Delhi, gantry crane suppliers, goliath crane manufacturers, jib crane India, single girder crane, double girder crane, electric hoists India" />
         <link rel="canonical" href="https://linkwelengineers.com/products/cranes" />
+        <meta property="og:title" content="Industrial Cranes in India | EOT, Gantry, Goliath, Jib Cranes" />
+        <meta property="og:description" content="Heavy-duty EOT, gantry, goliath, jib cranes and electric hoists by Linkwel Engineers. Crane manufacturers in Delhi NCR & India." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://linkwelengineers.com/products/cranes" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Industrial Cranes in India | EOT, Gantry, Goliath, Jib Cranes" />
+        <meta name="twitter:description" content="Industrial EOT, gantry, goliath and jib cranes by Linkwel Engineers, India." />
       </Helmet>
 
       {/* Hero */}
