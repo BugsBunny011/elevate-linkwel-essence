@@ -1,13 +1,17 @@
 # Netlify configuration for Linkwel Engineers
-# Prerender.io integration for SEO (Googlebot, Bingbot, etc.)
+# - Build output: dist/
+# - Prerender.io for search engine bots
+# - SPA fallback ONLY when no prerendered file exists (force = false)
 
 [build]
-  command = "npm run build"
   publish = "dist"
+  command = "npm run build"
 
 # ---------------------------------------------------------------------------
 # Prerender.io: route search engine crawlers through service.prerender.io
-# so they receive fully-rendered HTML instead of an empty SPA shell.
+# so they receive fully-rendered HTML. force = false means this only runs
+# for matching User-Agents and never overrides an existing static file for
+# regular users.
 # ---------------------------------------------------------------------------
 [[redirects]]
   from = "/*"
@@ -62,10 +66,13 @@
     X-Prerender-Token = "FRLTxv8QLJTdzXmtGH3m"
 
 # ---------------------------------------------------------------------------
-# SPA fallback: every other route serves index.html so React Router can
-# handle client-side navigation without 404s on refresh / deep links.
+# SPA fallback for client-side routes that have NO prerendered HTML file.
+# CRITICAL: force = false ensures Netlify serves the actual prerendered
+# dist/index.html for "/" and dist/products/<slug>.html for product pages,
+# falling back to dist/index.html only when no static file matches.
 # ---------------------------------------------------------------------------
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
