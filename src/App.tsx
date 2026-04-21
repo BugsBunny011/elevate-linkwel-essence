@@ -21,8 +21,15 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Skip preloader for prerender crawler & search bots so HTML snapshot has real content
+const isPrerender =
+  typeof navigator !== "undefined" &&
+  /Prerender|HeadlessChrome|Googlebot|bingbot|Bingbot|DuckDuckBot|Baiduspider|YandexBot/i.test(
+    navigator.userAgent
+  );
+
 const App = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!isPrerender);
   const handleComplete = useCallback(() => setLoading(false), []);
 
   return (
