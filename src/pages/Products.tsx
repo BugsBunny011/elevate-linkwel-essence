@@ -10,12 +10,20 @@ const Products = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Elevators & Cranes | Manufacturers in India – Linkwel</title>
+        <title>Elevators, Lifts & Industrial Cranes | Linkwel Engineers</title>
         <meta
           name="description"
-          content="Explore premium elevators, lifts & industrial cranes by Linkwel Engineers. Passenger, home, hospital lifts + EOT, gantry, goliath & jib cranes. Manufacturers in Delhi, India."
+          content="Browse Linkwel Engineers' full product range: passenger, home, hospital, capsule, goods & car lifts plus EOT, single & double girder, gantry, goliath, jib cranes and electric hoists."
         />
+        <meta name="keywords" content="elevators and cranes India, lift manufacturers in Delhi, EOT crane manufacturers, gantry crane suppliers, jib crane manufacturers, electric hoists India, industrial crane manufacturers" />
         <link rel="canonical" href="https://linkwelengineers.com/products" />
+        <meta property="og:title" content="Elevators, Lifts & Industrial Cranes | Linkwel Engineers" />
+        <meta property="og:description" content="Full range of elevators, lifts and industrial cranes engineered for safety, efficiency and performance across India." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://linkwelengineers.com/products" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Elevators, Lifts & Industrial Cranes | Linkwel Engineers" />
+        <meta name="twitter:description" content="Premium elevators, lifts and industrial cranes by Linkwel Engineers, India." />
       </Helmet>
 
       {/* Hero */}
