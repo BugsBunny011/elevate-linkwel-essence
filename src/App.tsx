@@ -49,9 +49,11 @@ export const AppRoutes = () => (
 interface AppProps {
   /** Optional router wrapper used during SSR (e.g. StaticRouter). */
   router?: (children: ReactNode) => ReactNode;
+  /** Optional Helmet context used during SSR to collect head tags. */
+  helmetContext?: Record<string, unknown>;
 }
 
-const App = ({ router }: AppProps = {}) => {
+const App = ({ router, helmetContext }: AppProps = {}) => {
   const [loading, setLoading] = useState(!isPrerender && !isSSR);
   const handleComplete = useCallback(() => setLoading(false), []);
 
@@ -70,7 +72,7 @@ const App = ({ router }: AppProps = {}) => {
   );
 
   return (
-    <HelmetProvider>
+    <HelmetProvider context={helmetContext}>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <Toaster />

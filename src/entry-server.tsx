@@ -1,6 +1,5 @@
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
-import { HelmetProvider } from "react-helmet-async";
 import App from "./App";
 
 export interface RenderResult {
@@ -17,9 +16,10 @@ export function render(url: string): RenderResult {
   const helmetContext: { helmet?: any } = {};
 
   const appHtml = renderToString(
-    <HelmetProvider context={helmetContext}>
-      <App router={(children) => <StaticRouter location={url}>{children}</StaticRouter>} />
-    </HelmetProvider>
+    <App
+      helmetContext={helmetContext}
+      router={(children) => <StaticRouter location={url}>{children}</StaticRouter>}
+    />
   );
 
   const helmet = helmetContext.helmet;
