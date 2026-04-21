@@ -1,0 +1,71 @@
+# Netlify configuration for Linkwel Engineers
+# Prerender.io integration for SEO (Googlebot, Bingbot, etc.)
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# ---------------------------------------------------------------------------
+# Prerender.io: route search engine crawlers through service.prerender.io
+# so they receive fully-rendered HTML instead of an empty SPA shell.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/*"
+  to = "https://service.prerender.io/https://linkwelengineers.com/:splat"
+  status = 200
+  force = false
+  conditions = {User-Agent = [
+    "googlebot",
+    "Googlebot",
+    "Googlebot-Image",
+    "Googlebot-News",
+    "Googlebot-Video",
+    "Mediapartners-Google",
+    "AdsBot-Google",
+    "AdsBot-Google-Mobile",
+    "bingbot",
+    "Bingbot",
+    "Slurp",
+    "DuckDuckBot",
+    "Baiduspider",
+    "YandexBot",
+    "Sogou",
+    "Exabot",
+    "facebot",
+    "facebookexternalhit",
+    "ia_archiver",
+    "LinkedInBot",
+    "Twitterbot",
+    "Applebot",
+    "WhatsApp",
+    "TelegramBot",
+    "Discordbot",
+    "Pinterestbot",
+    "redditbot",
+    "SemrushBot",
+    "AhrefsBot",
+    "DotBot",
+    "rogerbot",
+    "embedly",
+    "quora link preview",
+    "showyoubot",
+    "outbrain",
+    "vkShare",
+    "W3C_Validator",
+    "ChatGPT-User",
+    "GPTBot",
+    "PerplexityBot",
+    "ClaudeBot",
+    "Claude-Web"
+  ]}
+  [redirects.headers]
+    X-Prerender-Token = "FRLTxv8QLJTdzXmtGH3m"
+
+# ---------------------------------------------------------------------------
+# SPA fallback: every other route serves index.html so React Router can
+# handle client-side navigation without 404s on refresh / deep links.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
