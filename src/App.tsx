@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, type ReactNode } from "react";
 import { AnimatePresence } from "framer-motion";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
@@ -28,12 +28,51 @@ const isPrerender =
     navigator.userAgent
   );
 
-const App = () => {
-  const [loading, setLoading] = useState(!isPrerender);
+// Detect SSR (no window) — skip preloader & BrowserRouter during static generation
+const isSSR = typeof window === "undefined";
+
+export const AppRoutes = () => (
+  <Routes>
+    <Route path="/" element={<Index />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/services" element={<Services />} />
+    <Route path="/projects" element={<Projects />} />
+    <Route path="/products" element={<Products />} />
+    <Route path="/products/lifts" element={<ProductsLifts />} />
+    <Route path="/products/cranes" element={<ProductsCranes />} />
+    <Route path="/products/:slug" element={<ProductDetail />} />
+    <Route path="/contact" element={<Contact />} />
+    <Route path="*" element={<NotFound />} />
+  </Routes>
+);
+
+interface AppProps {
+  /** Optional router wrapper used during SSR (e.g. StaticRouter). */
+  router?: (children: ReactNode) => ReactNode;
+  /** Optional Helmet context used during SSR to collect head tags. */
+  helmetContext?: Record<string, unknown>;
+}
+
+const App = ({ router, helmetContext }: AppProps = {}) => {
+  const [loading, setLoading] = useState(!isPrerender && !isSSR);
   const handleComplete = useCallback(() => setLoading(false), []);
 
+  const routedApp = router ? (
+    router(
+      <>
+        <ScrollToTop />
+        <AppRoutes />
+      </>
+    )
+  ) : (
+    <BrowserRouter>
+      <ScrollToTop />
+      <AppRoutes />
+    </BrowserRouter>
+  );
+
   return (
-    <HelmetProvider>
+    <HelmetProvider context={helmetContext}>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <Toaster />
@@ -41,23 +80,7 @@ const App = () => {
           <AnimatePresence mode="wait">
             {loading && <Preloader key="preloader" onComplete={handleComplete} />}
           </AnimatePresence>
-          {!loading && (
-            <BrowserRouter>
-              <ScrollToTop />
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/products/lifts" element={<ProductsLifts />} />
-                <Route path="/products/cranes" element={<ProductsCranes />} />
-                <Route path="/products/:slug" element={<ProductDetail />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </BrowserRouter>
-          )}
+          {!loading && routedApp}
         </TooltipProvider>
       </QueryClientProvider>
     </HelmetProvider>
