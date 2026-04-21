@@ -8,9 +8,12 @@ interface Props {
 
 const ScrollReveal = ({ children, className = "", delay = 0 }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const isSSR = typeof window === "undefined";
+  const [visible, setVisible] = useState(isSSR);
 
   useEffect(() => {
+    if (isSSR) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -22,7 +25,7 @@ const ScrollReveal = ({ children, className = "", delay = 0 }: Props) => {
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, [delay]);
+  }, [delay, isSSR]);
 
   return (
     <div
