@@ -150,6 +150,9 @@ console.log(
     (failures.length ? ` ${failures.length} failed.` : "")
 );
 
+console.log('=== PRERENDER COMPLETE ===');
+console.log('Files written:', routes.length);
+
 if (failures.length) {
   process.exit(1);
 }
