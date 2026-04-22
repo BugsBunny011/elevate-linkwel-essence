@@ -1,76 +1,7 @@
-# Netlify configuration for Linkwel Engineers
-# - Build output: dist/
-# - Prerender.io for search engine bots
-# - SPA fallback ONLY when no prerendered file exists (force = false)
-
 [build]
   publish = "dist"
   command = "npm run build"
 
-# ---------------------------------------------------------------------------
-# Prerender.io: route search engine crawlers through service.prerender.io
-# so they receive fully-rendered HTML. force = false means this only runs
-# for matching User-Agents and never overrides an existing static file for
-# regular users.
-# ---------------------------------------------------------------------------
-[[redirects]]
-  from = "/*"
-  to = "https://service.prerender.io/https://linkwelengineers.com/:splat"
-  status = 200
-  force = false
-  conditions = {User-Agent = [
-    "googlebot",
-    "Googlebot",
-    "Googlebot-Image",
-    "Googlebot-News",
-    "Googlebot-Video",
-    "Mediapartners-Google",
-    "AdsBot-Google",
-    "AdsBot-Google-Mobile",
-    "bingbot",
-    "Bingbot",
-    "Slurp",
-    "DuckDuckBot",
-    "Baiduspider",
-    "YandexBot",
-    "Sogou",
-    "Exabot",
-    "facebot",
-    "facebookexternalhit",
-    "ia_archiver",
-    "LinkedInBot",
-    "Twitterbot",
-    "Applebot",
-    "WhatsApp",
-    "TelegramBot",
-    "Discordbot",
-    "Pinterestbot",
-    "redditbot",
-    "SemrushBot",
-    "AhrefsBot",
-    "DotBot",
-    "rogerbot",
-    "embedly",
-    "quora link preview",
-    "showyoubot",
-    "outbrain",
-    "vkShare",
-    "W3C_Validator",
-    "ChatGPT-User",
-    "GPTBot",
-    "PerplexityBot",
-    "ClaudeBot",
-    "Claude-Web"
-  ]}
-  [redirects.headers]
-    X-Prerender-Token = "FRLTxv8QLJTdzXmtGH3m"
-
-# ---------------------------------------------------------------------------
-# SPA fallback for client-side routes that have NO prerendered HTML file.
-# CRITICAL: force = false ensures Netlify serves the actual prerendered
-# dist/index.html for "/" and dist/products/<slug>.html for product pages,
-# falling back to dist/index.html only when no static file matches.
-# ---------------------------------------------------------------------------
 [[redirects]]
   from = "/*"
   to = "/index.html"
