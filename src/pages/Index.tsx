@@ -55,6 +55,45 @@ const Index = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Linkwel Engineers | Lift & Industrial Crane Manufacturers in India" />
         <meta name="twitter:description" content="Leading manufacturer of elevators, lifts and industrial cranes in India - premium solutions for every application." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://linkwelengineers.com/#organization",
+              "name": "Linkwel Engineers",
+              "url": "https://linkwelengineers.com/",
+              "logo": "https://linkwelengineers.com/favicon.png",
+              "description": "Manufacturer of elevators, lifts and industrial cranes in India. 35+ years of experience serving Delhi NCR and across India.",
+              "foundingDate": "1989",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Okhla Industrial Area",
+                "addressLocality": "New Delhi",
+                "addressRegion": "Delhi",
+                "addressCountry": "IN"
+              },
+              "contactPoint": [{
+                "@type": "ContactPoint",
+                "telephone": "+91-9818511177",
+                "contactType": "sales",
+                "areaServed": "IN",
+                "availableLanguage": ["English", "Hindi"]
+              }],
+              "sameAs": [
+                "https://www.linkedin.com/company/linkwel-engineers",
+                "https://www.instagram.com/linkwelengineers"
+              ]
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://linkwelengineers.com/#website",
+              "url": "https://linkwelengineers.com/",
+              "name": "Linkwel Engineers",
+              "publisher": { "@id": "https://linkwelengineers.com/#organization" }
+            }
+          ]
+        })}</script>
       </Helmet>
       {/* Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
