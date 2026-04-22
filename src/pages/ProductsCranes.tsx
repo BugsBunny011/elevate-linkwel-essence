@@ -7,6 +7,8 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { craneProducts } from "@/data/products";
 
 const ProductsCranes = () => {
+  const isSSR = typeof window === "undefined";
+  const fadeInitial = isSSR ? false : { opacity: 0, y: 20 };
   return (
     <Layout>
       <Helmet>
@@ -30,7 +32,7 @@ const ProductsCranes = () => {
       <section className="pt-32 pb-20 navy-gradient">
         <div className="container mx-auto section-padding text-center">
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={fadeInitial}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3"
@@ -38,7 +40,7 @@ const ProductsCranes = () => {
             Material Handling
           </motion.p>
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={fadeInitial}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-6xl font-heading font-bold text-gold-light mb-6"
@@ -46,7 +48,7 @@ const ProductsCranes = () => {
             Industrial <span className="text-gold-gradient">Cranes</span>
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={fadeInitial}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-gold-light/60 font-body text-lg max-w-3xl mx-auto"
