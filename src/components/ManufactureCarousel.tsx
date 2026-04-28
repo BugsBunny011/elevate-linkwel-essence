@@ -104,7 +104,7 @@ const ManufactureCarousel = () => {
                       className={`font-heading leading-none whitespace-nowrap ${
                         isActive
                           ? "text-gold text-3xl md:text-4xl lg:text-5xl font-bold"
-                          : "text-gold-light text-2xl md:text-3xl font-medium"
+                          : "text-gold text-2xl md:text-3xl font-medium"
                       }`}
                       style={{ opacity }}
                     >
