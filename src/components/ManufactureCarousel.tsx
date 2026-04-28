@@ -77,14 +77,15 @@ const ManufactureCarousel = () => {
               }}
             >
               {slots.map(({ offset, word, key }) => {
-                // After the glide completes, item with offset === -1 will
-                // land in the active slot. So highlight that one as it arrives.
+                // The track glides up by one row; offset === 0 is the active
+                // slot AFTER the glide completes. Fade by distance from center,
+                // but keep padded rows visible so the window is never blank.
                 const isActive = offset === 0;
                 const dist = Math.abs(offset);
                 let opacity = 1;
                 if (dist === 1) opacity = 0.6;
                 else if (dist === 2) opacity = 0.28;
-                else opacity = 0;
+                else opacity = 0.12;
 
                 return (
                   <div
