@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Shield, Award, Wrench, Building2, Star, Quote, ChevronRight, Phone, Settings } from "lucide-react";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
+import ManufactureCarousel from "@/components/ManufactureCarousel";
 import heroFallback from "@/assets/hero-fallback.jpg";
 import installImg from "@/assets/elevator-installation.jpg";
 import elevatorLobbyImg from "@/assets/elevator-lobby.jpg";
@@ -184,6 +185,9 @@ const Index = () => {
           </div>
         </motion.div>
       </section>
+
+      {/* We Manufacture - vertical word carousel */}
+      <ManufactureCarousel />
 
       {/* Stats */}
       <section className="navy-gradient py-16">
