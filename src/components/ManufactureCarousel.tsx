@@ -34,12 +34,12 @@ const ManufactureCarousel = () => {
   const half = Math.floor(VISIBLE / 2);
   const N = WORDS.length;
 
-  // Render a window of slots: [-half-1 .. +half+1] around the active position,
-  // each mapped to a word via modulo so the chain feels continuous.
-  // Vertical position glides by a fractional offset that resets every tick,
-  // but because we always re-pick the surrounding words, there's no visible jump.
-  const slots = Array.from({ length: VISIBLE + 2 }, (_, i) => {
-    const offset = i - (half + 1); // -3..+3 for VISIBLE=5
+  // Render a wider window so the visible 5-row area stays full during the
+  // glide animation (track moves down→up by ITEM_HEIGHT each tick).
+  // Pad = half + 2 covers the gap that would otherwise appear at top/bottom.
+  const PAD = half + 2;
+  const slots = Array.from({ length: PAD * 2 + 1 }, (_, i) => {
+    const offset = i - PAD; // e.g. -4..+4 for VISIBLE=5
     const wordIdx = ((tick + offset) % N + N) % N;
     return { offset, word: WORDS[wordIdx], key: `${tick}-${i}` };
   });
