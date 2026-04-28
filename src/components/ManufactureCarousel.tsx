@@ -16,33 +16,41 @@ const WORDS = [
   "Car Elevators",
 ];
 
-const ITEM_HEIGHT = 64; // px per slot (matches text-3xl/4xl line height)
-const VISIBLE = 5; // 2 above + active + 2 below
-const INTERVAL = 2600; // ms between rotations
+const ITEM_HEIGHT = 64; // px per slot
+const VISIBLE = 5;
+const INTERVAL = 2600; // ms between glides
+const TRANSITION_MS = 1100; // glide duration
+
+// Duplicate the list so we can translate continuously and seamlessly loop.
+const LOOP = [...WORDS, ...WORDS];
 
 const ManufactureCarousel = () => {
   const [index, setIndex] = useState(0);
+  const [animate, setAnimate] = useState(true);
 
   useEffect(() => {
     const id = setInterval(() => {
-      setIndex((i) => (i + 1) % WORDS.length);
+      setIndex((i) => i + 1);
     }, INTERVAL);
     return () => clearInterval(id);
   }, []);
 
-  // Build a list of VISIBLE slots centered on the active index (wrapping).
-  const half = Math.floor(VISIBLE / 2);
-  const slots = Array.from({ length: VISIBLE }, (_, slotIdx) => {
-    const offset = slotIdx - half; // -2,-1,0,1,2
-    const wordIdx = (index + offset + WORDS.length * 10) % WORDS.length;
-    return { offset, word: WORDS[wordIdx] };
-  });
+  // When we reach the end of the first copy, snap back to 0 without animation.
+  useEffect(() => {
+    if (index === WORDS.length) {
+      const t = setTimeout(() => {
+        setAnimate(false);
+        setIndex(0);
+        // re-enable animation on next frame
+        requestAnimationFrame(() => requestAnimationFrame(() => setAnimate(true)));
+      }, TRANSITION_MS);
+      return () => clearTimeout(t);
+    }
+  }, [index]);
 
-  const opacityFor = (offset: number) => {
-    if (offset === 0) return 1;
-    if (Math.abs(offset) === 1) return 0.5;
-    return 0.2;
-  };
+  const half = Math.floor(VISIBLE / 2);
+  // translate so that the active word sits in the middle slot
+  const translateY = -(index * ITEM_HEIGHT);
 
   return (
     <section
@@ -59,34 +67,51 @@ const ManufactureCarousel = () => {
             </h2>
           </div>
 
-          {/* Right: vertical carousel */}
+          {/* Right: smooth gliding carousel */}
           <div
             className="relative overflow-hidden"
             style={{ height: `${ITEM_HEIGHT * VISIBLE}px` }}
             aria-live="polite"
           >
             {/* Top & bottom fade masks */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-navy-dark to-transparent z-10" />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-navy-dark to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-navy-dark to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-navy-dark to-transparent z-10" />
 
-            <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center">
-              {slots.map(({ offset, word }) => {
+            {/* Sliding track — the middle slot is the active row */}
+            <div
+              className="absolute left-0 right-0"
+              style={{
+                top: `${half * ITEM_HEIGHT}px`,
+                transform: `translateY(${translateY}px)`,
+                transition: animate
+                  ? `transform ${TRANSITION_MS}ms cubic-bezier(0.22, 1, 0.36, 1)`
+                  : "none",
+                willChange: "transform",
+              }}
+            >
+              {LOOP.map((word, i) => {
+                // distance from current active index
+                const offset = i - index;
+                const dist = Math.abs(offset);
                 const isActive = offset === 0;
+                let opacity = 1;
+                if (dist === 1) opacity = 0.55;
+                else if (dist === 2) opacity = 0.22;
+                else if (dist >= 3) opacity = 0;
+
                 return (
                   <div
-                    key={`${offset}-${word}`}
-                    className="flex items-center transition-all duration-700 ease-in-out"
-                    style={{
-                      height: `${ITEM_HEIGHT}px`,
-                      opacity: opacityFor(offset),
-                    }}
+                    key={i}
+                    className="flex items-center md:justify-start justify-center"
+                    style={{ height: `${ITEM_HEIGHT}px` }}
                   >
                     <span
-                      className={`font-heading leading-none whitespace-nowrap transition-all duration-700 ${
+                      className={`font-heading leading-none whitespace-nowrap transition-[color,font-size,opacity] duration-700 ease-out ${
                         isActive
                           ? "text-gold text-3xl md:text-4xl lg:text-5xl font-bold"
-                          : "text-gold-light/80 text-2xl md:text-3xl font-medium"
+                          : "text-gold-light text-2xl md:text-3xl font-medium"
                       }`}
+                      style={{ opacity }}
                     >
                       {word}
                     </span>
