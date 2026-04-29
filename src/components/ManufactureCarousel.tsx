@@ -82,19 +82,19 @@ const ManufactureCarousel = () => {
                 // but keep padded rows visible so the window is never blank.
                 const isActive = offset === 0;
                 const dist = Math.abs(offset);
-                let color = "hsl(var(--gold))";
+                let color = "hsl(var(--primary-foreground))";
                 let opacity = 1;
                 if (dist === 0) {
-                  color = "hsl(var(--gold))";
+                  color = "hsl(var(--primary-foreground))";
                   opacity = 1;
                 } else if (dist === 1) {
-                  color = "hsl(0 0% 100%)";
+                  color = "hsl(var(--primary-foreground))";
                   opacity = 0.55;
                 } else if (dist === 2) {
-                  color = "hsl(0 0% 100%)";
+                  color = "hsl(var(--primary-foreground))";
                   opacity = 0.22;
                 } else {
-                  color = "hsl(0 0% 100%)";
+                  color = "hsl(var(--primary-foreground))";
                   opacity = 0.08;
                 }
 
