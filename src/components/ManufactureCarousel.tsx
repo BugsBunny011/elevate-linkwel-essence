@@ -114,7 +114,7 @@ const ManufactureCarousel = () => {
                     <span
                       className={`font-heading leading-none whitespace-nowrap ${
                         isActive
-                          ? "text-3xl md:text-5xl lg:text-6xl font-bold"
+                          ? "text-2xl md:text-3xl lg:text-4xl font-semibold"
                           : "text-2xl md:text-3xl font-medium"
                       }`}
                       style={{ color, opacity }}
