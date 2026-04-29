@@ -63,8 +63,8 @@ const ManufactureCarousel = () => {
             style={{ height: `${ITEM_HEIGHT * VISIBLE}px` }}
             aria-live="polite"
           >
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-navy-dark to-transparent z-10" />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-navy-dark to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-navy-dark to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-navy-dark to-transparent z-10" />
 
             {/* Sliding chain — re-keyed each tick so it always glides one row up
                 from the same start position, giving a seamless infinite loop. */}
@@ -82,10 +82,21 @@ const ManufactureCarousel = () => {
                 // but keep padded rows visible so the window is never blank.
                 const isActive = offset === 0;
                 const dist = Math.abs(offset);
+                let color = "hsl(var(--gold))";
                 let opacity = 1;
-                if (dist === 1) opacity = 0.6;
-                else if (dist === 2) opacity = 0.28;
-                else opacity = 0.12;
+                if (dist === 0) {
+                  color = "hsl(var(--gold))";
+                  opacity = 1;
+                } else if (dist === 1) {
+                  color = "hsl(0 0% 100%)";
+                  opacity = 0.55;
+                } else if (dist === 2) {
+                  color = "hsl(0 0% 100%)";
+                  opacity = 0.22;
+                } else {
+                  color = "hsl(0 0% 100%)";
+                  opacity = 0.08;
+                }
 
                 return (
                   <div
@@ -103,10 +114,10 @@ const ManufactureCarousel = () => {
                     <span
                       className={`font-heading leading-none whitespace-nowrap ${
                         isActive
-                          ? "text-gold text-3xl md:text-4xl lg:text-5xl font-bold"
-                          : "text-gold text-2xl md:text-3xl font-medium"
+                          ? "text-3xl md:text-5xl lg:text-6xl font-bold"
+                          : "text-2xl md:text-3xl font-medium"
                       }`}
-                      style={{ opacity }}
+                      style={{ color, opacity }}
                     >
                       {word}
                     </span>
