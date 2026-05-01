@@ -29,12 +29,15 @@ export default defineConfig(({ mode }) => ({
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
-        manualChunks: {
-          "react-vendor": ["react", "react-dom", "react-router-dom"],
-          "motion": ["framer-motion"],
-          "query": ["@tanstack/react-query"],
-          "icons": ["lucide-react"],
-          "forms": ["react-hook-form", "@hookform/resolvers", "zod"],
+        // Function form: skips externals (e.g. "react" in the SSR build via generate.mjs).
+        manualChunks(id) {
+          if (!id.includes("node_modules")) return;
+          if (/[\\/]node_modules[\\/](react|react-dom|react-router|react-router-dom|scheduler)[\\/]/.test(id))
+            return "react-vendor";
+          if (id.includes("framer-motion")) return "motion";
+          if (id.includes("@tanstack")) return "query";
+          if (id.includes("lucide-react")) return "icons";
+          if (/(react-hook-form|@hookform|zod)/.test(id)) return "forms";
         },
       },
     },
