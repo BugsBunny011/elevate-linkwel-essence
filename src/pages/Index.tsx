@@ -104,6 +104,7 @@ const Index = () => {
             muted
             loop
             playsInline
+            preload="none"
             className="w-full h-full object-cover"
             poster={heroFallback}
           >
@@ -268,6 +269,10 @@ const Index = () => {
                   src={eotCraneImg}
                   alt="EOT crane by Linkwel Engineers - crane manufacturers in India"
                   className="rounded-lg premium-shadow w-full"
+                  loading="lazy"
+                  decoding="async"
+                  width="1200"
+                  height="800"
                 />
               </div>
             </ScrollReveal>
@@ -285,6 +290,10 @@ const Index = () => {
                   src={elevatorLobbyImg}
                   alt="Modern passenger elevator by Linkwel Engineers - lift manufacturers in India"
                   className="rounded-lg premium-shadow w-full"
+                  loading="lazy"
+                  decoding="async"
+                  width="1200"
+                  height="800"
                 />
               </div>
             </ScrollReveal>
@@ -362,6 +371,10 @@ const Index = () => {
                   src={installImg}
                   alt="Elevator installation engineers at Linkwel Engineers"
                   className="rounded-lg premium-shadow w-full"
+                  loading="lazy"
+                  decoding="async"
+                  width="1200"
+                  height="800"
                 />
                 <div className="absolute -bottom-6 -left-6 bg-accent text-accent-foreground p-6 rounded-lg">
                   <p className="text-3xl font-heading font-bold">35+</p>
@@ -391,6 +404,10 @@ const Index = () => {
                     src={proj.img}
                     alt={proj.name}
                     className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="600"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/90 via-navy-dark/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">

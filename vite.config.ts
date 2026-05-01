@@ -21,4 +21,22 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    target: "es2020",
+    cssCodeSplit: true,
+    sourcemap: false,
+    reportCompressedSize: false,
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "react-vendor": ["react", "react-dom", "react-router-dom"],
+          "motion": ["framer-motion"],
+          "query": ["@tanstack/react-query"],
+          "icons": ["lucide-react"],
+          "forms": ["react-hook-form", "@hookform/resolvers", "zod"],
+        },
+      },
+    },
+  },
 }));
