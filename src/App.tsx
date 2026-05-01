@@ -1,4 +1,4 @@
-import { useState, useCallback, type ReactNode } from "react";
+import { useState, useCallback, lazy, Suspense, type ReactNode } from "react";
 import { AnimatePresence } from "framer-motion";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
@@ -9,15 +9,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Preloader from "@/components/Preloader";
 import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Projects from "./pages/Projects";
-import Products from "./pages/Products";
-import ProductsLifts from "./pages/ProductsLifts";
-import ProductsCranes from "./pages/ProductsCranes";
-import ProductDetail from "./pages/ProductDetail";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
+
+// Code-split secondary routes — keeps initial JS bundle small for LCP/SEO.
+const About = lazy(() => import("./pages/About"));
+const Services = lazy(() => import("./pages/Services"));
+const Projects = lazy(() => import("./pages/Projects"));
+const Products = lazy(() => import("./pages/Products"));
+const ProductsLifts = lazy(() => import("./pages/ProductsLifts"));
+const ProductsCranes = lazy(() => import("./pages/ProductsCranes"));
+const ProductDetail = lazy(() => import("./pages/ProductDetail"));
+const Contact = lazy(() => import("./pages/Contact"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
@@ -32,18 +34,20 @@ const isPrerender =
 const isSSR = typeof window === "undefined";
 
 export const AppRoutes = () => (
-  <Routes>
-    <Route path="/" element={<Index />} />
-    <Route path="/about" element={<About />} />
-    <Route path="/services" element={<Services />} />
-    <Route path="/projects" element={<Projects />} />
-    <Route path="/products" element={<Products />} />
-    <Route path="/products/lifts" element={<ProductsLifts />} />
-    <Route path="/products/cranes" element={<ProductsCranes />} />
-    <Route path="/products/:slug" element={<ProductDetail />} />
-    <Route path="/contact" element={<Contact />} />
-    <Route path="*" element={<NotFound />} />
-  </Routes>
+  <Suspense fallback={null}>
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/projects" element={<Projects />} />
+      <Route path="/products" element={<Products />} />
+      <Route path="/products/lifts" element={<ProductsLifts />} />
+      <Route path="/products/cranes" element={<ProductsCranes />} />
+      <Route path="/products/:slug" element={<ProductDetail />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </Suspense>
 );
 
 interface AppProps {
