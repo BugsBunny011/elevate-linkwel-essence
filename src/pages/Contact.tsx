@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
+import MarqueeStrip from "@/components/MarqueeStrip";
 import ScrollReveal from "@/components/ScrollReveal";
 import { toast } from "sonner";
 
@@ -62,6 +63,7 @@ const Contact = () => {
           </p>
         </div>
       </section>
+      <MarqueeStrip />
 
       <section className="py-24 bg-background">
         <div className="container mx-auto section-padding">

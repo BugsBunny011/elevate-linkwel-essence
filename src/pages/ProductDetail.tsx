@@ -13,6 +13,7 @@ import {
   HelpCircle,
 } from "lucide-react";
 import Layout from "@/components/Layout";
+import MarqueeStrip from "@/components/MarqueeStrip";
 import ScrollReveal from "@/components/ScrollReveal";
 import { products } from "@/data/products";
 import {
@@ -156,6 +157,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
+      <MarqueeStrip />
 
       {/* Description */}
       <section className="py-20 bg-background">
