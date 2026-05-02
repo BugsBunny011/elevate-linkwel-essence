@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
+import MarqueeStrip from "@/components/MarqueeStrip";
 import ScrollReveal from "@/components/ScrollReveal";
 import catVillas from "@/assets/category-villas.jpg";
 import catFarmhouse from "@/assets/category-farmhouse.jpg";
@@ -44,6 +45,7 @@ const Projects = () => {
           </p>
         </div>
       </section>
+      <MarqueeStrip />
 
       <section className="py-24 bg-background">
         <div className="container mx-auto section-padding">

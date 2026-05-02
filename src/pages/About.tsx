@@ -1,6 +1,7 @@
 import { Target, Eye, Shield, Lightbulb, Award, Heart } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
+import MarqueeStrip from "@/components/MarqueeStrip";
 import ScrollReveal from "@/components/ScrollReveal";
 import installImg from "@/assets/elevator-installation.jpg";
 import maintenanceImg from "@/assets/elevator-maintenance.jpg";
@@ -46,6 +47,7 @@ const About = () => {
           </p>
         </div>
       </section>
+      <MarqueeStrip />
 
       {/* Company Overview & Our Story */}
       <section className="py-24 bg-background">

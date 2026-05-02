@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
+import MarqueeStrip from "@/components/MarqueeStrip";
 import ScrollReveal from "@/components/ScrollReveal";
 import { craneProducts } from "@/data/products";
 
@@ -58,6 +59,7 @@ const ProductsCranes = () => {
           </motion.p>
         </div>
       </section>
+      <MarqueeStrip />
 
       {/* Cranes Grid */}
       <section className="py-24 bg-background">
