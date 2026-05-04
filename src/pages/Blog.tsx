@@ -79,7 +79,7 @@ const Blog = () => {
         <div className="container mx-auto section-padding">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {sorted.map((post, idx) => (
-              <ScrollReveal key={post.slug} delay={idx * 0.1}>
+              <ScrollReveal key={post.slug} delay={idx * 100}>
                 <Link
                   to={`/blog/${post.slug}`}
                   className="group block h-full bg-card border border-border rounded-lg overflow-hidden hover:border-accent/60 transition-all duration-500 hover:shadow-[0_20px_50px_-20px_hsl(var(--accent)/0.35)]"
