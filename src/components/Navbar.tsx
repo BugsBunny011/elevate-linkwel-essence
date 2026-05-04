@@ -4,9 +4,11 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/linkwel-logo.png";
 
-const navLinks = [
+type NavChild = { name: string; path: string };
+type NavItem = { name: string; path: string; children?: NavChild[] };
+
+const navLinks: NavItem[] = [
   { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
   {
     name: "Products",
     path: "/products",
@@ -17,16 +19,23 @@ const navLinks = [
     ],
   },
   { name: "Services", path: "/services" },
-  { name: "Projects", path: "/projects" },
-  { name: "Blog", path: "/blog" },
+  {
+    name: "Company",
+    path: "/about",
+    children: [
+      { name: "About Us", path: "/about" },
+      { name: "Projects", path: "/projects" },
+      { name: "Blog", path: "/blog" },
+    ],
+  },
   { name: "Contact", path: "/contact" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileOpenDropdown, setMobileOpenDropdown] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
@@ -38,19 +47,26 @@ const Navbar = () => {
 
   useEffect(() => {
     setMobileOpen(false);
-    setDropdownOpen(false);
-    setMobileProductsOpen(false);
+    setOpenDropdown(null);
+    setMobileOpenDropdown(null);
   }, [location]);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false);
+        setOpenDropdown(null);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const isGroupActive = (item: NavItem) =>
+    item.children
+      ? item.children.some((c) =>
+          c.path === "/" ? location.pathname === "/" : location.pathname.startsWith(c.path)
+        )
+      : location.pathname === item.path;
 
   return (
     <nav
@@ -66,26 +82,28 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-7" ref={dropdownRef}>
           {navLinks.map((link) =>
             link.children ? (
-              <div key={link.path} className="relative" ref={dropdownRef}>
+              <div key={link.name} className="relative">
                 <button
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  onClick={() =>
+                    setOpenDropdown(openDropdown === link.name ? null : link.name)
+                  }
                   className={`text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 inline-flex items-center gap-1 ${
-                    location.pathname.startsWith("/products")
-                      ? "text-gold"
-                      : "text-gold-light/70 hover:text-gold"
+                    isGroupActive(link) ? "text-gold" : "text-gold-light/70 hover:text-gold"
                   }`}
                 >
                   {link.name}
                   <ChevronDown
                     size={14}
-                    className={`transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
+                    className={`transition-transform duration-200 ${
+                      openDropdown === link.name ? "rotate-180" : ""
+                    }`}
                   />
                 </button>
                 <AnimatePresence>
-                  {dropdownOpen && (
+                  {openDropdown === link.name && (
                     <motion.div
                       initial={{ opacity: 0, y: -8 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -97,7 +115,7 @@ const Navbar = () => {
                         <Link
                           key={child.path}
                           to={child.path}
-                          onClick={() => setDropdownOpen(false)}
+                          onClick={() => setOpenDropdown(null)}
                           className="block px-5 py-3 text-sm font-body text-gold-light/70 hover:text-gold hover:bg-gold/5 transition-colors"
                         >
                           {child.name}
@@ -150,23 +168,27 @@ const Navbar = () => {
             <div className="flex flex-col items-center gap-6 py-8">
               {navLinks.map((link) =>
                 link.children ? (
-                  <div key={link.path} className="flex flex-col items-center gap-3">
+                  <div key={link.name} className="flex flex-col items-center gap-3">
                     <button
-                      onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+                      onClick={() =>
+                        setMobileOpenDropdown(
+                          mobileOpenDropdown === link.name ? null : link.name
+                        )
+                      }
                       className={`text-sm font-body font-medium tracking-wide uppercase inline-flex items-center gap-1 ${
-                        location.pathname.startsWith("/products")
-                          ? "text-gold"
-                          : "text-gold-light/70"
+                        isGroupActive(link) ? "text-gold" : "text-gold-light/70"
                       }`}
                     >
                       {link.name}
                       <ChevronDown
                         size={14}
-                        className={`transition-transform duration-200 ${mobileProductsOpen ? "rotate-180" : ""}`}
+                        className={`transition-transform duration-200 ${
+                          mobileOpenDropdown === link.name ? "rotate-180" : ""
+                        }`}
                       />
                     </button>
                     <AnimatePresence>
-                      {mobileProductsOpen && (
+                      {mobileOpenDropdown === link.name && (
                         <motion.div
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
