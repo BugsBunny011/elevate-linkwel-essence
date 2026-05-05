@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
 import MarqueeStrip from "@/components/MarqueeStrip";
+import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 import catVillas from "@/assets/category-villas.jpg";
 import catFarmhouse from "@/assets/category-farmhouse.jpg";
@@ -34,6 +35,7 @@ const Projects = () => {
         <meta name="twitter:title" content="Our Projects | Lift & Crane Installations Across India" />
         <meta name="twitter:description" content="Premium elevator and industrial crane installations across India by Linkwel Engineers." />
       </Helmet>
+      <SeoBreadcrumbs items={[{name: "Projects",path: "/projects"}]} hidden />
       <section className="pt-32 pb-20 navy-gradient">
         <div className="container mx-auto section-padding text-center">
           <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Our Portfolio</p>
