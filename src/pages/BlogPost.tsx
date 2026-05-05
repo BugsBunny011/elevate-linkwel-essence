@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Calendar, Clock, User, ArrowLeft, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import MarqueeStrip from "@/components/MarqueeStrip";
+import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 import { blogPosts, getPostBySlug } from "@/data/blogPosts";
 
