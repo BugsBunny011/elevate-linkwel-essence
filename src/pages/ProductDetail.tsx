@@ -91,6 +91,18 @@ const ProductDetail = () => {
             {JSON.stringify(faqSchema)}
           </script>
         )}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://linkwelengineers.com/" },
+              { "@type": "ListItem", position: 2, name: "Products", item: "https://linkwelengineers.com/products" },
+              { "@type": "ListItem", position: 3, name: isCrane ? "Cranes" : "Lifts", item: `https://linkwelengineers.com/products/${isCrane ? "cranes" : "lifts"}` },
+              { "@type": "ListItem", position: 4, name: product.title, item: `https://linkwelengineers.com/products/${product.slug}` },
+            ],
+          })}
+        </script>
       </Helmet>
 
       {/* Breadcrumb */}
