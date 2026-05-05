@@ -66,6 +66,13 @@ const BlogPost = () => {
         <meta name="twitter:description" content={post.excerpt} />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
       </Helmet>
+      <SeoBreadcrumbs
+        items={[
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ]}
+        hidden
+      />
 
       {/* Hero */}
       <section className="pt-32 pb-12 navy-gradient">
