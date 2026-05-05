@@ -91,7 +91,33 @@ const Index = () => {
               "@id": "https://linkwelengineers.com/#website",
               "url": "https://linkwelengineers.com/",
               "name": "Linkwel Engineers",
-              "publisher": { "@id": "https://linkwelengineers.com/#organization" }
+              "publisher": { "@id": "https://linkwelengineers.com/#organization" },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://linkwelengineers.com/products?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            },
+            {
+              "@type": "ItemList",
+              "@id": "https://linkwelengineers.com/#sitelinks",
+              "name": "Linkwel Engineers Site Navigation",
+              "itemListElement": [
+                { "@type": "SiteNavigationElement", "position": 1, "name": "Products", "url": "https://linkwelengineers.com/products" },
+                { "@type": "SiteNavigationElement", "position": 2, "name": "Lifts & Elevators", "url": "https://linkwelengineers.com/products/lifts" },
+                { "@type": "SiteNavigationElement", "position": 3, "name": "Industrial Cranes", "url": "https://linkwelengineers.com/products/cranes" },
+                { "@type": "SiteNavigationElement", "position": 4, "name": "Services", "url": "https://linkwelengineers.com/services" },
+                { "@type": "SiteNavigationElement", "position": 5, "name": "Projects", "url": "https://linkwelengineers.com/projects" },
+                { "@type": "SiteNavigationElement", "position": 6, "name": "About Us", "url": "https://linkwelengineers.com/about" },
+                { "@type": "SiteNavigationElement", "position": 7, "name": "Blog", "url": "https://linkwelengineers.com/blog" },
+                { "@type": "SiteNavigationElement", "position": 8, "name": "Contact", "url": "https://linkwelengineers.com/contact" }
+              ]
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://linkwelengineers.com/" }
+              ]
             }
           ]
         })}</script>
