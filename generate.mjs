@@ -29,6 +29,8 @@ const productSlugs = [
   "electric-hoists",
 ];
 
+const blogSlugs = ["india-vertical-mobility-boom-2026"];
+
 const routes = [
   "/",
   "/about",
@@ -38,6 +40,8 @@ const routes = [
   "/products/lifts",
   "/products/cranes",
   "/contact",
+  "/blog",
+  ...blogSlugs.map((s) => `/blog/${s}`),
   ...productSlugs.map((s) => `/products/${s}`),
 ];
 
