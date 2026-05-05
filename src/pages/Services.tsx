@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
 import MarqueeStrip from "@/components/MarqueeStrip";
+import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const services = [
@@ -49,6 +50,7 @@ const Services = () => {
         <meta name="twitter:title" content="Lift & Crane Services in India | Installation, AMC, Modernization" />
         <meta name="twitter:description" content="Expert installation, maintenance & AMC services for lifts and industrial cranes across India." />
       </Helmet>
+      <SeoBreadcrumbs items={[{name: "Services",path: "/services"}]} hidden />
       <section className="pt-32 pb-20 navy-gradient">
         <div className="container mx-auto section-padding text-center">
           <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">What We Offer</p>

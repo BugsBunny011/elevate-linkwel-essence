@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import MarqueeStrip from "@/components/MarqueeStrip";
+import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 import { liftProducts } from "@/data/products";
 
@@ -28,6 +29,7 @@ const ProductsLifts = () => {
         <meta name="twitter:title" content="Elevators & Lifts in India | Passenger, Home, Hospital, Capsule" />
         <meta name="twitter:description" content="Premium elevators and lifts by Linkwel Engineers - passenger, home, hospital, capsule, goods and car lifts." />
       </Helmet>
+      <SeoBreadcrumbs items={[{name: "Products",path: "/products"},{name: "Lifts",path: "/products/lifts"}]} hidden />
 
       {/* Hero */}
       <section className="pt-32 pb-20 navy-gradient">

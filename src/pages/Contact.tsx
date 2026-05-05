@@ -3,6 +3,7 @@ import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
 import MarqueeStrip from "@/components/MarqueeStrip";
+import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 import { toast } from "sonner";
 
@@ -52,6 +53,7 @@ const Contact = () => {
         <meta name="twitter:title" content="Contact Linkwel Engineers | Free Lift & Crane Quote in India" />
         <meta name="twitter:description" content="Free quote and consultation for elevators, lifts and industrial cranes from Linkwel Engineers." />
       </Helmet>
+      <SeoBreadcrumbs items={[{name: "Contact",path: "/contact"}]} hidden />
       <section className="pt-32 pb-20 navy-gradient">
         <div className="container mx-auto section-padding text-center">
           <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Get In Touch</p>

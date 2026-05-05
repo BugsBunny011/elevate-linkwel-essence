@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Calendar, Clock, User, ArrowLeft, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import MarqueeStrip from "@/components/MarqueeStrip";
+import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 import { blogPosts, getPostBySlug } from "@/data/blogPosts";
 
@@ -65,6 +66,13 @@ const BlogPost = () => {
         <meta name="twitter:description" content={post.excerpt} />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
       </Helmet>
+      <SeoBreadcrumbs
+        items={[
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ]}
+        hidden
+      />
 
       {/* Hero */}
       <section className="pt-32 pb-12 navy-gradient">

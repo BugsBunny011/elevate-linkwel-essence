@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import MarqueeStrip from "@/components/MarqueeStrip";
+import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 import { blogPosts } from "@/data/blogPosts";
 
@@ -55,6 +56,7 @@ const Blog = () => {
           {JSON.stringify(itemListSchema)}
         </script>
       </Helmet>
+      <SeoBreadcrumbs items={[{name: "Blog",path: "/blog"}]} hidden />
 
       {/* Hero */}
       <section className="pt-32 pb-20 navy-gradient">

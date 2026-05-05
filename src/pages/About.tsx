@@ -2,6 +2,7 @@ import { Target, Eye, Shield, Lightbulb, Award, Heart } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
 import MarqueeStrip from "@/components/MarqueeStrip";
+import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 import installImg from "@/assets/elevator-installation.jpg";
 import maintenanceImg from "@/assets/elevator-maintenance.jpg";
@@ -35,6 +36,7 @@ const About = () => {
         <meta name="twitter:title" content="About Linkwel Engineers | Lift & Crane Manufacturers Since 1989" />
         <meta name="twitter:description" content="Trusted elevator, lift and industrial crane manufacturer in India since 1989." />
       </Helmet>
+      <SeoBreadcrumbs items={[{ name: "About", path: "/about" }]} hidden />
       {/* Hero */}
       <section className="pt-32 pb-20 navy-gradient">
         <div className="container mx-auto section-padding text-center">
