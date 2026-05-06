@@ -196,6 +196,42 @@ const BlogPost = () => {
             })}
           </div>
 
+          {/* FAQ */}
+          {post.faqs && post.faqs.length > 0 && (
+            <div className="mt-16">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">
+                Frequently Asked Questions
+              </h2>
+              <div className="flex flex-col gap-4">
+                {post.faqs.map((f, i) => (
+                  <div
+                    key={i}
+                    className="border border-border rounded-lg p-5 bg-card"
+                  >
+                    <h3 className="text-lg font-heading font-semibold text-foreground mb-2">
+                      {f.q}
+                    </h3>
+                    <p className="text-base font-body text-muted-foreground leading-relaxed">
+                      {f.a}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Author bio */}
+          {post.authorBio && (
+            <div className="mt-12 p-6 rounded-lg border border-border bg-muted/30">
+              <p className="text-accent font-body text-xs tracking-[0.3em] uppercase mb-2">
+                About the Author
+              </p>
+              <p className="text-base font-body text-muted-foreground leading-relaxed">
+                {post.authorBio}
+              </p>
+            </div>
+          )}
+
           {/* CTA */}
           <div className="mt-16 p-8 md:p-10 rounded-lg navy-gradient border border-gold/20 text-center">
             <h3 className="text-2xl md:text-3xl font-heading font-bold text-gold-light mb-3">
