@@ -1,4 +1,5 @@
 import blogIndiaInfra from "@/assets/blog-india-infra-2026.jpg";
+import blogHomeElevatorGuide from "@/assets/blog-home-elevator-guide-2026.jpg";
 
 export type BlogBlock =
   | { type: "p"; text: string }
@@ -53,7 +54,207 @@ const indiaPostFaqs: BlogFaq[] = [
   },
 ];
 
+const homeElevatorFaqs: BlogFaq[] = [
+  {
+    q: "What is the minimum space needed for a home elevator in India?",
+    a: "Most modern home elevators in India can fit in a shaft as compact as 1000 mm x 1000 mm (internal) for a 2–3 person cabin. Pneumatic vacuum lifts can be even smaller — around 800 mm diameter — while a comfortable 4-passenger MRL home lift typically needs about 1500 mm x 1400 mm of shaft space.",
+  },
+  {
+    q: "How many floors can a home lift cover?",
+    a: "A typical residential home elevator in India is engineered for 2 to 6 stops, covering ground + 5 floors comfortably. Traction MRL and hydraulic systems can handle G+5 or more with ease, while pneumatic vacuum lifts are usually best suited up to 3–4 stops.",
+  },
+  {
+    q: "Is a machine room required for a home elevator?",
+    a: "No. Modern home lifts are largely Machine Room Less (MRL). Traction MRL and pneumatic vacuum elevators do not need a separate machine room, while hydraulic home lifts only need a small power-pack cabinet that can sit in a utility area within ~10 m of the shaft.",
+  },
+  {
+    q: "What is the maintenance cost of a home lift per year in India?",
+    a: "Annual maintenance contracts (AMC) for residential elevators in India typically range from ₹15,000 to ₹45,000 per year, depending on the type of lift, number of stops and level of coverage (comprehensive vs non-comprehensive). Pneumatic and premium imported lifts can cost more due to specialized parts.",
+  },
+  {
+    q: "Can a home elevator be added to an already constructed building?",
+    a: "Yes. Pneumatic vacuum lifts and compact MRL home elevators are specifically designed for retrofit projects in existing villas, duplexes and bungalows. They need minimal civil work, can often be installed in a stairwell void or external shaft, and typically take 2–4 weeks to commission.",
+  },
+];
+
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "home-elevator-buying-guide-india-2026",
+    title: "Home Elevator Buying Guide India 2026",
+    excerpt:
+      "Planning to install home elevators in your residential project? Our 2026 guide covers types, costs, shaft requirements and safety norms for builders in Delhi, Noida and Gurgaon.",
+    date: new Date().toISOString().slice(0, 10),
+    readTime: "10 min read",
+    author: "Linkwel Engineers Editorial",
+    category: "Buying Guide",
+    image: blogHomeElevatorGuide,
+    imageAlt:
+      "Home elevator installed in a luxury villa in Delhi NCR by Linkwel Engineers",
+    keywords:
+      "home elevator India 2026, home lift Delhi NCR, residential elevator cost India, villa lift manufacturers Delhi, home elevator buying guide India",
+    authorBio:
+      "Written by the Linkwel Engineers editorial team — elevator and crane manufacturers in New Delhi with 35+ years of experience.",
+    faqs: homeElevatorFaqs,
+    content: [
+      {
+        type: "p",
+        text: "Home elevators have moved from being a luxury feature to a near-default specification in premium residential projects across Delhi NCR. In 2026, builders and developers in Delhi, Noida and Gurgaon are increasingly adding home lifts to villas, duplexes, builder floors and luxury independent houses — both to meet buyer expectations and to future-proof homes for ageing residents and accessibility.",
+      },
+      {
+        type: "p",
+        text: "This home elevator buying guide India 2026 is written specifically for builders, architects and developers who need to specify, budget and plan home lifts at the design stage itself. It covers the four main home lift technologies, realistic 2026 pricing, shaft and pit requirements, safety compliance and why a strong local manufacturing partner usually wins over a purely imported brand.",
+      },
+      {
+        type: "h2",
+        text: "Why Home Elevators Are Now a Standard Feature in Delhi NCR",
+      },
+      {
+        type: "p",
+        text: "Three structural shifts are driving demand for the home lift Delhi NCR market in 2026: taller plot-based villas (G+3 and G+4 are now common in DLF, Gurgaon sectors and Noida), an ageing demographic among end-buyers, and a clear pricing premium that homes with elevators command on resale. For developers, offering a home elevator is no longer a differentiator — its absence is now a deal-breaker in the premium segment.",
+      },
+      {
+        type: "h2",
+        text: "Types of Home Elevators Available in India",
+      },
+      {
+        type: "p",
+        text: "From a builder's perspective, the four most relevant home elevator technologies in India today are Hydraulic, Pneumatic (Vacuum), Traction MRL and Chain-driven systems. Each has a distinct cost, shaft, serviceability and aesthetic profile.",
+      },
+      {
+        type: "h3",
+        text: "1. Hydraulic Home Elevators",
+      },
+      {
+        type: "ul",
+        items: [
+          "Pros: Very smooth ride, no overhead machine room needed, excellent for low-rise villas (G+3), strong load capacity, quiet operation.",
+          "Cons: Requires a small hydraulic power pack room near the shaft, slightly slower than traction lifts, oil-based system needs periodic checks.",
+          "Best for: Independent villas and bungalows where ride comfort and reliability matter more than top speed.",
+        ],
+      },
+      {
+        type: "h3",
+        text: "2. Pneumatic (Vacuum) Home Elevators",
+      },
+      {
+        type: "ul",
+        items: [
+          "Pros: Self-supported tube — no pit, no machine room, minimal civil work, ideal retrofit option for already constructed homes, panoramic 360° view.",
+          "Cons: Limited capacity (typically 1–3 persons), shorter travel (usually up to 3–4 stops), higher equipment cost per stop.",
+          "Best for: Retrofits, boutique villas and architects who want a sculptural, glass-tube lift as a design statement.",
+        ],
+      },
+      {
+        type: "h3",
+        text: "3. Traction MRL (Machine Room Less) Home Elevators",
+      },
+      {
+        type: "ul",
+        items: [
+          "Pros: Best energy efficiency thanks to gearless PMSM motors, no separate machine room, higher speeds, suitable for G+4 and above, lowest long-term running cost.",
+          "Cons: Slightly higher upfront cost than chain-driven systems, servicing needs trained technicians inside the shaft.",
+          "Best for: Most modern villas, duplex penthouses and luxury builder floors in Delhi, Noida and Gurgaon.",
+        ],
+      },
+      {
+        type: "h3",
+        text: "4. Chain-driven Home Elevators",
+      },
+      {
+        type: "ul",
+        items: [
+          "Pros: Compact, cost-effective, simple mechanics, easy to install in tight shafts.",
+          "Cons: Noisier than traction or hydraulic, lower ride comfort, generally limited to small homes and low travel.",
+          "Best for: Budget residential elevator cost India projects where the priority is basic vertical access at a low price point.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "How Much Does a Home Elevator Cost in India in 2026?",
+      },
+      {
+        type: "p",
+        text: "Realistic 2026 pricing for a fully installed home lift in Delhi NCR — including cabin, controller, doors, basic civil interface and commissioning — typically falls into three tiers. Final cost depends on number of floors, capacity, cabin finish, door type and brand.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Budget (chain-driven / basic hydraulic, 2–3 stops): ₹6 lakh to ₹10 lakh.",
+          "Mid-range (traction MRL or quality hydraulic, 3–4 stops, standard finish): ₹10 lakh to ₹16 lakh.",
+          "Premium (high-end MRL or pneumatic vacuum, 4+ stops, designer cabin, automatic doors, ARD and BMS integration): ₹16 lakh to ₹35 lakh and above.",
+        ],
+      },
+      {
+        type: "p",
+        text: "For developers planning multiple units across a project, bulk procurement and standardized cabin design typically bring per-unit cost down by 10–18%. Working early with experienced villa lift manufacturers Delhi developers already trust avoids late-stage shaft redesigns that can quietly add lakhs to a single tower.",
+      },
+      {
+        type: "h2",
+        text: "Space and Shaft Requirements — Plan at the Drawing Stage",
+      },
+      {
+        type: "p",
+        text: "The single most expensive mistake builders make is finalising civil drawings without locking the elevator specification. Pit depth, overhead clearance and shaft size must be coordinated with the OEM at the design stage itself.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Shaft size: Compact home lifts start at ~1000 mm x 1000 mm internal; comfortable 4-passenger cabins need ~1500 mm x 1400 mm.",
+          "Pit depth: 150 mm (pneumatic / pit-less designs) up to 600–1000 mm for traction and hydraulic systems.",
+          "Overhead clearance: 2400 mm to 3500 mm depending on technology and speed.",
+          "Power supply: Typically 3-phase, 415V, 5–7.5 HP for traction; pneumatic lifts often run on single-phase.",
+          "Door & lobby: Plan minimum 900 mm clear opening and a comfortable arrival lobby on each floor.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Safety Standards and Compliance in India",
+      },
+      {
+        type: "p",
+        text: "Home elevators in India must comply with the same core safety framework that governs commercial lifts: relevant Bureau of Indian Standards (BIS) codes, the National Building Code (NBC) 2016 and the applicable State Lift Act (Delhi, Haryana and Uttar Pradesh each have their own).",
+      },
+      {
+        type: "ul",
+        items: [
+          "BIS-aligned manufacturing for cars, controllers, ropes, doors and safety gear.",
+          "NBC 2016 compliance for shaft fire rating, ventilation and accessibility.",
+          "State Lift Act registration, periodic inspection and licensed installation.",
+          "Mandatory safety devices: ARD (Automatic Rescue Device), overspeed governor, door sensors, interlocks and emergency intercom.",
+        ],
+      },
+      {
+        type: "html",
+        html: 'For broader policy and infrastructure context, public dashboards from <a href="https://www.ibef.org" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:opacity-80">IBEF</a> and the <a href="https://mohua.gov.in" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:opacity-80">Ministry of Housing & Urban Affairs</a> continue to highlight how rapidly India\'s residential construction and urban-mobility norms are evolving.',
+      },
+      {
+        type: "h2",
+        text: "Why Choose a Local Manufacturer Over an Imported Brand",
+      },
+      {
+        type: "p",
+        text: "Imported brands look attractive on a brochure, but the real cost of a home elevator is felt over the next 15–20 years of ownership. A local manufacturer almost always wins on the metrics that actually matter to a developer and to the eventual homeowner.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Service support: Local engineers can reach a Delhi, Noida or Gurgaon site within hours, not days.",
+          "Spare parts availability: Indian-made components are stocked locally — no waiting weeks for an imported PCB or door operator.",
+          "AMC economics: Annual maintenance contracts with Indian OEMs are typically 30–50% lower than imported equivalents.",
+          "Customisation: Local manufacturers can match shaft sizes, cabin finishes and door configurations to your project drawings.",
+          "Accountability: A single point of responsibility — manufacturer, installer and AMC partner all under one roof.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Linkwel Engineers, headquartered in New Delhi, designs and installs the full range of home, passenger, hospital, capsule, car and goods elevators across Delhi NCR. With more than three decades of engineering experience and dedicated service teams in Delhi, Noida and Gurgaon, we work with builders and developers from the drawing-stage shaft layout right through to long-term AMC.",
+      },
+      {
+        type: "quote",
+        text: "Specify the lift before you finalise the staircase — not after. The home elevator is no longer an accessory; it is a core part of the architecture.",
+      },
+    ],
+  },
   {
     slug: "india-vertical-mobility-boom-2026",
     title:
