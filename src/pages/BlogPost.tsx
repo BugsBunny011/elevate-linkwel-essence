@@ -170,8 +170,6 @@ const BlogPost = () => {
                       dangerouslySetInnerHTML={{ __html: block.html }}
                     />
                   );
-                  // eslint-disable-next-line no-fallthrough
-                  case "ul_placeholder": return null;
                 case "ul":
                   return (
                     <ul
