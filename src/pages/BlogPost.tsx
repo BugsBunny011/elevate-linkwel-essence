@@ -162,6 +162,16 @@ const BlogPost = () => {
                       {block.text}
                     </p>
                   );
+                case "html":
+                  return (
+                    <p
+                      key={i}
+                      className="text-base md:text-lg font-body text-muted-foreground leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: block.html }}
+                    />
+                  );
+                  // eslint-disable-next-line no-fallthrough
+                  case "ul_placeholder": return null;
                 case "ul":
                   return (
                     <ul
