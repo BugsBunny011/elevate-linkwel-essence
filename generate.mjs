@@ -29,7 +29,10 @@ const productSlugs = [
   "electric-hoists",
 ];
 
-const blogSlugs = ["india-vertical-mobility-boom-2026"];
+const blogSlugs = [
+  "india-vertical-mobility-boom-2026",
+  "home-elevator-buying-guide-india-2026",
+];
 
 const routes = [
   "/",
