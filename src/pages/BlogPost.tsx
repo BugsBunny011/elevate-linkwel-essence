@@ -21,30 +21,36 @@ const BlogPost = () => {
   if (!post) return <Navigate to="/blog" replace />;
 
   const url = `https://linkwelengineers.com/blog/${post.slug}`;
+  const publisher = {
+    "@type": "Organization",
+    name: "Linkwel Engineers",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://linkwelengineers.com/favicon.png",
+    },
+  };
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "@type": "Article",
     headline: post.title,
     description: post.excerpt,
     image: `https://linkwelengineers.com${post.image}`,
     datePublished: post.date,
     dateModified: post.date,
-    author: {
-      "@type": "Organization",
-      name: "Linkwel Engineers",
-      url: "https://linkwelengineers.com",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Linkwel Engineers",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://linkwelengineers.com/favicon.png",
-      },
-    },
+    author: { "@type": "Organization", name: "Linkwel Engineers", url: "https://linkwelengineers.com" },
+    publisher,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     keywords: post.keywords,
   };
+  const faqSchema = post.faqs && post.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: post.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  } : null;
 
   const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
 
@@ -65,6 +71,9 @@ const BlogPost = () => {
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.excerpt} />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+        {faqSchema && (
+          <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        )}
       </Helmet>
       <SeoBreadcrumbs
         items={[
@@ -153,6 +162,14 @@ const BlogPost = () => {
                       {block.text}
                     </p>
                   );
+                case "html":
+                  return (
+                    <p
+                      key={i}
+                      className="text-base md:text-lg font-body text-muted-foreground leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: block.html }}
+                    />
+                  );
                 case "ul":
                   return (
                     <ul
@@ -178,6 +195,42 @@ const BlogPost = () => {
               }
             })}
           </div>
+
+          {/* FAQ */}
+          {post.faqs && post.faqs.length > 0 && (
+            <div className="mt-16">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">
+                Frequently Asked Questions
+              </h2>
+              <div className="flex flex-col gap-4">
+                {post.faqs.map((f, i) => (
+                  <div
+                    key={i}
+                    className="border border-border rounded-lg p-5 bg-card"
+                  >
+                    <h3 className="text-lg font-heading font-semibold text-foreground mb-2">
+                      {f.q}
+                    </h3>
+                    <p className="text-base font-body text-muted-foreground leading-relaxed">
+                      {f.a}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Author bio */}
+          {post.authorBio && (
+            <div className="mt-12 p-6 rounded-lg border border-border bg-muted/30">
+              <p className="text-accent font-body text-xs tracking-[0.3em] uppercase mb-2">
+                About the Author
+              </p>
+              <p className="text-base font-body text-muted-foreground leading-relaxed">
+                {post.authorBio}
+              </p>
+            </div>
+          )}
 
           {/* CTA */}
           <div className="mt-16 p-8 md:p-10 rounded-lg navy-gradient border border-gold/20 text-center">
