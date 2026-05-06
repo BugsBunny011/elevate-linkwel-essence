@@ -21,30 +21,36 @@ const BlogPost = () => {
   if (!post) return <Navigate to="/blog" replace />;
 
   const url = `https://linkwelengineers.com/blog/${post.slug}`;
+  const publisher = {
+    "@type": "Organization",
+    name: "Linkwel Engineers",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://linkwelengineers.com/favicon.png",
+    },
+  };
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "@type": "Article",
     headline: post.title,
     description: post.excerpt,
     image: `https://linkwelengineers.com${post.image}`,
     datePublished: post.date,
     dateModified: post.date,
-    author: {
-      "@type": "Organization",
-      name: "Linkwel Engineers",
-      url: "https://linkwelengineers.com",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Linkwel Engineers",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://linkwelengineers.com/favicon.png",
-      },
-    },
+    author: { "@type": "Organization", name: "Linkwel Engineers", url: "https://linkwelengineers.com" },
+    publisher,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     keywords: post.keywords,
   };
+  const faqSchema = post.faqs && post.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: post.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  } : null;
 
   const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
 
