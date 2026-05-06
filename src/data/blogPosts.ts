@@ -82,7 +82,7 @@ export const blogPosts: BlogPost[] = [
     slug: "home-elevator-buying-guide-india-2026",
     title: "Home Elevator Buying Guide India 2026",
     excerpt:
-      "A practical 2026 guide for builders and developers in Delhi, Noida and Gurgaon — covering home elevator types, costs, shaft requirements and safety norms.",
+      "Planning to install home elevators in your residential project? Our 2026 guide covers types, costs, shaft requirements and safety norms for builders in Delhi, Noida and Gurgaon.",
     date: new Date().toISOString().slice(0, 10),
     readTime: "10 min read",
     author: "Linkwel Engineers Editorial",
