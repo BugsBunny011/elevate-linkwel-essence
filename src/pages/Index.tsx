@@ -362,8 +362,8 @@ const Index = () => {
                 </h2>
                 <p className="text-muted-foreground font-body leading-relaxed mb-8">
                   Since 1989, Linkwel Engineers has combined cutting-edge technology with deep industry expertise
-                  to deliver elevator and crane solutions that exceed expectations. Our commitment to safety, innovation,
-                  and client satisfaction sets us apart.
+                  to deliver <Link to="/products/lifts" className="text-accent hover:underline">elevator</Link> and <Link to="/products/cranes" className="text-accent hover:underline">crane</Link> solutions that exceed expectations. Our commitment to safety, innovation,
+                  and client satisfaction sets us apart, see our <Link to="/services" className="text-accent hover:underline">services</Link>, browse <Link to="/projects" className="text-accent hover:underline">recent projects</Link>, or read insights on our <Link to="/blog" className="text-accent hover:underline">blog</Link>.
                 </p>
                 <div className="space-y-4">
                   {["Comprehensive Annual Maintenance Contracts", "State-of-the-art Technology Solutions", "Trusted by 500+ Clients Across India", "Expert Installation & Modernization"].map((item, i) => (
