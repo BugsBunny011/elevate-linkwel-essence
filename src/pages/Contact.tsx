@@ -143,7 +143,7 @@ const Contact = () => {
                 <div>
                   <h2 className="text-2xl font-heading font-bold text-foreground mb-6">Contact Information</h2>
                   <p className="text-muted-foreground font-body leading-relaxed mb-8">
-                    We're here to help you with all your elevator and crane needs. Reach out to us through any of the channels below.
+                    We're here to help you with all your <a href="/products/lifts" className="text-accent hover:underline">elevator</a> and <a href="/products/cranes" className="text-accent hover:underline">crane</a> needs, from new installations to <a href="/services" className="text-accent hover:underline">maintenance and modernization</a>. See <a href="/projects" className="text-accent hover:underline">our projects</a> or learn more <a href="/about" className="text-accent hover:underline">about us</a>. Reach out to us through any of the channels below.
                   </p>
                 </div>
 

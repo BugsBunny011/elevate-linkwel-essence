@@ -213,8 +213,8 @@ const About = () => {
                 <p className="text-gold-light/60 font-body leading-relaxed">
                   Our team comprises highly trained engineers and technicians who bring passion
                   and precision to every project. With continuous training and adherence to
-                  international standards, our professionals ensure that every elevator and crane we
-                  install, maintain, or modernize meets the highest benchmarks of quality and safety.
+                  international standards, our professionals ensure that every <a href="/products/lifts" className="text-gold hover:underline">elevator</a> and <a href="/products/cranes" className="text-gold hover:underline">crane</a> we
+                  install, maintain, or <a href="/services" className="text-gold hover:underline">modernize</a> meets the highest benchmarks of quality and safety. Explore our <a href="/projects" className="text-gold hover:underline">recent projects</a>, read the latest from our <a href="/blog" className="text-gold hover:underline">blog</a>, or <a href="/contact" className="text-gold hover:underline">contact us</a> to start a conversation.
                 </p>
               </div>
             </ScrollReveal>

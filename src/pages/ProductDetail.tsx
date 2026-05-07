@@ -407,7 +407,7 @@ const ProductDetail = () => {
               Interested in {product.title}?
             </h2>
             <p className="text-gold-light/60 font-body text-lg max-w-2xl mx-auto mb-4">
-              Get in touch with Linkwel Engineers for a customised quote and free site consultation.
+              Get in touch with <Link to="/about" className="text-gold hover:underline">Linkwel Engineers</Link> for a customised quote and free site consultation. Read our latest insights in the <Link to={isCrane ? "/blog/india-vertical-mobility-boom-2026" : "/blog/home-elevator-buying-guide-india-2026"} className="text-gold hover:underline">{isCrane ? "industry outlook for 2026" : "home elevator buying guide"}</Link> or browse all <Link to="/blog" className="text-gold hover:underline">articles on our blog</Link>.
             </p>
             <p className="text-gold-light/40 font-body text-sm mb-8">
               Serving Delhi, Noida, Gurgaon and across India
