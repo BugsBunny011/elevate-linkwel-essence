@@ -246,8 +246,8 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        type: "p",
-        text: "Linkwel Engineers, headquartered in New Delhi, designs and installs the full range of home, passenger, hospital, capsule, car and goods elevators across Delhi NCR. With more than three decades of engineering experience and dedicated service teams in Delhi, Noida and Gurgaon, we work with builders and developers from the drawing-stage shaft layout right through to long-term AMC.",
+        type: "html",
+        html: 'Linkwel Engineers, headquartered in New Delhi, designs and installs the full range of <a href="/products/home-elevators" class="text-accent underline underline-offset-2 hover:opacity-80">home elevators</a>, <a href="/products/passenger-elevators" class="text-accent underline underline-offset-2 hover:opacity-80">passenger elevators</a>, <a href="/products/hospital-elevators" class="text-accent underline underline-offset-2 hover:opacity-80">hospital elevators</a>, <a href="/products/capsule-elevators" class="text-accent underline underline-offset-2 hover:opacity-80">capsule elevators</a>, car and <a href="/products/goods-elevators" class="text-accent underline underline-offset-2 hover:opacity-80">goods elevators</a> across Delhi NCR. With more than three decades of engineering experience and dedicated <a href="/services" class="text-accent underline underline-offset-2 hover:opacity-80">service teams</a> in Delhi, Noida and Gurgaon, we work with builders and developers from the drawing-stage shaft layout right through to long-term AMC. For market context, see our companion piece on <a href="/blog/india-vertical-mobility-boom-2026" class="text-accent underline underline-offset-2 hover:opacity-80">India\'s vertical mobility boom in 2026</a>, or <a href="/contact" class="text-accent underline underline-offset-2 hover:opacity-80">get in touch</a> for a project consultation.',
       },
       {
         type: "quote",
@@ -287,8 +287,8 @@ export const blogPosts: BlogPost[] = [
         text: "Premium residential towers in Noida, Greater Noida and Gurgaon are increasingly crossing the 40-floor mark, with several mixed-use developments now planned beyond G+60. This shift is fuelling a structural increase in demand for high-speed passenger elevators, MRL (machine-room-less) lifts and intelligent destination-control systems.",
       },
       {
-        type: "p",
-        text: "Developers are also prioritising elevators that perform reliably during peak load hours, support EV-style regenerative drives, and integrate cleanly with building management systems. This is a strong signal for established lift manufacturers Delhi NCR depends on, especially those who can deliver both quality engineering and long-term service support locally.",
+        type: "html",
+        html: 'Developers are also prioritising <a href="/products/passenger-elevators" class="text-accent underline underline-offset-2 hover:opacity-80">passenger elevators</a> that perform reliably during peak load hours, support EV-style regenerative drives, and integrate cleanly with building management systems. This is a strong signal for established <a href="/products/lifts" class="text-accent underline underline-offset-2 hover:opacity-80">lift manufacturers Delhi NCR</a> depends on, especially those who can deliver both quality engineering and long-term <a href="/services" class="text-accent underline underline-offset-2 hover:opacity-80">service support</a> locally.',
       },
       {
         type: "h2",
@@ -364,8 +364,8 @@ export const blogPosts: BlogPost[] = [
         text: "Industrial Cranes: Powering 'Make in India' Manufacturing",
       },
       {
-        type: "p",
-        text: "On the industrial side, a steady wave of new factories, from auto components and white goods to renewable-energy equipment, is driving sustained EOT crane demand India-wide. Material handling has moved from being an afterthought to a core productivity lever on the shop floor, and industrial crane suppliers Gurgaon and Delhi NCR depend on are seeing strong order books from across North India.",
+        type: "html",
+        html: 'On the industrial side, a steady wave of new factories, from auto components and white goods to renewable-energy equipment, is driving sustained <a href="/products/eot-cranes" class="text-accent underline underline-offset-2 hover:opacity-80">EOT crane</a> demand India-wide. Material handling has moved from being an afterthought to a core productivity lever on the shop floor, and <a href="/products/cranes" class="text-accent underline underline-offset-2 hover:opacity-80">industrial crane suppliers</a> Gurgaon and Delhi NCR depend on are seeing strong order books from across North India.',
       },
       {
         type: "ul",
@@ -401,8 +401,8 @@ export const blogPosts: BlogPost[] = [
         text: "How Linkwel Engineers Is Building for This Moment",
       },
       {
-        type: "p",
-        text: "With more than three decades of engineering experience, Linkwel Engineers manufactures and installs a complete range of passenger, home, hospital, capsule, car and goods elevators along with EOT, single girder, double girder, goliath, gantry and jib cranes. Our teams across Delhi, Noida and Gurgaon support every project from design and installation to modernization and AMC, because sky truly is the limit.",
+        type: "html",
+        html: 'With more than three decades of engineering experience, Linkwel Engineers manufactures and installs a complete range of <a href="/products/lifts" class="text-accent underline underline-offset-2 hover:opacity-80">elevators</a> (passenger, home, hospital, capsule, car and goods) along with <a href="/products/cranes" class="text-accent underline underline-offset-2 hover:opacity-80">cranes</a> (EOT, single girder, double girder, goliath, gantry and jib). Our teams across Delhi, Noida and Gurgaon support every project from design and installation to <a href="/services" class="text-accent underline underline-offset-2 hover:opacity-80">modernization and AMC</a>. Planning a build? <a href="/contact" class="text-accent underline underline-offset-2 hover:opacity-80">Talk to our engineers</a> or read our <a href="/blog/home-elevator-buying-guide-india-2026" class="text-accent underline underline-offset-2 hover:opacity-80">home elevator buying guide for 2026</a>.',
       },
     ],
   },
