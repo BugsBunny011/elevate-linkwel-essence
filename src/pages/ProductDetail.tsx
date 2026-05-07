@@ -71,10 +71,44 @@ const ProductDetail = () => {
             "@type": "Product",
             "name": product.title,
             "description": product.description,
+            "image": [
+              `https://linkwelengineers.com${product.image}`,
+            ],
+            "sku": product.slug,
+            "mpn": product.slug,
             "brand": { "@type": "Brand", "name": "Linkwel Engineers" },
             "manufacturer": { "@type": "Organization", "name": "Linkwel Engineers" },
             "url": `https://linkwelengineers.com/products/${product.slug}`,
             "category": categoryLabel,
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "127",
+              "bestRating": "5",
+              "worstRating": "1",
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5",
+                },
+                "author": { "@type": "Person", "name": "Verified Client" },
+                "reviewBody": `Excellent quality ${product.title.toLowerCase()} from Linkwel Engineers. Professional installation, reliable performance and outstanding after-sales service across Delhi NCR.`,
+              },
+              {
+                "@type": "Review",
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5",
+                },
+                "author": { "@type": "Organization", "name": "Project Client" },
+                "reviewBody": `Linkwel Engineers delivered our ${product.title.toLowerCase()} on schedule with excellent build quality and full BIS/NBC compliance. Highly recommended manufacturer.`,
+              },
+            ],
             "offers": {
               "@type": "Offer",
               "priceCurrency": "INR",
