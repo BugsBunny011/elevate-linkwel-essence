@@ -57,7 +57,7 @@ const indiaPostFaqs: BlogFaq[] = [
 const homeElevatorFaqs: BlogFaq[] = [
   {
     q: "What is the minimum space needed for a home elevator in India?",
-    a: "Most modern home elevators in India can fit in a shaft as compact as 1000 mm x 1000 mm (internal) for a 2–3 person cabin. Pneumatic vacuum lifts can be even smaller — around 800 mm diameter — while a comfortable 4-passenger MRL home lift typically needs about 1500 mm x 1400 mm of shaft space.",
+    a: "Most modern home elevators in India can fit in a shaft as compact as 1000 mm x 1000 mm (internal) for a 2–3 person cabin. Pneumatic vacuum lifts can be even smaller, around 800 mm diameter, while a comfortable 4-passenger MRL home lift typically needs about 1500 mm x 1400 mm of shaft space.",
   },
   {
     q: "How many floors can a home lift cover?",
@@ -93,12 +93,12 @@ export const blogPosts: BlogPost[] = [
     keywords:
       "home elevator India 2026, home lift Delhi NCR, residential elevator cost India, villa lift manufacturers Delhi, home elevator buying guide India",
     authorBio:
-      "Written by the Linkwel Engineers editorial team — elevator and crane manufacturers in New Delhi with 35+ years of experience.",
+      "Written by the Linkwel Engineers editorial team, elevator and crane manufacturers in New Delhi with 35+ years of experience.",
     faqs: homeElevatorFaqs,
     content: [
       {
         type: "p",
-        text: "Home elevators have moved from being a luxury feature to a near-default specification in premium residential projects across Delhi NCR. In 2026, builders and developers in Delhi, Noida and Gurgaon are increasingly adding home lifts to villas, duplexes, builder floors and luxury independent houses — both to meet buyer expectations and to future-proof homes for ageing residents and accessibility.",
+        text: "Home elevators have moved from being a luxury feature to a near-default specification in premium residential projects across Delhi NCR. In 2026, builders and developers in Delhi, Noida and Gurgaon are increasingly adding home lifts to villas, duplexes, builder floors and luxury independent houses, both to meet buyer expectations and to future-proof homes for ageing residents and accessibility.",
       },
       {
         type: "p",
@@ -110,7 +110,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Three structural shifts are driving demand for the home lift Delhi NCR market in 2026: taller plot-based villas (G+3 and G+4 are now common in DLF, Gurgaon sectors and Noida), an ageing demographic among end-buyers, and a clear pricing premium that homes with elevators command on resale. For developers, offering a home elevator is no longer a differentiator — its absence is now a deal-breaker in the premium segment.",
+        text: "Three structural shifts are driving demand for the home lift Delhi NCR market in 2026: taller plot-based villas (G+3 and G+4 are now common in DLF, Gurgaon sectors and Noida), an ageing demographic among end-buyers, and a clear pricing premium that homes with elevators command on resale. For developers, offering a home elevator is no longer a differentiator, its absence is now a deal-breaker in the premium segment.",
       },
       {
         type: "h2",
@@ -139,7 +139,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Pros: Self-supported tube — no pit, no machine room, minimal civil work, ideal retrofit option for already constructed homes, panoramic 360° view.",
+          "Pros: Self-supported tube, no pit, no machine room, minimal civil work, ideal retrofit option for already constructed homes, panoramic 360° view.",
           "Cons: Limited capacity (typically 1–3 persons), shorter travel (usually up to 3–4 stops), higher equipment cost per stop.",
           "Best for: Retrofits, boutique villas and architects who want a sculptural, glass-tube lift as a design statement.",
         ],
@@ -174,7 +174,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Realistic 2026 pricing for a fully installed home lift in Delhi NCR — including cabin, controller, doors, basic civil interface and commissioning — typically falls into three tiers. Final cost depends on number of floors, capacity, cabin finish, door type and brand.",
+        text: "Realistic 2026 pricing for a fully installed home lift in Delhi NCR, including cabin, controller, doors, basic civil interface and commissioning, typically falls into three tiers. Final cost depends on number of floors, capacity, cabin finish, door type and brand.",
       },
       {
         type: "ul",
@@ -190,7 +190,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "h2",
-        text: "Space and Shaft Requirements — Plan at the Drawing Stage",
+        text: "Space and Shaft Requirements, Plan at the Drawing Stage",
       },
       {
         type: "p",
@@ -239,10 +239,10 @@ export const blogPosts: BlogPost[] = [
         type: "ul",
         items: [
           "Service support: Local engineers can reach a Delhi, Noida or Gurgaon site within hours, not days.",
-          "Spare parts availability: Indian-made components are stocked locally — no waiting weeks for an imported PCB or door operator.",
+          "Spare parts availability: Indian-made components are stocked locally, no waiting weeks for an imported PCB or door operator.",
           "AMC economics: Annual maintenance contracts with Indian OEMs are typically 30–50% lower than imported equivalents.",
           "Customisation: Local manufacturers can match shaft sizes, cabin finishes and door configurations to your project drawings.",
-          "Accountability: A single point of responsibility — manufacturer, installer and AMC partner all under one roof.",
+          "Accountability: A single point of responsibility, manufacturer, installer and AMC partner all under one roof.",
         ],
       },
       {
@@ -251,7 +251,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "quote",
-        text: "Specify the lift before you finalise the staircase — not after. The home elevator is no longer an accessory; it is a core part of the architecture.",
+        text: "Specify the lift before you finalise the staircase, not after. The home elevator is no longer an accessory; it is a core part of the architecture.",
       },
     ],
   },
@@ -271,12 +271,12 @@ export const blogPosts: BlogPost[] = [
     keywords:
       "elevator industry India 2026, lift manufacturers Delhi, EOT crane demand India, elevator installation Noida, industrial crane suppliers Gurgaon, goods lift manufacturers India, high rise construction Noida Gurgaon, vertical mobility India",
     authorBio:
-      "This article is written by the editorial team at Linkwel Engineers — elevator and crane manufacturers based in New Delhi with over 35 years of experience in vertical mobility and material handling across India.",
+      "This article is written by the editorial team at Linkwel Engineers, elevator and crane manufacturers based in New Delhi with over 35 years of experience in vertical mobility and material handling across India.",
     faqs: indiaPostFaqs,
     content: [
       {
         type: "p",
-        text: "India's skyline is rising faster than ever — and so is the demand for safer, smarter and greener vertical mobility. As Delhi, Noida and Gurgaon continue to anchor one of the world's most active real-estate corridors, 2026 is shaping up to be a landmark year for both the elevator and industrial crane sectors.",
+        text: "India's skyline is rising faster than ever, and so is the demand for safer, smarter and greener vertical mobility. As Delhi, Noida and Gurgaon continue to anchor one of the world's most active real-estate corridors, 2026 is shaping up to be a landmark year for both the elevator and industrial crane sectors.",
       },
       {
         type: "h2",
@@ -308,7 +308,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "One of the most common questions buyers ask in 2026 is whether to specify a Machine Room Less (MRL) elevator or a conventional geared traction lift. Both are reliable when engineered well — the right answer depends on building type, travel, traffic and serviceability.",
+        text: "One of the most common questions buyers ask in 2026 is whether to specify a Machine Room Less (MRL) elevator or a conventional geared traction lift. Both are reliable when engineered well, the right answer depends on building type, travel, traffic and serviceability.",
       },
       {
         type: "h3",
@@ -336,7 +336,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "For developers comparing options, working early with experienced goods lift manufacturers India trusts can prevent costly shaft redesigns later — particularly when travel height, pit depth or overhead clearances are constrained.",
+        text: "For developers comparing options, working early with experienced goods lift manufacturers India trusts can prevent costly shaft redesigns later, particularly when travel height, pit depth or overhead clearances are constrained.",
       },
       {
         type: "h2",
@@ -344,7 +344,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Safety is non-negotiable. Elevators in India are governed by Bureau of Indian Standards (BIS) codes — including IS 14665 for electric traction lifts, IS 15259 for hydraulic lifts and the IS 17900 series covering safety rules for the construction and installation of lifts. Alongside BIS, the National Building Code (NBC) 2016 prescribes lobby planning, fire-fighting lifts, evacuation lifts and accessibility requirements.",
+        text: "Safety is non-negotiable. Elevators in India are governed by Bureau of Indian Standards (BIS) codes, including IS 14665 for electric traction lifts, IS 15259 for hydraulic lifts and the IS 17900 series covering safety rules for the construction and installation of lifts. Alongside BIS, the National Building Code (NBC) 2016 prescribes lobby planning, fire-fighting lifts, evacuation lifts and accessibility requirements.",
       },
       {
         type: "ul",
@@ -365,7 +365,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "On the industrial side, a steady wave of new factories — from auto components and white goods to renewable-energy equipment — is driving sustained EOT crane demand India-wide. Material handling has moved from being an afterthought to a core productivity lever on the shop floor, and industrial crane suppliers Gurgaon and Delhi NCR depend on are seeing strong order books from across North India.",
+        text: "On the industrial side, a steady wave of new factories, from auto components and white goods to renewable-energy equipment, is driving sustained EOT crane demand India-wide. Material handling has moved from being an afterthought to a core productivity lever on the shop floor, and industrial crane suppliers Gurgaon and Delhi NCR depend on are seeing strong order books from across North India.",
       },
       {
         type: "ul",
@@ -382,7 +382,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Across both lifts and cranes, three themes stand out in 2026: stricter safety codes, sustainability, and predictive maintenance. Energy-efficient gearless machines, LED cabin lighting, regenerative drives and IoT-based remote monitoring are no longer 'premium' features — they are becoming the new baseline.",
+        text: "Across both lifts and cranes, three themes stand out in 2026: stricter safety codes, sustainability, and predictive maintenance. Energy-efficient gearless machines, LED cabin lighting, regenerative drives and IoT-based remote monitoring are no longer 'premium' features, they are becoming the new baseline.",
       },
       {
         type: "quote",
@@ -402,7 +402,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "With more than three decades of engineering experience, Linkwel Engineers manufactures and installs a complete range of passenger, home, hospital, capsule, car and goods elevators along with EOT, single girder, double girder, goliath, gantry and jib cranes. Our teams across Delhi, Noida and Gurgaon support every project from design and installation to modernization and AMC — because sky truly is the limit.",
+        text: "With more than three decades of engineering experience, Linkwel Engineers manufactures and installs a complete range of passenger, home, hospital, capsule, car and goods elevators along with EOT, single girder, double girder, goliath, gantry and jib cranes. Our teams across Delhi, Noida and Gurgaon support every project from design and installation to modernization and AMC, because sky truly is the limit.",
       },
     ],
   },

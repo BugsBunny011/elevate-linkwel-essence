@@ -35,7 +35,7 @@ const Blog = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Blog | Linkwel Engineers — Lift & Crane Industry Insights</title>
+        <title>Blog | Linkwel Engineers: Lift & Crane Industry Insights</title>
         <meta
           name="description"
           content="Industry news, project insights and engineering perspectives on elevators, lifts and industrial cranes across Delhi, Noida and Gurgaon from Linkwel Engineers."
