@@ -115,6 +115,55 @@ const Services = () => {
         </div>
       </section>
 
+      {/* In-depth content for SEO */}
+      <section className="py-20 bg-card">
+        <div className="container mx-auto section-padding max-w-4xl">
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+              End-to-End Lift & Crane Services Across Delhi NCR
+            </h2>
+            <div className="space-y-5 text-muted-foreground font-body leading-relaxed">
+              <p>
+                For over 35 years, Linkwel Engineers has delivered turnkey vertical mobility and material
+                handling solutions across New Delhi, Noida, Gurgaon and the rest of India. Our service
+                portfolio covers the full lifecycle of every installation, from initial site survey and
+                load calculation through commissioning, scheduled maintenance, modernization and
+                long-term support contracts.
+              </p>
+              <p>
+                We service the complete range of our manufactured equipment, including{" "}
+                <Link to="/products/passenger-elevators" className="text-accent underline underline-offset-2 hover:opacity-80">passenger elevators</Link>,{" "}
+                <Link to="/products/home-elevators" className="text-accent underline underline-offset-2 hover:opacity-80">home elevators</Link>,{" "}
+                <Link to="/products/hospital-elevators" className="text-accent underline underline-offset-2 hover:opacity-80">hospital elevators</Link>,{" "}
+                <Link to="/products/goods-elevators" className="text-accent underline underline-offset-2 hover:opacity-80">goods elevators</Link>, and the full{" "}
+                <Link to="/products/cranes" className="text-accent underline underline-offset-2 hover:opacity-80">industrial crane line-up</Link> covering EOT, gantry, jib and goliath configurations.
+              </p>
+              <p>
+                Our maintenance and AMC programs are designed to maximize uptime and equipment lifespan.
+                Each contract includes scheduled inspections, lubrication, safety-circuit testing,
+                wear-component replacement and priority breakdown response by trained technicians based
+                out of our Delhi NCR service hubs.
+              </p>
+              <p>
+                Modernization projects upgrade legacy installations with VVVF drives, gearless machines,
+                modern landing fixtures, ARD units and contemporary cabin interiors, often without
+                requiring major civil work. Read more about industry trends in our{" "}
+                <Link to="/blog/india-vertical-mobility-boom-2026" className="text-accent underline underline-offset-2 hover:opacity-80">India vertical mobility report</Link>{" "}
+                and our{" "}
+                <Link to="/blog/home-elevator-buying-guide-india-2026" className="text-accent underline underline-offset-2 hover:opacity-80">home elevator buying guide</Link>.
+              </p>
+              <p>
+                To request a site visit, scope a new installation or move an existing system onto an
+                AMC plan, please <Link to="/contact" className="text-accent underline underline-offset-2 hover:opacity-80">get in touch with our team</Link>.
+                You can also explore our full{" "}
+                <Link to="/products" className="text-accent underline underline-offset-2 hover:opacity-80">product catalogue</Link> or read about our{" "}
+                <Link to="/about" className="text-accent underline underline-offset-2 hover:opacity-80">company story</Link>.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 navy-gradient">
         <div className="container mx-auto section-padding text-center">
