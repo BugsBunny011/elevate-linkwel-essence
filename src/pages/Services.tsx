@@ -49,6 +49,33 @@ const Services = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Lift & Crane Services in India | Installation, AMC, Modernization" />
         <meta name="twitter:description" content="Expert installation, maintenance & AMC services for lifts and industrial cranes across India." />
+        <meta property="og:image" content="https://linkwelengineers.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://linkwelengineers.com/og-image.jpg" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Lift & Crane Services by Linkwel Engineers",
+          "itemListElement": services.map((s, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "item": {
+              "@type": "Service",
+              "name": s.title,
+              "description": s.desc,
+              "provider": {
+                "@type": "Organization",
+                "name": "Linkwel Engineers",
+                "url": "https://linkwelengineers.com"
+              },
+              "areaServed": [
+                { "@type": "City", "name": "New Delhi" },
+                { "@type": "City", "name": "Noida" },
+                { "@type": "City", "name": "Gurgaon" }
+              ],
+              "serviceType": s.title
+            }
+          }))
+        })}</script>
       </Helmet>
       <SeoBreadcrumbs items={[{name: "Services",path: "/services"}]} hidden />
       <section className="pt-32 pb-20 navy-gradient">
