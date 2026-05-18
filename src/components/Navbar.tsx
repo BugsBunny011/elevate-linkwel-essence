@@ -44,7 +44,7 @@ const navLinks: NavItem[] = [
       { name: "Blog", path: "/blog" },
     ],
   },
-  { name: "Contact", path: "/contact" },
+  
 ];
 
 const Navbar = () => {
