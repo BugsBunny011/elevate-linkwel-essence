@@ -25,6 +25,7 @@ const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Delhi = lazy(() => import("./pages/Delhi"));
 const Noida = lazy(() => import("./pages/Noida"));
 const Gurgaon = lazy(() => import("./pages/Gurgaon"));
+const Locations = lazy(() => import("./pages/Locations"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
