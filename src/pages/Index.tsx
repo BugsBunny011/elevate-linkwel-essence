@@ -33,10 +33,15 @@ const projects = [
 ];
 
 const testimonials = [
-  { name: "Rajesh Patel", role: "Director, Skyline Group", text: "Linkwel Engineers delivered exceptional elevator installations across our building. Their professionalism, reliability, and attention to detail were truly outstanding." },
-  { name: "Priya Sharma", role: "Facility Manager, Grand Hotels", text: "The maintenance service from Linkwel is unparalleled. Our elevators run flawlessly and their response time is incredibly fast." },
-  { name: "Amit Desai", role: "CEO, Metro Developments", text: "We've trusted Linkwel Engineers for over a decade. Their modernization work transformed our aging elevators into state-of-the-art systems." },
+  { name: "Raghav Gupta", rating: 5, date: "3 days ago", text: "We saw this company reference from our relative in Indore. Contacted them for our Gwalior residence. Very professional behavior from sales to installation. Lift design is also very elegant, matches our interior." },
+  { name: "Kinshuk Ahuja", rating: 4, date: "4 days ago", text: "Good product and good service. Only little delay in delivery otherwise everything is fine. Crane quality is superb and their after sales support is also very nice." },
+  { name: "Jivanshu Kumar", rating: 4, date: "4 days ago", text: "Good Company for industrial lifting solutions. staff was responsive and installation quality was proper." },
+  { name: "Sanat Gupta", rating: 5, date: "a week ago", text: "Overall service was good. Installation took one extra day but quality was satisfactory." },
+  { name: "Aditya Singhania", rating: 5, date: "a week ago", text: "Installed hydraulic lift at our warehouse. Smooth experience." },
 ];
+
+const getInitials = (name: string) =>
+  name.split(" ").map((n) => n[0]).slice(0, 2).join("").toUpperCase();
 
 const Index = () => {
   const isSSR = typeof window === "undefined";
@@ -146,20 +151,9 @@ const Index = () => {
         })}</script>
       </Helmet>
       {/* Hero */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-navy-dark">
         <div className="absolute inset-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="none"
-            className="w-full h-full object-cover"
-            poster={heroFallback}
-          >
-            <source src="https://assets.mixkit.co/videos/30544/30544-720.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-navy-dark/65" />
+          <div className="absolute inset-0 navy-gradient" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-transparent to-navy-dark/30" />
         </div>
 
@@ -475,19 +469,40 @@ const Index = () => {
               <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Testimonials</p>
               <h2 className="text-3xl md:text-5xl font-heading font-bold text-gold-light">Client Testimonials</h2>
               <div className="w-16 h-0.5 bg-gold mx-auto mt-4" />
+              <div className="mt-6 inline-flex items-center gap-2 text-gold-light/80 font-body text-sm">
+                <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
+                  <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C12.955 4 4 12.955 4 24s8.955 20 20 20s20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
+                  <path fill="#FF3D00" d="m6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C16.318 4 9.656 8.337 6.306 14.691z"/>
+                  <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
+                  <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
+                </svg>
+                <span>What our clients say on Google</span>
+              </div>
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
               <ScrollReveal key={i} delay={i * 150}>
-                <div className="bg-navy-light/30 backdrop-blur border border-gold/10 rounded-lg p-8">
-                  <Quote className="text-gold/30 mb-4" size={32} />
-                  <p className="text-gold-light/70 font-body text-sm leading-relaxed mb-6">"{t.text}"</p>
-                  <div className="flex items-center gap-1">
+                <div className="bg-navy-light/30 backdrop-blur border border-gold/10 rounded-lg p-8 h-full flex flex-col">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-full gold-gradient flex items-center justify-center text-white font-heading font-semibold text-sm shrink-0">
+                      {getInitials(t.name)}
+                    </div>
+                    <div>
+                      <p className="text-gold-light font-body font-semibold text-sm">{t.name}</p>
+                      {t.date && <p className="text-gold-light/50 font-body text-xs">{t.date}</p>}
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1 mb-4" aria-label={`${t.rating} out of 5 stars`}>
                     {[...Array(5)].map((_, j) => (
-                      <Star key={j} size={14} className="text-gold fill-gold" />
+                      <Star
+                        key={j}
+                        size={14}
+                        className={j < t.rating ? "text-gold fill-gold" : "text-gold/20"}
+                      />
                     ))}
                   </div>
+                  <p className="text-gold-light/70 font-body text-sm leading-relaxed">"{t.text}"</p>
                 </div>
               </ScrollReveal>
             ))}

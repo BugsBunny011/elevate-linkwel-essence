@@ -7,8 +7,34 @@ import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 import { toast } from "sonner";
 
+const PRODUCT_TYPES = [
+  "Passenger Elevator",
+  "Home Elevator",
+  "Goods Elevator",
+  "Hospital Elevator",
+  "Capsule Elevator",
+  "Car Elevator",
+  "EOT Crane",
+  "Single Girder Crane",
+  "Double Girder Crane",
+  "Gantry Crane",
+  "Goliath Crane",
+  "Jib Crane",
+  "Electric Hoist",
+];
+
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
+  const [form, setForm] = useState({
+    productType: "",
+    capacity: "",
+    floorsOrSpan: "",
+    city: "",
+    company: "",
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
 
   const [submitting, setSubmitting] = useState(false);
 
@@ -17,11 +43,8 @@ const Contact = () => {
     setSubmitting(true);
     try {
       const formData = new URLSearchParams();
-      formData.append("form-name", "contact");
-      formData.append("name", form.name);
-      formData.append("phone", form.phone);
-      formData.append("email", form.email);
-      formData.append("message", form.message);
+      formData.append("form-name", "quote");
+      Object.entries(form).forEach(([k, v]) => formData.append(k, v));
 
       await fetch("/", {
         method: "POST",
@@ -30,7 +53,7 @@ const Contact = () => {
       });
 
       toast.success("Thank you! We'll get back to you shortly.");
-      setForm({ name: "", phone: "", email: "", message: "" });
+      setForm({ productType: "", capacity: "", floorsOrSpan: "", city: "", company: "", name: "", phone: "", email: "", message: "" });
     } catch {
       toast.error("Something went wrong. Please try again.");
     } finally {
@@ -73,11 +96,77 @@ const Contact = () => {
             {/* Form */}
             <ScrollReveal>
               <div className="glass-card rounded-lg p-10">
-                <h2 className="text-2xl font-heading font-bold text-foreground mb-6">Send Us a Message</h2>
-                <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-5">
-                  <input type="hidden" name="form-name" value="contact" />
+                <h2 className="text-2xl font-heading font-bold text-foreground mb-6">Request a Quote</h2>
+                <form name="quote" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-5">
+                  <input type="hidden" name="form-name" value="quote" />
                   <div>
-                    <label className="block text-sm font-body font-medium text-foreground mb-1.5">Full Name</label>
+                    <label className="block text-sm font-body font-medium text-foreground mb-1.5">Product Type</label>
+                    <select
+                      name="productType"
+                      required
+                      value={form.productType}
+                      onChange={(e) => setForm({ ...form, productType: e.target.value })}
+                      className="w-full px-4 py-3 rounded-sm border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow"
+                    >
+                      <option value="" disabled>Select a product</option>
+                      {PRODUCT_TYPES.map((p) => (
+                        <option key={p} value={p}>{p}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                      <label className="block text-sm font-body font-medium text-foreground mb-1.5">Capacity Required</label>
+                      <input
+                        type="text"
+                        name="capacity"
+                        required
+                        value={form.capacity}
+                        onChange={(e) => setForm({ ...form, capacity: e.target.value })}
+                        className="w-full px-4 py-3 rounded-sm border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow"
+                        placeholder="e.g. 500 kg / 10 tons"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-body font-medium text-foreground mb-1.5">Floors or Span (m)</label>
+                      <input
+                        type="text"
+                        name="floorsOrSpan"
+                        required
+                        value={form.floorsOrSpan}
+                        onChange={(e) => setForm({ ...form, floorsOrSpan: e.target.value })}
+                        className="w-full px-4 py-3 rounded-sm border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow"
+                        placeholder="e.g. 6 floors / 12 metres"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                      <label className="block text-sm font-body font-medium text-foreground mb-1.5">Installation City</label>
+                      <input
+                        type="text"
+                        name="city"
+                        required
+                        value={form.city}
+                        onChange={(e) => setForm({ ...form, city: e.target.value })}
+                        className="w-full px-4 py-3 rounded-sm border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow"
+                        placeholder="e.g. New Delhi"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-body font-medium text-foreground mb-1.5">Company Name</label>
+                      <input
+                        type="text"
+                        name="company"
+                        value={form.company}
+                        onChange={(e) => setForm({ ...form, company: e.target.value })}
+                        className="w-full px-4 py-3 rounded-sm border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow"
+                        placeholder="Your company"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-body font-medium text-foreground mb-1.5">Your Name</label>
                     <input
                       type="text"
                       name="name"
@@ -90,7 +179,7 @@ const Contact = () => {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-body font-medium text-foreground mb-1.5">Phone</label>
+                      <label className="block text-sm font-body font-medium text-foreground mb-1.5">Phone Number</label>
                       <input
                         type="tel"
                         name="phone"
@@ -102,7 +191,7 @@ const Contact = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-body font-medium text-foreground mb-1.5">Email</label>
+                      <label className="block text-sm font-body font-medium text-foreground mb-1.5">Email Address</label>
                       <input
                         type="email"
                         name="email"
@@ -115,11 +204,10 @@ const Contact = () => {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-body font-medium text-foreground mb-1.5">Message</label>
+                    <label className="block text-sm font-body font-medium text-foreground mb-1.5">Additional Requirements</label>
                     <textarea
                       name="message"
-                      required
-                      rows={5}
+                      rows={4}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       className="w-full px-4 py-3 rounded-sm border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow resize-none"
@@ -131,7 +219,7 @@ const Contact = () => {
                     disabled={submitting}
                     className="gold-gradient text-white font-body font-semibold px-8 py-3.5 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2 w-full justify-center disabled:opacity-60"
                   >
-                    <Send size={16} /> {submitting ? "Sending..." : "Send Message"}
+                    <Send size={16} /> {submitting ? "Sending..." : "Request a Quote"}
                   </button>
                 </form>
               </div>
