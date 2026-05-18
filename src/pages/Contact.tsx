@@ -124,7 +124,7 @@ const Contact = () => {
                         value={form.capacity}
                         onChange={(e) => setForm({ ...form, capacity: e.target.value })}
                         className="w-full px-4 py-3 rounded-sm border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow"
-                        placeholder="e.g. 500 kg / 10 tons"
+                        placeholder="500kg/6 passenger"
                       />
                     </div>
                     <div>
