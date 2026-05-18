@@ -13,6 +13,7 @@ import Index from "./pages/Index";
 // Code-split secondary routes — keeps initial JS bundle small for LCP/SEO.
 const About = lazy(() => import("./pages/About"));
 const Services = lazy(() => import("./pages/Services"));
+const AMC = lazy(() => import("./pages/AMC"));
 const Projects = lazy(() => import("./pages/Projects"));
 const Products = lazy(() => import("./pages/Products"));
 const ProductsLifts = lazy(() => import("./pages/ProductsLifts"));
@@ -21,6 +22,9 @@ const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
+const Delhi = lazy(() => import("./pages/Delhi"));
+const Noida = lazy(() => import("./pages/Noida"));
+const Gurgaon = lazy(() => import("./pages/Gurgaon"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -41,6 +45,7 @@ export const AppRoutes = () => (
       <Route path="/" element={<Index />} />
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/services/amc" element={<AMC />} />
       <Route path="/projects" element={<Projects />} />
       <Route path="/products" element={<Products />} />
       <Route path="/products/lifts" element={<ProductsLifts />} />
@@ -49,6 +54,9 @@ export const AppRoutes = () => (
       <Route path="/contact" element={<Contact />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
+      <Route path="/delhi" element={<Delhi />} />
+      <Route path="/noida" element={<Noida />} />
+      <Route path="/gurgaon" element={<Gurgaon />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </Suspense>

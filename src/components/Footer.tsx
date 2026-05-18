@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="navy-gradient text-gold-light/80">
       <div className="container mx-auto section-padding py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
@@ -69,6 +69,22 @@ const Footer = () => {
                   className="text-sm hover:text-gold transition-colors duration-300"
                 >
                   {product.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Service Areas */}
+          <div>
+            <h4 className="text-gold font-heading text-lg mb-4">Service Areas</h4>
+            <div className="flex flex-col gap-3">
+              {[
+                { name: "Delhi", path: "/delhi" },
+                { name: "Noida", path: "/noida" },
+                { name: "Gurgaon", path: "/gurgaon" },
+              ].map((item) => (
+                <Link key={item.path} to={item.path} className="text-sm hover:text-gold transition-colors duration-300">
+                  {item.name}
                 </Link>
               ))}
             </div>
