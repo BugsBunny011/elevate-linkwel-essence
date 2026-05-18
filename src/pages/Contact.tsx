@@ -7,8 +7,34 @@ import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 import { toast } from "sonner";
 
+const PRODUCT_TYPES = [
+  "Passenger Elevator",
+  "Home Elevator",
+  "Goods Elevator",
+  "Hospital Elevator",
+  "Capsule Elevator",
+  "Car Elevator",
+  "EOT Crane",
+  "Single Girder Crane",
+  "Double Girder Crane",
+  "Gantry Crane",
+  "Goliath Crane",
+  "Jib Crane",
+  "Electric Hoist",
+];
+
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
+  const [form, setForm] = useState({
+    productType: "",
+    capacity: "",
+    floorsOrSpan: "",
+    city: "",
+    company: "",
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
 
   const [submitting, setSubmitting] = useState(false);
 
@@ -17,11 +43,8 @@ const Contact = () => {
     setSubmitting(true);
     try {
       const formData = new URLSearchParams();
-      formData.append("form-name", "contact");
-      formData.append("name", form.name);
-      formData.append("phone", form.phone);
-      formData.append("email", form.email);
-      formData.append("message", form.message);
+      formData.append("form-name", "quote");
+      Object.entries(form).forEach(([k, v]) => formData.append(k, v));
 
       await fetch("/", {
         method: "POST",
@@ -30,7 +53,7 @@ const Contact = () => {
       });
 
       toast.success("Thank you! We'll get back to you shortly.");
-      setForm({ name: "", phone: "", email: "", message: "" });
+      setForm({ productType: "", capacity: "", floorsOrSpan: "", city: "", company: "", name: "", phone: "", email: "", message: "" });
     } catch {
       toast.error("Something went wrong. Please try again.");
     } finally {
