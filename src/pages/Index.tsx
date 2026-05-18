@@ -121,6 +121,29 @@ const Index = () => {
             }
           ]
         })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "@id": "https://linkwelengineers.com/#localbusiness",
+          "name": "Linkwel Engineers",
+          "url": "https://linkwelengineers.com",
+          "telephone": ["+91 9818511177", "+91 9810371220"],
+          "email": "info@linkwelengineers.com",
+          "description": "Leading manufacturer of elevators, lifts and industrial cranes in India since 1989. Serving Delhi, Noida, Gurgaon and across India.",
+          "foundingDate": "1989",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "62 DSIDC Complex, Okhla Phase I",
+            "addressLocality": "New Delhi",
+            "addressRegion": "Delhi",
+            "postalCode": "110020",
+            "addressCountry": "IN"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/linkwel-engineers-le/",
+            "https://www.instagram.com/linkwelengineers?igsh=MTl0M2drbmdlZmVieg=="
+          ]
+        })}</script>
       </Helmet>
       {/* Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
