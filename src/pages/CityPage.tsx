@@ -137,12 +137,42 @@ const CityPage = ({ slug, city }: CityConfig) => {
             <p className="text-muted-foreground font-body max-w-xl mx-auto mb-8">
               Get in touch with our experts for a free consultation and quote tailored to your project in {city}.
             </p>
-            <Link
-              to="/contact"
-              className="gold-gradient text-white font-body font-semibold px-10 py-4 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2"
-            >
-              Request a Quote <ArrowRight size={16} />
-            </Link>
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+              <Link
+                to="/contact"
+                className="gold-gradient text-white font-body font-semibold px-10 py-4 rounded-sm tracking-wider uppercase text-sm hover:opacity-90 transition-opacity inline-flex items-center gap-2"
+              >
+                Request a Quote <ArrowRight size={16} />
+              </Link>
+              <Link
+                to="/services/amc"
+                className="border border-accent/40 text-foreground font-body font-semibold px-10 py-4 rounded-sm tracking-wider uppercase text-sm hover:bg-accent/10 transition-colors inline-flex items-center gap-2"
+              >
+                Explore AMC <ChevronRight size={16} />
+              </Link>
+            </div>
+
+            {/* Cross-city interlinks */}
+            <div className="border-t border-border pt-8">
+              <p className="text-xs font-body uppercase tracking-[0.3em] text-muted-foreground mb-4">Also Serving</p>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                {[
+                  { slug: "delhi", name: "Delhi" },
+                  { slug: "noida", name: "Noida" },
+                  { slug: "gurgaon", name: "Gurgaon" },
+                ]
+                  .filter((c) => c.slug !== slug)
+                  .map((c) => (
+                    <Link
+                      key={c.slug}
+                      to={`/${c.slug}`}
+                      className="text-sm font-body text-accent hover:underline inline-flex items-center gap-1"
+                    >
+                      Elevators & Cranes in {c.name} <ChevronRight size={14} />
+                    </Link>
+                  ))}
+              </div>
+            </div>
           </ScrollReveal>
         </div>
       </section>
