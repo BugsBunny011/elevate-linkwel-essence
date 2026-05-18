@@ -33,10 +33,15 @@ const projects = [
 ];
 
 const testimonials = [
-  { name: "Rajesh Patel", role: "Director, Skyline Group", text: "Linkwel Engineers delivered exceptional elevator installations across our building. Their professionalism, reliability, and attention to detail were truly outstanding." },
-  { name: "Priya Sharma", role: "Facility Manager, Grand Hotels", text: "The maintenance service from Linkwel is unparalleled. Our elevators run flawlessly and their response time is incredibly fast." },
-  { name: "Amit Desai", role: "CEO, Metro Developments", text: "We've trusted Linkwel Engineers for over a decade. Their modernization work transformed our aging elevators into state-of-the-art systems." },
+  { name: "Raghav Gupta", rating: 5, date: "3 days ago", text: "We saw this company reference from our relative in Indore. Contacted them for our Gwalior residence. Very professional behavior from sales to installation. Lift design is also very elegant, matches our interior." },
+  { name: "Kinshuk Ahuja", rating: 4, date: "4 days ago", text: "Good product and good service. Only little delay in delivery otherwise everything is fine. Crane quality is superb and their after sales support is also very nice." },
+  { name: "Jivanshu Kumar", rating: 4, date: "4 days ago", text: "Good Company for industrial lifting solutions. staff was responsive and installation quality was proper." },
+  { name: "Sanat Gupta", rating: 5, date: "a week ago", text: "Overall service was good. Installation took one extra day but quality was satisfactory." },
+  { name: "Aditya Singhania", rating: 5, date: "a week ago", text: "Installed hydraulic lift at our warehouse. Smooth experience." },
 ];
+
+const getInitials = (name: string) =>
+  name.split(" ").map((n) => n[0]).slice(0, 2).join("").toUpperCase();
 
 const Index = () => {
   const isSSR = typeof window === "undefined";
