@@ -174,7 +174,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-body font-semibold text-foreground text-sm">Email</h4>
-                      <a href="mailto:linkwelengineers@gmail.com" className="text-muted-foreground font-body text-sm mt-1 block hover:text-accent transition-colors">linkwelengineers@gmail.com</a>
+                      <a href="mailto:info@linkwelengineers.com" className="text-muted-foreground font-body text-sm mt-1 block hover:text-accent transition-colors">info@linkwelengineers.com</a>
                     </div>
                   </div>
                 </div>
