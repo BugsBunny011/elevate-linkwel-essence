@@ -58,6 +58,7 @@ export const AppRoutes = () => (
       <Route path="/delhi" element={<Delhi />} />
       <Route path="/noida" element={<Noida />} />
       <Route path="/gurgaon" element={<Gurgaon />} />
+      <Route path="/locations" element={<Locations />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </Suspense>
