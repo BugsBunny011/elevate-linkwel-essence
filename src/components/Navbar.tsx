@@ -18,7 +18,14 @@ const navLinks: NavItem[] = [
       { name: "Cranes", path: "/products/cranes" },
     ],
   },
-  { name: "Services", path: "/services" },
+  {
+    name: "Services",
+    path: "/services",
+    children: [
+      { name: "All Services", path: "/services" },
+      { name: "Annual Maintenance Contract", path: "/services/amc" },
+    ],
+  },
   {
     name: "Company",
     path: "/about",
