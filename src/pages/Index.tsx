@@ -151,20 +151,9 @@ const Index = () => {
         })}</script>
       </Helmet>
       {/* Hero */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-navy-dark">
         <div className="absolute inset-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="none"
-            className="w-full h-full object-cover"
-            poster={heroFallback}
-          >
-            <source src="https://assets.mixkit.co/videos/30544/30544-720.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-navy-dark/65" />
+          <div className="absolute inset-0 navy-gradient" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-transparent to-navy-dark/30" />
         </div>
 
