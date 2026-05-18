@@ -82,6 +82,7 @@ const Footer = () => {
                 { name: "Delhi", path: "/delhi" },
                 { name: "Noida", path: "/noida" },
                 { name: "Gurgaon", path: "/gurgaon" },
+                { name: "Other Locations", path: "/locations" },
               ].map((item) => (
                 <Link key={item.path} to={item.path} className="text-sm hover:text-gold transition-colors duration-300">
                   {item.name}
