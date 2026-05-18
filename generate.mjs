@@ -47,7 +47,8 @@ const routes = [
   "/blog",
   "/delhi",
   "/noida",
-  "/gurgaon",
+ "/gurgaon",
+ "/locations",
   ...blogSlugs.map((s) => `/blog/${s}`),
   ...productSlugs.map((s) => `/products/${s}`),
 ];

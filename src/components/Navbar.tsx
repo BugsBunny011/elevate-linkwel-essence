@@ -28,11 +28,12 @@ const navLinks: NavItem[] = [
   },
   {
     name: "Locations",
-    path: "/delhi",
+    path: "/locations",
     children: [
       { name: "Delhi", path: "/delhi" },
       { name: "Noida", path: "/noida" },
       { name: "Gurgaon", path: "/gurgaon" },
+      { name: "Other Locations", path: "/locations" },
     ],
   },
   {
