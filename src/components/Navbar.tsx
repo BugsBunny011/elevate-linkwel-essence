@@ -27,6 +27,15 @@ const navLinks: NavItem[] = [
     ],
   },
   {
+    name: "Locations",
+    path: "/delhi",
+    children: [
+      { name: "Delhi", path: "/delhi" },
+      { name: "Noida", path: "/noida" },
+      { name: "Gurgaon", path: "/gurgaon" },
+    ],
+  },
+  {
     name: "Company",
     path: "/about",
     children: [
