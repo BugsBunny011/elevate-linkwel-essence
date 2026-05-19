@@ -1,0 +1,29 @@
+# Linkwel Engineers
+
+> Manufacturer of elevators, lifts and industrial cranes serving Delhi, Noida, Gurgaon and across North India since 1989. Tagline: Sky Is the Limit.
+
+Linkwel Engineers designs, installs and maintains passenger lifts, home elevators, goods lifts, hospital lifts, capsule lifts, EOT cranes, gantry cranes, jib cranes and electric hoists for residential, commercial and industrial projects. 35+ years of engineering experience. Headquartered in Okhla, New Delhi.
+
+## Pages
+
+- [Home](/): Overview of Linkwel Engineers — elevators and industrial cranes.
+- [About](/about): Company history, leadership and engineering ethos since 1989.
+- [Products](/products): Full catalogue of lifts and cranes.
+- [Lifts & Elevators](/products/lifts): Passenger, home, goods, hospital and capsule lifts.
+- [Industrial Cranes](/products/cranes): EOT, gantry, jib cranes and electric hoists.
+- [Projects](/projects): Installation categories and case studies.
+- [Services](/services): Installation, maintenance, modernization and AMC.
+- [AMC](/services/amc): Annual Maintenance Contracts for lifts and cranes.
+- [Blog](/blog): Insights on elevators, cranes and vertical transportation.
+- [Contact](/contact): Request a quote, phone, email and Okhla address.
+
+## Locations
+
+- [Delhi](/delhi): Elevator and crane manufacturer in Delhi.
+- [Noida](/noida): Lifts and cranes in Noida and Greater Noida.
+- [Gurgaon](/gurgaon): Lifts and cranes in Gurgaon / Gurugram and Manesar.
+- [Other Locations](/locations): Emerging markets — Shimla, New Chandigarh, Mohali, Faridabad, Sonipat, Dehradun, Jaipur.
+
+## Optional
+
+- [Blog Archive](/blog): All published articles.
