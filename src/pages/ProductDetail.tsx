@@ -117,6 +117,39 @@ const ProductDetail = () => {
               "availability": "https://schema.org/InStock",
               "seller": { "@type": "Organization", "name": "Linkwel Engineers" },
               "url": `https://linkwelengineers.com/contact`,
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": "0",
+                  "currency": "INR",
+                },
+                "shippingDestination": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "IN",
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 2,
+                    "maxValue": 7,
+                    "unitCode": "DAY",
+                  },
+                  "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 3,
+                    "maxValue": 14,
+                    "unitCode": "DAY",
+                  },
+                },
+              },
+              "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "IN",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+                "merchantReturnLink": "https://linkwelengineers.com/contact",
+              },
             },
           })}
         </script>
