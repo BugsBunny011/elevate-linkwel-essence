@@ -26,6 +26,7 @@ const Delhi = lazy(() => import("./pages/Delhi"));
 const Noida = lazy(() => import("./pages/Noida"));
 const Gurgaon = lazy(() => import("./pages/Gurgaon"));
 const Locations = lazy(() => import("./pages/Locations"));
+const ElevatorStudio = lazy(() => import("./pages/ElevatorStudio"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -59,6 +60,7 @@ export const AppRoutes = () => (
       <Route path="/noida" element={<Noida />} />
       <Route path="/gurgaon" element={<Gurgaon />} />
       <Route path="/locations" element={<Locations />} />
+      <Route path="/elevator-studio" element={<ElevatorStudio />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </Suspense>
