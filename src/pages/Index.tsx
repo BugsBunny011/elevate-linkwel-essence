@@ -33,11 +33,12 @@ const projects = [
 ];
 
 const testimonials = [
-  { name: "Raghav Gupta", rating: 5, date: "3 days ago", text: "We saw this company reference from our relative in Indore. Contacted them for our Gwalior residence. Very professional behavior from sales to installation. Lift design is also very elegant, matches our interior." },
-  { name: "Kinshuk Ahuja", rating: 4, date: "4 days ago", text: "Good product and good service. Only little delay in delivery otherwise everything is fine. Crane quality is superb and their after sales support is also very nice." },
-  { name: "Jivanshu Kumar", rating: 4, date: "4 days ago", text: "Good Company for industrial lifting solutions. staff was responsive and installation quality was proper." },
-  { name: "Sanat Gupta", rating: 5, date: "a week ago", text: "Overall service was good. Installation took one extra day but quality was satisfactory." },
-  { name: "Aditya Singhania", rating: 5, date: "a week ago", text: "Installed hydraulic lift at our warehouse. Smooth experience." },
+  { name: "Gagan Rana", rating: 5, date: "3 days ago", text: "Very good service. Mr. Bagga is also very nice, was present on time during installation and very cooperative throughout the process." },
+  { name: "Raghav Gupta", rating: 5, date: "a week ago", text: "We saw this company reference from our relative in Indore. Contacted them for our Gwalior residence. Very professional behavior from sales to installation. Lift design is also very elegant, matches our interior." },
+  { name: "Kinshuk Ahuja", rating: 4, date: "a week ago", text: "Good product and good service. Only little delay in delivery otherwise everything is fine. Crane quality is superb and their after sales support is also very nice." },
+  { name: "Jivanshu Kumar", rating: 4, date: "a week ago", text: "Good Company for industrial lifting solutions. staff was responsive and installation quality was proper." },
+  { name: "Sanat Gupta", rating: 5, date: "2 weeks ago", text: "Overall service was good. Installation took one extra day but quality was satisfactory." },
+  { name: "Aditya Singhania", rating: 5, date: "2 weeks ago", text: "Installed hydraulic lift at our warehouse. Smooth experience." },
 ];
 
 const getInitials = (name: string) =>
