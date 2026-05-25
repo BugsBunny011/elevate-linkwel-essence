@@ -81,9 +81,8 @@ const homeElevatorFaqs: BlogFaq[] = [
 const villaHomeLiftFaqs: BlogFaq[] = [
   {
     q: "What is the best home lift for a villa in Delhi?",
-    q_: "",
     a: "For most villas in Delhi, a compact traction MRL (Machine Room Less) home lift is the best fit. It needs no overhead machine room, handles G+3 and G+4 villas comfortably, runs on a standard 3-phase connection, and offers the smoothest ride for 3–6 passengers. For retrofits into already-constructed bungalows, a pneumatic vacuum lift is often a better choice because it needs almost no civil work.",
-  } as unknown as BlogFaq,
+  },
   {
     q: "How much does a home elevator cost for a bungalow in India?",
     a: "In 2026, a home elevator for a bungalow in India typically costs between ₹8 lakh and ₹18 lakh for a 3–4 stop traction MRL or hydraulic lift with a quality cabin finish. Pneumatic vacuum lifts for 2–3 stops generally fall between ₹14 lakh and ₹22 lakh, while premium glass and designer cabins for luxury villas in Delhi NCR can go up to ₹30 lakh and above.",
