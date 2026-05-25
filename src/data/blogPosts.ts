@@ -303,6 +303,8 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "home-elevator-buying-guide-india-2026",
     title: "Home Elevator Buying Guide India 2026",
     excerpt:
       "Planning to install home elevators in your residential project? Our 2026 guide covers types, costs, shaft requirements and safety norms for builders in Delhi, Noida and Gurgaon.",
