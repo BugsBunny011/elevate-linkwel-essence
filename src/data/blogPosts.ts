@@ -112,7 +112,7 @@ export const blogPosts: BlogPost[] = [
       "Home Lift for Villa & Bungalow in Delhi NCR: 2026 Buyer's Guide",
     excerpt:
       "Planning a home lift for your villa, bungalow, duplex or independent house in Delhi NCR? Compare types, costs, shaft sizes and luxury options for 2, 3 and 4 floor homes.",
-    date: "2026-05-25",
+    date: "2026-05-15",
     readTime: "11 min read",
     author: "Linkwel Engineers Editorial",
     category: "Residential",
@@ -308,7 +308,7 @@ export const blogPosts: BlogPost[] = [
     title: "Home Elevator Buying Guide India 2026",
     excerpt:
       "Planning to install home elevators in your residential project? Our 2026 guide covers types, costs, shaft requirements and safety norms for builders in Delhi, Noida and Gurgaon.",
-    date: new Date().toISOString().slice(0, 10),
+    date: "2026-05-06",
     readTime: "10 min read",
     author: "Linkwel Engineers Editorial",
     category: "Buying Guide",
@@ -486,7 +486,7 @@ export const blogPosts: BlogPost[] = [
       "India's Vertical Mobility Boom: Why 2026 Is a Landmark Year for Elevators & Cranes",
     excerpt:
       "From record high-rise launches in Delhi NCR to surging demand for EOT cranes in manufacturing, India's lift and crane industry is entering its strongest growth phase yet.",
-    date: "2026-05-04",
+    date: "2026-04-24",
     readTime: "9 min read",
     author: "Linkwel Engineers Editorial",
     category: "Industry Insights",
