@@ -1,5 +1,6 @@
 import blogIndiaInfra from "@/assets/blog-india-infra-2026.jpg";
 import blogHomeElevatorGuide from "@/assets/blog-home-elevator-guide-2026.jpg";
+import blogVillaHomeLift from "@/assets/blog-villa-home-lift-2026.jpg";
 
 export type BlogBlock =
   | { type: "p"; text: string }
@@ -77,7 +78,231 @@ const homeElevatorFaqs: BlogFaq[] = [
   },
 ];
 
+const villaHomeLiftFaqs: BlogFaq[] = [
+  {
+    q: "What is the best home lift for a villa in Delhi?",
+    a: "For most villas in Delhi, a compact traction MRL (Machine Room Less) home lift is the best fit. It needs no overhead machine room, handles G+3 and G+4 villas comfortably, runs on a standard 3-phase connection, and offers the smoothest ride for 3–6 passengers. For retrofits into already-constructed bungalows, a pneumatic vacuum lift is often a better choice because it needs almost no civil work.",
+  },
+  {
+    q: "How much does a home elevator cost for a bungalow in India?",
+    a: "In 2026, a home elevator for a bungalow in India typically costs between ₹8 lakh and ₹18 lakh for a 3–4 stop traction MRL or hydraulic lift with a quality cabin finish. Pneumatic vacuum lifts for 2–3 stops generally fall between ₹14 lakh and ₹22 lakh, while premium glass and designer cabins for luxury villas in Delhi NCR can go up to ₹30 lakh and above.",
+  },
+  {
+    q: "Can I install a lift in an independent house in Delhi NCR after construction?",
+    a: "Yes. Pneumatic vacuum lifts and compact MRL home elevators are specifically designed for retrofit projects in independent houses across Delhi, Noida and Gurgaon. They can be installed in a stairwell void, light well or external shaft with minimal civil work, and most retrofits are commissioned in 2–4 weeks.",
+  },
+  {
+    q: "What is the smallest home lift for a 2 floor house?",
+    a: "The smallest practical home lift for a 2 floor house in India is a pneumatic vacuum elevator with an internal diameter of about 800–950 mm, suitable for 1–2 passengers. Compact traction MRL home lifts start at roughly 1000 mm x 1000 mm internal shaft size and can carry 3 passengers comfortably across 2 stops.",
+  },
+  {
+    q: "Is a home elevator suitable for a duplex or 3 floor house?",
+    a: "Absolutely. A duplex house or a 3 floor independent house in Delhi NCR is the most common use case for residential lifts. A 3-stop traction MRL or hydraulic home elevator with a 320–400 kg capacity covers a duplex or G+2 villa perfectly, while G+3 and G+4 layouts benefit from a slightly higher-capacity MRL system with ARD and emergency intercom.",
+  },
+  {
+    q: "Are glass elevators safe for homes in Delhi?",
+    a: "Yes. A glass home elevator for Delhi villas uses toughened laminated safety glass, the same family of materials used in commercial capsule lifts, along with all standard safety devices: overspeed governor, door sensors, interlocks, ARD and emergency intercom. When manufactured and installed to BIS and NBC 2016 norms, a glass cabin is just as safe as a metal one and adds a strong architectural statement.",
+  },
+];
+
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "home-lift-for-villa-bungalow-delhi-ncr",
+    title:
+      "Home Lift for Villa & Bungalow in Delhi NCR: 2026 Buyer's Guide",
+    excerpt:
+      "Planning a home lift for your villa, bungalow, duplex or independent house in Delhi NCR? Compare types, costs, shaft sizes and luxury options for 2, 3 and 4 floor homes.",
+    date: "2026-05-25",
+    readTime: "11 min read",
+    author: "Linkwel Engineers Editorial",
+    category: "Residential",
+    image: blogVillaHomeLift,
+    imageAlt:
+      "Luxury glass home lift installed beside a marble staircase in a villa in Delhi NCR by Linkwel Engineers",
+    keywords:
+      "home lift for villa Delhi, home elevator for bungalow India, lift for independent house Delhi NCR, small home lift for 2 floors, home elevator for duplex house, residential lift for 3 floor house India, glass elevator for home Delhi, luxury home lift Delhi NCR",
+    authorBio:
+      "Written by the Linkwel Engineers editorial team, elevator and crane manufacturers in New Delhi with 35+ years of experience designing home lifts for villas, bungalows and independent houses across Delhi, Noida and Gurgaon.",
+    faqs: villaHomeLiftFaqs,
+    content: [
+      {
+        type: "p",
+        text: "A home lift for a villa in Delhi is no longer a luxury statement, it is a practical upgrade that adds long-term value to any independent house in Delhi NCR. Whether you are building a new G+3 bungalow in South Delhi, retrofitting a duplex in Greater Kailash, or planning a luxury home lift for a farmhouse in Gurgaon, the right residential elevator can change how a family uses every floor of the house.",
+      },
+      {
+        type: "p",
+        text: "This 2026 buyer's guide is written specifically for homeowners and architects evaluating a home elevator for a bungalow in India. We cover the right lift for 2, 3 and 4 floor homes, realistic costs, glass and capsule options, shaft and pit requirements, and what makes a luxury home lift in Delhi NCR worth the investment.",
+      },
+      {
+        type: "h2",
+        text: "Why Villa and Bungalow Owners in Delhi NCR Are Installing Home Lifts",
+      },
+      {
+        type: "p",
+        text: "Independent houses in Delhi, Noida and Gurgaon are getting taller. With plot sizes under pressure and FAR norms allowing G+3 and G+4 builds in most colonies, families are using their roofs, top floors and basements far more actively. A home elevator for an independent house in Delhi NCR solves three real problems at once.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Accessibility for parents, grandparents and young children across all floors.",
+          "Comfort: groceries, luggage and laundry move effortlessly between basement, kitchen and bedrooms.",
+          "Resale value: villas with a home lift command a clear premium in DLF, Vasant Vihar, Sainik Farms, Noida Sectors 44/50/128 and Gurgaon Sectors 14/15/57.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Choosing a Home Lift by Number of Floors",
+      },
+      {
+        type: "h3",
+        text: "Small Home Lift for 2 Floors (G+1)",
+      },
+      {
+        type: "p",
+        text: "For a 2 floor house, the priority is a small home lift that fits a tight shaft, needs minimal civil work and is genuinely affordable. Pneumatic vacuum lifts and compact chain-driven or MRL traction lifts are all viable. A 2-stop cabin sized for 2–3 passengers is usually enough, and the entire installation can often be completed in under 3 weeks.",
+      },
+      {
+        type: "h3",
+        text: "Home Elevator for a Duplex House",
+      },
+      {
+        type: "p",
+        text: "A home elevator for a duplex house is one of the most common requests we receive. Duplex apartments and duplex villas in Delhi NCR typically need a 2-stop lift with a slightly higher capacity, around 320 kg, so it can comfortably carry parents with a child or two adults with luggage. A traction MRL system gives the smoothest ride here and integrates cleanly with the duplex's main staircase.",
+      },
+      {
+        type: "h3",
+        text: "Residential Lift for a 3 Floor House in India",
+      },
+      {
+        type: "p",
+        text: "A residential lift for a 3 floor house in India (G+2 or G+3) is best served by a 3 or 4 stop traction MRL or hydraulic home elevator. At this travel height, a pneumatic vacuum lift starts to feel slow, while a properly engineered MRL lift offers fast, quiet, energy-efficient travel and can comfortably carry 4 passengers. This is also the sweet spot where a glass cabin becomes a real design upgrade.",
+      },
+      {
+        type: "h3",
+        text: "Lift for a G+3 or G+4 Bungalow",
+      },
+      {
+        type: "p",
+        text: "For taller bungalows and villas in Gurgaon and Noida, especially homes with a basement, ground, two upper floors and a terrace lounge, a 5 or 6 stop traction MRL lift with ARD (Automatic Rescue Device), emergency intercom and battery backup is the right specification. Capacity in the 400–500 kg range future-proofs the home for stretcher-style emergencies and elderly residents.",
+      },
+      {
+        type: "h2",
+        text: "Glass Elevator for Home in Delhi: Architecture Meets Engineering",
+      },
+      {
+        type: "p",
+        text: "A glass elevator for a home in Delhi is one of the strongest design moves a villa owner can make in 2026. A panoramic glass cabin running beside or inside a sweeping staircase turns vertical circulation into a sculptural element, daylight reaches deeper into the core of the house, and the lift itself becomes a focal point rather than a hidden service shaft.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Toughened laminated safety glass cabin and shaft cladding for full transparency.",
+          "Slim stainless steel or brass-finished frames to match interior palettes.",
+          "LED cove and spot lighting integrated into the ceiling for a jewellery-box effect at night.",
+          "Whisper-quiet gearless PMSM drive so the lift never competes with the architecture.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Luxury Home Lift Delhi NCR: What Premium Buyers Actually Pay For",
+      },
+      {
+        type: "p",
+        text: "A luxury home lift in Delhi NCR is less about the motor and more about the experience. Premium buyers in DLF Camellias, Magnolias, Aralias, Vasant Vihar, Jor Bagh and the new luxury townships of Gurgaon Sectors 60–62 are specifying lifts as a complete interior product, not as a machine.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Designer cabins in burl wood, brushed brass, mirror-polished stainless steel, leather or fluted glass.",
+          "Automatic landing doors with frameless glass and concealed operators.",
+          "Touchless calls, smart phone integration and personalised lighting scenes.",
+          "Silent gearless drives, regenerative VVVF controllers and energy-efficient LED lighting.",
+          "ARD, fireman's switch, intercom, CCTV and BMS integration as standard.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "How Much Does a Home Lift Cost for a Villa in 2026?",
+      },
+      {
+        type: "p",
+        text: "Realistic 2026 pricing for a fully installed home lift in a Delhi NCR villa or bungalow, including cabin, controller, doors, basic civil interface and commissioning. Final cost depends on number of floors, capacity, cabin finish, door type and brand.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Small home lift for 2 floors (chain-driven or basic MRL, 2 stops): ₹6 lakh to ₹10 lakh.",
+          "Home elevator for duplex house (traction MRL or hydraulic, 2–3 stops, standard finish): ₹9 lakh to ₹15 lakh.",
+          "Residential lift for 3 floor house India (MRL, 3–4 stops, premium finish): ₹12 lakh to ₹20 lakh.",
+          "Glass elevator for home Delhi (panoramic cabin, 3–5 stops): ₹15 lakh to ₹25 lakh.",
+          "Luxury home lift Delhi NCR (designer cabin, automatic doors, ARD, BMS): ₹20 lakh to ₹35 lakh and above.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Shaft, Pit and Power Requirements at a Glance",
+      },
+      {
+        type: "p",
+        text: "Locking the lift specification before civil drawings are finalised is the single most important step. These are realistic planning numbers for a typical home elevator for a bungalow in India.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Shaft size: 1000 mm x 1000 mm (compact) to 1500 mm x 1400 mm (4-passenger luxury cabin).",
+          "Pit depth: 150 mm for pneumatic, 600–1000 mm for traction and hydraulic.",
+          "Overhead clearance: 2400 mm to 3500 mm depending on technology and speed.",
+          "Power supply: 3-phase, 415V, 5–7.5 HP for traction; single-phase often enough for pneumatic.",
+          "Doors: 700–900 mm clear opening, automatic for premium villas.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Retrofitting a Lift Into an Already-Built Independent House",
+      },
+      {
+        type: "p",
+        text: "A common question from homeowners across Delhi NCR is whether a lift can be added to an independent house that is already constructed. The answer is yes, and the two best technologies for this are pneumatic vacuum lifts (no pit, no machine room, self-supported tube) and compact MRL home lifts placed in a stairwell void or external shaft. Retrofits typically need 2–4 weeks of site work.",
+      },
+      {
+        type: "h2",
+        text: "Safety and Compliance for Home Elevators in India",
+      },
+      {
+        type: "p",
+        text: "Even though it sits inside a private home, a residential elevator must follow the same safety framework as a commercial lift: relevant BIS codes, the National Building Code (NBC) 2016, and the applicable State Lift Act for Delhi, Haryana or Uttar Pradesh.",
+      },
+      {
+        type: "ul",
+        items: [
+          "BIS-aligned manufacturing for cars, controllers, ropes and safety gear.",
+          "NBC 2016 compliance for shaft fire rating, ventilation and accessibility.",
+          "State Lift Act registration, periodic inspection and licensed installation.",
+          "Mandatory devices: ARD, overspeed governor, door sensors, interlocks and emergency intercom.",
+        ],
+      },
+      {
+        type: "html",
+        html: 'For broader policy and urban-mobility context, public dashboards from <a href="https://www.ibef.org" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:opacity-80">IBEF</a> and the <a href="https://mohua.gov.in" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:opacity-80">Ministry of Housing & Urban Affairs</a> show how rapidly India\'s residential and accessibility norms are evolving.',
+      },
+      {
+        type: "h2",
+        text: "Why a Local Manufacturer Wins for Villa Home Lifts",
+      },
+      {
+        type: "p",
+        text: "A home lift is a 15–20 year ownership decision. Local manufacturing partners almost always win on the metrics that matter to a villa owner: faster service response in Delhi, Noida and Gurgaon, locally stocked spares, lower AMC costs, and the ability to customise the cabin to match the home's interior.",
+      },
+      {
+        type: "html",
+        html: 'Linkwel Engineers, headquartered in New Delhi, designs and installs the full range of <a href="/products/home-elevators" class="text-accent underline underline-offset-2 hover:opacity-80">home elevators</a>, including compact MRL, hydraulic, pneumatic and panoramic <a href="/products/capsule-elevators" class="text-accent underline underline-offset-2 hover:opacity-80">capsule lifts</a> for villas and bungalows across Delhi NCR. With more than three decades of engineering experience and dedicated <a href="/services" class="text-accent underline underline-offset-2 hover:opacity-80">service teams</a> in <a href="/delhi" class="text-accent underline underline-offset-2 hover:opacity-80">Delhi</a>, <a href="/noida" class="text-accent underline underline-offset-2 hover:opacity-80">Noida</a> and <a href="/gurgaon" class="text-accent underline underline-offset-2 hover:opacity-80">Gurgaon</a>, we partner with homeowners and architects from shaft layout through long-term AMC. Read our broader <a href="/blog/home-elevator-buying-guide-india-2026" class="text-accent underline underline-offset-2 hover:opacity-80">home elevator buying guide India 2026</a>, or <a href="/contact" class="text-accent underline underline-offset-2 hover:opacity-80">get in touch</a> for a villa consultation.',
+      },
+      {
+        type: "quote",
+        text: "A home lift is not a machine you bolt onto a villa. Specified early, it becomes part of the architecture, and quietly transforms how the family lives in the house for the next twenty years.",
+      },
+    ],
+  },
   {
     slug: "home-elevator-buying-guide-india-2026",
     title: "Home Elevator Buying Guide India 2026",
