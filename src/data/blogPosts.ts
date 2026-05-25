@@ -1,5 +1,6 @@
 import blogIndiaInfra from "@/assets/blog-india-infra-2026.jpg";
 import blogHomeElevatorGuide from "@/assets/blog-home-elevator-guide-2026.jpg";
+import blogVillaHomeLift from "@/assets/blog-villa-home-lift-2026.jpg";
 
 export type BlogBlock =
   | { type: "p"; text: string }
