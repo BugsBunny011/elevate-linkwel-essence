@@ -32,6 +32,7 @@ const productSlugs = [
 const blogSlugs = [
   "india-vertical-mobility-boom-2026",
   "home-elevator-buying-guide-india-2026",
+  "home-lift-for-villa-bungalow-delhi-ncr",
 ];
 
 const routes = [
