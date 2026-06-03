@@ -9,6 +9,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import AMC from "./pages/AMC";
 import Projects from "./pages/Projects";
 import Products from "./pages/Products";
 import ProductsLifts from "./pages/ProductsLifts";
@@ -17,6 +18,11 @@ import ProductDetail from "./pages/ProductDetail";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import Delhi from "./pages/Delhi";
+import Noida from "./pages/Noida";
+import Gurgaon from "./pages/Gurgaon";
+import Locations from "./pages/Locations";
+import ElevatorStudio from "./pages/ElevatorStudio";
 import NotFound from "./pages/NotFound";
 
 export interface RenderResult {
@@ -34,6 +40,7 @@ const SsrRoutes = () => (
     <Route path="/" element={<Index />} />
     <Route path="/about" element={<About />} />
     <Route path="/services" element={<Services />} />
+    <Route path="/services/amc" element={<AMC />} />
     <Route path="/projects" element={<Projects />} />
     <Route path="/products" element={<Products />} />
     <Route path="/products/lifts" element={<ProductsLifts />} />
@@ -42,6 +49,11 @@ const SsrRoutes = () => (
     <Route path="/contact" element={<Contact />} />
     <Route path="/blog" element={<Blog />} />
     <Route path="/blog/:slug" element={<BlogPost />} />
+    <Route path="/delhi" element={<Delhi />} />
+    <Route path="/noida" element={<Noida />} />
+    <Route path="/gurgaon" element={<Gurgaon />} />
+    <Route path="/locations" element={<Locations />} />
+    <Route path="/elevator-studio" element={<ElevatorStudio />} />
     <Route path="*" element={<NotFound />} />
   </Routes>
 );
