@@ -24,17 +24,43 @@ const About = () => {
   return (
     <Layout>
       <Helmet>
-        <title>About Linkwel Engineers | Lift & Crane Manufacturers Since 1989</title>
-        <meta name="description" content="Founded in 1989 in New Delhi, Linkwel Engineers is a trusted manufacturer of elevators, lifts and industrial cranes. 35+ years of engineering excellence and 500+ projects across India." />
+        <title>About Linkwel Engineers | Lift & Crane Manufacturers Since 1989 – Delhi NCR</title>
+        <meta name="description" content="Linkwel Engineers has been manufacturing elevators and industrial cranes in India since 1989. Learn about our 35+ years of engineering expertise, certifications, and team." />
         <meta name="keywords" content="elevator and crane company in India, lift manufacturers in Delhi since 1989, crane manufacturers near me, industrial crane company India, elevator manufacturers Delhi NCR" />
         <link rel="canonical" href="https://linkwelengineers.com/about" />
         <meta property="og:title" content="About Linkwel Engineers | Lift & Crane Manufacturers Since 1989" />
-        <meta property="og:description" content="Trusted elevator, lift and industrial crane manufacturer in India since 1989 with 500+ projects completed." />
+        <meta property="og:description" content="Linkwel Engineers has been manufacturing elevators and industrial cranes in India since 1989. Learn about our 35+ years of engineering expertise, certifications, and team." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://linkwelengineers.com/about" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Linkwel Engineers | Lift & Crane Manufacturers Since 1989" />
-        <meta name="twitter:description" content="Trusted elevator, lift and industrial crane manufacturer in India since 1989." />
+        <meta name="twitter:description" content="Linkwel Engineers has been manufacturing elevators and industrial cranes in India since 1989. Learn about our 35+ years of engineering expertise, certifications, and team." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Linkwel Engineers",
+          "url": "https://linkwelengineers.com/",
+          "foundingDate": "1989",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "62 DSIDC Complex, Okhla Phase I",
+            "addressLocality": "New Delhi",
+            "addressRegion": "Delhi",
+            "postalCode": "110020",
+            "addressCountry": "IN"
+          },
+          "contactPoint": [{
+            "@type": "ContactPoint",
+            "telephone": "+91-9818511177",
+            "contactType": "sales",
+            "areaServed": "IN",
+            "availableLanguage": ["English", "Hindi"]
+          }],
+          "sameAs": [
+            "https://www.linkedin.com/company/linkwel-engineers-le/",
+            "https://www.instagram.com/linkwelengineers?igsh=MTl0M2drbmdlZmVieg=="
+          ]
+        })}</script>
       </Helmet>
       <SeoBreadcrumbs items={[{ name: "About", path: "/about" }]} hidden />
       {/* Hero */}
