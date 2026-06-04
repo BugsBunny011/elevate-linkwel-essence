@@ -62,9 +62,11 @@ const ProductDetail = () => {
         <meta property="og:description" content={product.metaDesc} />
         <meta property="og:type" content="product" />
         <meta property="og:url" content={`https://linkwelengineers.com/products/${product.slug}`} />
+        <meta property="og:image" content={`https://linkwelengineers.com${product.image}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={product.metaTitle} />
         <meta name="twitter:description" content={product.metaDesc} />
+        <meta name="twitter:image" content={`https://linkwelengineers.com${product.image}`} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
