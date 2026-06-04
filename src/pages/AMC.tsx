@@ -62,31 +62,31 @@ const benefits = [
   { icon: Shield, title: "Safety First", desc: "Every visit follows strict IS and international safety protocols, protecting users and your liability." },
   { icon: Clock, title: "Priority Response", desc: "AMC clients receive priority dispatch and faster turnaround on breakdown calls." },
   { icon: Wrench, title: "OEM Spare Parts", desc: "Genuine, manufacturer-grade spares to extend equipment life and avoid recurring faults." },
-  { icon: Settings, title: "Certified Technicians", desc: "Trained engineers with decades of hands-on experience across lifts, EOT, gantry, jib cranes and hoists." },
+  { icon: Settings, title: "Certified Technicians", desc: "Trained engineers with decades of hands-on experience across elevators and lifts of all makes and models." },
 ];
 
 const AMC = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Elevator & Crane AMC Services | Annual Maintenance Contract – Linkwel Engineers</title>
-        <meta name="description" content="Linkwel Engineers offers comprehensive AMC for elevators and industrial cranes in Delhi NCR. Preventive maintenance, 24/7 breakdown support, and certified technicians." />
-        <meta name="keywords" content="elevator AMC Delhi NCR, crane annual maintenance contract, lift AMC services, EOT crane maintenance, elevator preventive maintenance, industrial crane AMC India" />
+        <title>Elevator AMC Services | Annual Maintenance Contract – Linkwel Engineers</title>
+        <meta name="description" content="Linkwel Engineers offers comprehensive AMC for elevators and lifts in Delhi NCR. Preventive maintenance, 24/7 breakdown support, and certified technicians." />
+        <meta name="keywords" content="elevator AMC Delhi NCR, lift AMC services, elevator annual maintenance contract, elevator preventive maintenance, lift maintenance Delhi NCR" />
         <link rel="canonical" href="https://linkwelengineers.com/services/amc" />
-        <meta property="og:title" content="Elevator & Crane AMC Services | Annual Maintenance Contract – Linkwel Engineers" />
-        <meta property="og:description" content="Comprehensive AMC for elevators and industrial cranes in Delhi NCR. Preventive maintenance, 24/7 breakdown support, and certified technicians." />
+        <meta property="og:title" content="Elevator AMC Services | Annual Maintenance Contract – Linkwel Engineers" />
+        <meta property="og:description" content="Comprehensive AMC for elevators and lifts in Delhi NCR. Preventive maintenance, 24/7 breakdown support, and certified technicians." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://linkwelengineers.com/services/amc" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Elevator & Crane AMC Services | Annual Maintenance Contract – Linkwel Engineers" />
-        <meta name="twitter:description" content="Comprehensive AMC for elevators and industrial cranes in Delhi NCR. Preventive maintenance, 24/7 breakdown support, and certified technicians." />
+        <meta name="twitter:title" content="Elevator AMC Services | Annual Maintenance Contract – Linkwel Engineers" />
+        <meta name="twitter:description" content="Comprehensive AMC for elevators and lifts in Delhi NCR. Preventive maintenance, 24/7 breakdown support, and certified technicians." />
         <meta property="og:image" content="https://linkwelengineers.com/og-image.jpg" />
         <meta name="twitter:image" content="https://linkwelengineers.com/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Elevator & Crane Annual Maintenance Contract",
-          "description": "Linkwel Engineers offers comprehensive AMC for elevators and industrial cranes in Delhi NCR. Preventive maintenance, 24/7 breakdown support, and certified technicians.",
+          "name": "Elevator Annual Maintenance Contract",
+          "description": "Linkwel Engineers offers comprehensive AMC for elevators and lifts in Delhi NCR. Preventive maintenance, 24/7 breakdown support, and certified technicians.",
           "provider": {
             "@type": "Organization",
             "name": "Linkwel Engineers",
@@ -121,7 +121,7 @@ const AMC = () => {
             Annual Maintenance Contract <span className="text-gold-gradient">(AMC)</span>
           </h1>
           <p className="text-gold-light/70 font-body text-lg max-w-3xl mx-auto leading-relaxed">
-            Guaranteed uptime, certified technicians, and genuine spare parts — so you can focus on your business while we keep your lifts and cranes running flawlessly.
+            Guaranteed uptime, certified technicians, and genuine spare parts — so you can focus on your business while we keep your elevators and lifts running flawlessly.
           </p>
         </div>
       </section>
@@ -240,7 +240,7 @@ const AMC = () => {
               Protect Your Investment
             </h2>
             <p className="text-gold-light/60 font-body max-w-xl mx-auto mb-8">
-              Get a tailored Annual Maintenance Contract for your elevators or cranes. Our team will scope your site and recommend the right plan.
+              Get a tailored Annual Maintenance Contract for your elevators and lifts. Our team will scope your site and recommend the right plan.
             </p>
             <Link
               to="/contact"
