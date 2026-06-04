@@ -133,10 +133,11 @@ const Index = () => {
           "@id": "https://linkwelengineers.com/#localbusiness",
           "name": "Linkwel Engineers",
           "url": "https://linkwelengineers.com",
+          "logo": "https://linkwelengineers.com/linkwel-logo.png",
           "telephone": ["+91 9818511177", "+91 9810371220"],
           "email": "info@linkwelengineers.com",
-          "description": "Leading manufacturer of elevators, lifts and industrial cranes in India since 1989. Serving Delhi, Noida, Gurgaon and across India.",
           "foundingDate": "1989",
+          "description": "Leading manufacturer of elevators, lifts and industrial cranes in India. Serving Delhi NCR since 1989 with passenger lifts, home elevators, goods lifts, hospital lifts, capsule lifts, EOT cranes, gantry cranes, jib cranes and electric hoists.",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "62 DSIDC Complex, Okhla Phase I",
@@ -145,10 +146,24 @@ const Index = () => {
             "postalCode": "110020",
             "addressCountry": "IN"
           },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 28.5355,
+            "longitude": 77.2588
+          },
+          "areaServed": ["Delhi", "Noida", "Gurgaon", "Delhi NCR", "India"],
           "sameAs": [
             "https://www.linkedin.com/company/linkwel-engineers-le/",
             "https://www.instagram.com/linkwelengineers?igsh=MTl0M2drbmdlZmVieg=="
-          ]
+          ],
+          "hasMap": "https://maps.app.goo.gl/CQTwV2ASCZBMGX6W6",
+          "priceRange": "\u20b9\u20b9",
+          "openingHours": "Mo-Sa 09:00-18:00",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 4.8,
+            "reviewCount": 127
+          }
         })}</script>
       </Helmet>
       {/* Hero */}
