@@ -76,7 +76,7 @@ const Projects = () => {
                       <h3 className="text-gold-light font-heading text-xl font-semibold">{proj.name}</h3>
                     </div>
                   </div>
-                  <p className="text-gold-light/60 font-body text-sm leading-relaxed mt-3">{proj.desc}</p>
+                  <p className="text-foreground font-body text-sm leading-relaxed mt-3">{proj.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
