@@ -494,6 +494,9 @@ export const blogPosts: BlogPost[] = [
     slug: "india-vertical-mobility-boom-2026",
     title:
       "India's Vertical Mobility Boom: Why 2026 Is a Landmark Year for Elevators & Cranes",
+    seoTitle: "India's Vertical Mobility Boom 2026 | Linkwel Blog",
+    metaDesc:
+      "From high-rise launches in Delhi NCR to surging EOT crane demand, India's lift and crane industry enters its strongest growth phase in 2026.",
     excerpt:
       "From record high-rise launches in Delhi NCR to surging demand for EOT cranes in manufacturing, India's lift and crane industry is entering its strongest growth phase yet.",
     date: "2026-04-24",
