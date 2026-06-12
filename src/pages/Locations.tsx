@@ -50,11 +50,11 @@ const Locations = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Locations We Serve | Elevators & Cranes Across North India | Linkwel Engineers</title>
-        <meta name="description" content="Linkwel Engineers delivers elevators, lifts and industrial cranes across Delhi NCR, Himachal, Punjab, Haryana, UP, Uttarakhand and Rajasthan — including Shimla, New Chandigarh, Faridabad, Dehradun, Jaipur and more." />
+        <title>Locations We Serve | North India – Linkwel Engineers</title>
+        <meta name="description" content="Linkwel Engineers delivers elevators, lifts and industrial cranes across Delhi NCR, Himachal, Punjab, Haryana, UP, Uttarakhand and Rajasthan." />
         <meta name="keywords" content="Elevator manufacturer North India, Lift suppliers Shimla, Elevator company New Chandigarh, Lift dealers Faridabad, EOT crane Bhiwadi, Goods lift Dehradun, Passenger lift Jaipur, Industrial crane Ludhiana, Hospital lift Lucknow, Home elevator Mohali" />
         <link rel="canonical" href={canonical} />
-        <meta property="og:title" content="Locations We Serve | Linkwel Engineers" />
+        <meta property="og:title" content="Locations We Serve | North India – Linkwel Engineers" />
         <meta property="og:description" content="Elevators, lifts and industrial cranes across North India by Linkwel Engineers." />
         <meta property="og:url" content={canonical} />
       </Helmet>
