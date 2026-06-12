@@ -14,19 +14,19 @@ const ProductsLifts = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Elevators & Lifts in India | Passenger, Home, Hospital, Capsule</title>
+        <title>Elevators & Lifts | Lift Manufacturers India – Linkwel</title>
         <meta
           name="description"
-          content="Premium elevators by Linkwel Engineers - passenger, home, hospital, capsule, goods and car lifts. Leading lift manufacturers in Delhi NCR serving clients across India."
+          content="Premium passenger, home, hospital, capsule, goods and car lifts by Linkwel Engineers. Lift manufacturers in Delhi NCR serving clients across India."
         />
         <meta name="keywords" content="lift manufacturers in India, passenger elevator manufacturers, home lift manufacturers, hospital elevator suppliers, capsule lift manufacturers Delhi, goods lift India" />
         <link rel="canonical" href="https://linkwelengineers.com/products/lifts" />
-        <meta property="og:title" content="Elevators & Lifts in India | Passenger, Home, Hospital, Capsule" />
+        <meta property="og:title" content="Elevators & Lifts | Lift Manufacturers India – Linkwel" />
         <meta property="og:description" content="Premium passenger, home, hospital, capsule, goods and car lifts by Linkwel Engineers. Lift manufacturers in Delhi NCR & India." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://linkwelengineers.com/products/lifts" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Elevators & Lifts in India | Passenger, Home, Hospital, Capsule" />
+        <meta name="twitter:title" content="Elevators & Lifts | Lift Manufacturers India – Linkwel" />
         <meta name="twitter:description" content="Premium elevators and lifts by Linkwel Engineers - passenger, home, hospital, capsule, goods and car lifts." />
       </Helmet>
       <SeoBreadcrumbs items={[{name: "Products",path: "/products"},{name: "Lifts",path: "/products/lifts"}]} hidden />
