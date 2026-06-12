@@ -114,6 +114,9 @@ export const blogPosts: BlogPost[] = [
     slug: "home-lift-for-villa-bungalow-delhi-ncr",
     title:
       "Home Lift for Villa & Bungalow in Delhi NCR: 2026 Buyer's Guide",
+    seoTitle: "Home Lift for Villa & Bungalow Delhi NCR | Linkwel",
+    metaDesc:
+      "Compare home lift types, costs, shaft sizes and luxury options for villas, bungalows, duplexes and independent houses in Delhi NCR for 2026.",
     excerpt:
       "Planning a home lift for your villa, bungalow, duplex or independent house in Delhi NCR? Compare types, costs, shaft sizes and luxury options for 2, 3 and 4 floor homes.",
     date: "2026-05-15",
