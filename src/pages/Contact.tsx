@@ -65,7 +65,7 @@ const Contact = () => {
     <Layout>
       <Helmet>
         <title>Contact Linkwel Engineers | Free Lift & Crane Quote in India</title>
-        <meta name="description" content="Contact Linkwel Engineers for a free quote on elevators, lifts and industrial cranes. Trusted lift & crane manufacturers in Delhi NCR serving clients across India." />
+        <meta name="description" content="Contact Linkwel Engineers for a free quote on elevators, lifts and industrial cranes. Trusted manufacturers in Delhi NCR serving across India." />
         <meta name="keywords" content="lifts near me, crane manufacturers near me, lift manufacturer in Delhi, elevator manufacturers in India, EOT crane manufacturers in India, contact elevator and crane company" />
         <link rel="canonical" href="https://linkwelengineers.com/contact" />
         <meta property="og:title" content="Contact Linkwel Engineers | Free Lift & Crane Quote in India" />

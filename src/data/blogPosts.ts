@@ -19,6 +19,10 @@ export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
+  /** Optional SEO meta title (<60 chars). Falls back to `${title} | Linkwel Engineers Blog`. */
+  seoTitle?: string;
+  /** Optional SEO meta description (<155 chars). Falls back to excerpt. */
+  metaDesc?: string;
   date: string; // ISO
   readTime: string;
   author: string;
@@ -110,6 +114,9 @@ export const blogPosts: BlogPost[] = [
     slug: "home-lift-for-villa-bungalow-delhi-ncr",
     title:
       "Home Lift for Villa & Bungalow in Delhi NCR: 2026 Buyer's Guide",
+    seoTitle: "Home Lift for Villa & Bungalow Delhi NCR | Linkwel",
+    metaDesc:
+      "Compare home lift types, costs, shaft sizes and luxury options for villas, bungalows, duplexes and independent houses in Delhi NCR for 2026.",
     excerpt:
       "Planning a home lift for your villa, bungalow, duplex or independent house in Delhi NCR? Compare types, costs, shaft sizes and luxury options for 2, 3 and 4 floor homes.",
     date: "2026-05-15",
@@ -306,6 +313,9 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "home-elevator-buying-guide-india-2026",
     title: "Home Elevator Buying Guide India 2026",
+    seoTitle: "Home Elevator Buying Guide India 2026 | Linkwel",
+    metaDesc:
+      "Our 2026 guide to home elevators in India covers types, costs, shaft requirements and safety norms for builders in Delhi, Noida and Gurgaon.",
     excerpt:
       "Planning to install home elevators in your residential project? Our 2026 guide covers types, costs, shaft requirements and safety norms for builders in Delhi, Noida and Gurgaon.",
     date: "2026-05-06",
@@ -484,6 +494,9 @@ export const blogPosts: BlogPost[] = [
     slug: "india-vertical-mobility-boom-2026",
     title:
       "India's Vertical Mobility Boom: Why 2026 Is a Landmark Year for Elevators & Cranes",
+    seoTitle: "India's Vertical Mobility Boom 2026 | Linkwel Blog",
+    metaDesc:
+      "From high-rise launches in Delhi NCR to surging EOT crane demand, India's lift and crane industry enters its strongest growth phase in 2026.",
     excerpt:
       "From record high-rise launches in Delhi NCR to surging demand for EOT cranes in manufacturing, India's lift and crane industry is entering its strongest growth phase yet.",
     date: "2026-04-24",

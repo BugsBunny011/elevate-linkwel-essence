@@ -153,7 +153,7 @@ const CityPage = ({ slug, city }: CityConfig) => {
     <Layout>
       <Helmet>
         <title>{`Elevators, Lifts & Cranes in ${city} | Linkwel Engineers`}</title>
-        <meta name="description" content={`Leading elevator & industrial crane manufacturer in ${city}. Passenger lifts, home elevators, goods lifts, EOT & gantry cranes. 35+ years experience. Free quote.`} />
+        <meta name="description" content={`Elevator & industrial crane manufacturer in ${city}. Passenger lifts, home elevators, EOT & gantry cranes. 35+ years experience. Free quote.`} />
         <meta name="keywords" content={data.keywords.join(", ")} />
         <link rel="canonical" href={canonical} />
         <meta property="og:title" content={`Elevators, Lifts & Cranes in ${city} | Linkwel Engineers`} />

@@ -24,17 +24,17 @@ const About = () => {
   return (
     <Layout>
       <Helmet>
-        <title>About Linkwel Engineers | Lift & Crane Manufacturers Since 1989 – Delhi NCR</title>
-        <meta name="description" content="Linkwel Engineers has been manufacturing elevators and industrial cranes in India since 1989. Learn about our 35+ years of engineering expertise, certifications, and team." />
+        <title>About Linkwel Engineers | Manufacturers Since 1989</title>
+        <meta name="description" content="Linkwel Engineers has manufactured elevators and industrial cranes in India since 1989. 35+ years of engineering expertise, certifications and team." />
         <meta name="keywords" content="elevator and crane company in India, lift manufacturers in Delhi since 1989, crane manufacturers near me, industrial crane company India, elevator manufacturers Delhi NCR" />
         <link rel="canonical" href="https://linkwelengineers.com/about" />
-        <meta property="og:title" content="About Linkwel Engineers | Lift & Crane Manufacturers Since 1989" />
-        <meta property="og:description" content="Linkwel Engineers has been manufacturing elevators and industrial cranes in India since 1989. Learn about our 35+ years of engineering expertise, certifications, and team." />
+        <meta property="og:title" content="About Linkwel Engineers | Manufacturers Since 1989" />
+        <meta property="og:description" content="Linkwel Engineers has manufactured elevators and industrial cranes in India since 1989. 35+ years of engineering expertise, certifications and team." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://linkwelengineers.com/about" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Linkwel Engineers | Lift & Crane Manufacturers Since 1989" />
-        <meta name="twitter:description" content="Linkwel Engineers has been manufacturing elevators and industrial cranes in India since 1989. Learn about our 35+ years of engineering expertise, certifications, and team." />
+        <meta name="twitter:title" content="About Linkwel Engineers | Manufacturers Since 1989" />
+        <meta name="twitter:description" content="Linkwel Engineers has manufactured elevators and industrial cranes in India since 1989. 35+ years of engineering expertise." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",

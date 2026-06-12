@@ -57,19 +57,19 @@ const BlogPost = () => {
   return (
     <Layout>
       <Helmet>
-        <title>{post.title} | Linkwel Engineers Blog</title>
-        <meta name="description" content={post.excerpt} />
+        <title>{post.seoTitle ?? `${post.title} | Linkwel Engineers Blog`}</title>
+        <meta name="description" content={post.metaDesc ?? post.excerpt} />
         <meta name="keywords" content={post.keywords} />
         <link rel="canonical" href={url} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:title" content={post.seoTitle ?? post.title} />
+        <meta property="og:description" content={post.metaDesc ?? post.excerpt} />
         <meta property="og:url" content={url} />
         <meta property="og:image" content={`https://linkwelengineers.com${post.image}`} />
         <meta property="article:published_time" content={post.date} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.title} />
-        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:title" content={post.seoTitle ?? post.title} />
+        <meta name="twitter:description" content={post.metaDesc ?? post.excerpt} />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         {faqSchema && (
           <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

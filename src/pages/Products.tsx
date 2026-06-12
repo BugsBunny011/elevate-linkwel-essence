@@ -17,7 +17,7 @@ const Products = () => {
         <title>Elevators, Lifts & Industrial Cranes | Linkwel Engineers</title>
         <meta
           name="description"
-          content="Browse Linkwel Engineers' full product range: passenger, home, hospital, capsule, goods & car lifts plus EOT, single & double girder, gantry, goliath, jib cranes and electric hoists."
+          content="Browse our full range of passenger, home, hospital, capsule, goods & car lifts plus EOT, gantry, goliath, jib cranes and electric hoists."
         />
         <meta name="keywords" content="elevators and cranes India, lift manufacturers in Delhi, EOT crane manufacturers, gantry crane suppliers, jib crane manufacturers, electric hoists India, industrial crane manufacturers" />
         <link rel="canonical" href="https://linkwelengineers.com/products" />

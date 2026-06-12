@@ -25,6 +25,15 @@ import {
 
 const ProductDetail = () => {
   const { slug } = useParams<{ slug: string }>();
+
+  // Slug redirects (legacy/alias URLs -> canonical product slug)
+  const SLUG_REDIRECTS: Record<string, string> = {
+    "eot-cranes": "overhead-cranes",
+  };
+  if (slug && SLUG_REDIRECTS[slug]) {
+    return <Navigate to={`/products/${SLUG_REDIRECTS[slug]}`} replace />;
+  }
+
   const product = products.find((p) => p.slug === slug);
 
   if (!product) return <Navigate to="/products" replace />;

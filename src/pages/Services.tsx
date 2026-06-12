@@ -38,16 +38,16 @@ const Services = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Lift & Crane Services in India | Installation, AMC, Modernization</title>
+        <title>Lift & Crane Services | Installation & AMC – Linkwel</title>
         <meta name="description" content="Linkwel Engineers offers expert installation, maintenance, modernization & AMC services for elevators, lifts and industrial cranes across Delhi NCR & India." />
         <meta name="keywords" content="lift installation services, elevator maintenance, crane installation services, EOT crane maintenance, elevator modernization, AMC elevator and crane, industrial crane services India" />
         <link rel="canonical" href="https://linkwelengineers.com/services" />
-        <meta property="og:title" content="Lift & Crane Services in India | Installation, AMC, Modernization" />
+        <meta property="og:title" content="Lift & Crane Services | Installation & AMC – Linkwel" />
         <meta property="og:description" content="Installation, maintenance, modernization & AMC for elevators, lifts and industrial cranes across India since 1989." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://linkwelengineers.com/services" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Lift & Crane Services in India | Installation, AMC, Modernization" />
+        <meta name="twitter:title" content="Lift & Crane Services | Installation & AMC – Linkwel" />
         <meta name="twitter:description" content="Expert installation, maintenance & AMC services for lifts and industrial cranes across India." />
         <meta property="og:image" content="https://linkwelengineers.com/og-image.jpg" />
         <meta name="twitter:image" content="https://linkwelengineers.com/og-image.jpg" />
