@@ -69,16 +69,16 @@ const AMC = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Elevator AMC Services | Annual Maintenance Contract – Linkwel Engineers</title>
+        <title>Elevator AMC Services Delhi NCR – Linkwel Engineers</title>
         <meta name="description" content="Linkwel Engineers offers comprehensive AMC for elevators and lifts in Delhi NCR. Preventive maintenance, 24/7 breakdown support, and certified technicians." />
         <meta name="keywords" content="elevator AMC Delhi NCR, lift AMC services, elevator annual maintenance contract, elevator preventive maintenance, lift maintenance Delhi NCR" />
         <link rel="canonical" href="https://linkwelengineers.com/services/amc" />
-        <meta property="og:title" content="Elevator AMC Services | Annual Maintenance Contract – Linkwel Engineers" />
+        <meta property="og:title" content="Elevator AMC Services Delhi NCR – Linkwel Engineers" />
         <meta property="og:description" content="Comprehensive AMC for elevators and lifts in Delhi NCR. Preventive maintenance, 24/7 breakdown support, and certified technicians." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://linkwelengineers.com/services/amc" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Elevator AMC Services | Annual Maintenance Contract – Linkwel Engineers" />
+        <meta name="twitter:title" content="Elevator AMC Services Delhi NCR – Linkwel Engineers" />
         <meta name="twitter:description" content="Comprehensive AMC for elevators and lifts in Delhi NCR. Preventive maintenance, 24/7 breakdown support, and certified technicians." />
         <meta property="og:image" content="https://linkwelengineers.com/og-image.jpg" />
         <meta name="twitter:image" content="https://linkwelengineers.com/og-image.jpg" />
