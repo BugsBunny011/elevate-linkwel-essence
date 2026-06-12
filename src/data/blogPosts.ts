@@ -19,6 +19,10 @@ export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
+  /** Optional SEO meta title (<60 chars). Falls back to `${title} | Linkwel Engineers Blog`. */
+  seoTitle?: string;
+  /** Optional SEO meta description (<155 chars). Falls back to excerpt. */
+  metaDesc?: string;
   date: string; // ISO
   readTime: string;
   author: string;
