@@ -3,17 +3,17 @@ import { useEffect, useRef, useState } from "react";
 const WORDS = [
   "EOT Cranes",
   "Single Girder Cranes",
-  "Double Girder Cranes",
-  "Gantry Cranes",
-  "Goliath Cranes",
-  "Jib Cranes",
-  "Electric Hoists",
   "Passenger Elevators",
   "Home Elevators",
+  "Double Girder Cranes",
+  "Gantry Cranes",
   "Freight and Goods Elevators",
   "Hospital Elevators",
+  "Goliath Cranes",
+  "Jib Cranes",
   "Capsule and Glass Elevators",
   "Car Elevators",
+  "Electric Hoists",
 ];
 
 const ITEM_HEIGHT = 64;
