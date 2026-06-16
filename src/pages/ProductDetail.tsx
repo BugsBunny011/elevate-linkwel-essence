@@ -419,6 +419,15 @@ const ProductDetail = () => {
                     Frequently Asked Questions
                   </h2>
                 </div>
+                {/* SEO: full Q&A text rendered in DOM for crawlers (visually hidden, accordion below is visual UI) */}
+                <div className="sr-only" aria-hidden="true">
+                  {product.faqs.map((faq, i) => (
+                    <div key={`seo-faq-${i}`}>
+                      <h3>{faq.question}</h3>
+                      <p>{faq.answer}</p>
+                    </div>
+                  ))}
+                </div>
                 <Accordion type="single" collapsible className="space-y-3">
                   {product.faqs.map((faq, i) => (
                     <AccordionItem
