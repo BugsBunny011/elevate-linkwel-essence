@@ -419,6 +419,15 @@ const ProductDetail = () => {
                     Frequently Asked Questions
                   </h2>
                 </div>
+                {/* SEO: full Q&A text rendered in DOM for crawlers (visually hidden, accordion below is visual UI) */}
+                <div className="sr-only" aria-hidden="true">
+                  {product.faqs.map((faq, i) => (
+                    <div key={`seo-faq-${i}`}>
+                      <h3>{faq.question}</h3>
+                      <p>{faq.answer}</p>
+                    </div>
+                  ))}
+                </div>
                 <Accordion type="single" collapsible className="space-y-3">
                   {product.faqs.map((faq, i) => (
                     <AccordionItem
@@ -429,7 +438,7 @@ const ProductDetail = () => {
                       <AccordionTrigger className="text-left font-body font-semibold text-foreground hover:no-underline py-5 text-sm md:text-base">
                         {faq.question}
                       </AccordionTrigger>
-                      <AccordionContent>
+                      <AccordionContent forceMount>
                         <p className="text-muted-foreground font-body text-sm leading-relaxed pb-2">
                           {faq.answer}
                         </p>
