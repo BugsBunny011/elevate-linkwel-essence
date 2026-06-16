@@ -129,6 +129,13 @@ const ManufactureCarousel = () => {
         </div>
       </div>
 
+      {/* SEO: full product list visible to crawlers, hidden from sighted users */}
+      <ul className="sr-only" aria-hidden="true">
+        {WORDS.map((w) => (
+          <li key={w}>We manufacture {w}</li>
+        ))}
+      </ul>
+
       <style>{`
         @keyframes glide-up {
           from { transform: translateY(${ITEM_HEIGHT}px); }
