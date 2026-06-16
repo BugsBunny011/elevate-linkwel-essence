@@ -534,7 +534,7 @@ const Index = () => {
                     </div>
                     <div>
                       <p className="text-gold-light font-body font-semibold text-sm">{t.name}</p>
-                      {t.date && <p className="text-gold-light/50 font-body text-xs">{t.date}</p>}
+                      {t.postedAt && <p className="text-gold-light/50 font-body text-xs">{getRelativeDate(t.postedAt)}</p>}
                     </div>
                   </div>
                   <div className="flex items-center gap-1 mb-4" aria-label={`${t.rating} out of 5 stars`}>
