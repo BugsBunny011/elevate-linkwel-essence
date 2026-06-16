@@ -196,6 +196,17 @@ const About = () => {
                 </AccordionItem>
               </ScrollReveal>
             </Accordion>
+
+            {/* SEO: full text from collapsed "Our Story" accordion, visible to crawlers, no visual impact */}
+            <div className="sr-only" aria-hidden="true">
+              <h3>Our Story</h3>
+              <p>In 1989, Mr. Suresh Bagga founded Linkwel in Okhla, New Delhi, with a clear vision: to build precision-engineered solutions for India's growing industrial landscape.</p>
+              <p>The company began by manufacturing crane components, quickly earning a reputation for quality and reliability among industrial clients.</p>
+              <h4>Growth and Expansion</h4>
+              <p>In the early 2000s, Linkwel expanded into complete elevator systems and full crane manufacturing, responding to India's rapid infrastructure growth.</p>
+              <p>Under the leadership of CEO Mr. Sunit Bagga, the company has continued to innovate, embracing modern technology, expanding its service portfolio, and strengthening client relationships across India.</p>
+              <p>Today, with over 35 years of experience and 500+ successful projects, Linkwel Engineers remains committed to engineering excellence, innovation, and customer-focused solutions.</p>
+            </div>
           </div>
         </div>
       </section>
