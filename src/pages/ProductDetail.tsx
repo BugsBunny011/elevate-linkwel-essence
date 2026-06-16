@@ -438,7 +438,7 @@ const ProductDetail = () => {
                       <AccordionTrigger className="text-left font-body font-semibold text-foreground hover:no-underline py-5 text-sm md:text-base">
                         {faq.question}
                       </AccordionTrigger>
-                      <AccordionContent forceMount>
+                      <AccordionContent>
                         <p className="text-muted-foreground font-body text-sm leading-relaxed pb-2">
                           {faq.answer}
                         </p>
