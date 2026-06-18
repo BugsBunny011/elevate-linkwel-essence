@@ -526,33 +526,43 @@ const Index = () => {
               </div>
             </div>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <ScrollReveal key={i} delay={i * 150}>
-                <div className="bg-navy-light/30 backdrop-blur border border-gold/10 rounded-lg p-8 h-full flex flex-col">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full gold-gradient flex items-center justify-center text-white font-heading font-semibold text-sm shrink-0">
-                      {getInitials(t.name)}
+          <Carousel
+            opts={{ align: "start", loop: true }}
+            plugins={[Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })]}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {testimonials.map((t, i) => (
+                <CarouselItem key={i} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="bg-navy-light/30 backdrop-blur border border-gold/10 rounded-lg p-8 h-full flex flex-col">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-full gold-gradient flex items-center justify-center text-white font-heading font-semibold text-sm shrink-0">
+                        {getInitials(t.name)}
+                      </div>
+                      <div>
+                        <p className="text-gold-light font-body font-semibold text-sm">{t.name}</p>
+                        {t.postedAt && <p className="text-gold-light/50 font-body text-xs">{getRelativeDate(t.postedAt)}</p>}
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-gold-light font-body font-semibold text-sm">{t.name}</p>
-                      {t.postedAt && <p className="text-gold-light/50 font-body text-xs">{getRelativeDate(t.postedAt)}</p>}
+                    <div className="flex items-center gap-1 mb-4" aria-label={`${t.rating} out of 5 stars`}>
+                      {[...Array(5)].map((_, j) => (
+                        <Star
+                          key={j}
+                          size={14}
+                          className={j < t.rating ? "text-gold fill-gold" : "text-gold/20"}
+                        />
+                      ))}
                     </div>
+                    <p className="text-gold-light/70 font-body text-sm leading-relaxed">"{t.text}"</p>
                   </div>
-                  <div className="flex items-center gap-1 mb-4" aria-label={`${t.rating} out of 5 stars`}>
-                    {[...Array(5)].map((_, j) => (
-                      <Star
-                        key={j}
-                        size={14}
-                        className={j < t.rating ? "text-gold fill-gold" : "text-gold/20"}
-                      />
-                    ))}
-                  </div>
-                  <p className="text-gold-light/70 font-body text-sm leading-relaxed">"{t.text}"</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="hidden md:block">
+              <CarouselPrevious className="border-gold/30 bg-navy-light/50 text-gold-light hover:bg-navy-light hover:text-gold" />
+              <CarouselNext className="border-gold/30 bg-navy-light/50 text-gold-light hover:bg-navy-light hover:text-gold" />
+            </div>
+          </Carousel>
         </div>
       </section>
 
