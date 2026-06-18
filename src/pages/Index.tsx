@@ -34,13 +34,15 @@ const projects = [
 
 // Posted dates as ISO strings — relative label is computed at render so it auto-updates.
 const testimonials = [
-  { name: "Gagan Rana", rating: 5, postedAt: "2026-06-13", text: "Very good service. Mr. Bagga is also very nice, was present on time during installation and very cooperative throughout the process." },
-  { name: "Raghav Gupta", rating: 5, postedAt: "2026-06-09", text: "We saw this company reference from our relative in Indore. Contacted them for our Gwalior residence. Very professional behavior from sales to installation. Lift design is also very elegant, matches our interior." },
-  { name: "Kinshuk Ahuja", rating: 4, postedAt: "2026-06-08", text: "Good product and good service. Only little delay in delivery otherwise everything is fine. Crane quality is superb and their after sales support is also very nice." },
-  { name: "Jivanshu Kumar", rating: 4, postedAt: "2026-06-07", text: "Good Company for industrial lifting solutions. staff was responsive and installation quality was proper." },
-  { name: "Sanat Gupta", rating: 5, postedAt: "2026-06-02", text: "Overall service was good. Installation took one extra day but quality was satisfactory." },
-  { name: "Aditya Singhania", rating: 5, postedAt: "2026-06-01", text: "Installed hydraulic lift at our warehouse. Smooth experience." },
-];
+  { name: "Gagan Rana", rating: 5, postedAt: "2026-05-21", text: "Very good service. Mr. Bagga is also very nice, was present on time during installation and very cooperative throughout the process." },
+  { name: "Raghav Gupta", rating: 5, postedAt: "2026-05-18", text: "We saw this company reference from our relative in Indore. Contacted them for our Gwalior residence. Very professional behavior from sales to installation. Lift design is also very elegant, matches our interior." },
+  { name: "Kinshuk Ahuja", rating: 4, postedAt: "2026-05-17", text: "Good product and good service. Only little delay in delivery otherwise everything is fine. Crane quality is superb and their after sales support is also very nice." },
+  { name: "Jivanshu Kumar", rating: 4, postedAt: "2026-05-16", text: "Good Company for industrial lifting solutions. Staff was responsive and installation quality was proper." },
+  { name: "Sanat Gupta", rating: 5, postedAt: "2026-05-15", text: "Overall service was good. Installation took one extra day but quality was satisfactory." },
+  { name: "Aditya Singhania", rating: 5, postedAt: "2026-05-14", text: "Installed hydraulic lift at our warehouse. Smooth experience." },
+]
+  .slice()
+  .sort((a, b) => new Date(b.postedAt).getTime() - new Date(a.postedAt).getTime());
 
 const getInitials = (name: string) =>
   name.split(" ").map((n) => n[0]).slice(0, 2).join("").toUpperCase();
