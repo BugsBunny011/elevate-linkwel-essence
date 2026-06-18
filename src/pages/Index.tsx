@@ -5,6 +5,8 @@ import { ArrowRight, Shield, Award, Wrench, Building2, Star, Quote, ChevronRight
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import ManufactureCarousel from "@/components/ManufactureCarousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import heroFallback from "@/assets/hero-fallback.jpg";
 import installImg from "@/assets/elevator-installation.jpg";
 import elevatorLobbyImg from "@/assets/elevator-lobby.jpg";
@@ -34,13 +36,15 @@ const projects = [
 
 // Posted dates as ISO strings — relative label is computed at render so it auto-updates.
 const testimonials = [
-  { name: "Gagan Rana", rating: 5, postedAt: "2026-06-13", text: "Very good service. Mr. Bagga is also very nice, was present on time during installation and very cooperative throughout the process." },
-  { name: "Raghav Gupta", rating: 5, postedAt: "2026-06-09", text: "We saw this company reference from our relative in Indore. Contacted them for our Gwalior residence. Very professional behavior from sales to installation. Lift design is also very elegant, matches our interior." },
-  { name: "Kinshuk Ahuja", rating: 4, postedAt: "2026-06-08", text: "Good product and good service. Only little delay in delivery otherwise everything is fine. Crane quality is superb and their after sales support is also very nice." },
-  { name: "Jivanshu Kumar", rating: 4, postedAt: "2026-06-07", text: "Good Company for industrial lifting solutions. staff was responsive and installation quality was proper." },
-  { name: "Sanat Gupta", rating: 5, postedAt: "2026-06-02", text: "Overall service was good. Installation took one extra day but quality was satisfactory." },
-  { name: "Aditya Singhania", rating: 5, postedAt: "2026-06-01", text: "Installed hydraulic lift at our warehouse. Smooth experience." },
-];
+  { name: "Gagan Rana", rating: 5, postedAt: "2026-05-21", text: "Very good service. Mr. Bagga is also very nice, was present on time during installation and very cooperative throughout the process." },
+  { name: "Raghav Gupta", rating: 5, postedAt: "2026-05-18", text: "We saw this company reference from our relative in Indore. Contacted them for our Gwalior residence. Very professional behavior from sales to installation. Lift design is also very elegant, matches our interior." },
+  { name: "Kinshuk Ahuja", rating: 4, postedAt: "2026-05-17", text: "Good product and good service. Only little delay in delivery otherwise everything is fine. Crane quality is superb and their after sales support is also very nice." },
+  { name: "Jivanshu Kumar", rating: 4, postedAt: "2026-05-16", text: "Good Company for industrial lifting solutions. Staff was responsive and installation quality was proper." },
+  { name: "Sanat Gupta", rating: 5, postedAt: "2026-05-15", text: "Overall service was good. Installation took one extra day but quality was satisfactory." },
+  { name: "Aditya Singhania", rating: 5, postedAt: "2026-05-14", text: "Installed hydraulic lift at our warehouse. Smooth experience." },
+]
+  .slice()
+  .sort((a, b) => new Date(b.postedAt).getTime() - new Date(a.postedAt).getTime());
 
 const getInitials = (name: string) =>
   name.split(" ").map((n) => n[0]).slice(0, 2).join("").toUpperCase();
@@ -524,33 +528,43 @@ const Index = () => {
               </div>
             </div>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <ScrollReveal key={i} delay={i * 150}>
-                <div className="bg-navy-light/30 backdrop-blur border border-gold/10 rounded-lg p-8 h-full flex flex-col">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full gold-gradient flex items-center justify-center text-white font-heading font-semibold text-sm shrink-0">
-                      {getInitials(t.name)}
+          <Carousel
+            opts={{ align: "start", loop: true }}
+            plugins={[Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })]}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {testimonials.map((t, i) => (
+                <CarouselItem key={i} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="bg-navy-light/30 backdrop-blur border border-gold/10 rounded-lg p-8 h-full flex flex-col">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-full gold-gradient flex items-center justify-center text-white font-heading font-semibold text-sm shrink-0">
+                        {getInitials(t.name)}
+                      </div>
+                      <div>
+                        <p className="text-gold-light font-body font-semibold text-sm">{t.name}</p>
+                        {t.postedAt && <p className="text-gold-light/50 font-body text-xs">{getRelativeDate(t.postedAt)}</p>}
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-gold-light font-body font-semibold text-sm">{t.name}</p>
-                      {t.postedAt && <p className="text-gold-light/50 font-body text-xs">{getRelativeDate(t.postedAt)}</p>}
+                    <div className="flex items-center gap-1 mb-4" aria-label={`${t.rating} out of 5 stars`}>
+                      {[...Array(5)].map((_, j) => (
+                        <Star
+                          key={j}
+                          size={14}
+                          className={j < t.rating ? "text-gold fill-gold" : "text-gold/20"}
+                        />
+                      ))}
                     </div>
+                    <p className="text-gold-light/70 font-body text-sm leading-relaxed">"{t.text}"</p>
                   </div>
-                  <div className="flex items-center gap-1 mb-4" aria-label={`${t.rating} out of 5 stars`}>
-                    {[...Array(5)].map((_, j) => (
-                      <Star
-                        key={j}
-                        size={14}
-                        className={j < t.rating ? "text-gold fill-gold" : "text-gold/20"}
-                      />
-                    ))}
-                  </div>
-                  <p className="text-gold-light/70 font-body text-sm leading-relaxed">"{t.text}"</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="hidden md:block">
+              <CarouselPrevious className="border-gold/30 bg-navy-light/50 text-gold-light hover:bg-navy-light hover:text-gold" />
+              <CarouselNext className="border-gold/30 bg-navy-light/50 text-gold-light hover:bg-navy-light hover:text-gold" />
+            </div>
+          </Carousel>
         </div>
       </section>
 
