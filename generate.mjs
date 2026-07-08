@@ -30,6 +30,7 @@ const productSlugs = [
 ];
 
 const blogSlugs = [
+  "elevator-maintenance-near-me",
   "lift-manufacturers-in-india-linkwel-engineers",
   "india-vertical-mobility-boom-2026",
   "home-elevator-buying-guide-india-2026",
