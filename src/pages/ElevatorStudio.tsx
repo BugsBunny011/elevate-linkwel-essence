@@ -13,23 +13,21 @@ import {
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
-import wallStainless from "@/assets/elevator/wall-stainless.jpg";
-import wallGold from "@/assets/elevator/wall-gold.jpg";
-import wallWood from "@/assets/elevator/wall-wood.jpg";
-import wallRoseGold from "@/assets/elevator/wall-rose-gold.jpg";
-import ceilingRecessedPanel from "@/assets/elevator/ceiling-recessed-panel.jpg";
-import ceilingRingDownlight from "@/assets/elevator/ceiling-ring-downlight.jpg";
-import ceilingCoveLight from "@/assets/elevator/ceiling-cove-light.jpg";
+import wallStainlessOpen from "@/assets/elevator/wall-stainless-open.png.asset.json";
+import wallStainlessClosed from "@/assets/elevator/wall-stainless-closed.png.asset.json";
+import wallGoldOpen from "@/assets/elevator/wall-gold-open.png.asset.json";
+import wallWoodOpen from "@/assets/elevator/wall-wood-open.png.asset.json";
+import wallRoseGoldOpen from "@/assets/elevator/wall-rose-gold-open.png.asset.json";
+import ceilingRingDownlight from "@/assets/elevator/ceiling-ring-downlight.png.asset.json";
+import ceilingCoveLight from "@/assets/elevator/ceiling-cove-light.png.asset.json";
 
 type LightRegion = { top: string; left: string; width: string; height: string; radius?: string };
 
 type WallFinish = {
   id: string;
   name: string;
-  image: string;
+  openImage: string;
   swatch: string;
-  border?: boolean;
-  // Default light-glow region when this wall is displayed (non-stainless walls)
   defaultLightRegion: LightRegion;
 };
 
@@ -37,37 +35,37 @@ const WALL_FINISHES: WallFinish[] = [
   {
     id: "stainless",
     name: "Brushed Stainless Steel",
-    image: wallStainless,
+    openImage: wallStainlessOpen.url,
     swatch: "linear-gradient(135deg, #c8ccd1 0%, #9aa0a6 50%, #c8ccd1 100%)",
-    defaultLightRegion: { top: "6%", left: "26%", width: "48%", height: "24%", radius: "8px" },
+    defaultLightRegion: { top: "13%", left: "40%", width: "22%", height: "10%", radius: "6px" },
   },
   {
     id: "champagne-gold",
     name: "Champagne Gold",
-    image: wallGold,
+    openImage: wallGoldOpen.url,
     swatch: "linear-gradient(135deg, #d4a857 0%, #b8893a 50%, #d4a857 100%)",
-    defaultLightRegion: { top: "5%", left: "25%", width: "50%", height: "25%", radius: "8px" },
+    defaultLightRegion: { top: "13%", left: "40%", width: "22%", height: "10%", radius: "6px" },
   },
   {
     id: "wood",
     name: "Wooden Panel",
-    image: wallWood,
+    openImage: wallWoodOpen.url,
     swatch: "linear-gradient(135deg, #8b5a2b 0%, #5c3a1e 100%)",
-    defaultLightRegion: { top: "5%", left: "25%", width: "50%", height: "25%", radius: "8px" },
+    defaultLightRegion: { top: "13%", left: "40%", width: "22%", height: "10%", radius: "6px" },
   },
   {
     id: "rose-gold",
     name: "Rose Gold",
-    image: wallRoseGold,
+    openImage: wallRoseGoldOpen.url,
     swatch: "linear-gradient(135deg, #e8b4a0 0%, #c68372 50%, #e8b4a0 100%)",
-    defaultLightRegion: { top: "6%", left: "26%", width: "48%", height: "24%", radius: "8px" },
+    defaultLightRegion: { top: "13%", left: "40%", width: "22%", height: "10%", radius: "6px" },
   },
 ];
 
 type CeilingLight = {
   id: string;
   name: string;
-  image: string; // shown only when wall = stainless
+  image: string; // shown only when wall = stainless & door open
   swatch: string;
   lightRegion: LightRegion;
 };
@@ -76,23 +74,23 @@ const CEILING_LIGHTS: CeilingLight[] = [
   {
     id: "recessed-panel",
     name: "Recessed Square Panel",
-    image: ceilingRecessedPanel,
+    image: wallStainlessOpen.url,
     swatch: "linear-gradient(135deg, #f8f9fb 0%, #d8dde3 100%)",
-    lightRegion: { top: "9%", left: "27%", width: "46%", height: "22%", radius: "6px" },
+    lightRegion: { top: "13%", left: "40%", width: "22%", height: "10%", radius: "6px" },
   },
   {
     id: "ring-downlight",
     name: "Circular Ring Downlight",
-    image: ceilingRingDownlight,
+    image: ceilingRingDownlight.url,
     swatch: "radial-gradient(circle, #ffffff 30%, #b8bec7 70%)",
-    lightRegion: { top: "5%", left: "22%", width: "56%", height: "32%", radius: "50%" },
+    lightRegion: { top: "12%", left: "42%", width: "18%", height: "10%", radius: "50%" },
   },
   {
     id: "cove-light",
     name: "Cove Light",
-    image: ceilingCoveLight,
+    image: ceilingCoveLight.url,
     swatch: "linear-gradient(135deg, #fff3d6 0%, #f0c987 100%)",
-    lightRegion: { top: "0%", left: "18%", width: "64%", height: "36%", radius: "45%" },
+    lightRegion: { top: "12%", left: "37%", width: "28%", height: "4%", radius: "3px" },
   },
 ];
 
@@ -104,7 +102,10 @@ const LIGHT_COLORS: LightColor[] = [
   { id: "warm-white", name: "Warm White", swatch: "#FFD9A0", color: "#FFD9A0", opacity: 0.4 },
 ];
 
+type DoorView = "open" | "closed";
+
 const ElevatorStudio = () => {
+  const [doorView, setDoorView] = useState<DoorView>("open");
   const [wallId, setWallId] = useState("stainless");
   const [ceilingId, setCeilingId] = useState("recessed-panel");
   const [lightColorId, setLightColorId] = useState("white");
@@ -117,13 +118,35 @@ const ElevatorStudio = () => {
   const selectedLightColor = LIGHT_COLORS.find((l) => l.id === lightColorId) ?? LIGHT_COLORS[0];
 
   const isStainless = wallId === "stainless";
-  const previewImage = isStainless ? selectedCeiling.image : selectedWall.image;
-  const previewAlt = isStainless
+  const isClosed = doorView === "closed";
+
+  // Pick preview image
+  let previewImage: string;
+  let lightRegion: LightRegion;
+  if (isClosed) {
+    previewImage = wallStainlessClosed.url;
+    lightRegion = selectedWall.defaultLightRegion;
+  } else if (isStainless) {
+    previewImage = selectedCeiling.image;
+    lightRegion = selectedCeiling.lightRegion;
+  } else {
+    previewImage = selectedWall.openImage;
+    lightRegion = selectedWall.defaultLightRegion;
+  }
+
+  const previewAlt = isClosed
+    ? "Elevator cabin with closed brushed stainless steel doors"
+    : isStainless
     ? `${selectedWall.name} elevator cabin with ${selectedCeiling.name}`
     : `${selectedWall.name} elevator cabin`;
-  const lightRegion = isStainless ? selectedCeiling.lightRegion : selectedWall.defaultLightRegion;
 
-  const configuration = `Wall Finish: ${selectedWall.name} | Ceiling Light: ${selectedCeiling.name} | Light Color: ${selectedLightColor.name}`;
+  
+  const configuration = isClosed
+    ? `Door View: Closed | Wall Finish: ${selectedWall.name}`
+    : `Door View: Open | Wall Finish: ${selectedWall.name} | Ceiling Light: ${selectedCeiling.name} | Light Color: ${selectedLightColor.name}`;
+
+  const ceilingDisabled = isClosed || !isStainless;
+  const lightColorDisabled = isClosed;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -163,8 +186,30 @@ const ElevatorStudio = () => {
               alt={previewAlt}
               className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
             />
-            {/* Light color tint overlay — positioned over glow area only */}
-            {selectedLightColor.opacity > 0 && (
+
+            {/* Door View toggle */}
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 inline-flex rounded-full bg-black/60 backdrop-blur border border-white/20 p-1">
+              {(["open", "closed"] as DoorView[]).map((v) => {
+                const active = doorView === v;
+                return (
+                  <button
+                    key={v}
+                    type="button"
+                    onClick={() => setDoorView(v)}
+                    className={cn(
+                      "px-5 py-1.5 text-xs font-medium rounded-full transition-colors",
+                      active ? "bg-gold text-navy" : "text-white/80 hover:text-white"
+                    )}
+                    aria-pressed={active}
+                  >
+                    {v === "open" ? "Open" : "Closed"}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Light color tint overlay — only when door open */}
+            {!isClosed && selectedLightColor.opacity > 0 && (
               <div
                 aria-hidden
                 className="absolute pointer-events-none transition-opacity duration-300"
@@ -234,6 +279,11 @@ const ElevatorStudio = () => {
                   );
                 })}
               </div>
+              {isClosed && !isStainless && (
+                <p className="text-[11px] text-muted-foreground mt-3 italic">
+                  Closed-door view currently available for Brushed Stainless Steel only.
+                </p>
+              )}
             </section>
 
             {/* STEP 2: Ceiling Light Style */}
@@ -242,13 +292,17 @@ const ElevatorStudio = () => {
                 <span className="text-xs font-semibold text-gold tracking-widest">STEP 2</span>
                 <h2 className="font-heading text-xl">Ceiling Light Style</h2>
               </div>
-              {!isStainless && (
+              {isClosed ? (
+                <p className="text-[11px] text-muted-foreground mb-3 italic">
+                  Open the door to preview ceiling lighting.
+                </p>
+              ) : !isStainless ? (
                 <p className="text-[11px] text-muted-foreground mb-3 italic">
                   Available with Brushed Stainless Steel for now.
                 </p>
-              )}
+              ) : null}
 
-              <div className={cn("grid grid-cols-3 gap-4", !isStainless && "opacity-40 pointer-events-none")}>
+              <div className={cn("grid grid-cols-3 gap-4", ceilingDisabled && "opacity-40 pointer-events-none")}>
                 {CEILING_LIGHTS.map((c) => {
                   const active = c.id === ceilingId;
                   return (
@@ -259,7 +313,7 @@ const ElevatorStudio = () => {
                       className="flex flex-col items-center gap-2 group"
                       aria-label={c.name}
                       aria-pressed={active}
-                      disabled={!isStainless}
+                      disabled={ceilingDisabled}
                     >
                       <span
                         className={cn(
@@ -290,8 +344,13 @@ const ElevatorStudio = () => {
                 <span className="text-xs font-semibold text-gold tracking-widest">STEP 3</span>
                 <h2 className="font-heading text-xl">Light Color</h2>
               </div>
+              {isClosed && (
+                <p className="text-[11px] text-muted-foreground mb-3 italic">
+                  Open the door to preview ceiling lighting.
+                </p>
+              )}
 
-              <div className="grid grid-cols-3 gap-4 max-w-xs">
+              <div className={cn("grid grid-cols-3 gap-4 max-w-xs", lightColorDisabled && "opacity-40 pointer-events-none")}>
                 {LIGHT_COLORS.map((l) => {
                   const active = l.id === lightColorId;
                   return (
@@ -302,6 +361,7 @@ const ElevatorStudio = () => {
                       className="flex flex-col items-center gap-2 group"
                       aria-label={l.name}
                       aria-pressed={active}
+                      disabled={lightColorDisabled}
                     >
                       <span
                         className={cn(
