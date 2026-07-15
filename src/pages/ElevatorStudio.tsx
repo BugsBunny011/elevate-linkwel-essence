@@ -13,13 +13,13 @@ import {
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
-import wallStainlessOpen from "@/assets/elevator/wall-stainless-open.png.asset.json";
-import wallStainlessClosed from "@/assets/elevator/wall-stainless-closed.png.asset.json";
-import wallGoldOpen from "@/assets/elevator/wall-gold-open.png.asset.json";
-import wallWoodOpen from "@/assets/elevator/wall-wood-open.png.asset.json";
-import wallRoseGoldOpen from "@/assets/elevator/wall-rose-gold-open.png.asset.json";
-import ceilingRingDownlight from "@/assets/elevator/ceiling-ring-downlight.png.asset.json";
-import ceilingCoveLight from "@/assets/elevator/ceiling-cove-light.png.asset.json";
+import wallStainlessOpen from "@/assets/elevator/wall-stainless-open.jpg";
+import wallStainlessClosed from "@/assets/elevator/wall-stainless-closed.jpg";
+import wallGoldOpen from "@/assets/elevator/wall-gold-open.jpg";
+import wallWoodOpen from "@/assets/elevator/wall-wood-open.jpg";
+import wallRoseGoldOpen from "@/assets/elevator/wall-rose-gold-open.jpg";
+import ceilingRingDownlight from "@/assets/elevator/ceiling-ring-downlight.jpg";
+import ceilingCoveLight from "@/assets/elevator/ceiling-cove-light.jpg";
 
 type LightRegion = { top: string; left: string; width: string; height: string; radius?: string };
 
