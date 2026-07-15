@@ -35,28 +35,28 @@ const WALL_FINISHES: WallFinish[] = [
   {
     id: "stainless",
     name: "Brushed Stainless Steel",
-    openImage: wallStainlessOpen.url,
+    openImage: wallStainlessOpen,
     swatch: "linear-gradient(135deg, #c8ccd1 0%, #9aa0a6 50%, #c8ccd1 100%)",
     defaultLightRegion: { top: "13%", left: "40%", width: "22%", height: "10%", radius: "6px" },
   },
   {
     id: "champagne-gold",
     name: "Champagne Gold",
-    openImage: wallGoldOpen.url,
+    openImage: wallGoldOpen,
     swatch: "linear-gradient(135deg, #d4a857 0%, #b8893a 50%, #d4a857 100%)",
     defaultLightRegion: { top: "13%", left: "40%", width: "22%", height: "10%", radius: "6px" },
   },
   {
     id: "wood",
     name: "Wooden Panel",
-    openImage: wallWoodOpen.url,
+    openImage: wallWoodOpen,
     swatch: "linear-gradient(135deg, #8b5a2b 0%, #5c3a1e 100%)",
     defaultLightRegion: { top: "13%", left: "40%", width: "22%", height: "10%", radius: "6px" },
   },
   {
     id: "rose-gold",
     name: "Rose Gold",
-    openImage: wallRoseGoldOpen.url,
+    openImage: wallRoseGoldOpen,
     swatch: "linear-gradient(135deg, #e8b4a0 0%, #c68372 50%, #e8b4a0 100%)",
     defaultLightRegion: { top: "13%", left: "40%", width: "22%", height: "10%", radius: "6px" },
   },
@@ -74,21 +74,21 @@ const CEILING_LIGHTS: CeilingLight[] = [
   {
     id: "recessed-panel",
     name: "Recessed Square Panel",
-    image: wallStainlessOpen.url,
+    image: wallStainlessOpen,
     swatch: "linear-gradient(135deg, #f8f9fb 0%, #d8dde3 100%)",
     lightRegion: { top: "13%", left: "40%", width: "22%", height: "10%", radius: "6px" },
   },
   {
     id: "ring-downlight",
     name: "Circular Ring Downlight",
-    image: ceilingRingDownlight.url,
+    image: ceilingRingDownlight,
     swatch: "radial-gradient(circle, #ffffff 30%, #b8bec7 70%)",
     lightRegion: { top: "12%", left: "42%", width: "18%", height: "10%", radius: "50%" },
   },
   {
     id: "cove-light",
     name: "Cove Light",
-    image: ceilingCoveLight.url,
+    image: ceilingCoveLight,
     swatch: "linear-gradient(135deg, #fff3d6 0%, #f0c987 100%)",
     lightRegion: { top: "12%", left: "37%", width: "28%", height: "4%", radius: "3px" },
   },
@@ -124,7 +124,7 @@ const ElevatorStudio = () => {
   let previewImage: string;
   let lightRegion: LightRegion;
   if (isClosed) {
-    previewImage = wallStainlessClosed.url;
+    previewImage = wallStainlessClosed;
     lightRegion = selectedWall.defaultLightRegion;
   } else if (isStainless) {
     previewImage = selectedCeiling.image;
