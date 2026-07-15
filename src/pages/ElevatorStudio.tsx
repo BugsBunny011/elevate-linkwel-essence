@@ -140,7 +140,7 @@ const ElevatorStudio = () => {
     ? `${selectedWall.name} elevator cabin with ${selectedCeiling.name}`
     : `${selectedWall.name} elevator cabin`;
 
-  const doorLabel = isClosed ? "Closed" : "Open";
+  
   const configuration = isClosed
     ? `Door View: Closed | Wall Finish: ${selectedWall.name}`
     : `Door View: Open | Wall Finish: ${selectedWall.name} | Ceiling Light: ${selectedCeiling.name} | Light Color: ${selectedLightColor.name}`;
