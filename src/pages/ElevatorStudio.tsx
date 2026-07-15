@@ -16,9 +16,12 @@ import { cn } from "@/lib/utils";
 import wallStainless from "@/assets/elevator/wall-stainless.jpg";
 import wallGold from "@/assets/elevator/wall-gold.jpg";
 import wallWood from "@/assets/elevator/wall-wood.jpg";
-import wallBlack from "@/assets/elevator/wall-black.jpg";
-import wallMirror from "@/assets/elevator/wall-mirror.jpg";
-import wallWhite from "@/assets/elevator/wall-white.jpg";
+import wallRoseGold from "@/assets/elevator/wall-rose-gold.jpg";
+import ceilingRecessedPanel from "@/assets/elevator/ceiling-recessed-panel.jpg";
+import ceilingRingDownlight from "@/assets/elevator/ceiling-ring-downlight.jpg";
+import ceilingCoveLight from "@/assets/elevator/ceiling-cove-light.jpg";
+
+type LightRegion = { top: string; left: string; width: string; height: string; radius?: string };
 
 type WallFinish = {
   id: string;
@@ -26,6 +29,8 @@ type WallFinish = {
   image: string;
   swatch: string;
   border?: boolean;
+  // Default light-glow region when this wall is displayed (non-stainless walls)
+  defaultLightRegion: LightRegion;
 };
 
 const WALL_FINISHES: WallFinish[] = [
@@ -34,48 +39,91 @@ const WALL_FINISHES: WallFinish[] = [
     name: "Brushed Stainless Steel",
     image: wallStainless,
     swatch: "linear-gradient(135deg, #c8ccd1 0%, #9aa0a6 50%, #c8ccd1 100%)",
+    defaultLightRegion: { top: "6%", left: "26%", width: "48%", height: "24%", radius: "8px" },
   },
   {
-    id: "gold",
+    id: "champagne-gold",
     name: "Champagne Gold",
     image: wallGold,
     swatch: "linear-gradient(135deg, #d4a857 0%, #b8893a 50%, #d4a857 100%)",
+    defaultLightRegion: { top: "5%", left: "25%", width: "50%", height: "25%", radius: "8px" },
   },
   {
     id: "wood",
     name: "Wooden Panel",
     image: wallWood,
     swatch: "linear-gradient(135deg, #8b5a2b 0%, #5c3a1e 100%)",
+    defaultLightRegion: { top: "5%", left: "25%", width: "50%", height: "25%", radius: "8px" },
   },
   {
-    id: "black",
-    name: "Black Matte",
-    image: wallBlack,
-    swatch: "#111111",
-  },
-  {
-    id: "mirror",
-    name: "Mirror Finish",
-    image: wallMirror,
-    swatch: "linear-gradient(135deg, #f5f7fa 0%, #b8bec7 40%, #ffffff 70%, #9aa0a6 100%)",
-  },
-  {
-    id: "white",
-    name: "White Gloss",
-    image: wallWhite,
-    swatch: "#ffffff",
-    border: true,
+    id: "rose-gold",
+    name: "Rose Gold",
+    image: wallRoseGold,
+    swatch: "linear-gradient(135deg, #e8b4a0 0%, #c68372 50%, #e8b4a0 100%)",
+    defaultLightRegion: { top: "6%", left: "26%", width: "48%", height: "24%", radius: "8px" },
   },
 ];
 
+type CeilingLight = {
+  id: string;
+  name: string;
+  image: string; // shown only when wall = stainless
+  swatch: string;
+  lightRegion: LightRegion;
+};
+
+const CEILING_LIGHTS: CeilingLight[] = [
+  {
+    id: "recessed-panel",
+    name: "Recessed Square Panel",
+    image: ceilingRecessedPanel,
+    swatch: "linear-gradient(135deg, #f8f9fb 0%, #d8dde3 100%)",
+    lightRegion: { top: "9%", left: "27%", width: "46%", height: "22%", radius: "6px" },
+  },
+  {
+    id: "ring-downlight",
+    name: "Circular Ring Downlight",
+    image: ceilingRingDownlight,
+    swatch: "radial-gradient(circle, #ffffff 30%, #b8bec7 70%)",
+    lightRegion: { top: "5%", left: "22%", width: "56%", height: "32%", radius: "50%" },
+  },
+  {
+    id: "cove-light",
+    name: "Cove Light",
+    image: ceilingCoveLight,
+    swatch: "linear-gradient(135deg, #fff3d6 0%, #f0c987 100%)",
+    lightRegion: { top: "0%", left: "18%", width: "64%", height: "36%", radius: "45%" },
+  },
+];
+
+type LightColor = { id: string; name: string; swatch: string; color: string; opacity: number };
+
+const LIGHT_COLORS: LightColor[] = [
+  { id: "white", name: "White", swatch: "#ffffff", color: "#FFFFFF", opacity: 0 },
+  { id: "natural-white", name: "Natural White", swatch: "#FFF4E0", color: "#FFF4E0", opacity: 0.35 },
+  { id: "warm-white", name: "Warm White", swatch: "#FFD9A0", color: "#FFD9A0", opacity: 0.4 },
+];
+
 const ElevatorStudio = () => {
-  const [wallId, setWallId] = useState<string>("stainless");
+  const [wallId, setWallId] = useState("stainless");
+  const [ceilingId, setCeilingId] = useState("recessed-panel");
+  const [lightColorId, setLightColorId] = useState("white");
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", city: "" });
 
-  const selected = WALL_FINISHES.find((w) => w.id === wallId) ?? WALL_FINISHES[0];
-  const configuration = `Wall Finish: ${selected.name}`;
+  const selectedWall = WALL_FINISHES.find((w) => w.id === wallId) ?? WALL_FINISHES[0];
+  const selectedCeiling = CEILING_LIGHTS.find((c) => c.id === ceilingId) ?? CEILING_LIGHTS[0];
+  const selectedLightColor = LIGHT_COLORS.find((l) => l.id === lightColorId) ?? LIGHT_COLORS[0];
+
+  const isStainless = wallId === "stainless";
+  const previewImage = isStainless ? selectedCeiling.image : selectedWall.image;
+  const previewAlt = isStainless
+    ? `${selectedWall.name} elevator cabin with ${selectedCeiling.name}`
+    : `${selectedWall.name} elevator cabin`;
+  const lightRegion = isStainless ? selectedCeiling.lightRegion : selectedWall.defaultLightRegion;
+
+  const configuration = `Wall Finish: ${selectedWall.name} | Ceiling Light: ${selectedCeiling.name} | Light Color: ${selectedLightColor.name}`;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -107,19 +155,32 @@ const ElevatorStudio = () => {
 
       <div className="min-h-screen bg-background text-foreground">
         <div className="grid lg:grid-cols-2 min-h-screen">
-          {/* Left: Cabin Image */}
+          {/* Left: Cabin Preview */}
           <div className="relative bg-black overflow-hidden h-[60vh] lg:h-screen lg:sticky lg:top-0">
-            {WALL_FINISHES.map((w) => (
-              <img
-                key={w.id}
-                src={w.image}
-                alt={`${w.name} elevator cabin`}
-                className={cn(
-                  "absolute inset-0 w-full h-full object-cover transition-opacity duration-300",
-                  w.id === wallId ? "opacity-100" : "opacity-0"
-                )}
+            <img
+              key={previewImage}
+              src={previewImage}
+              alt={previewAlt}
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+            />
+            {/* Light color tint overlay — positioned over glow area only */}
+            {selectedLightColor.opacity > 0 && (
+              <div
+                aria-hidden
+                className="absolute pointer-events-none transition-opacity duration-300"
+                style={{
+                  top: lightRegion.top,
+                  left: lightRegion.left,
+                  width: lightRegion.width,
+                  height: lightRegion.height,
+                  borderRadius: lightRegion.radius ?? "8px",
+                  backgroundColor: selectedLightColor.color,
+                  opacity: selectedLightColor.opacity,
+                  mixBlendMode: "overlay",
+                  filter: "blur(8px)",
+                }}
               />
-            ))}
+            )}
           </div>
 
           {/* Right: Configurator */}
@@ -133,15 +194,14 @@ const ElevatorStudio = () => {
               </p>
             </header>
 
+            {/* STEP 1: Wall Finish */}
             <section>
               <div className="flex items-baseline gap-3 mb-4">
-                <span className="text-xs font-semibold text-gold tracking-widest">
-                  STEP 1
-                </span>
+                <span className="text-xs font-semibold text-gold tracking-widest">STEP 1</span>
                 <h2 className="font-heading text-xl">Wall Finish</h2>
               </div>
 
-              <div className="grid grid-cols-3 sm:grid-cols-6 gap-4">
+              <div className="grid grid-cols-4 gap-4">
                 {WALL_FINISHES.map((w) => {
                   const active = w.id === wallId;
                   return (
@@ -158,8 +218,7 @@ const ElevatorStudio = () => {
                           "w-14 h-14 rounded-full transition-all duration-200",
                           active
                             ? "ring-2 ring-primary ring-offset-2 ring-offset-background scale-105"
-                            : "ring-1 ring-border group-hover:scale-105",
-                          w.border && !active && "ring-border"
+                            : "ring-1 ring-border group-hover:scale-105"
                         )}
                         style={{ background: w.swatch }}
                       />
@@ -177,6 +236,96 @@ const ElevatorStudio = () => {
               </div>
             </section>
 
+            {/* STEP 2: Ceiling Light Style */}
+            <section>
+              <div className="flex items-baseline gap-3 mb-2">
+                <span className="text-xs font-semibold text-gold tracking-widest">STEP 2</span>
+                <h2 className="font-heading text-xl">Ceiling Light Style</h2>
+              </div>
+              {!isStainless && (
+                <p className="text-[11px] text-muted-foreground mb-3 italic">
+                  Available with Brushed Stainless Steel for now.
+                </p>
+              )}
+
+              <div className={cn("grid grid-cols-3 gap-4", !isStainless && "opacity-40 pointer-events-none")}>
+                {CEILING_LIGHTS.map((c) => {
+                  const active = c.id === ceilingId;
+                  return (
+                    <button
+                      key={c.id}
+                      type="button"
+                      onClick={() => setCeilingId(c.id)}
+                      className="flex flex-col items-center gap-2 group"
+                      aria-label={c.name}
+                      aria-pressed={active}
+                      disabled={!isStainless}
+                    >
+                      <span
+                        className={cn(
+                          "w-14 h-14 rounded-full transition-all duration-200",
+                          active
+                            ? "ring-2 ring-primary ring-offset-2 ring-offset-background scale-105"
+                            : "ring-1 ring-border group-hover:scale-105"
+                        )}
+                        style={{ background: c.swatch }}
+                      />
+                      <span
+                        className={cn(
+                          "text-[11px] text-center leading-tight transition-colors",
+                          active ? "text-foreground" : "text-muted-foreground"
+                        )}
+                      >
+                        {c.name}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
+
+            {/* STEP 3: Light Color */}
+            <section>
+              <div className="flex items-baseline gap-3 mb-4">
+                <span className="text-xs font-semibold text-gold tracking-widest">STEP 3</span>
+                <h2 className="font-heading text-xl">Light Color</h2>
+              </div>
+
+              <div className="grid grid-cols-3 gap-4 max-w-xs">
+                {LIGHT_COLORS.map((l) => {
+                  const active = l.id === lightColorId;
+                  return (
+                    <button
+                      key={l.id}
+                      type="button"
+                      onClick={() => setLightColorId(l.id)}
+                      className="flex flex-col items-center gap-2 group"
+                      aria-label={l.name}
+                      aria-pressed={active}
+                    >
+                      <span
+                        className={cn(
+                          "w-10 h-10 rounded-full transition-all duration-200",
+                          active
+                            ? "ring-2 ring-primary ring-offset-2 ring-offset-background scale-105"
+                            : "ring-1 ring-border group-hover:scale-105"
+                        )}
+                        style={{ backgroundColor: l.swatch }}
+                      />
+                      <span
+                        className={cn(
+                          "text-[11px] text-center leading-tight transition-colors",
+                          active ? "text-foreground" : "text-muted-foreground"
+                        )}
+                      >
+                        {l.name}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
+
             <div className="flex-1" />
 
             <div className="border-t border-border pt-6 space-y-4">
@@ -184,7 +333,7 @@ const ElevatorStudio = () => {
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">
                   Your Design
                 </div>
-                <div className="font-heading text-lg text-foreground">
+                <div className="font-heading text-base text-foreground leading-relaxed">
                   {configuration}
                 </div>
               </div>
