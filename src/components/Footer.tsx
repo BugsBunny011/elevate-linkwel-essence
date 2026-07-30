@@ -118,6 +118,21 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Company Credentials */}
+        <div className="border-t border-gold/10 mt-12 pt-8">
+          <div className="text-xs opacity-60 text-center md:text-left">
+            <p className="mb-1">
+              <span className="font-medium">Regd. Office:</span> DSIDC Complex, 62, Nd-20, Pocket C, Okhla Phase I, Okhla, New Delhi, Delhi 110020
+            </p>
+            <p className="mb-1">
+              <span className="font-medium">GSTIN:</span> 07AAKPB8891L2Z3
+            </p>
+            <p>
+              <span className="font-medium">D&B D-U-N-S®:</span> 863109329
+            </p>
+          </div>
+        </div>
+
         <div className="border-t border-gold/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs opacity-60">
             © {new Date().getFullYear()} Linkwel Engineers. All rights reserved.
