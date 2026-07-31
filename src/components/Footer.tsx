@@ -127,8 +127,11 @@ const Footer = () => {
             <p className="mb-1">
               <span className="font-medium">GSTIN:</span> 07AAKPB8891L2Z3
             </p>
-            <p>
+            <p className="mb-1">
               <span className="font-medium">D&B D-U-N-S®:</span> 863109329
+            </p>
+            <p>
+              <span className="font-medium">Udyam Registration No:</span> UDYAM-DL-08-0068019
             </p>
           </div>
         </div>
