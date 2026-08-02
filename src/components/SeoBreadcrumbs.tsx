@@ -36,7 +36,7 @@ const SeoBreadcrumbs = ({ items, hidden = false }: SeoBreadcrumbsProps) => {
       {!hidden && (
         <nav
           aria-label="Breadcrumb"
-          className="bg-navy-dark/60 border-b border-gold/10"
+          className="bg-navy-dark border-b border-gold/10"
         >
           <ol className="container mx-auto section-padding flex flex-wrap items-center gap-1.5 py-3 text-xs font-body text-gold-light/60">
             {all.map((c, i) => {
