@@ -111,7 +111,7 @@ const AMC = () => {
         })}</script>
       </Helmet>
 
-      <SeoBreadcrumbs items={[{ name: "Services", path: "/services" }, { name: "AMC", path: "/services/amc" }]} />
+      <SeoBreadcrumbs items={[{ name: "Services", path: "/services" }, { name: "AMC", path: "/services/amc" }]} hidden />
 
       {/* Hero */}
       <section className="pt-32 pb-20 navy-gradient">
