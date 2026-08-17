@@ -26,14 +26,9 @@ const PRODUCT_TYPES = [
 const Contact = () => {
   const [form, setForm] = useState({
     productType: "",
-    capacity: "",
-    floorsOrSpan: "",
-    city: "",
-    company: "",
     name: "",
-    phone: "",
     email: "",
-    message: "",
+    phone: "",
   });
 
   const [submitting, setSubmitting] = useState(false);
@@ -53,7 +48,7 @@ const Contact = () => {
       });
 
       toast.success("Thank you! We'll get back to you shortly.");
-      setForm({ productType: "", capacity: "", floorsOrSpan: "", city: "", company: "", name: "", phone: "", email: "", message: "" });
+      setForm({ productType: "", name: "", email: "", phone: "" });
     } catch {
       toast.error("Something went wrong. Please try again.");
     } finally {
