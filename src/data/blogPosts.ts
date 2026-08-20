@@ -181,9 +181,76 @@ export const blogPosts: BlogPost[] = [
       },
       { type: "h3", text: "3. Bought-out component quality" },
       {
-        type: "html">',
+        type: "html",
+        html: 'The bridge is only as good as what hangs from it. Ask which make of wire rope hoist, gearbox, brake and VFD is being supplied, and whether spares are stocked in India. Where a plant needs simple lifting rather than a full crane, a standalone <a href="/products/electric-hoists" class="text-accent underline underline-offset-2 hover:opacity-80">electric wire rope hoist</a> on a monorail is often the more economical answer.',
       },
-      { type: "h2", text: "Placeholder" },
+      { type: "h3", text: "4. Testing and documentation" },
+      {
+        type: "p",
+        text: "Insist on shop load testing at 125 percent of rated capacity, a test certificate, general arrangement drawings, an electrical schematic and an operation and maintenance manual. These documents are also what your factory inspectorate will ask for during statutory inspection.",
+      },
+      { type: "h3", text: "5. After-sales reach" },
+      {
+        type: "p",
+        text: "A crane that is down for a week costs far more than the price difference between two quotations. Confirm the supplier's response time commitment for your specific location, the size of their service team and whether preventive maintenance visits are contracted or ad hoc.",
+      },
+      { type: "h2", text: "Why Delhi NCR Is a Hub for Industrial Crane Manufacturers" },
+      {
+        type: "p",
+        text: "India's material handling industry is concentrated around a handful of clusters, and the National Capital Region is one of the strongest. Fabrication capacity, structural steel supply, skilled welders and a dense base of engineering buyers all sit within a short radius, which shortens both lead times and service response.",
+      },
+      {
+        type: "html",
+        html: 'The industrial belts of <a href="/delhi" class="text-accent underline underline-offset-2 hover:opacity-80">Delhi</a> host older fabrication and workshop units where single girder cranes and hoists dominate, and where modernisation of ageing equipment is now a large part of demand.',
+      },
+      {
+        type: "html",
+        html: 'Across the river, the sectors and industrial phases of <a href="/noida" class="text-accent underline underline-offset-2 hover:opacity-80">Noida and Greater Noida</a> concentrate electronics, auto component and packaging plants, which typically specify medium duty cranes with precise positioning and radio remote control.',
+      },
+      {
+        type: "html",
+        html: 'To the south west, warehousing, logistics parks and automotive suppliers around <a href="/gurgaon" class="text-accent underline underline-offset-2 hover:opacity-80">EOT cranes in Gurgaon and Manesar</a> drive demand for higher duty class double girder installations and long span gantry systems.',
+      },
+      {
+        type: "p",
+        text: "For a buyer, this regional density has a practical benefit. Design review meetings, factory inspection before dispatch and post-installation service can all happen without long travel, and spare parts move in hours rather than days.",
+      },
+      { type: "h2", text: "Comparing EOT Crane Suppliers in India: A Practical Checklist" },
+      {
+        type: "ul",
+        items: [
+          "Years in operation and reference installations in your industry",
+          "In-house design team and ability to share duty calculations before order",
+          "Compliance with IS 3177, IS 807, IS 3938 and IS 13834",
+          "Make and origin of hoist, gearbox, motors, brakes and control panel",
+          "Shop load test at 125 percent with documented certification",
+          "Erection team on the supplier's own payroll rather than fully subcontracted",
+          "Written response time for breakdown support at your location",
+          "Availability of preventive maintenance contracts and stocked spares",
+        ],
+      },
+      { type: "h2", text: "Where Linkwel Engineers Fits" },
+      {
+        type: "p",
+        text: "Linkwel Engineers has been engineering material handling and vertical mobility equipment out of New Delhi for over 35 years. That history matters less as a credential than as a service footprint: cranes we installed a decade ago are still under our maintenance across the region.",
+      },
+      {
+        type: "html",
+        html: 'We manufacture single girder, double girder, gantry, goliath and jib configurations, engineered to the duty class the application actually demands rather than to a catalogue number. You can review the <a href="/products/cranes" class="text-accent underline underline-offset-2 hover:opacity-80">full crane product range</a> before shortlisting.',
+      },
+      {
+        type: "quote",
+        text: "Specify the duty cycle honestly at the enquiry stage. Almost every premature crane failure we are called to inspect began as an under-classified machine.",
+      },
+      { type: "h2", text: "Getting the Specification Right" },
+      {
+        type: "p",
+        text: "Before you approach any manufacturer, gather the span between runway rails, required hook height, safe working load, expected lifts per shift, the class of material being handled, power supply available and any constraints such as low headroom or outdoor exposure. With those eight inputs, a competent supplier can produce a meaningful proposal rather than a placeholder quotation.",
+      },
+      {
+        type: "html",
+        html: 'If you are drawing up a tender or comparing offers already on your desk, our engineering team is happy to review your specification. <a href="/contact" class="text-accent underline underline-offset-2 hover:opacity-80">Request a crane specification review and quotation</a> and we will respond with drawings and duty calculations, not just a price.',
+      },
     ],
   },
   {
