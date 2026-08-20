@@ -30,6 +30,7 @@ const productSlugs = [
 ];
 
 const blogSlugs = [
+  "eot-crane-manufacturers-india",
   "elevator-maintenance-near-me",
   "lift-manufacturers-in-india-linkwel-engineers",
   "india-vertical-mobility-boom-2026",
