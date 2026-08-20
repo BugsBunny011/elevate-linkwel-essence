@@ -3,6 +3,7 @@ import blogHomeElevatorGuide from "@/assets/blog-home-elevator-guide-2026.jpg";
 import blogVillaHomeLift from "@/assets/blog-villa-home-lift-2026.jpg";
 import blogLiftManufacturersIndia from "@/assets/blog-lift-manufacturers-india.jpg";
 import blogElevatorMaintenanceNearMe from "@/assets/blog-elevator-maintenance-near-me.jpg";
+import blogEotCraneManufacturersIndia from "@/assets/blog-eot-crane-manufacturers-india.jpg";
 
 
 export type BlogBlock =
@@ -113,6 +114,146 @@ const villaHomeLiftFaqs: BlogFaq[] = [
 ];
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "eot-crane-manufacturers-india",
+    title:
+      "EOT Crane Manufacturers India: How to Evaluate Suppliers Before You Buy",
+    seoTitle: "EOT Crane Manufacturers India | Linkwel Engineers",
+    metaDesc:
+      "Comparing EOT crane manufacturers in India? See how to judge design, duty class, service and lead times, then request a specification review from Linkwel.",
+    excerpt:
+      "A buyer's guide to EOT crane manufacturers in India: duty classification, girder selection, compliance, after-sales support and why Delhi NCR remains a core manufacturing hub.",
+    date: "2026-08-20",
+    readTime: "11 min read",
+    author: "Linkwel Engineers Editorial",
+    category: "Cranes & Material Handling",
+    image: blogEotCraneManufacturersIndia,
+    imageAlt:
+      "Double girder EOT crane lifting a steel plate inside an Indian fabrication factory",
+    keywords:
+      "EOT crane manufacturers India, overhead crane manufacturers, EOT crane suppliers India, industrial crane manufacturers, EOT crane Delhi NCR",
+    authorBio:
+      "This article is written by the editorial team at Linkwel Engineers, elevator and crane manufacturers based in New Delhi with over 35 years of experience in vertical mobility and material handling across India.",
+    faqs: [
+      {
+        q: "What should I check before shortlisting EOT crane manufacturers in India?",
+        a: "Check in-house design capability, compliance with IS 3177 and IS 807, the duty class the crane is engineered for, the make of hoist and gearbox used, quality of the electrical panel and controls, documented load testing, and the strength of the after-sales service network near your plant. A supplier who can share general arrangement drawings and duty calculations before order is usually a safer choice.",
+      },
+      {
+        q: "What is the difference between single girder and double girder EOT cranes?",
+        a: "A single girder EOT crane carries the hoist on the lower flange of one bridge girder and suits spans and capacities up to roughly 10 to 15 tons in light and medium duty workshops. A double girder EOT crane runs the crab on top of two girders, giving greater hook height, longer spans, higher capacity and better performance in Class M5 and above duty cycles found in fabrication, steel and precast plants.",
+      },
+      {
+        q: "How long does it take to manufacture and install an EOT crane?",
+        a: "For standard capacities, most Indian manufacturers need about 6 to 10 weeks for design approval, fabrication and testing, followed by 3 to 10 days of site erection and commissioning once the gantry girders and runway rails are ready. Custom spans, higher duty classes and special features such as anti-sway or radio remote control can extend the schedule.",
+      },
+      {
+        q: "Which Indian standards apply to overhead cranes?",
+        a: "The most commonly referenced standards are IS 3177 for electric overhead travelling cranes, IS 807 for the design of crane structures, IS 3938 for electric wire rope hoists, and IS 13834 for crane classification. Factory inspectorate approval and periodic load testing under the applicable state Factories Rules also apply once the crane is in service.",
+      },
+      {
+        q: "Do EOT crane suppliers provide maintenance after installation?",
+        a: "Reputable industrial crane manufacturers offer preventive maintenance visits, wire rope and brake inspection, spares support and breakdown response. Confirm the response time commitment for your location and whether spares for the hoist, gearbox and control panel are stocked in India before finalising the order.",
+      },
+    ],
+    content: [
+      {
+        type: "p",
+        text: "Buying an EOT crane is a long-term capital decision. The machine you install today will run for fifteen to twenty five years, and its reliability directly affects throughput on your shop floor. That is why the search for EOT crane manufacturers in India rarely ends with a price comparison. Serious buyers look at engineering depth, compliance, component quality and how quickly a service engineer can reach the plant when something stops.",
+      },
+      {
+        type: "p",
+        text: "This guide sets out what industrial buyers should evaluate when comparing overhead crane manufacturers, why Delhi NCR continues to be a major production and supply hub, and where Linkwel Engineers fits into that landscape.",
+      },
+      { type: "h2", text: "EOT Crane Manufacturers India: What Buyers Should Evaluate" },
+      {
+        type: "p",
+        text: "Most disappointing crane purchases can be traced back to one of five gaps. Working through them methodically at the enquiry stage costs nothing and saves years of downtime.",
+      },
+      { type: "h3", text: "1. Duty classification, not just tonnage" },
+      {
+        type: "p",
+        text: "A ten ton crane lifting twice a shift and a ten ton crane lifting forty times a shift are not the same machine. Duty class under IS 13834 and CMAA determines girder sizing, hoist selection, brake wear and motor rating. Ask every supplier which class they have designed for and request the calculation.",
+      },
+      { type: "h3", text: "2. Structural design and girder choice" },
+      {
+        type: "html",
+        html: 'Single girder configurations are efficient for light and medium duty workshops. Heavy fabrication, steel yards and precast plants usually need double girder construction for hook height and stability. Our full range of <a href="/products/overhead-cranes" class="text-accent underline underline-offset-2 hover:opacity-80">EOT crane specifications and types</a> sets out where each configuration is appropriate.',
+      },
+      { type: "h3", text: "3. Bought-out component quality" },
+      {
+        type: "html",
+        html: 'The bridge is only as good as what hangs from it. Ask which make of wire rope hoist, gearbox, brake and VFD is being supplied, and whether spares are stocked in India. Where a plant needs simple lifting rather than a full crane, a standalone <a href="/products/electric-hoists" class="text-accent underline underline-offset-2 hover:opacity-80">electric wire rope hoist</a> on a monorail is often the more economical answer.',
+      },
+      { type: "h3", text: "4. Testing and documentation" },
+      {
+        type: "p",
+        text: "Insist on shop load testing at 125 percent of rated capacity, a test certificate, general arrangement drawings, an electrical schematic and an operation and maintenance manual. These documents are also what your factory inspectorate will ask for during statutory inspection.",
+      },
+      { type: "h3", text: "5. After-sales reach" },
+      {
+        type: "p",
+        text: "A crane that is down for a week costs far more than the price difference between two quotations. Confirm the supplier's response time commitment for your specific location, the size of their service team and whether preventive maintenance visits are contracted or ad hoc.",
+      },
+      { type: "h2", text: "Why Delhi NCR Is a Hub for Industrial Crane Manufacturers" },
+      {
+        type: "p",
+        text: "India's material handling industry is concentrated around a handful of clusters, and the National Capital Region is one of the strongest. Fabrication capacity, structural steel supply, skilled welders and a dense base of engineering buyers all sit within a short radius, which shortens both lead times and service response.",
+      },
+      {
+        type: "html",
+        html: 'The industrial belts of <a href="/delhi" class="text-accent underline underline-offset-2 hover:opacity-80">Delhi</a> host older fabrication and workshop units where single girder cranes and hoists dominate, and where modernisation of ageing equipment is now a large part of demand.',
+      },
+      {
+        type: "html",
+        html: 'Across the river, the sectors and industrial phases of <a href="/noida" class="text-accent underline underline-offset-2 hover:opacity-80">Noida and Greater Noida</a> concentrate electronics, auto component and packaging plants, which typically specify medium duty cranes with precise positioning and radio remote control.',
+      },
+      {
+        type: "html",
+        html: 'To the south west, warehousing, logistics parks and automotive suppliers around <a href="/gurgaon" class="text-accent underline underline-offset-2 hover:opacity-80">EOT cranes in Gurgaon and Manesar</a> drive demand for higher duty class double girder installations and long span gantry systems.',
+      },
+      {
+        type: "p",
+        text: "For a buyer, this regional density has a practical benefit. Design review meetings, factory inspection before dispatch and post-installation service can all happen without long travel, and spare parts move in hours rather than days.",
+      },
+      { type: "h2", text: "Comparing EOT Crane Suppliers in India: A Practical Checklist" },
+      {
+        type: "ul",
+        items: [
+          "Years in operation and reference installations in your industry",
+          "In-house design team and ability to share duty calculations before order",
+          "Compliance with IS 3177, IS 807, IS 3938 and IS 13834",
+          "Make and origin of hoist, gearbox, motors, brakes and control panel",
+          "Shop load test at 125 percent with documented certification",
+          "Erection team on the supplier's own payroll rather than fully subcontracted",
+          "Written response time for breakdown support at your location",
+          "Availability of preventive maintenance contracts and stocked spares",
+        ],
+      },
+      { type: "h2", text: "Where Linkwel Engineers Fits" },
+      {
+        type: "p",
+        text: "Linkwel Engineers has been engineering material handling and vertical mobility equipment out of New Delhi for over 35 years. That history matters less as a credential than as a service footprint: cranes we installed a decade ago are still under our maintenance across the region.",
+      },
+      {
+        type: "html",
+        html: 'We manufacture single girder, double girder, gantry, goliath and jib configurations, engineered to the duty class the application actually demands rather than to a catalogue number. You can review the <a href="/products/cranes" class="text-accent underline underline-offset-2 hover:opacity-80">full crane product range</a> before shortlisting.',
+      },
+      {
+        type: "quote",
+        text: "Specify the duty cycle honestly at the enquiry stage. Almost every premature crane failure we are called to inspect began as an under-classified machine.",
+      },
+      { type: "h2", text: "Getting the Specification Right" },
+      {
+        type: "p",
+        text: "Before you approach any manufacturer, gather the span between runway rails, required hook height, safe working load, expected lifts per shift, the class of material being handled, power supply available and any constraints such as low headroom or outdoor exposure. With those eight inputs, a competent supplier can produce a meaningful proposal rather than a placeholder quotation.",
+      },
+      {
+        type: "html",
+        html: 'If you are drawing up a tender or comparing offers already on your desk, our engineering team is happy to review your specification. <a href="/contact" class="text-accent underline underline-offset-2 hover:opacity-80">Request a crane specification review and quotation</a> and we will respond with drawings and duty calculations, not just a price.',
+      },
+    ],
+  },
   {
     slug: "elevator-maintenance-near-me",
     title:
