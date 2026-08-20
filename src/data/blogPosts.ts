@@ -114,6 +114,79 @@ const villaHomeLiftFaqs: BlogFaq[] = [
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "eot-crane-manufacturers-india",
+    title:
+      "EOT Crane Manufacturers India: How to Evaluate Suppliers Before You Buy",
+    seoTitle: "EOT Crane Manufacturers India | Linkwel Engineers",
+    metaDesc:
+      "Comparing EOT crane manufacturers in India? See how to judge design, duty class, service and lead times, then request a specification review from Linkwel.",
+    excerpt:
+      "A buyer's guide to EOT crane manufacturers in India: duty classification, girder selection, compliance, after-sales support and why Delhi NCR remains a core manufacturing hub.",
+    date: "2026-08-20",
+    readTime: "11 min read",
+    author: "Linkwel Engineers Editorial",
+    category: "Cranes & Material Handling",
+    image: blogEotCraneManufacturersIndia,
+    imageAlt:
+      "Double girder EOT crane lifting a steel plate inside an Indian fabrication factory",
+    keywords:
+      "EOT crane manufacturers India, overhead crane manufacturers, EOT crane suppliers India, industrial crane manufacturers, EOT crane Delhi NCR",
+    authorBio:
+      "This article is written by the editorial team at Linkwel Engineers, elevator and crane manufacturers based in New Delhi with over 35 years of experience in vertical mobility and material handling across India.",
+    faqs: [
+      {
+        q: "What should I check before shortlisting EOT crane manufacturers in India?",
+        a: "Check in-house design capability, compliance with IS 3177 and IS 807, the duty class the crane is engineered for, the make of hoist and gearbox used, quality of the electrical panel and controls, documented load testing, and the strength of the after-sales service network near your plant. A supplier who can share general arrangement drawings and duty calculations before order is usually a safer choice.",
+      },
+      {
+        q: "What is the difference between single girder and double girder EOT cranes?",
+        a: "A single girder EOT crane carries the hoist on the lower flange of one bridge girder and suits spans and capacities up to roughly 10 to 15 tons in light and medium duty workshops. A double girder EOT crane runs the crab on top of two girders, giving greater hook height, longer spans, higher capacity and better performance in Class M5 and above duty cycles found in fabrication, steel and precast plants.",
+      },
+      {
+        q: "How long does it take to manufacture and install an EOT crane?",
+        a: "For standard capacities, most Indian manufacturers need about 6 to 10 weeks for design approval, fabrication and testing, followed by 3 to 10 days of site erection and commissioning once the gantry girders and runway rails are ready. Custom spans, higher duty classes and special features such as anti-sway or radio remote control can extend the schedule.",
+      },
+      {
+        q: "Which Indian standards apply to overhead cranes?",
+        a: "The most commonly referenced standards are IS 3177 for electric overhead travelling cranes, IS 807 for the design of crane structures, IS 3938 for electric wire rope hoists, and IS 13834 for crane classification. Factory inspectorate approval and periodic load testing under the applicable state Factories Rules also apply once the crane is in service.",
+      },
+      {
+        q: "Do EOT crane suppliers provide maintenance after installation?",
+        a: "Reputable industrial crane manufacturers offer preventive maintenance visits, wire rope and brake inspection, spares support and breakdown response. Confirm the response time commitment for your location and whether spares for the hoist, gearbox and control panel are stocked in India before finalising the order.",
+      },
+    ],
+    content: [
+      {
+        type: "p",
+        text: "Buying an EOT crane is a long-term capital decision. The machine you install today will run for fifteen to twenty five years, and its reliability directly affects throughput on your shop floor. That is why the search for EOT crane manufacturers in India rarely ends with a price comparison. Serious buyers look at engineering depth, compliance, component quality and how quickly a service engineer can reach the plant when something stops.",
+      },
+      {
+        type: "p",
+        text: "This guide sets out what industrial buyers should evaluate when comparing overhead crane manufacturers, why Delhi NCR continues to be a major production and supply hub, and where Linkwel Engineers fits into that landscape.",
+      },
+      { type: "h2", text: "EOT Crane Manufacturers India: What Buyers Should Evaluate" },
+      {
+        type: "p",
+        text: "Most disappointing crane purchases can be traced back to one of five gaps. Working through them methodically at the enquiry stage costs nothing and saves years of downtime.",
+      },
+      { type: "h3", text: "1. Duty classification, not just tonnage" },
+      {
+        type: "p",
+        text: "A ten ton crane lifting twice a shift and a ten ton crane lifting forty times a shift are not the same machine. Duty class under IS 13834 and CMAA determines girder sizing, hoist selection, brake wear and motor rating. Ask every supplier which class they have designed for and request the calculation.",
+      },
+      { type: "h3", text: "2. Structural design and girder choice" },
+      {
+        type: "html",
+        html: 'Single girder configurations are efficient for light and medium duty workshops. Heavy fabrication, steel yards and precast plants usually need double girder construction for hook height and stability. Our full range of <a href="/products/overhead-cranes" class="text-accent underline underline-offset-2 hover:opacity-80">EOT crane specifications and types</a> sets out where each configuration is appropriate.',
+      },
+      { type: "h3", text: "3. Bought-out component quality" },
+      {
+        type: "html">',
+      },
+      { type: "h2", text: "Placeholder" },
+    ],
+  },
+  {
     slug: "elevator-maintenance-near-me",
     title:
       "Elevator Maintenance Near Me: How Regular Lift Servicing Keeps Your Building Safe and Reliable",
