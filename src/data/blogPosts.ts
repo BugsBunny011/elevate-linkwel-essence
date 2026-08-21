@@ -4,6 +4,8 @@ import blogVillaHomeLift from "@/assets/blog-villa-home-lift-2026.jpg";
 import blogLiftManufacturersIndia from "@/assets/blog-lift-manufacturers-india.jpg";
 import blogElevatorMaintenanceNearMe from "@/assets/blog-elevator-maintenance-near-me.jpg";
 import blogEotCraneManufacturersIndia from "@/assets/blog-eot-crane-manufacturers-india.jpg";
+import blogPassengerLiftDelhi from "@/assets/blog-passenger-lift-manufacturers-delhi.jpg";
+
 
 
 export type BlogBlock =
@@ -115,6 +117,157 @@ const villaHomeLiftFaqs: BlogFaq[] = [
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "passenger-lift-manufacturers-delhi",
+    title:
+      "Passenger Lift Manufacturers in Delhi: A Buyer's Guide for Builders and RWAs",
+    seoTitle: "Passenger Lift Manufacturers in Delhi | Linkwel",
+    metaDesc:
+      "How builders, RWAs and property owners should evaluate passenger lift manufacturers in Delhi. Compare types, compliance and AMC, then request a quote.",
+    excerpt:
+      "What builders, RWAs and commercial property owners in Delhi should evaluate before selecting a passenger lift manufacturer: lift technology, capacity planning, Delhi Lift Act compliance, customisation and after-sales support.",
+    date: "2026-08-21",
+    readTime: "10 min read",
+    author: "Linkwel Engineers Editorial",
+    category: "Elevators & Lifts",
+    image: blogPassengerLiftDelhi,
+    imageAlt:
+      "Passenger lift lobby with brushed stainless steel elevator doors in a Delhi commercial building",
+    keywords:
+      "passenger lift manufacturers in Delhi, elevator manufacturers Delhi, lift suppliers Delhi NCR, residential lift installation Delhi, passenger elevator Delhi",
+    authorBio:
+      "This article is written by the editorial team at Linkwel Engineers, elevator and crane manufacturers based in New Delhi with over 35 years of experience in vertical mobility across Delhi NCR.",
+    faqs: [
+      {
+        q: "What is the cost of a passenger lift in Delhi?",
+        a: "In 2026, a passenger lift in Delhi typically costs between ₹9 lakh and ₹16 lakh for a 6 to 8 passenger machine room less installation across G+4 floors with a standard stainless steel cabin. Larger 13 passenger commercial lifts, higher travel heights, glass cabins and features such as ARD, BMS integration and destination control push the figure towards ₹25 lakh and above. Civil work, shaft readiness and the number of stops are usually the biggest cost variables.",
+      },
+      {
+        q: "How long does lift installation take in Delhi?",
+        a: "Once the shaft, pit and machine space are ready and handed over, a standard passenger elevator in a mid rise Delhi building takes about 25 to 45 days for mechanical and electrical installation, followed by 7 to 15 days for testing, commissioning and statutory inspection. Manufacturing lead time before that is generally 6 to 10 weeks depending on cabin customisation.",
+      },
+      {
+        q: "Is AMC mandatory for passenger lifts?",
+        a: "Under the Delhi Lift Act framework and the safety requirements of IS 17900, every installed lift must be maintained by a competent agency and kept in safe working order, with records available for inspection. In practice this means an annual maintenance contract is effectively mandatory for residential societies and commercial buildings, and insurers and inspecting authorities will ask for the AMC and service log.",
+      },
+      {
+        q: "What lift capacities are available for residential buildings?",
+        a: "Residential lift installation in Delhi most commonly uses 4 passenger (272 kg), 6 passenger (408 kg), 8 passenger (544 kg) and 10 passenger (680 kg) capacities. Group housing and apartment blocks usually specify 8 to 13 passengers with at least one stretcher compliant lift, while independent houses and duplexes are comfortable with 3 to 5 passenger compact home lifts.",
+      },
+      {
+        q: "What should an RWA check before appointing a lift supplier?",
+        a: "Ask for the manufacturer's Delhi based service team size and breakdown response commitment, reference installations in comparable buildings, compliance documentation against IS 14665 and IS 17900, the make of the controller, machine and door operator, availability of spares in Delhi NCR, and a written AMC scope that separates comprehensive from non comprehensive coverage.",
+      },
+    ],
+    content: [
+      {
+        type: "p",
+        text: "A passenger lift is one of the few building assets that runs every day for two decades and is used by every occupant. Choosing the wrong supplier does not show up on handover day. It shows up three years later as long breakdown waits, unavailable spares and an escalating maintenance bill. That is why the search for passenger lift manufacturers in Delhi should start with engineering and service capability rather than with the quotation figure.",
+      },
+      {
+        type: "p",
+        text: "This guide is written for builders, resident welfare associations and commercial property owners across the capital. It covers how the main lift technologies differ, how to size capacity for mid rise buildings, what the Delhi regulatory framework expects, and which after sales commitments actually matter.",
+      },
+      { type: "h2", text: "Passenger Lift Manufacturers in Delhi: What to Evaluate First" },
+      {
+        type: "p",
+        text: "Most elevator manufacturers in Delhi can supply a functioning lift. The differences appear in design depth, component sourcing and the service footprint behind the sale. Four questions separate a serious supplier from a trading operation.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Is the controller, machine, door operator and safety gear from a reputable make with spares stocked in India?",
+          "Does the supplier issue traffic and capacity calculations for the building, or simply quote a catalogue model?",
+          "Is the erection team on the manufacturer's own payroll or fully subcontracted?",
+          "What is the written breakdown response time for your specific Delhi location?",
+        ],
+      },
+      { type: "h2", text: "MRL, Hydraulic or Traditional Traction: Choosing the Right Lift Type" },
+      { type: "h3", text: "Machine room less traction (MRL)" },
+      {
+        type: "html",
+        html: 'MRL is now the default for most new mid rise buildings. A gearless permanent magnet machine sits inside the shaft, removing the need for an overhead machine room, cutting energy consumption significantly against older geared systems and delivering a smoother ride. It suits residential towers and offices from G+3 upward. Our <a href="/products/passenger-elevators" class="text-accent underline underline-offset-2 hover:opacity-80">passenger elevator specifications and capacity range</a> set out typical shaft dimensions for each configuration.',
+      },
+      { type: "h3", text: "Hydraulic lifts" },
+      {
+        type: "p",
+        text: "Hydraulic systems push the car with a piston driven by a power pack. They are appropriate for low rise buildings up to roughly four or five stops, need no overhead structural load bearing headroom, and are often the practical answer for retrofits into existing Delhi buildings where the roof cannot carry a traction load. The trade off is slower speed and higher energy use per trip.",
+      },
+      { type: "h3", text: "Traditional geared traction with machine room" },
+      {
+        type: "p",
+        text: "Geared traction with a dedicated machine room remains relevant for heavy duty service lifts, goods movement and buildings where an existing machine room is already built. Maintenance access is easier, but the footprint and energy profile are less efficient than MRL for standard passenger duty.",
+      },
+      { type: "h2", text: "Capacity and Floor Planning for Mid Rise Buildings" },
+      {
+        type: "p",
+        text: "Capacity is not a preference, it is a calculation. Handling capacity should be assessed against occupancy per floor, the number of stops and expected peak traffic in the morning and evening. A common and expensive mistake in Delhi group housing is installing a single 8 passenger lift for a G+7 block with two flats per floor, which produces unacceptable waiting times within a year of occupation.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Independent houses and duplexes: 3 to 5 passengers, 2 to 4 stops",
+          "Small apartment blocks up to G+4: one 6 to 8 passenger lift",
+          "Mid rise residential G+5 to G+10: two lifts, at least one 13 passenger stretcher compliant",
+          "Commercial and office buildings: 13 to 20 passengers with higher speed and duplex control",
+        ],
+      },
+      {
+        type: "p",
+        text: "Speed should be matched to travel height. Up to 15 metres of travel, 1.0 m/s is adequate. Beyond that, 1.5 m/s or higher keeps round trip times reasonable in office buildings.",
+      },
+      { type: "h2", text: "Compliance: Delhi Lift Act and BIS Standards" },
+      {
+        type: "p",
+        text: "Lifts in the capital are governed by the Delhi Lift Rules framework, which requires registration of the installation with the licensing authority, installation and maintenance by a competent agency, and periodic inspection with records kept by the building owner. This applies to residential societies as much as to commercial premises.",
+      },
+      {
+        type: "p",
+        text: "On the technical side, IS 14665 covers the design and installation of electric traction lifts, the IS 17900 series covers safety rules for construction and installation, and NBC 2016 governs fire lift provisions, lobby pressurisation and stretcher lift requirements. Ask any supplier to state compliance against these explicitly in the technical offer, including the fire rating of landing doors and the presence of an automatic rescue device for power failure.",
+      },
+      {
+        type: "quote",
+        text: "Compliance documentation is cheapest to obtain at the order stage. Retrofitting it after inspection is where projects lose months.",
+      },
+      { type: "h2", text: "Customisation: Cabin, COP and Finishes" },
+      {
+        type: "html",
+        html: 'Beyond the mechanics, the cabin is what occupants judge. Wall finishes in hairline stainless steel, mirror, gold titanium, wood laminate or glass, flooring in granite, vinyl or PVC, ceiling and cove lighting layouts, and car operating panel styles all change the perceived quality of a building lobby. You can explore combinations visually in our <a href="/elevator-studio" class="text-accent underline underline-offset-2 hover:opacity-80">elevator cabin configurator</a> before finalising the specification with your architect.',
+      },
+      {
+        type: "p",
+        text: "Practical customisation matters too: vandal resistant panels for public buildings, braille and audio announcements for accessibility, anti bacterial handrails for healthcare use, and separate service entrances in dual door configurations.",
+      },
+      { type: "h2", text: "After Sales Support and AMC" },
+      {
+        type: "html",
+        html: 'Service reach is the single strongest reason to prefer local lift suppliers in Delhi NCR over distant vendors. Confirm the number of technicians deployed in your zone, the escalation path for a trapped passenger call, spare part availability and whether the maintenance visits are scheduled or reactive. Our <a href="/services/amc" class="text-accent underline underline-offset-2 hover:opacity-80">elevator AMC coverage and service tiers</a> explain what comprehensive and non comprehensive contracts include.',
+      },
+      { type: "h2", text: "Delhi NCR Coverage" },
+      {
+        type: "html",
+        html: 'Manufacturing and service operations based in <a href="/delhi" class="text-accent underline underline-offset-2 hover:opacity-80">Delhi</a> put engineers within reach of South Delhi, Dwarka, Rohini, Karol Bagh and the Okhla industrial belt within a short response window, which is what determines lift downtime in practice.',
+      },
+      {
+        type: "html",
+        html: 'The same team handles high rise group housing and commercial projects across the sectors of <a href="/noida" class="text-accent underline underline-offset-2 hover:opacity-80">elevator installation in Noida</a>, where taller towers typically demand duplex control and higher speeds.',
+      },
+      {
+        type: "html",
+        html: 'For corporate parks, condominiums and retail developments to the south west, our <a href="/gurgaon" class="text-accent underline underline-offset-2 hover:opacity-80">lift installation and service in Gurgaon</a> follows the same specification and maintenance standards.',
+      },
+      { type: "h2", text: "Where Linkwel Engineers Fits" },
+      {
+        type: "p",
+        text: "Linkwel Engineers has manufactured and maintained vertical mobility equipment from New Delhi since 1989. Lifts installed by our team more than a decade ago remain under our maintenance across the region, which is the only real test of an after sales promise. We engineer to the building rather than to a catalogue, and we share traffic calculations, general arrangement drawings and compliance documentation before order rather than after it.",
+      },
+      {
+        type: "html",
+        html: 'If you are drawing up a tender for a residential society, a commercial building or a redevelopment project, our engineers can review your shaft drawings and traffic requirement. <a href="/contact" class="text-accent underline underline-offset-2 hover:opacity-80">Request a passenger lift quotation from Linkwel Engineers</a> and we will respond with a specification, not just a price.',
+      },
+    ],
+  },
+  {
+
     slug: "eot-crane-manufacturers-india",
     title:
       "EOT Crane Manufacturers India: How to Evaluate Suppliers Before You Buy",

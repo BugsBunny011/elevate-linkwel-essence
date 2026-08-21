@@ -30,6 +30,7 @@ const productSlugs = [
 ];
 
 const blogSlugs = [
+  "passenger-lift-manufacturers-delhi",
   "eot-crane-manufacturers-india",
   "elevator-maintenance-near-me",
   "lift-manufacturers-in-india-linkwel-engineers",
