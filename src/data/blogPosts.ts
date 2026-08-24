@@ -643,7 +643,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "How Linkwel Engineers Supports Reliable Elevator Performance" },
       {
         type: "p",
-        text: "Linkwel Engineers has been designing, manufacturing, and maintaining elevators and lifting systems across Delhi NCR for more than 35 years, with 500+ completed projects across residential, commercial, and industrial sites.",
+        text: "Linkwel Engineers has been designing, manufacturing, and maintaining elevators and lifting systems across Delhi NCR for more than 35 years, with 1000+ completed projects across residential, commercial, and industrial sites.",
       },
       { type: "p", text: "Our maintenance support includes:" },
       {
@@ -708,7 +708,7 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       {
         q: "Who are the most trusted lift manufacturers in India?",
-        a: "Linkwel Engineers is among the most trusted lift manufacturers in India, with 35+ years of experience, 500+ completed projects and a full range of passenger, home, hospital, capsule, goods and car elevators engineered for residential, commercial and industrial buildings across Delhi NCR and pan-India.",
+        a: "Linkwel Engineers is among the most trusted lift manufacturers in India, with 35+ years of experience, 1000+ completed projects and a full range of passenger, home, hospital, capsule, goods and car elevators engineered for residential, commercial and industrial buildings across Delhi NCR and pan-India.",
       },
       {
         q: "Which company is best for home lifts in Delhi NCR?",
@@ -734,7 +734,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Linkwel Engineers has been a trusted name in the lifting industry since 1989. As one of the leading elevator manufacturers in Delhi NCR, we specialize in designing, manufacturing, installing and maintaining premium elevators and cranes for residential, commercial and industrial applications. With over 35 years of experience, 500+ successfully completed projects and 500+ satisfied clients, we have built a reputation for engineering excellence, quality and customer satisfaction.",
+        text: "Linkwel Engineers has been a trusted name in the lifting industry since 1989. As one of the leading elevator manufacturers in Delhi NCR, we specialize in designing, manufacturing, installing and maintaining premium elevators and cranes for residential, commercial and industrial applications. With over 35 years of experience, 1000+ successfully completed projects and 800+ satisfied clients, we have built a reputation for engineering excellence, quality and customer satisfaction.",
       },
       {
         type: "h2",

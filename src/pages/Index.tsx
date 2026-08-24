@@ -16,9 +16,9 @@ import catCorporate from "@/assets/category-corporate.jpg";
 import eotCraneImg from "@/assets/product-eot-crane.jpg";
 
 const stats = [
-  { value: "500+", label: "Projects Completed" },
+  { value: "1000+", label: "Projects Completed" },
   { value: "35+", label: "Years Experience" },
-  { value: "500+", label: "Happy Clients" },
+  { value: "800+", label: "Happy Clients" },
 ];
 
 const expertise = [
@@ -431,7 +431,7 @@ const Index = () => {
                   and client satisfaction sets us apart, see our <Link to="/services" className="text-accent hover:underline">services</Link>, browse <Link to="/projects" className="text-accent hover:underline">recent projects</Link>, or read insights on our <Link to="/blog" className="text-accent hover:underline">blog</Link>.
                 </p>
                 <div className="space-y-4">
-                  {["Comprehensive Annual Maintenance Contracts", "State-of-the-art Technology Solutions", "Trusted by 500+ Clients Across India", "Expert Installation & Modernization"].map((item, i) => (
+                  {["Comprehensive Annual Maintenance Contracts", "State-of-the-art Technology Solutions", "Trusted by 800+ Clients Across India", "Expert Installation & Modernization"].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
                       <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
                       <span className="text-foreground font-body text-sm">{item}</span>
