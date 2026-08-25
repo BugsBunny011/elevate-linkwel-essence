@@ -4,8 +4,8 @@ import journeyBg from "@/assets/journey-skyline.jpg";
 
 
 const iconProps = {
-  width: 28,
-  height: 28,
+  width: 22,
+  height: 22,
   viewBox: "0 0 24 24",
   fill: "none",
   stroke: "currentColor",
