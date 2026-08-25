@@ -1,8 +1,11 @@
 import ScrollReveal from "./ScrollReveal";
+import journeyBg from "@/assets/journey-skyline.jpg";
+
+
 
 const iconProps = {
-  width: 28,
-  height: 28,
+  width: 22,
+  height: 22,
   viewBox: "0 0 24 24",
   fill: "none",
   stroke: "currentColor",
@@ -149,23 +152,23 @@ const Connector = ({ side }: { side: "left" | "right" }) => (
 const Card = ({ m, align }: { m: Milestone; align: "left" | "right" }) => (
   <div
     tabIndex={0}
-    className={`group rounded-2xl border border-accent/40 bg-white/[0.02] p-5 md:p-6 outline-none transition-colors duration-300 hover:border-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--journey-bg))] ${
+    className={`group rounded-xl border border-accent/40 bg-black/40 backdrop-blur-sm p-4 md:p-5 outline-none transition-colors duration-300 hover:border-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--journey-bg))] ${
       align === "left" ? "md:text-right" : "md:text-left"
     }`}
   >
     <div
-      className={`flex items-center gap-3 mb-3 ${
+      className={`flex items-center gap-2.5 mb-2 ${
         align === "left" ? "md:flex-row-reverse" : ""
       }`}
     >
       <span className="text-accent shrink-0">
         <m.Icon />
       </span>
-      <span className="font-heading font-bold text-white text-3xl md:text-[2.35rem] leading-none">
+      <span className="font-heading font-bold text-white text-xl md:text-2xl leading-none">
         {m.year}
       </span>
     </div>
-    <p className="font-body text-[0.975rem] leading-relaxed text-white/60">
+    <p className="font-body text-sm leading-relaxed text-white/65">
       <strong className="font-semibold text-white">{m.key}</strong>
       {m.rest}
     </p>
@@ -176,35 +179,51 @@ const JourneyTimeline = () => (
   <section
     id="our-journey"
     aria-labelledby="our-journey-heading"
-    className="relative py-24 md:py-32 bg-[hsl(var(--journey-bg))]"
+    className="relative py-20 md:py-24 bg-[hsl(var(--journey-bg))] overflow-hidden"
   >
-    <div className="container mx-auto section-padding">
+    {/* skyline backdrop */}
+    <img
+      src={journeyBg}
+      alt=""
+      aria-hidden="true"
+      loading="lazy"
+      width={1920}
+      height={1280}
+      className="absolute inset-0 h-full w-full object-cover opacity-70"
+    />
+    <div
+      aria-hidden="true"
+      className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--journey-bg))]/85 via-[hsl(var(--journey-bg))]/55 to-[hsl(var(--journey-bg))]/90"
+    />
+
+    <div className="relative container mx-auto section-padding">
       <ScrollReveal>
-        <div className="text-center mb-16 md:mb-24">
-          <p className="text-accent font-body text-sm tracking-[0.3em] uppercase mb-3">
+        <div className="text-center mb-12 md:mb-16">
+          <p className="text-accent font-body text-xs tracking-[0.3em] uppercase mb-3">
             Milestones
           </p>
           <h2
             id="our-journey-heading"
-            className="text-4xl md:text-6xl font-heading font-bold text-white"
+            className="text-3xl md:text-5xl font-heading font-bold text-white"
           >
             Our Journey
           </h2>
-          <p className="mt-4 font-body text-white/60 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="mt-3 font-body text-white/60 text-sm md:text-base max-w-2xl mx-auto">
             35+ years of engineering trust, from a workshop to a pan-India manufacturer
           </p>
-          <div className="w-16 h-0.5 bg-accent mx-auto mt-6" />
+          <div className="w-16 h-0.5 bg-accent mx-auto mt-5" />
         </div>
       </ScrollReveal>
 
-      <div className="relative max-w-5xl mx-auto">
+      <div className="relative max-w-4xl mx-auto">
         {/* dotted spine */}
         <div
           aria-hidden="true"
           className="absolute top-0 bottom-0 left-[11px] md:left-1/2 md:-translate-x-1/2 border-l border-dotted border-accent/45"
         />
 
-        <ol className="relative space-y-[72px] md:space-y-[130px]">
+        <ol className="relative space-y-12 md:space-y-16">
+
           {milestones.map((m, i) => {
             const left = i % 2 === 0;
             return (
