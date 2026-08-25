@@ -1,4 +1,7 @@
 import ScrollReveal from "./ScrollReveal";
+import journeyBg from "@/assets/journey-skyline.jpg";
+
+
 
 const iconProps = {
   width: 28,
