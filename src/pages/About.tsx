@@ -4,6 +4,8 @@ import Layout from "@/components/Layout";
 import MarqueeStrip from "@/components/MarqueeStrip";
 import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
+import JourneyTimeline from "@/components/JourneyTimeline";
+
 import installImg from "@/assets/elevator-installation.jpg";
 import maintenanceImg from "@/assets/elevator-maintenance.jpg";
 import {
