@@ -211,7 +211,10 @@ const About = () => {
         </div>
       </section>
 
+      <JourneyTimeline />
+
       {/* Values */}
+
       <section className="py-24 bg-surface">
         <div className="container mx-auto section-padding">
           <ScrollReveal>
