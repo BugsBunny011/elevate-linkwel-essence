@@ -189,11 +189,11 @@ const JourneyTimeline = () => (
       loading="lazy"
       width={1920}
       height={1280}
-      className="absolute inset-0 h-full w-full object-cover opacity-40"
+      className="absolute inset-0 h-full w-full object-cover opacity-70"
     />
     <div
       aria-hidden="true"
-      className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--journey-bg))]/95 via-[hsl(var(--journey-bg))]/75 to-[hsl(var(--journey-bg))]/95"
+      className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--journey-bg))]/85 via-[hsl(var(--journey-bg))]/55 to-[hsl(var(--journey-bg))]/90"
     />
 
     <div className="relative container mx-auto section-padding">
