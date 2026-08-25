@@ -215,22 +215,17 @@ const JourneyTimeline = () => (
                       left ? "md:flex-row" : "md:flex-row-reverse"
                     }`}
                   >
-                    <div className="w-full md:w-1/2 flex md:justify-end">
-                      <div className={`w-full ${left ? "" : "md:invisible md:hidden"}`}>
-                        {left && <Card m={m} align="left" />}
+                    <div className="w-full md:w-[calc(50%-2rem)] flex md:justify-end">
+                      <div className="w-full">
+                        <Card m={m} align={left ? "left" : "right"} />
                       </div>
                     </div>
 
                     <Connector side={left ? "left" : "right"} />
 
-                    <div className="hidden md:flex w-1/2">
-                      {!left && (
-                        <div className="w-full">
-                          <Card m={m} align="right" />
-                        </div>
-                      )}
-                    </div>
+                    <div className="hidden md:block md:w-[calc(50%-2rem)]" />
                   </div>
+
 
                   {/* dot on the line */}
                   <span
