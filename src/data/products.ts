@@ -35,6 +35,7 @@ export interface Product {
   faqs: FAQ[];
   metaTitle: string;
   metaDesc: string;
+  h1?: string;
   category: ProductCategory;
 }
 
@@ -100,13 +101,10 @@ export const products: Product[] = [
       { question: "What is the maintenance schedule for passenger lifts?", answer: "We recommend quarterly preventive maintenance for passenger elevators. Linkwel Engineers offers comprehensive Annual Maintenance Contracts (AMCs) to ensure your lift runs safely and efficiently year-round." },
       { question: "Which elevator manufacturers in India offer the best quality?", answer: "Linkwel Engineers is among the most trusted elevator manufacturers in India, known for premium quality, safety compliance, and reliable after-sales service across Delhi NCR and pan-India." },
     ],
-    metaTitle: "Passenger Elevators | Lift Manufacturers in Delhi – Linkwel",
+    metaTitle: "Passenger Lift Manufacturer in Delhi NCR | Linkwel Engineers",
     metaDesc:
-      "Linkwel Engineers - leading passenger lift manufacturers in Delhi & India. Premium passenger elevators for commercial & residential buildings. Get a free quote.",
-  },
-  {
-    slug: "home-elevators",
-    title: "Home Elevators",
+      "Linkwel Engineers manufactures passenger lifts for residential & commercial buildings across Delhi NCR. Safe, efficient, code-compliant elevators.",
+    h1: "Passenger Lift Manufacturer in Delhi NCR",
     category: "lifts",
     shortDesc:
       "Elegant and compact home lifts designed for modern Indian residences, villas, and bungalows, blending luxury with convenience.",
