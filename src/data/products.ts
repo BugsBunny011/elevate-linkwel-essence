@@ -36,6 +36,7 @@ export interface Product {
   metaTitle: string;
   metaDesc: string;
   h1?: string;
+  h1?: string;
   category: ProductCategory;
 }
 
@@ -164,10 +165,10 @@ export const products: Product[] = [
       { question: "How much space is needed for a home lift?", answer: "A home elevator typically requires a shaft area as small as 4×4 feet. Our engineers conduct a free site survey to recommend the best configuration for your space." },
       { question: "Are home elevators safe for elderly and children?", answer: "Absolutely. Our home lifts feature child-safe controls, non-slip flooring, emergency lowering, and overload protection, making them perfectly safe for all family members." },
     ],
-    metaTitle: "Home Elevators | Home Lift Manufacturers in India – Linkwel",
+    metaTitle: "Home Elevator Manufacturer in Delhi NCR | Linkwel Engineers",
     metaDesc:
-      "Premium home elevators by Linkwel Engineers, India's trusted home lift manufacturer. Compact, elegant lifts for villas & residences. Get a quote now.",
-  },
+      "Compact, stylish home elevators built for Indian homes. Linkwel Engineers manufactures home lifts across Delhi NCR — get a custom quote today.",
+    h1: "Home Elevator Manufacturer in Delhi NCR",
   {
     slug: "goods-elevators",
     title: "Freight / Goods Elevators",
@@ -227,10 +228,10 @@ export const products: Product[] = [
       { question: "Are freight lifts suitable for 24/7 industrial use?", answer: "Yes, our goods elevators are built with industrial-grade components designed for continuous 24/7 operation in demanding factory and warehouse environments." },
       { question: "Where can I find goods lift manufacturers near me in Delhi?", answer: "Linkwel Engineers is based in Okhla, New Delhi, and serves clients across Delhi, Noida, Gurgaon, and pan-India. Contact us for a free site survey and quote." },
     ],
-    metaTitle: "Goods Elevators | Freight Lift Manufacturers India – Linkwel",
+    metaTitle: "Goods Lift Manufacturer in Delhi NCR | Linkwel Engineers",
     metaDesc:
-      "Industrial goods elevators & freight lifts by Linkwel Engineers. Heavy-duty lift manufacturer in India for warehouses & factories. Contact us today.",
-  },
+      "Heavy-duty goods lifts for warehouses, factories & commercial buildings. Linkwel Engineers manufactures goods elevators across Delhi NCR.",
+    h1: "Goods Lift Manufacturer in Delhi NCR",
   {
     slug: "hospital-elevators",
     title: "Hospital Elevators",
@@ -291,10 +292,10 @@ export const products: Product[] = [
       { question: "Do hospital lifts have battery backup?", answer: "Yes, all our hospital elevators come with battery backup and Automatic Rescue Device (ARD) to ensure uninterrupted patient transportation during power failures." },
       { question: "Which elevator manufacturers in India specialise in hospital lifts?", answer: "Linkwel Engineers is a trusted manufacturer of hospital elevators in India, serving healthcare facilities across Delhi, Noida, Gurgaon, and nationwide with specialised medical lift solutions." },
     ],
-    metaTitle: "Hospital Elevators | Medical Lift Manufacturers – Linkwel",
+    metaTitle: "Hospital Elevator Manufacturer in Delhi | Linkwel Engineers",
     metaDesc:
-      "Specialised hospital elevators by Linkwel Engineers. Hygienic, spacious medical lifts for hospitals & healthcare in India. Request a quote.",
-  },
+      "Linkwel Engineers manufactures hospital elevators built for stretcher and bed access, designed for speed, safety & hygiene compliance.",
+    h1: "Hospital Elevator Manufacturer in Delhi",
   {
     slug: "capsule-elevators",
     title: "Capsule / Glass Elevators",
@@ -355,10 +356,10 @@ export const products: Product[] = [
       { question: "What glass is used in panoramic lifts?", answer: "We use laminated safety glass with UV-coating and anti-reflective properties, ensuring safety, clarity, and protection against sun exposure." },
       { question: "Where can I find glass lift manufacturers near me?", answer: "Linkwel Engineers manufactures premium capsule and glass elevators from our facility in Delhi, serving clients across Delhi NCR, Noida, Gurgaon, and all of India." },
     ],
-    metaTitle: "Capsule Elevators | Glass Lift Manufacturers – Linkwel",
+    metaTitle: "Capsule & Glass Lift Manufacturer Delhi | Linkwel Engineers",
     metaDesc:
-      "Premium capsule & glass elevators by Linkwel Engineers. Panoramic lifts for malls, hotels & buildings in India. Get a custom quote.",
-  },
+      "Panoramic capsule and glass lifts for modern buildings. Linkwel Engineers manufactures glass elevators across Delhi NCR — request a quote.",
+    h1: "Capsule & Glass Lift Manufacturer",
   {
     slug: "car-elevators",
     title: "Car Elevators",
@@ -418,11 +419,10 @@ export const products: Product[] = [
       { question: "Can car lifts be installed in existing buildings?", answer: "Yes, Linkwel Engineers specialises in retrofitting car elevators into existing parking structures and residential basements with minimal structural modifications." },
       { question: "Who are the best car lift manufacturers near me in Delhi?", answer: "Linkwel Engineers, based in Okhla, New Delhi, is a trusted car elevator manufacturer serving Delhi, Noida, Gurgaon, and across India." },
     ],
-    metaTitle: "Car Elevators | Vehicle Lift Manufacturers Delhi – Linkwel",
+    metaTitle: "Car Lift Manufacturer in Delhi NCR | Linkwel Engineers",
     metaDesc:
-      "Heavy-duty car elevators by Linkwel Engineers. Automobile lifts for parking & showrooms in India. Request a free quote today.",
-  },
-  // ===== CRANES =====
+      "Linkwel Engineers manufactures car lifts and vehicle elevators for basements, showrooms & multi-level parking across Delhi NCR.",
+    h1: "Car Lift Manufacturer in Delhi NCR",
   {
     slug: "overhead-cranes",
     title: "Overhead Cranes (EOT Cranes)",
@@ -490,10 +490,10 @@ export const products: Product[] = [
       { question: "What capacity EOT cranes does Linkwel manufacture?", answer: "We manufacture EOT cranes ranging from 1 ton to 100 tons, with customisable spans up to 30 metres to suit your factory or warehouse layout." },
       { question: "Where can I find crane manufacturers near me in Delhi?", answer: "Linkwel Engineers is based in Okhla, New Delhi, and is one of the leading crane manufacturers in Delhi NCR, serving clients in Delhi, Noida, Gurgaon, and across India." },
     ],
-    metaTitle: "EOT Cranes | Overhead Crane Manufacturers India – Linkwel",
+    metaTitle: "EOT Crane Manufacturer in Delhi NCR | Linkwel Engineers",
     metaDesc:
-      "Heavy-duty EOT cranes by Linkwel Engineers, leading crane manufacturers in India. Overhead cranes for factories & warehouses. Get a quote.",
-  },
+      "Linkwel Engineers manufactures EOT (overhead) cranes for industrial and warehouse applications across Delhi NCR. Custom capacity & span.",
+    h1: "EOT Crane Manufacturer in Delhi NCR",
   {
     slug: "single-girder-cranes",
     title: "Single Girder Cranes",
@@ -560,10 +560,10 @@ export const products: Product[] = [
       { question: "What is the maximum capacity of a single girder crane?", answer: "Linkwel Engineers manufactures single girder cranes with capacities from 1 ton to 20 tons, suitable for most light to medium industrial applications." },
       { question: "Where can I find single girder crane manufacturers near me?", answer: "Linkwel Engineers is a leading crane manufacturer based in Delhi, providing single girder cranes across Delhi, Noida, Gurgaon, and all major industrial hubs in India." },
     ],
-    metaTitle: "Single Girder Cranes | Crane Manufacturers Delhi – Linkwel",
+    metaTitle: "Single Girder Crane Manufacturer Delhi | Linkwel Engineers",
     metaDesc:
-      "Cost-effective single girder overhead cranes by Linkwel Engineers. Leading crane manufacturers in Delhi & India for workshops & factories. Get a quote.",
-  },
+      "Cost-effective single girder EOT cranes for light to medium-duty lifting. Manufactured by Linkwel Engineers in Delhi NCR.",
+    h1: "Single Girder Crane Manufacturer",
   {
     slug: "double-girder-cranes",
     title: "Double Girder Cranes",
@@ -630,10 +630,10 @@ export const products: Product[] = [
       { question: "What is the maximum capacity of double girder cranes?", answer: "Linkwel Engineers manufactures double girder cranes with capacities from 10 tons to 200 tons, customised for your specific industrial requirements." },
       { question: "Who are the best double girder crane manufacturers in India?", answer: "Linkwel Engineers is among India's most trusted crane manufacturers, building double girder cranes for steel plants, power plants, and heavy industries across Delhi, Noida, Gurgaon, and nationwide." },
     ],
-    metaTitle: "Double Girder Cranes | Crane Manufacturers India – Linkwel",
+    metaTitle: "Double Girder Crane Manufacturer Delhi | Linkwel Engineers",
     metaDesc:
-      "Heavy-duty double girder cranes by Linkwel Engineers. Leading crane manufacturers in India for steel plants & heavy industries. Contact us today.",
-  },
+      "Heavy-duty double girder EOT cranes for high-capacity lifting. Linkwel Engineers manufactures custom double girder cranes in Delhi NCR.",
+    h1: "Double Girder Crane Manufacturer",
   {
     slug: "gantry-cranes",
     title: "Gantry Cranes",
@@ -700,10 +700,10 @@ export const products: Product[] = [
       { question: "Can gantry cranes be used outdoors?", answer: "Yes, our gantry cranes are specifically designed for outdoor use with weather-resistant components, wind load resistance, and storm anchoring systems." },
       { question: "Where can I find gantry crane suppliers near me?", answer: "Linkwel Engineers is a leading gantry crane manufacturer based in Delhi, serving clients across Delhi, Noida, Gurgaon, and throughout India." },
     ],
-    metaTitle: "Gantry Cranes | Gantry Crane Suppliers India – Linkwel",
+    metaTitle: "Gantry Crane Manufacturer in Delhi NCR | Linkwel Engineers",
     metaDesc:
-      "High-performance gantry cranes by Linkwel Engineers, leading crane manufacturers in Delhi. Full & semi-gantry cranes for yards & construction. Contact us.",
-  },
+      "Linkwel Engineers manufactures gantry cranes for outdoor and yard lifting applications across Delhi NCR. Custom spans & capacities available.",
+    h1: "Gantry Crane Manufacturer in Delhi NCR",
   {
     slug: "goliath-cranes",
     title: "Goliath Cranes",
@@ -770,10 +770,10 @@ export const products: Product[] = [
       { question: "What industries use goliath cranes?", answer: "Goliath cranes are used in shipbuilding, power generation, nuclear installations, defence projects, and large-scale infrastructure construction where heavy equipment and materials need to be lifted." },
       { question: "Who manufactures goliath cranes in India?", answer: "Linkwel Engineers is an experienced industrial crane manufacturer in India building goliath cranes for major infrastructure projects. We serve clients across Delhi NCR and nationwide." },
     ],
-    metaTitle: "Goliath Cranes | Industrial Crane Manufacturers – Linkwel",
+    metaTitle: "Goliath Crane Manufacturer in Delhi NCR | Linkwel Engineers",
     metaDesc:
-      "Extra-heavy-duty goliath cranes by Linkwel Engineers. Industrial crane manufacturers in India for shipyards, power plants & infrastructure. Get a quote.",
-  },
+      "Heavy-duty goliath cranes built for shipyards, construction & steel yards. Manufactured by Linkwel Engineers in Delhi NCR.",
+    h1: "Goliath Crane Manufacturer in Delhi NCR",
   {
     slug: "jib-cranes",
     title: "Jib Cranes",
@@ -840,10 +840,10 @@ export const products: Product[] = [
       { question: "What types of jib cranes are available?", answer: "Linkwel Engineers offers wall-mounted, pillar-mounted, and free-standing jib cranes with capacities from 250 kg to 10 tons, suitable for various industrial applications." },
       { question: "Where can I find jib crane manufacturers near me in Delhi?", answer: "Linkwel Engineers is a trusted jib crane manufacturer based in Delhi, serving clients across Delhi, Noida, Gurgaon, and all major cities in India." },
     ],
-    metaTitle: "Jib Cranes | Crane Manufacturers in Delhi – Linkwel",
+    metaTitle: "Jib Crane Manufacturer in Delhi NCR | Linkwel Engineers",
     metaDesc:
-      "Compact jib cranes by Linkwel Engineers, trusted crane manufacturers in Delhi. Wall, pillar & free-standing jib cranes for workshops. Request a quote.",
-  },
+      "Linkwel Engineers manufactures jib cranes for workstations and confined-space lifting across Delhi NCR. Compact, durable, reliable.",
+    h1: "Jib Crane Manufacturer in Delhi NCR",
   {
     slug: "electric-hoists",
     title: "Electric Hoists",
@@ -910,10 +910,10 @@ export const products: Product[] = [
       { question: "Can electric hoists be used with existing cranes?", answer: "Yes, our electric hoists are designed for easy integration with overhead cranes, jib cranes, monorails, and gantry cranes. Linkwel Engineers provides complete hoist and crane solutions." },
       { question: "Where can I buy electric hoists near me in Delhi?", answer: "Linkwel Engineers supplies high-quality electric hoists from our facility in Delhi, serving clients across Delhi, Noida, Gurgaon, and throughout India." },
     ],
-    metaTitle: "Electric Hoists | Hoist Manufacturers India – Linkwel",
+    metaTitle: "Electric Hoist Manufacturer in Delhi NCR | Linkwel Engineers",
     metaDesc:
-      "Reliable electric chain & wire rope hoists by Linkwel Engineers. Leading hoist manufacturers in India for factories & workshops. Get a quote.",
-  },
+      "Linkwel Engineers manufactures electric wire rope and chain hoists for cranes and industrial lifting applications across Delhi NCR.",
+    h1: "Electric Hoist Manufacturer in Delhi NCR",},
 ];
 
 export const liftProducts = products.filter((p) => p.category === "lifts");
