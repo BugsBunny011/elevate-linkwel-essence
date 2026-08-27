@@ -105,6 +105,10 @@ export const products: Product[] = [
     metaDesc:
       "Linkwel Engineers manufactures passenger lifts for residential & commercial buildings across Delhi NCR. Safe, efficient, code-compliant elevators.",
     h1: "Passenger Lift Manufacturer in Delhi NCR",
+  },
+  {
+    slug: "home-elevators",
+    title: "Home Elevators",
     category: "lifts",
     shortDesc:
       "Elegant and compact home lifts designed for modern Indian residences, villas, and bungalows, blending luxury with convenience.",
