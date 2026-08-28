@@ -211,7 +211,7 @@ const ProductDetail = () => {
                 Linkwel Engineers
               </p>
               <h1 className="text-4xl md:text-5xl font-heading font-bold text-gold-light mb-6">
-                {product.title}
+                {product.h1 ?? product.title}
               </h1>
               <p className="text-gold-light/70 font-body text-lg leading-relaxed mb-8">
                 {product.heroDesc}

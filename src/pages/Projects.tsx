@@ -23,8 +23,8 @@ const Projects = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Our Projects | Lift & Crane Installations Across India</title>
-        <meta name="description" content="Explore our portfolio of elevator and industrial crane installations in villas, apartments, hospitals, factories and corporate buildings in India." />
+        <title>Elevator & Lift Projects Across India | Linkwel Engineers</title>
+        <meta name="description" content="Explore Linkwel Engineers' completed elevator and lift installation projects across India — residential, commercial and industrial sites." />
         <meta name="keywords" content="elevator installations India, lift projects, EOT crane installations, gantry crane projects, industrial crane suppliers, elevator and crane company in India" />
         <link rel="canonical" href="https://linkwelengineers.com/projects" />
         <meta property="og:title" content="Our Projects | Lift & Crane Installations Across India" />
@@ -50,7 +50,7 @@ const Projects = () => {
         <div className="container mx-auto section-padding text-center">
           <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Our Portfolio</p>
           <h1 className="text-4xl md:text-6xl font-heading font-bold text-gold-light mb-6">
-            Featured <span className="text-gold-gradient">Projects</span>
+            Elevator & Lift Projects <span className="text-gold-gradient">Across India</span>
           </h1>
           <p className="text-gold-light/60 font-body text-lg max-w-2xl mx-auto">
             Showcasing our finest installations across India's most prestigious buildings.

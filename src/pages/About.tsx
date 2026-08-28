@@ -26,8 +26,8 @@ const About = () => {
   return (
     <Layout>
       <Helmet>
-        <title>About Linkwel Engineers | Manufacturers Since 1989</title>
-        <meta name="description" content="Linkwel Engineers has manufactured elevators and industrial cranes in India since 1989. 35+ years of engineering expertise, certifications and team." />
+        <title>About Linkwel Engineers | Elevator Manufacturer Since 1989</title>
+        <meta name="description" content="Learn about Linkwel Engineers, a Delhi NCR-based elevator manufacturer with decades of engineering experience since 1989. Family-owned, quality-driven." />
         <meta name="keywords" content="elevator and crane company in India, lift manufacturers in Delhi since 1989, crane manufacturers near me, industrial crane company India, elevator manufacturers Delhi NCR" />
         <link rel="canonical" href="https://linkwelengineers.com/about" />
         <meta property="og:title" content="About Linkwel Engineers | Manufacturers Since 1989" />
@@ -70,7 +70,7 @@ const About = () => {
         <div className="container mx-auto section-padding text-center">
           <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">About Us</p>
           <h1 className="text-4xl md:text-6xl font-heading font-bold text-gold-light mb-6">
-            Building Trust, <span className="text-gold-gradient">Since 1989</span>
+            About Linkwel Engineers – <span className="text-gold-gradient">Elevator Manufacturer Since 1989</span>
           </h1>
           <p className="text-gold-light/60 font-body text-lg max-w-2xl mx-auto">
             Linkwel Engineers is a premier elevator and crane solutions company committed to excellence in vertical transportation and material handling.

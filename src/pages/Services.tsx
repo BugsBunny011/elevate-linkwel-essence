@@ -38,8 +38,8 @@ const Services = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Lift & Crane Services | Installation & AMC – Linkwel</title>
-        <meta name="description" content="Linkwel Engineers offers expert installation, maintenance, modernization & AMC services for elevators, lifts and industrial cranes across Delhi NCR & India." />
+        <title>Elevator Installation & Lift AMC | Linkwel Engineers</title>
+        <meta name="description" content="Linkwel Engineers offers professional elevator installation and lift AMC services across Delhi NCR. Reliable maintenance plans built for safety and uptime." />
         <meta name="keywords" content="lift installation services, elevator maintenance, crane installation services, EOT crane maintenance, elevator modernization, AMC elevator and crane, industrial crane services India" />
         <link rel="canonical" href="https://linkwelengineers.com/services" />
         <meta property="og:title" content="Lift & Crane Services | Installation & AMC – Linkwel" />
@@ -82,7 +82,7 @@ const Services = () => {
         <div className="container mx-auto section-padding text-center">
           <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">What We Offer</p>
           <h1 className="text-4xl md:text-6xl font-heading font-bold text-gold-light mb-6">
-            Our <span className="text-gold-gradient">Services</span>
+            Elevator Installation & <span className="text-gold-gradient">Lift AMC Services</span>
           </h1>
           <p className="text-gold-light/60 font-body text-lg max-w-2xl mx-auto">
             Comprehensive elevator solutions from installation to modernization, backed by expert engineering.
