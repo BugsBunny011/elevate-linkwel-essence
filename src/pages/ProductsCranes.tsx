@@ -14,10 +14,10 @@ const ProductsCranes = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Industrial Cranes | Crane Manufacturers India – Linkwel</title>
+        <title>Crane Manufacturer in Delhi NCR | Linkwel Engineers</title>
         <meta
           name="description"
-          content="Industrial cranes by Linkwel Engineers: EOT, single & double girder, gantry, goliath, jib cranes & electric hoists. Crane manufacturers in Delhi NCR."
+          content="Linkwel Engineers manufactures EOT, gantry, jib & goliath cranes in Delhi NCR. Custom-built industrial cranes for heavy-duty applications."
         />
         <meta name="keywords" content="crane manufacturers in India, EOT crane manufacturers Delhi, gantry crane suppliers, goliath crane manufacturers, jib crane India, single girder crane, double girder crane, electric hoists India" />
         <link rel="canonical" href="https://linkwelengineers.com/products/cranes" />
@@ -48,7 +48,7 @@ const ProductsCranes = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-6xl font-heading font-bold text-gold-light mb-6"
           >
-            Industrial <span className="text-gold-gradient">Cranes</span>
+            Crane Manufacturer <span className="text-gold-gradient">in Delhi NCR</span>
           </motion.h1>
           <motion.p
             initial={fadeInitial}

@@ -69,8 +69,8 @@ const AMC = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Elevator AMC Services Delhi NCR – Linkwel Engineers</title>
-        <meta name="description" content="Linkwel Engineers offers comprehensive AMC for elevators and lifts in Delhi NCR. Preventive maintenance, 24/7 breakdown support, and certified technicians." />
+        <title>Lift AMC Services in Delhi NCR | Linkwel Engineers</title>
+        <meta name="description" content="Linkwel Engineers offers reliable lift AMC and maintenance contracts across Delhi NCR. Keep your elevators running safely, year-round." />
         <meta name="keywords" content="elevator AMC Delhi NCR, lift AMC services, elevator annual maintenance contract, elevator preventive maintenance, lift maintenance Delhi NCR" />
         <link rel="canonical" href="https://linkwelengineers.com/services/amc" />
         <meta property="og:title" content="Elevator AMC Services Delhi NCR – Linkwel Engineers" />
@@ -118,7 +118,7 @@ const AMC = () => {
         <div className="container mx-auto section-padding text-center">
           <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Annual Maintenance Contract</p>
           <h1 className="text-4xl md:text-6xl font-heading font-bold text-gold-light mb-6">
-            Annual Maintenance Contract <span className="text-gold-gradient">(AMC)</span>
+            Lift AMC Services <span className="text-gold-gradient">in Delhi NCR</span>
           </h1>
           <p className="text-gold-light/70 font-body text-lg max-w-3xl mx-auto leading-relaxed">
             Guaranteed uptime, certified technicians, and genuine spare parts — so you can focus on your business while we keep your elevators and lifts running flawlessly.

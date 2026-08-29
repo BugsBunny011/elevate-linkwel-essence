@@ -108,6 +108,24 @@ const cityData: Record<string, CityData> = {
   },
 };
 
+const cityMeta: Record<string, { title: string; desc: string; h1: string }> = {
+  delhi: {
+    title: "Elevator Company in Delhi | Linkwel Engineers",
+    desc: "Linkwel Engineers is a Delhi-based elevator company manufacturing and installing lifts across the city since 1989. Get a free quote.",
+    h1: "Elevator Company in Delhi",
+  },
+  noida: {
+    title: "Elevator Company in Noida | Linkwel Engineers",
+    desc: "Linkwel Engineers supplies and installs elevators across Noida — passenger, home, hospital & goods lifts. Request a free quote today.",
+    h1: "Elevator Company in Noida",
+  },
+  gurgaon: {
+    title: "Elevator Company in Gurgaon | Linkwel Engineers",
+    desc: "Linkwel Engineers supplies and installs elevators across Gurgaon — residential and commercial lifts. Request a free quote today.",
+    h1: "Elevator Company in Gurgaon",
+  },
+};
+
 const expertise = [
   { icon: Building2, title: "Elevator Solutions", desc: "State-of-the-art elevator and lift solutions for commercial, residential, and industrial buildings." },
   { icon: Settings, title: "Industrial Cranes", desc: "EOT, gantry, and jib cranes engineered for precision material handling across industries." },
@@ -117,6 +135,7 @@ const expertise = [
 
 const CityPage = ({ slug, city }: CityConfig) => {
   const data = cityData[slug];
+  const meta = cityMeta[slug];
   const canonical = `https://linkwelengineers.com/${slug}`;
 
   const faqSchema = {
@@ -152,8 +171,8 @@ const CityPage = ({ slug, city }: CityConfig) => {
   return (
     <Layout>
       <Helmet>
-        <title>{`Elevators, Lifts & Cranes in ${city} | Linkwel Engineers`}</title>
-        <meta name="description" content={`Elevator & industrial crane manufacturer in ${city}. Passenger lifts, home elevators, EOT & gantry cranes. 35+ years experience. Free quote.`} />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.desc} />
         <meta name="keywords" content={data.keywords.join(", ")} />
         <link rel="canonical" href={canonical} />
         <meta property="og:title" content={`Elevators, Lifts & Cranes in ${city} | Linkwel Engineers`} />
@@ -169,7 +188,7 @@ const CityPage = ({ slug, city }: CityConfig) => {
         <div className="container mx-auto section-padding text-center">
           <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Serving {city} Since 1989</p>
           <h1 className="text-4xl md:text-6xl font-heading font-bold text-gold-light mb-6">
-            Elevator & Crane Manufacturers in <span className="text-gold-gradient">{city}</span>
+            <span className="text-gold-gradient">{meta.h1}</span>
           </h1>
           <p className="text-gold-light/70 font-body text-lg max-w-3xl mx-auto leading-relaxed">
             {data.intro}
