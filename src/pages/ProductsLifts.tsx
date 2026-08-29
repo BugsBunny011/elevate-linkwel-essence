@@ -14,10 +14,10 @@ const ProductsLifts = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Elevators & Lifts | Lift Manufacturers India – Linkwel</title>
+        <title>Elevator Types & Range in Delhi NCR | Linkwel Engineers</title>
         <meta
           name="description"
-          content="Premium passenger, home, hospital, capsule, goods and car lifts by Linkwel Engineers. Lift manufacturers in Delhi NCR serving clients across India."
+          content="Explore Linkwel's full elevator range — passenger, home, hospital, goods, capsule & car lifts — manufactured and installed across Delhi NCR."
         />
         <meta name="keywords" content="lift manufacturers in India, passenger elevator manufacturers, home lift manufacturers, hospital elevator suppliers, capsule lift manufacturers Delhi, goods lift India" />
         <link rel="canonical" href="https://linkwelengineers.com/products/lifts" />
@@ -48,7 +48,7 @@ const ProductsLifts = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-6xl font-heading font-bold text-gold-light mb-6"
           >
-            Elevators & <span className="text-gold-gradient">Lifts</span>
+            Elevator Types & <span className="text-gold-gradient">Range in Delhi NCR</span>
           </motion.h1>
           <motion.p
             initial={fadeInitial}

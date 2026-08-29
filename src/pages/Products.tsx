@@ -14,10 +14,10 @@ const Products = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Elevators, Lifts & Industrial Cranes | Linkwel Engineers</title>
+        <title>Elevator, Crane & Hoist Range | Linkwel Engineers</title>
         <meta
           name="description"
-          content="Browse our full range of passenger, home, hospital, capsule, goods & car lifts plus EOT, gantry, goliath, jib cranes and electric hoists."
+          content="Browse Linkwel Engineers' full product range — elevators, EOT cranes, gantry cranes and electric hoists, manufactured in Delhi NCR since 1989."
         />
         <meta name="keywords" content="elevators and cranes India, lift manufacturers in Delhi, EOT crane manufacturers, gantry crane suppliers, jib crane manufacturers, electric hoists India, industrial crane manufacturers" />
         <link rel="canonical" href="https://linkwelengineers.com/products" />
@@ -48,7 +48,7 @@ const Products = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-6xl font-heading font-bold text-gold-light mb-6"
           >
-            Elevators & <span className="text-gold-gradient">Crane Solutions</span>
+            Elevator, Crane & <span className="text-gold-gradient">Hoist Range</span>
           </motion.h1>
           <motion.p
             initial={fadeInitial}
