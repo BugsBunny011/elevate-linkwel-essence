@@ -36,7 +36,6 @@ export interface Product {
   metaTitle: string;
   metaDesc: string;
   h1?: string;
-  h1?: string;
   category: ProductCategory;
 }
 
@@ -169,6 +168,7 @@ export const products: Product[] = [
     metaDesc:
       "Compact, stylish home elevators built for Indian homes. Linkwel Engineers manufactures home lifts across Delhi NCR — get a custom quote today.",
     h1: "Home Elevator Manufacturer in Delhi NCR",
+  },
   {
     slug: "goods-elevators",
     title: "Freight / Goods Elevators",
@@ -232,6 +232,7 @@ export const products: Product[] = [
     metaDesc:
       "Heavy-duty goods lifts for warehouses, factories & commercial buildings. Linkwel Engineers manufactures goods elevators across Delhi NCR.",
     h1: "Goods Lift Manufacturer in Delhi NCR",
+  },
   {
     slug: "hospital-elevators",
     title: "Hospital Elevators",
@@ -296,6 +297,7 @@ export const products: Product[] = [
     metaDesc:
       "Linkwel Engineers manufactures hospital elevators built for stretcher and bed access, designed for speed, safety & hygiene compliance.",
     h1: "Hospital Elevator Manufacturer in Delhi",
+  },
   {
     slug: "capsule-elevators",
     title: "Capsule / Glass Elevators",
@@ -360,6 +362,7 @@ export const products: Product[] = [
     metaDesc:
       "Panoramic capsule and glass lifts for modern buildings. Linkwel Engineers manufactures glass elevators across Delhi NCR — request a quote.",
     h1: "Capsule & Glass Lift Manufacturer",
+  },
   {
     slug: "car-elevators",
     title: "Car Elevators",
@@ -423,6 +426,7 @@ export const products: Product[] = [
     metaDesc:
       "Linkwel Engineers manufactures car lifts and vehicle elevators for basements, showrooms & multi-level parking across Delhi NCR.",
     h1: "Car Lift Manufacturer in Delhi NCR",
+  },
   {
     slug: "overhead-cranes",
     title: "Overhead Cranes (EOT Cranes)",
@@ -494,6 +498,7 @@ export const products: Product[] = [
     metaDesc:
       "Linkwel Engineers manufactures EOT (overhead) cranes for industrial and warehouse applications across Delhi NCR. Custom capacity & span.",
     h1: "EOT Crane Manufacturer in Delhi NCR",
+  },
   {
     slug: "single-girder-cranes",
     title: "Single Girder Cranes",
@@ -564,6 +569,7 @@ export const products: Product[] = [
     metaDesc:
       "Cost-effective single girder EOT cranes for light to medium-duty lifting. Manufactured by Linkwel Engineers in Delhi NCR.",
     h1: "Single Girder Crane Manufacturer",
+  },
   {
     slug: "double-girder-cranes",
     title: "Double Girder Cranes",
@@ -634,6 +640,7 @@ export const products: Product[] = [
     metaDesc:
       "Heavy-duty double girder EOT cranes for high-capacity lifting. Linkwel Engineers manufactures custom double girder cranes in Delhi NCR.",
     h1: "Double Girder Crane Manufacturer",
+  },
   {
     slug: "gantry-cranes",
     title: "Gantry Cranes",
@@ -704,6 +711,7 @@ export const products: Product[] = [
     metaDesc:
       "Linkwel Engineers manufactures gantry cranes for outdoor and yard lifting applications across Delhi NCR. Custom spans & capacities available.",
     h1: "Gantry Crane Manufacturer in Delhi NCR",
+  },
   {
     slug: "goliath-cranes",
     title: "Goliath Cranes",
@@ -774,6 +782,7 @@ export const products: Product[] = [
     metaDesc:
       "Heavy-duty goliath cranes built for shipyards, construction & steel yards. Manufactured by Linkwel Engineers in Delhi NCR.",
     h1: "Goliath Crane Manufacturer in Delhi NCR",
+  },
   {
     slug: "jib-cranes",
     title: "Jib Cranes",
@@ -844,6 +853,7 @@ export const products: Product[] = [
     metaDesc:
       "Linkwel Engineers manufactures jib cranes for workstations and confined-space lifting across Delhi NCR. Compact, durable, reliable.",
     h1: "Jib Crane Manufacturer in Delhi NCR",
+  },
   {
     slug: "electric-hoists",
     title: "Electric Hoists",
