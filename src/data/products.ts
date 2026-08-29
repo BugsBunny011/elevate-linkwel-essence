@@ -913,7 +913,8 @@ export const products: Product[] = [
     metaTitle: "Electric Hoist Manufacturer in Delhi NCR | Linkwel Engineers",
     metaDesc:
       "Linkwel Engineers manufactures electric wire rope and chain hoists for cranes and industrial lifting applications across Delhi NCR.",
-    h1: "Electric Hoist Manufacturer in Delhi NCR",},
+    h1: "Electric Hoist Manufacturer in Delhi NCR",
+  },
 ];
 
 export const liftProducts = products.filter((p) => p.category === "lifts");
