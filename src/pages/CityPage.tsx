@@ -108,6 +108,24 @@ const cityData: Record<string, CityData> = {
   },
 };
 
+const cityMeta: Record<string, { title: string; desc: string; h1: string }> = {
+  delhi: {
+    title: "Elevator Company in Delhi | Linkwel Engineers",
+    desc: "Linkwel Engineers is a Delhi-based elevator company manufacturing and installing lifts across the city since 1989. Get a free quote.",
+    h1: "Elevator Company in Delhi",
+  },
+  noida: {
+    title: "Elevator Company in Noida | Linkwel Engineers",
+    desc: "Linkwel Engineers supplies and installs elevators across Noida — passenger, home, hospital & goods lifts. Request a free quote today.",
+    h1: "Elevator Company in Noida",
+  },
+  gurgaon: {
+    title: "Elevator Company in Gurgaon | Linkwel Engineers",
+    desc: "Linkwel Engineers supplies and installs elevators across Gurgaon — residential and commercial lifts. Request a free quote today.",
+    h1: "Elevator Company in Gurgaon",
+  },
+};
+
 const expertise = [
   { icon: Building2, title: "Elevator Solutions", desc: "State-of-the-art elevator and lift solutions for commercial, residential, and industrial buildings." },
   { icon: Settings, title: "Industrial Cranes", desc: "EOT, gantry, and jib cranes engineered for precision material handling across industries." },

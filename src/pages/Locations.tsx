@@ -50,8 +50,8 @@ const Locations = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Locations We Serve | North India – Linkwel Engineers</title>
-        <meta name="description" content="Linkwel Engineers delivers elevators, lifts and industrial cranes across Delhi NCR, Himachal, Punjab, Haryana, UP, Uttarakhand and Rajasthan." />
+        <title>Elevator Manufacturer in North India | Linkwel Engineers</title>
+        <meta name="description" content="Linkwel Engineers manufactures and supplies elevators across North India, serving Delhi NCR and surrounding regions since 1989." />
         <meta name="keywords" content="Elevator manufacturer North India, Lift suppliers Shimla, Elevator company New Chandigarh, Lift dealers Faridabad, EOT crane Bhiwadi, Goods lift Dehradun, Passenger lift Jaipur, Industrial crane Ludhiana, Hospital lift Lucknow, Home elevator Mohali" />
         <link rel="canonical" href={canonical} />
         <meta property="og:title" content="Locations We Serve | North India – Linkwel Engineers" />
@@ -65,7 +65,7 @@ const Locations = () => {
         <div className="container mx-auto section-padding text-center">
           <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Pan-North India</p>
           <h1 className="text-4xl md:text-6xl font-heading font-bold text-gold-light mb-6">
-            Locations We <span className="text-gold-gradient">Serve</span>
+            Elevator Manufacturer <span className="text-gold-gradient">in North India</span>
           </h1>
           <p className="text-gold-light/70 font-body text-lg max-w-3xl mx-auto leading-relaxed">
             From our headquarters in New Delhi, Linkwel Engineers supplies elevators, lifts and industrial cranes across Delhi NCR and rapidly developing markets in Himachal Pradesh, Punjab, Haryana, Uttar Pradesh, Uttarakhand and Rajasthan.

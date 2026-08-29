@@ -35,10 +35,10 @@ const Blog = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Blog | Linkwel Engineers: Lift & Crane Industry Insights</title>
+        <title>Elevator & Crane Blog | Linkwel Engineers</title>
         <meta
           name="description"
-          content="Industry news, project insights and engineering perspectives on elevators, lifts and industrial cranes across Delhi, Noida and Gurgaon from Linkwel Engineers."
+          content="Insights, guides & industry updates on elevators, lifts, cranes and hoists from Linkwel Engineers — Delhi NCR's trusted manufacturer since 1989."
         />
         <meta
           name="keywords"
@@ -65,7 +65,7 @@ const Blog = () => {
             Insights
           </p>
           <h1 className="text-4xl md:text-6xl font-heading font-bold text-gold-light mb-6">
-            The Linkwel <span className="text-gold-gradient">Blog</span>
+            Elevator & <span className="text-gold-gradient">Crane Blog</span>
           </h1>
           <p className="text-gold-light/60 font-body text-lg max-w-2xl mx-auto">
             Industry news, engineering perspectives and project stories from the
