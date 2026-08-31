@@ -34,6 +34,57 @@ const services = [
   },
 ];
 
+const serviceProcess = [
+  {
+    title: "Site survey and traffic study",
+    desc: "Our engineers measure the shaft or bay, verify headroom, pit depth, power availability and structural clearances, then calculate handling capacity or duty class against the building's actual usage pattern.",
+  },
+  {
+    title: "Specification and drawings",
+    desc: "You receive a written specification with general arrangement drawings, load calculations, machine and drive selection, and cabin or crane configuration options before any commercial discussion.",
+  },
+  {
+    title: "Manufacturing and factory testing",
+    desc: "Cars, structures, girders and control panels are built at our own works and load tested before dispatch, so site time is spent on erection rather than fabrication.",
+  },
+  {
+    title: "Erection and commissioning",
+    desc: "A dedicated site team handles guide rail alignment, wiring, safety gear setting, load trials and statutory inspection support, and hands over documentation and operator training on completion.",
+  },
+  {
+    title: "Maintenance handover",
+    desc: "Every completed installation moves onto a scheduled maintenance plan with defined visit frequency, checklists, wear-part replacement and a named escalation contact for breakdown calls.",
+  },
+];
+
+const serviceFaqs = [
+  {
+    q: "How often should a lift be serviced in Delhi NCR?",
+    a: "Most passenger lifts in Delhi, Noida and Gurgaon are serviced monthly. High-traffic residential towers, hospitals and malls often move to fortnightly visits because dust ingress and heavy usage accelerate wear on door operators and ropes.",
+  },
+  {
+    q: "What is the difference between comprehensive and non-comprehensive AMC?",
+    a: "A non-comprehensive contract covers scheduled visits, inspection and labour, while parts are billed separately. A comprehensive contract additionally includes wear-part replacement such as contactors, door components, ropes and rollers within the agreed scope.",
+  },
+  {
+    q: "Can you take over maintenance of a lift installed by another manufacturer?",
+    a: "Yes. We take over third-party installations after a technical audit that records the controller type, drive, safety gear condition and spare availability, and we submit a remedial list before the contract begins.",
+  },
+  {
+    q: "Do you modernize old elevators without major civil work?",
+    a: "In most cases yes. VVVF drive replacement, gearless machine upgrades, new landing fixtures, ARD units and cabin interiors can usually be fitted in the existing shaft, with civil work needed only when speed or capacity changes materially.",
+  },
+  {
+    q: "How quickly do you respond to a breakdown call?",
+    a: "Contracted sites in Delhi NCR are attended by a technician from the nearest service hub, with entrapment calls treated as the highest priority and escalated to the service manager if not cleared on the first visit.",
+  },
+  {
+    q: "Do you service industrial cranes as well as elevators?",
+    a: "Yes. The same service organisation maintains EOT, gantry, goliath and jib cranes plus electric hoists, including structural inspection, brake and hoist testing and load trials.",
+  },
+];
+
+
 const Services = () => {
   return (
     <Layout>
