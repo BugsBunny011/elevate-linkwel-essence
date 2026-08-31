@@ -1,5 +1,11 @@
 import tvsLogo from "@/assets/clients/tvs.webp.asset.json";
+import centuryLogo from "@/assets/clients/century.webp.asset.json";
+import wowMomoLogo from "@/assets/clients/wow-momo.png.asset.json";
 import parksonsLogo from "@/assets/clients/parksons.png.asset.json";
+import nationalLogo from "@/assets/clients/national.jpeg.asset.json";
+import daffodilLogo from "@/assets/clients/daffodil.jpg.asset.json";
+import beetaLogo from "@/assets/clients/beeta.jpg.asset.json";
+import siddhivinayakLogo from "@/assets/clients/siddhivinayak.png.asset.json";
 
 /**
  * Automatic horizontal client logo carousel.
@@ -15,8 +21,15 @@ export interface ClientLogo {
 
 export const clients: ClientLogo[] = [
   { src: tvsLogo.url, name: "TVS" },
+  { src: centuryLogo.url, name: "Century Plyboards" },
+  { src: wowMomoLogo.url, name: "Wow! Momo" },
   { src: parksonsLogo.url, name: "Parksons Packaging" },
+  { src: nationalLogo.url, name: "National" },
+  { src: daffodilLogo.url, name: "Daffodil Tissues" },
+  { src: beetaLogo.url, name: "Beeta" },
+  { src: siddhivinayakLogo.url, name: "Siddhivinayak Plastic Wares" },
 ];
+
 
 const LogoRow = ({ ariaHidden = false }: { ariaHidden?: boolean }) => (
   <ul aria-hidden={ariaHidden} className="flex shrink-0 items-center">
