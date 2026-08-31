@@ -5,6 +5,7 @@ import blogLiftManufacturersIndia from "@/assets/blog-lift-manufacturers-india.j
 import blogElevatorMaintenanceNearMe from "@/assets/blog-elevator-maintenance-near-me.jpg";
 import blogEotCraneManufacturersIndia from "@/assets/blog-eot-crane-manufacturers-india.jpg";
 import blogPassengerLiftDelhi from "@/assets/blog-passenger-lift-manufacturers-delhi.jpg";
+import blogCheapestLiftQuote from "@/assets/blog-cheapest-lift-quote-delhi.jpg";
 
 
 
