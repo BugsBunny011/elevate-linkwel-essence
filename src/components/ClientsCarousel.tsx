@@ -15,6 +15,7 @@ export interface ClientLogo {
 
 export const clients: ClientLogo[] = [
   { src: tvsLogo.url, name: "TVS" },
+  { src: parksonsLogo.url, name: "Parksons Packaging" },
 ];
 
 const LogoRow = ({ ariaHidden = false }: { ariaHidden?: boolean }) => (
