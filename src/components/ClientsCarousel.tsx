@@ -1,4 +1,5 @@
 import tvsLogo from "@/assets/clients/tvs.webp.asset.json";
+import parksonsLogo from "@/assets/clients/parksons.png.asset.json";
 
 /**
  * Automatic horizontal client logo carousel.
