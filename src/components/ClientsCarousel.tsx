@@ -1,3 +1,5 @@
+import tvsLogo from "@/assets/clients/tvs.webp.asset.json";
+
 /**
  * Automatic horizontal client logo carousel.
  * Order matters: list clients from biggest name / revenue first —
@@ -11,8 +13,7 @@ export interface ClientLogo {
 }
 
 export const clients: ClientLogo[] = [
-  // Add logos here in order of prominence, e.g.
-  // { src: clientDlf, name: "DLF" },
+  { src: tvsLogo.url, name: "TVS" },
 ];
 
 const LogoRow = ({ ariaHidden = false }: { ariaHidden?: boolean }) => (
