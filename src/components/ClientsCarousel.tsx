@@ -21,13 +21,15 @@ export const clients: ClientLogo[] = [
 const LogoRow = ({ ariaHidden = false }: { ariaHidden?: boolean }) => (
   <ul aria-hidden={ariaHidden} className="flex shrink-0 items-center">
     {clients.map((c, i) => (
-      <li key={i} className="mx-8 md:mx-12 flex items-center">
-        <img
-          src={c.src}
-          alt={`${c.name} logo`}
-          loading="lazy"
-          className="h-12 md:h-16 w-auto object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
-        />
+      <li key={i} className="mx-8 md:mx-12 flex items-center justify-center">
+        <div className="w-36 md:w-44 h-16 md:h-20 flex items-center justify-center">
+          <img
+            src={c.src}
+            alt={`${c.name} logo`}
+            loading="lazy"
+            className="max-w-full max-h-full w-auto h-auto object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+          />
+        </div>
       </li>
     ))}
   </ul>
