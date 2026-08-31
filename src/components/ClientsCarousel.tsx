@@ -1,10 +1,16 @@
 import tvsLogo from "@/assets/clients/tvs.webp.asset.json";
+import bhushanLogo from "@/assets/clients/bhushan.jpeg.asset.json";
+import godawariLogo from "@/assets/clients/godawari.png.asset.json";
+import prakashLogo from "@/assets/clients/prakash.jpeg.asset.json";
 import centuryLogo from "@/assets/clients/century.webp.asset.json";
 import wowMomoLogo from "@/assets/clients/wow-momo.png.asset.json";
 import parksonsLogo from "@/assets/clients/parksons.png.asset.json";
 import nationalLogo from "@/assets/clients/national.jpeg.asset.json";
+import avonLogo from "@/assets/clients/avon.png.asset.json";
 import daffodilLogo from "@/assets/clients/daffodil.jpg.asset.json";
 import beetaLogo from "@/assets/clients/beeta.jpg.asset.json";
+import novaLogo from "@/assets/clients/nova.jpeg.asset.json";
+import rachitechLogo from "@/assets/clients/rachitech.png.asset.json";
 import siddhivinayakLogo from "@/assets/clients/siddhivinayak.png.asset.json";
 
 /**
@@ -21,14 +27,21 @@ export interface ClientLogo {
 
 export const clients: ClientLogo[] = [
   { src: tvsLogo.url, name: "TVS" },
+  { src: bhushanLogo.url, name: "Bhushan Steel" },
+  { src: godawariLogo.url, name: "Godawari Power & Ispat" },
+  { src: prakashLogo.url, name: "Prakash Industries" },
   { src: centuryLogo.url, name: "Century Plyboards" },
   { src: wowMomoLogo.url, name: "Wow! Momo" },
   { src: parksonsLogo.url, name: "Parksons Packaging" },
   { src: nationalLogo.url, name: "National" },
+  { src: avonLogo.url, name: "Avon" },
   { src: daffodilLogo.url, name: "Daffodil Tissues" },
   { src: beetaLogo.url, name: "Beeta" },
+  { src: novaLogo.url, name: "Nova Publication" },
+  { src: rachitechLogo.url, name: "Rachitech" },
   { src: siddhivinayakLogo.url, name: "Siddhivinayak Plastic Wares" },
 ];
+
 
 
 const LogoRow = ({ ariaHidden = false }: { ariaHidden?: boolean }) => (
