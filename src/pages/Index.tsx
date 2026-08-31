@@ -430,6 +430,15 @@ const Index = () => {
                   to deliver <Link to="/products/lifts" className="text-accent hover:underline">elevator</Link> and <Link to="/products/cranes" className="text-accent hover:underline">crane</Link> solutions that exceed expectations. Our commitment to safety, innovation,
                   and client satisfaction sets us apart, see our <Link to="/services" className="text-accent hover:underline">services</Link>, browse <Link to="/projects" className="text-accent hover:underline">recent projects</Link>, or read insights on our <Link to="/blog" className="text-accent hover:underline">blog</Link>.
                 </p>
+                <p className="text-muted-foreground font-body leading-relaxed mb-8">
+                  Every installation is backed by our <Link to="/services/amc" className="text-accent hover:underline">lift AMC and maintenance contracts</Link>, with engineering
+                  and service teams working directly out of <Link to="/delhi" className="text-accent hover:underline">Delhi</Link>,{" "}
+                  <Link to="/noida" className="text-accent hover:underline">Noida</Link> and{" "}
+                  <Link to="/gurgaon" className="text-accent hover:underline">Gurgaon</Link>. If you are planning a residential
+                  installation, start with our{" "}
+                  <Link to="/blog/home-elevator-buying-guide-india-2026" className="text-accent hover:underline">home elevator buying guide</Link>.
+                </p>
+
                 <div className="space-y-4">
                   {["Comprehensive Annual Maintenance Contracts", "State-of-the-art Technology Solutions", "Trusted by 800+ Clients Across India", "Expert Installation & Modernization"].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
