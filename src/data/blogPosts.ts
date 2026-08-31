@@ -25,6 +25,8 @@ export interface BlogFaq {
 export interface BlogPost {
   slug: string;
   title: string;
+  /** Optional short breadcrumb label. Falls back to title. */
+  breadcrumb?: string;
   excerpt: string;
   /** Optional SEO meta title (<60 chars). Falls back to `${title} | Linkwel Engineers Blog`. */
   seoTitle?: string;
