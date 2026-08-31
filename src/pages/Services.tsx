@@ -164,6 +164,59 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Service process — unique to this page */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto section-padding max-w-4xl">
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-8">
+              How a Linkwel Service Engagement Works
+            </h2>
+            <ol className="space-y-6">
+              {serviceProcess.map((step, i) => (
+                <li key={i} className="flex gap-5">
+                  <span className="shrink-0 w-9 h-9 rounded-full bg-accent/10 text-accent font-body font-semibold text-sm flex items-center justify-center">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <h3 className="font-heading font-semibold text-foreground mb-1">{step.title}</h3>
+                    <p className="text-muted-foreground font-body text-sm leading-relaxed">{step.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+            <p className="text-muted-foreground font-body leading-relaxed mt-8">
+              Service teams are dispatched from our hubs covering{" "}
+              <Link to="/delhi" className="text-accent underline underline-offset-2 hover:opacity-80">Delhi</Link>,{" "}
+              <Link to="/noida" className="text-accent underline underline-offset-2 hover:opacity-80">Noida</Link> and{" "}
+              <Link to="/gurgaon" className="text-accent underline underline-offset-2 hover:opacity-80">Gurgaon</Link>, with
+              dedicated <Link to="/services/amc" className="text-accent underline underline-offset-2 hover:opacity-80">annual maintenance contracts</Link>{" "}
+              available for every system we install or take over.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* FAQs — unique to this page */}
+      <section className="py-20 bg-card">
+        <div className="container mx-auto section-padding max-w-4xl">
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-8">
+              Lift & Crane Service FAQs
+            </h2>
+            <div className="space-y-6">
+              {serviceFaqs.map((f, i) => (
+                <div key={i} className="glass-card rounded-lg p-6">
+                  <h3 className="font-heading font-semibold text-foreground mb-2">{f.q}</h3>
+                  <p className="text-muted-foreground font-body text-sm leading-relaxed">{f.a}</p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+
+
       {/* CTA */}
       <section className="py-20 navy-gradient">
         <div className="container mx-auto section-padding text-center">
