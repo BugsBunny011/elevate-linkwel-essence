@@ -78,7 +78,7 @@ const BlogPost = () => {
       <SeoBreadcrumbs
         items={[
           { name: "Blog", path: "/blog" },
-          { name: post.title, path: `/blog/${post.slug}` },
+          { name: post.breadcrumb ?? post.title, path: `/blog/${post.slug}` },
         ]}
         hidden
       />
@@ -244,7 +244,7 @@ const BlogPost = () => {
               to="/contact"
               className="gold-gradient text-white font-body font-semibold text-sm px-8 py-3 rounded-sm uppercase tracking-wider hover:opacity-90 transition-opacity inline-flex items-center gap-2"
             >
-              Get a Quote <ArrowRight size={14} />
+              Get a Quote from Linkwel Engineers <ArrowRight size={14} />
             </Link>
           </div>
         </div>

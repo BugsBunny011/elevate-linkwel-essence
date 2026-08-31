@@ -5,6 +5,7 @@ import blogLiftManufacturersIndia from "@/assets/blog-lift-manufacturers-india.j
 import blogElevatorMaintenanceNearMe from "@/assets/blog-elevator-maintenance-near-me.jpg";
 import blogEotCraneManufacturersIndia from "@/assets/blog-eot-crane-manufacturers-india.jpg";
 import blogPassengerLiftDelhi from "@/assets/blog-passenger-lift-manufacturers-delhi.jpg";
+import blogCheapestLiftQuote from "@/assets/blog-cheapest-lift-quote-delhi.jpg";
 
 
 
@@ -24,6 +25,8 @@ export interface BlogFaq {
 export interface BlogPost {
   slug: string;
   title: string;
+  /** Optional short breadcrumb label. Falls back to title. */
+  breadcrumb?: string;
   excerpt: string;
   /** Optional SEO meta title (<60 chars). Falls back to `${title} | Linkwel Engineers Blog`. */
   seoTitle?: string;
@@ -116,6 +119,144 @@ const villaHomeLiftFaqs: BlogFaq[] = [
 ];
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "elevator-company-in-delhi-cheapest-lift-quote",
+    title:
+      "Elevator Company in Delhi: Why the Cheapest Lift Quote Usually Costs You More",
+    seoTitle: "Elevator Company in Delhi | Why Cheap Quotes Cost More",
+    metaDesc:
+      "Elevator company in Delhi comparing quotes? See why the cheapest lift quote often costs more later, and what 35 years of manufacturing means for reliability.",
+    breadcrumb: "Elevator Company in Delhi",
+    excerpt:
+      "Comparing lift quotes from every elevator company in Delhi? The cheapest quote often becomes the most expensive decision. Here's what 35 years of manufacturing and servicing elevators across Delhi NCR has taught us about total cost of ownership.",
+    date: "2026-08-31",
+    readTime: "8 min read",
+    author: "Linkwel Engineers Editorial",
+    category: "Elevators & Lifts",
+    image: blogCheapestLiftQuote,
+    imageAlt:
+      "Premium elevator cabin with brushed steel doors in a modern Delhi commercial building lobby",
+    keywords:
+      "elevator company in delhi, lift installation cost, best elevator company, elevator company near me, lift AMC service, elevator manufacturer Delhi",
+    content: [
+      {
+        type: "p",
+        text: "If you've ever asked for lift or elevator quotes for a building, a plant, or a residential society, you already know the drill. You call five vendors. You get five wildly different numbers. And almost every time, the temptation is the same: go with whoever quotes the lowest.",
+      },
+      {
+        type: "p",
+        text: "It feels like the smart, responsible decision. Save money, get the same product, right?",
+      },
+      { type: "p", text: "Except it rarely works out that way." },
+      {
+        type: "h2",
+        text: "The Real Pain Point: It's Not the Lift, It's What Happens After",
+      },
+      {
+        type: "p",
+        text: "Here's what customers across Delhi NCR keep running into, again and again:",
+      },
+      {
+        type: "html",
+        html: `<strong>The vendor who quoted the lowest price is not the vendor who installed the lift.</strong> Somewhere between the advance payment and the installation, a sub-contractor takes over. Corners get cut on cabin quality, wiring, and safety components that don't show up on a spec sheet but absolutely show up five years later.`,
+      },
+      {
+        type: "html",
+        html: `<strong>Service calls stop being answered.</strong> The lift works fine for the first year, maybe even two. Then a part fails, or the controller throws an error, and the number you call either doesn't pick up, or picks up and says "engineer will come next week." For a passenger lift in a residential society, "next week" means elderly residents climbing four flights of stairs.`,
+      },
+      {
+        type: "html",
+        html: `<strong>The company itself disappears.</strong> This is the part nobody warns you about. Low-margin players in the lift business often don't last. They win a contract on price, execute it as cheaply as possible, and by the time the <a href="/services/amc" class="text-accent underline hover:opacity-80">lift AMC service</a> is due for renewal, the company has rebranded, shut down, or simply gone silent. Your building is now left with a proprietary control system that no one else wants to touch, because every manufacturer prefers to service what they built.`,
+      },
+      {
+        type: "p",
+        text: "This isn't a rare, unlucky story. It's a pattern, one that plays out in RWAs, small factories, and commercial buildings across NCR every single year.",
+      },
+      {
+        type: "h2",
+        text: "A Few Real-World Scenarios (Names Withheld, Patterns Are Common)",
+      },
+      {
+        type: "html",
+        html: `<strong>A residential society in the outer Delhi NCR belt</strong> signed a contract with a vendor offering nearly 20% below every other quote. The lift was commissioned. Eighteen months in, the hydraulic system started leaking oil. The customer called the number on the invoice: disconnected. The RWA had to hire an entirely new, unfamiliar contractor just to diagnose a system they didn't design, at a premium, because "outside" servicing on someone else's installation always costs more.`,
+      },
+      {
+        type: "html",
+        html: `<strong>A small manufacturing unit</strong> installed a goods lift from a low-cost supplier to save on capex during a facility expansion. Within a year, the lift's load-bearing components showed signs of premature wear, the kind of wear that comes from under-specified motors and gearboxes, not from the elevator's own design life. The AMC technician who was supposed to visit quarterly showed up twice in the first year, then never again.`,
+      },
+      {
+        type: "html",
+        html: `<strong>A commercial building owner</strong> discovered, only after a breakdown stranded staff mid-floor, that the "authorized service partner" listed on his AMC paperwork was actually a two-person outfit with no access to genuine spare parts. The gearbox model was discontinued. Sourcing a compatible replacement took over six weeks.`,
+      },
+      {
+        type: "p",
+        text: "None of these buyers made a foolish decision. They made a rational one, based on the information in front of them: a quote. The problem is that a quote only tells you the price on day one. It tells you nothing about who will still be answering the phone on day 1,825.",
+      },
+      {
+        type: "h2",
+        text: "Why \u201cHow Long Has This Company Existed\u201d Should Be Your First Question, Not Your Last",
+      },
+      {
+        type: "html",
+        html: `In an industry crowded with new entrants who appear during a construction boom and vanish during a slowdown, longevity isn't a vanity metric. It's the single best predictor of whether you'll get supported in year seven of ownership, not just year one. When you search for an <a href="/locations" class="text-accent underline hover:opacity-80">elevator company near me</a>, the best elevator company on paper is often the one that has simply survived the longest.`,
+      },
+      {
+        type: "html",
+        html: `This is where <strong>Linkwel Engineers</strong> has quietly built something that's hard to manufacture overnight: a 35-year track record as an <a href="/delhi" class="text-accent underline hover:opacity-80">elevator manufacturer in Delhi</a>, based out of Okhla Industrial Area, New Delhi, manufacturing elevators, EOT cranes, hoists, and gearboxes since 1989.`,
+      },
+      { type: "p", text: "What that actually means for a customer:" },
+      {
+        type: "ul",
+        items: [
+          "We were here before your building was built, and we plan to be here after your next AMC renewal. Continuity isn't a promise on a brochure; it's a fact you can verify.",
+          "We manufacture, we don't just assemble and disappear. When Linkwel installs a lift or a crane, the same organization that built the component is the one servicing it years later, not a subcontractor who's moved on to the next job.",
+          "Spare parts and expertise don't expire with a rebrand. Because we've been continuously operating under the same name, in the same industrial base, our older installations are still fully serviceable, something many customers of shut-down vendors would give a great deal for.",
+          "We're not the cheapest quote in every RFQ, and we're comfortable with that. Our pricing reflects proper-grade components, compliant safety systems, and a service commitment we can actually stand behind for the life of the equipment, not just the warranty period.",
+        ],
+      },
+      { type: "h2", text: "The Real Comparison Isn't Price vs. Price" },
+      {
+        type: "html",
+        html: `It's <strong>price today vs. total cost of ownership over 15 to 20 years</strong>, the realistic working life of a well-built lift or crane. The headline lift installation cost is only the beginning. Factor in:`,
+      },
+      {
+        type: "ul",
+        items: [
+          "Breakdown downtime and lost productivity",
+          "Emergency third-party servicing at premium rates",
+          "Safety risk from under-specified components",
+          "The cost (and stress) of finding a new vendor mid-contract because the old one vanished",
+        ],
+      },
+      {
+        type: "p",
+        text: "When you run those numbers, the \u201cexpensive\u201d quote from an established manufacturer very often turns out to be the cheaper decision, just spread over the years the equipment actually has to work.",
+      },
+      { type: "h2", text: "Before You Sign the Next Quote" },
+      {
+        type: "p",
+        text: "Ask any lift or crane vendor three questions before you sign:",
+      },
+      {
+        type: "ul",
+        items: [
+          "How many years have you been manufacturing, not just trading or installing, under this exact company name?",
+          "Can I speak to a customer whose equipment you installed more than 10 years ago and still service today?",
+          "Who exactly answers the AMC helpline, and what's your average response time for a breakdown call?",
+        ],
+      },
+      {
+        type: "p",
+        text: "If those answers are vague, that's your pain point talking to you before it becomes a problem.",
+      },
+      {
+        type: "quote",
+        text: "Linkwel Engineers has been designing, manufacturing, and servicing elevators, EOT cranes, hoists, and gearboxes from Okhla Industrial Area, New Delhi, since 1989. Reach out for a quotation built on 35 years of standing behind what we build.",
+      },
+    ],
+    authorBio:
+      "Linkwel Engineers has been designing, manufacturing, and servicing elevators, EOT cranes, hoists, and gearboxes from Okhla Industrial Area, New Delhi, since 1989.",
+  },
   {
     slug: "passenger-lift-manufacturers-delhi",
     title:
