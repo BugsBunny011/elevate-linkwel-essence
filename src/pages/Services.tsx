@@ -127,6 +127,16 @@ const Services = () => {
             }
           }))
         })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": serviceFaqs.map((f) => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": { "@type": "Answer", "text": f.a }
+          }))
+        })}</script>
+
       </Helmet>
       <SeoBreadcrumbs items={[{name: "Services",path: "/services"}]} hidden />
       <section className="pt-32 pb-20 navy-gradient">
