@@ -5,6 +5,7 @@ import { ArrowRight, Shield, Award, Wrench, Building2, Star, Quote, ChevronRight
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import ManufactureCarousel from "@/components/ManufactureCarousel";
+import ClientsCarousel from "@/components/ClientsCarousel";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import heroFallback from "@/assets/hero-fallback.jpg";
@@ -286,6 +287,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Clients logo carousel */}
+      <ClientsCarousel />
 
       {/* Expertise */}
       <section className="py-24 bg-background">
