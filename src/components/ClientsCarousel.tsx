@@ -1,4 +1,5 @@
 import tvsLogo from "@/assets/clients/tvs.webp.asset.json";
+import parksonsLogo from "@/assets/clients/parksons.png.asset.json";
 
 /**
  * Automatic horizontal client logo carousel.
@@ -14,6 +15,7 @@ export interface ClientLogo {
 
 export const clients: ClientLogo[] = [
   { src: tvsLogo.url, name: "TVS" },
+  { src: parksonsLogo.url, name: "Parksons Packaging" },
 ];
 
 const LogoRow = ({ ariaHidden = false }: { ariaHidden?: boolean }) => (
