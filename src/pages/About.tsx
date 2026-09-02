@@ -118,7 +118,7 @@ const About = () => {
                           Leadership
                         </h4>
                         <p className="text-muted-foreground font-body leading-relaxed">
-                          Today, <strong>Mr. Sunit Bagga</strong>, son of Mr. Suresh Bagga, leads the company as CEO. With deep industry knowledge and a steadfast commitment to innovation, he continues to grow Linkwel while honoring its legacy of engineering excellence.
+                          Today, <strong>Mr. Sunit Bagga</strong>, son of Mr. Suresh Bagga, leads the company as <strong>Managing Director</strong>. With deep industry knowledge and a steadfast commitment to innovation, he continues to grow Linkwel while honoring its legacy of engineering excellence.
                         </p>
                       </div>
 
@@ -182,7 +182,7 @@ const About = () => {
                           <li className="flex items-start gap-3">
                             <div className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0" />
                             <p className="text-muted-foreground font-body leading-relaxed">
-                              Under the leadership of <strong>CEO Mr. Sunit Bagga</strong>, the company has continued to innovate, embracing modern technology, expanding its service portfolio, and strengthening client relationships across India.
+                              Under the leadership of <strong>Managing Director Mr. Sunit Bagga</strong>, the company has continued to innovate, embracing modern technology, expanding its service portfolio, and strengthening client relationships across India.
                             </p>
                           </li>
                           <li className="flex items-start gap-3">
@@ -206,7 +206,7 @@ const About = () => {
               <p>The company began by manufacturing crane components, quickly earning a reputation for quality and reliability among industrial clients.</p>
               <h4>Growth and Expansion</h4>
               <p>In the early 2000s, Linkwel expanded into complete elevator systems and full crane manufacturing, responding to India's rapid infrastructure growth.</p>
-              <p>Under the leadership of CEO Mr. Sunit Bagga, the company has continued to innovate, embracing modern technology, expanding its service portfolio, and strengthening client relationships across India.</p>
+              <p>Under the leadership of Managing Director Mr. Sunit Bagga, the company has continued to innovate, embracing modern technology, expanding its service portfolio, and strengthening client relationships across India.</p>
               <p>Today, with over 35 years of experience and 1000+ successful projects, Linkwel Engineers remains committed to engineering excellence, innovation, and customer-focused solutions.</p>
             </div>
           </div>
