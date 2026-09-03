@@ -73,17 +73,17 @@ const Index = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Elevator Manufacturer in Delhi NCR | Linkwel Engineers</title>
-        <meta name="description" content="Linkwel Engineers is a trusted elevator manufacturer in Delhi NCR, delivering passenger, home, hospital & goods elevators since 1989. Get a free quote." />
-        <meta name="keywords" content="elevator manufacturers in India, lift manufacturers in Delhi, crane manufacturers in India, EOT crane manufacturers, gantry crane suppliers, jib crane manufacturers, industrial crane company Delhi NCR" />
+        <title>Elevator Manufacturer in Delhi | Linkwel Engineers</title>
+        <meta name="description" content="Linkwel Engineers is a trusted elevator manufacturer in Delhi, delivering passenger, home, hospital & goods elevators since 1989." />
+        <meta name="keywords" content="elevator manufacturer, elevator manufacturer in delhi, elevator company delhi, home elevator, passenger lift manufacturer" />
         <link rel="canonical" href="https://linkwelengineers.com/" />
-        <meta property="og:title" content="Linkwel Engineers | Lift & Crane Manufacturers India" />
-        <meta property="og:description" content="Leading manufacturer of elevators, lifts and industrial cranes in India. Passenger lifts, EOT, gantry & jib cranes. 35+ years in Delhi NCR." />
+        <meta property="og:title" content="Elevator Manufacturer in Delhi | Linkwel Engineers" />
+        <meta property="og:description" content="Linkwel Engineers is a trusted elevator manufacturer in Delhi, delivering passenger, home, hospital & goods elevators since 1989." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://linkwelengineers.com/" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Linkwel Engineers | Lift & Crane Manufacturers India" />
-        <meta name="twitter:description" content="Leading manufacturer of elevators, lifts and industrial cranes in India. Passenger lifts, EOT, gantry & jib cranes. 35+ years in Delhi NCR." />
+        <meta name="twitter:title" content="Elevator Manufacturer in Delhi | Linkwel Engineers" />
+        <meta name="twitter:description" content="Linkwel Engineers is a trusted elevator manufacturer in Delhi, delivering passenger, home, hospital & goods elevators since 1989." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [
