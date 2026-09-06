@@ -141,13 +141,6 @@ const Footer = () => {
             © {new Date().getFullYear()} Linkwel Engineers. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a
-              href="/Linkwel-Product-Catalogue.pdf"
-              download
-              className="text-xs hover:text-gold transition-colors inline-flex items-center gap-1.5"
-            >
-              <Download size={12} /> Product Catalogue
-            </a>
             <a href="https://www.linkedin.com/company/linkwel-engineers-le/" target="_blank" rel="noopener noreferrer" className="text-xs hover:text-gold transition-colors">
               LinkedIn
             </a>
