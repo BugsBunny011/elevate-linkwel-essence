@@ -223,12 +223,28 @@ const Index = () => {
             initial={heroInitial}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-gold-light leading-tight mb-4"
+            className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-gold-light leading-tight mb-4 relative"
           >
-            Elevating Standards,
-            <br />
-            <span className="text-gold-gradient">Engineering Trust</span>
+            <motion.span
+              className="block absolute inset-0"
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.8, delay: 1.8 }}
+            >
+              Elevator Manufacturer in Delhi
+            </motion.span>
+            <motion.span
+              className="block"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 2.2 }}
+            >
+              Elevating Standards,
+              <br />
+              <span className="text-gold-gradient">Engineering Trust</span>
+            </motion.span>
           </motion.h1>
+
           <motion.p
             initial={heroInitial}
             animate={{ opacity: 1, y: 0 }}
