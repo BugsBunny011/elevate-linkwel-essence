@@ -119,7 +119,7 @@ interface AppProps {
 }
 
 const App = ({ router, helmetContext }: AppProps = {}) => {
-  const [loading, setLoading] = useState(!isPrerender && !isSSR);
+  const [loading, setLoading] = useState(!isPrerender && !isSSR && !isLiftPassRoute);
   const handleComplete = useCallback(() => setLoading(false), []);
 
   const routedApp = router ? (
