@@ -68,6 +68,40 @@ export const AppRoutes = () => (
       <Route path="/gurgaon" element={<Gurgaon />} />
       <Route path="/locations" element={<Locations />} />
       <Route path="/elevator-studio" element={<ElevatorStudio />} />
+      <Route path="/liftpass/login" element={<StaffAuth />} />
+      <Route path="/liftpass/:siteCode" element={<SiteStatus />} />
+      <Route
+        path="/admin"
+        element={
+          <RequireRole role="admin">
+            <AdminDashboard />
+          </RequireRole>
+        }
+      />
+      <Route
+        path="/admin/sites/:siteId"
+        element={
+          <RequireRole role="admin">
+            <AdminSiteDetail />
+          </RequireRole>
+        }
+      />
+      <Route
+        path="/admin/qr"
+        element={
+          <RequireRole role="admin">
+            <AdminQr />
+          </RequireRole>
+        }
+      />
+      <Route
+        path="/technician"
+        element={
+          <RequireRole role="technician">
+            <TechnicianConsole />
+          </RequireRole>
+        }
+      />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </Suspense>
