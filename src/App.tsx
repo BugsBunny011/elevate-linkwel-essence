@@ -48,6 +48,10 @@ const isPrerender =
 // Detect SSR (no window) — skip preloader & BrowserRouter during static generation
 const isSSR = typeof window === "undefined";
 
+// LiftPass tools are utility screens: no brand preloader, they must open instantly on scan
+const isLiftPassRoute =
+  !isSSR && /^\/(liftpass|admin|technician)(\/|$)/.test(window.location.pathname);
+
 export const AppRoutes = () => (
   <Suspense fallback={null}>
     <Routes>
