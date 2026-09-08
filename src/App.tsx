@@ -27,6 +27,13 @@ const Noida = lazy(() => import("./pages/Noida"));
 const Gurgaon = lazy(() => import("./pages/Gurgaon"));
 const Locations = lazy(() => import("./pages/Locations"));
 const ElevatorStudio = lazy(() => import("./pages/ElevatorStudio"));
+const SiteStatus = lazy(() => import("./pages/liftpass/SiteStatus"));
+const StaffAuth = lazy(() => import("./pages/liftpass/StaffAuth"));
+const AdminDashboard = lazy(() => import("./pages/liftpass/AdminDashboard"));
+const AdminSiteDetail = lazy(() => import("./pages/liftpass/AdminSiteDetail"));
+const AdminQr = lazy(() => import("./pages/liftpass/AdminQr"));
+const TechnicianConsole = lazy(() => import("./pages/liftpass/TechnicianConsole"));
+const RequireRole = lazy(() => import("./components/liftpass/RequireRole"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -40,6 +47,10 @@ const isPrerender =
 
 // Detect SSR (no window) — skip preloader & BrowserRouter during static generation
 const isSSR = typeof window === "undefined";
+
+// LiftPass tools are utility screens: no brand preloader, they must open instantly on scan
+const isLiftPassRoute =
+  !isSSR && /^\/(liftpass|admin|technician)(\/|$)/.test(window.location.pathname);
 
 export const AppRoutes = () => (
   <Suspense fallback={null}>
@@ -61,6 +72,40 @@ export const AppRoutes = () => (
       <Route path="/gurgaon" element={<Gurgaon />} />
       <Route path="/locations" element={<Locations />} />
       <Route path="/elevator-studio" element={<ElevatorStudio />} />
+      <Route path="/liftpass/login" element={<StaffAuth />} />
+      <Route path="/liftpass/:siteCode" element={<SiteStatus />} />
+      <Route
+        path="/admin"
+        element={
+          <RequireRole role="admin">
+            <AdminDashboard />
+          </RequireRole>
+        }
+      />
+      <Route
+        path="/admin/sites/:siteId"
+        element={
+          <RequireRole role="admin">
+            <AdminSiteDetail />
+          </RequireRole>
+        }
+      />
+      <Route
+        path="/admin/qr"
+        element={
+          <RequireRole role="admin">
+            <AdminQr />
+          </RequireRole>
+        }
+      />
+      <Route
+        path="/technician"
+        element={
+          <RequireRole role="technician">
+            <TechnicianConsole />
+          </RequireRole>
+        }
+      />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </Suspense>
@@ -74,7 +119,7 @@ interface AppProps {
 }
 
 const App = ({ router, helmetContext }: AppProps = {}) => {
-  const [loading, setLoading] = useState(!isPrerender && !isSSR);
+  const [loading, setLoading] = useState(!isPrerender && !isSSR && !isLiftPassRoute);
   const handleComplete = useCallback(() => setLoading(false), []);
 
   const routedApp = router ? (
