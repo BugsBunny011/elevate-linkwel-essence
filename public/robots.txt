@@ -12,5 +12,8 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /liftpass
+Disallow: /admin
+Disallow: /technician
 
 Sitemap: https://linkwelengineers.com/sitemap.xml
