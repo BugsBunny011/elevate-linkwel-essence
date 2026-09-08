@@ -27,6 +27,13 @@ const Noida = lazy(() => import("./pages/Noida"));
 const Gurgaon = lazy(() => import("./pages/Gurgaon"));
 const Locations = lazy(() => import("./pages/Locations"));
 const ElevatorStudio = lazy(() => import("./pages/ElevatorStudio"));
+const SiteStatus = lazy(() => import("./pages/liftpass/SiteStatus"));
+const StaffAuth = lazy(() => import("./pages/liftpass/StaffAuth"));
+const AdminDashboard = lazy(() => import("./pages/liftpass/AdminDashboard"));
+const AdminSiteDetail = lazy(() => import("./pages/liftpass/AdminSiteDetail"));
+const AdminQr = lazy(() => import("./pages/liftpass/AdminQr"));
+const TechnicianConsole = lazy(() => import("./pages/liftpass/TechnicianConsole"));
+const RequireRole = lazy(() => import("./components/liftpass/RequireRole"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
