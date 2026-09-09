@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import loginBackground from "@/assets/liftpass-login-building.jpg";
 
 const StaffAuth = () => {
   const navigate = useNavigate();
@@ -42,8 +43,17 @@ const StaffAuth = () => {
   return (
     <LiftPassShell>
       <NoIndex title="LiftPass staff sign in" />
-      <div className="flex min-h-screen items-center justify-center px-4">
-        <div className="w-full max-w-sm rounded-xl border border-border bg-card p-6 shadow-sm">
+      <div className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-8 sm:justify-end sm:px-10 lg:px-20">
+        <img
+          src={loginBackground}
+          alt="Modern elevator lobby"
+          width={1920}
+          height={1280}
+          className="absolute inset-0 h-full w-full object-cover object-left"
+        />
+        <div className="absolute inset-0 bg-navy-dark/45 sm:bg-navy-dark/30" aria-hidden="true" />
+
+        <div className="relative w-full max-w-sm rounded-lg border border-border/60 bg-card/95 p-6 shadow-2xl backdrop-blur-md sm:p-8">
           <div className="mb-6 flex items-center gap-3">
             <Logomark />
             <div>
@@ -79,12 +89,14 @@ const StaffAuth = () => {
             </Button>
           </form>
 
-          <button
+          <Button
+            type="button"
+            variant="link"
             onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
-            className="mt-4 w-full text-center text-xs text-muted-foreground underline"
+            className="mt-3 h-auto w-full text-xs text-muted-foreground"
           >
             {mode === "signin" ? "Need an account? Register" : "Already registered? Sign in"}
-          </button>
+          </Button>
         </div>
       </div>
     </LiftPassShell>
