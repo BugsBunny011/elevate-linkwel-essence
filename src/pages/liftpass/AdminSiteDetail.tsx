@@ -119,7 +119,10 @@ const LiftEditor = ({
       const value = form[key as string];
       payload[key as string] = value === "" ? null : NUMERIC_KEYS.has(key as string) ? Number(value) : value;
     });
-    const { error } = await supabase.from("lifts").update(payload).eq("id", lift.id);
+    const { error } = await supabase
+      .from("lifts")
+      .update(payload as never)
+      .eq("id", lift.id);
     if (error) {
       setSaving(false);
       return toast.error(error.message);
