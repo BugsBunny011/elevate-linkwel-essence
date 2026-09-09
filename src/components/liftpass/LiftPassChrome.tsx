@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
+import logo from "@/assets/linkwel-logo.png";
 
 /** Keeps every LiftPass route out of search engines until rollout is approved. */
 export const NoIndex = ({ title }: { title: string }) => (
@@ -11,8 +12,14 @@ export const NoIndex = ({ title }: { title: string }) => (
 );
 
 export const Logomark = () => (
-  <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-primary font-heading text-sm font-bold tracking-tight text-primary-foreground">
-    LE
+  <span className="inline-flex h-12 w-16 shrink-0 items-center justify-center rounded-md bg-primary p-1.5 shadow-sm">
+    <img
+      src={logo}
+      alt="Linkwel Engineers"
+      width={581}
+      height={429}
+      className="h-full w-full object-contain"
+    />
   </span>
 );
 
