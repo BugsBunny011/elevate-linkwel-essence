@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
-import MarqueeStrip from "@/components/MarqueeStrip";
+import ClientsCarousel from "@/components/ClientsCarousel";
 import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 import { blogPosts } from "@/data/blogPosts";
@@ -74,7 +74,7 @@ const Blog = () => {
         </div>
       </section>
 
-      <MarqueeStrip />
+      <ClientsCarousel />
 
       {/* Posts */}
       <section className="py-24 bg-background">

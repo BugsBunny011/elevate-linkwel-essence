@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, Shield, Award, Building2, Settings, ChevronRight, MapPin, Wrench, Factory } from "lucide-react";
 import Layout from "@/components/Layout";
-import MarqueeStrip from "@/components/MarqueeStrip";
+import ClientsCarousel from "@/components/ClientsCarousel";
 import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 import { liftProducts, craneProducts } from "@/data/products";
@@ -195,7 +195,7 @@ const CityPage = ({ slug, city }: CityConfig) => {
           </p>
         </div>
       </section>
-      <MarqueeStrip />
+      <ClientsCarousel />
 
       {/* Products */}
       <section className="py-24 bg-background">

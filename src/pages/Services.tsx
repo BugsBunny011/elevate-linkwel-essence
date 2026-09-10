@@ -2,7 +2,7 @@ import { Building2, Wrench, RefreshCw, Settings, FileCheck, ArrowRight } from "l
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
-import MarqueeStrip from "@/components/MarqueeStrip";
+import ClientsCarousel from "@/components/ClientsCarousel";
 import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -150,7 +150,7 @@ const Services = () => {
           </p>
         </div>
       </section>
-      <MarqueeStrip />
+      <ClientsCarousel />
 
       <section className="py-24 bg-background">
         <div className="container mx-auto section-padding">

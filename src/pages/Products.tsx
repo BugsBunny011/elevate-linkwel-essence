@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
-import MarqueeStrip from "@/components/MarqueeStrip";
+import ClientsCarousel from "@/components/ClientsCarousel";
 import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 import { liftProducts, craneProducts } from "@/data/products";
@@ -61,7 +61,7 @@ const Products = () => {
           </motion.p>
         </div>
       </section>
-      <MarqueeStrip />
+      <ClientsCarousel />
 
       {/* Lifts Section */}
       <section id="lifts" className="py-24 bg-background">

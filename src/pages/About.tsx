@@ -1,7 +1,7 @@
 import { Target, Eye, Shield, Lightbulb, Award, Heart } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
-import MarqueeStrip from "@/components/MarqueeStrip";
+import ClientsCarousel from "@/components/ClientsCarousel";
 import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 import JourneyTimeline from "@/components/JourneyTimeline";
@@ -77,7 +77,7 @@ const About = () => {
           </p>
         </div>
       </section>
-      <MarqueeStrip />
+      <ClientsCarousel />
 
       {/* Company Overview & Our Story */}
       <section className="py-24 bg-background">
