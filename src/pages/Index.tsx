@@ -71,7 +71,7 @@ const Index = () => {
   const heroInitial = isSSR ? false : { opacity: 0, y: 30 };
 
   return (
-    <Layout showClients={false}>
+    <Layout showMarquee={false}>
       <Helmet>
         <title>Elevator Manufacturer in Delhi | Linkwel Engineers</title>
         <meta name="description" content="Linkwel Engineers is a trusted elevator manufacturer in Delhi, delivering passenger, home, hospital & goods elevators since 1989." />
