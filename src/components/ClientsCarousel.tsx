@@ -12,6 +12,11 @@ import beetaLogo from "@/assets/clients/beeta.jpg";
 import novaLogo from "@/assets/clients/nova.jpeg";
 import rachitechLogo from "@/assets/clients/rachitech.png";
 import siddhivinayakLogo from "@/assets/clients/siddhivinayak.png";
+import periwalLogo from "@/assets/clients/periwal-polytech.jpeg";
+import blueClientLogo from "@/assets/clients/client-blue-logo.png";
+import infinityLogo from "@/assets/clients/infinity-advertising.jpeg";
+import djsLogo from "@/assets/clients/djs-printers.png";
+import joveesLogo from "@/assets/clients/jovees-herbal.webp";
 
 /**
  * Automatic horizontal client logo carousel.
@@ -33,13 +38,18 @@ export const clients: ClientLogo[] = [
   { src: centuryLogo, name: "Century Plyboards" },
   { src: wowMomoLogo, name: "Wow! Momo" },
   { src: parksonsLogo, name: "Parksons Packaging" },
+  { src: joveesLogo, name: "Jovees Herbal" },
   { src: nationalLogo, name: "National" },
   { src: avonLogo, name: "Avon" },
+  { src: periwalLogo, name: "Periwal Polytech" },
+  { src: djsLogo, name: "DJS Printers" },
+  { src: infinityLogo, name: "Infinity Advertising Network" },
   { src: daffodilLogo, name: "Daffodil Tissues" },
   { src: beetaLogo, name: "Beeta" },
   { src: novaLogo, name: "Nova Publication" },
   { src: rachitechLogo, name: "Rachitech" },
   { src: siddhivinayakLogo, name: "Siddhivinayak Plastic Wares" },
+  { src: blueClientLogo, name: "Client company" },
 ];
 
 
