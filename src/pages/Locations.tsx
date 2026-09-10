@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, MapPin, ChevronRight, Building2, Factory } from "lucide-react";
 import Layout from "@/components/Layout";
-import MarqueeStrip from "@/components/MarqueeStrip";
+import ClientsCarousel from "@/components/ClientsCarousel";
 import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -72,7 +72,7 @@ const Locations = () => {
           </p>
         </div>
       </section>
-      <MarqueeStrip />
+      <ClientsCarousel />
 
       {/* Primary cities */}
       <section className="py-20 bg-background">

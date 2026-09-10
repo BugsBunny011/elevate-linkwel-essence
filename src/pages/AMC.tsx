@@ -14,7 +14,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Layout from "@/components/Layout";
-import MarqueeStrip from "@/components/MarqueeStrip";
+import ClientsCarousel from "@/components/ClientsCarousel";
 import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -125,7 +125,7 @@ const AMC = () => {
           </p>
         </div>
       </section>
-      <MarqueeStrip />
+      <ClientsCarousel />
 
       {/* What's Covered */}
       <section className="py-24 bg-background">

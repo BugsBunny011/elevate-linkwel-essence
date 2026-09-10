@@ -2,7 +2,7 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Calendar, Clock, User, ArrowLeft, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
-import MarqueeStrip from "@/components/MarqueeStrip";
+import ClientsCarousel from "@/components/ClientsCarousel";
 import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 import { blogPosts, getPostBySlug } from "@/data/blogPosts";
@@ -112,7 +112,7 @@ const BlogPost = () => {
         </div>
       </section>
 
-      <MarqueeStrip />
+      <ClientsCarousel />
 
       {/* Featured image */}
       <section className="bg-background pt-12">

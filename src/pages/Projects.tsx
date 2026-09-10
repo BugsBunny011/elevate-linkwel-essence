@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
-import MarqueeStrip from "@/components/MarqueeStrip";
+import ClientsCarousel from "@/components/ClientsCarousel";
 import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 import catVillas from "@/assets/category-villas.jpg";
@@ -57,7 +57,7 @@ const Projects = () => {
           </p>
         </div>
       </section>
-      <MarqueeStrip />
+      <ClientsCarousel />
 
       <section className="py-24 bg-background">
         <div className="container mx-auto section-padding">
