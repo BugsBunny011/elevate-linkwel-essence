@@ -20,6 +20,15 @@ const QuickEnquiryModal = () => {
   }, [success]);
 
   useEffect(() => {
+    if (sessionStorage.getItem("quick-enquiry-shown")) return;
+    const t = setTimeout(() => {
+      setOpen(true);
+      sessionStorage.setItem("quick-enquiry-shown", "1");
+    }, 3000);
+    return () => clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
@@ -70,12 +79,7 @@ const QuickEnquiryModal = () => {
 
   return (
     <>
-      <button
-        onClick={() => setOpen(true)}
-        className="fixed bottom-20 right-5 md:bottom-24 md:right-6 z-50 gold-gradient text-white font-body font-semibold text-xs md:text-sm px-4 md:px-5 py-2.5 md:py-3 rounded-sm uppercase tracking-wider shadow-lg hover:opacity-90 transition-opacity"
-      >
-        Get a Quote
-      </button>
+
 
       <AnimatePresence>
         {success && (
