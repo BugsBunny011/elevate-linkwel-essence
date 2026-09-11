@@ -2,6 +2,7 @@ import tvsLogo from "@/assets/clients/tvs.webp";
 import bhushanLogo from "@/assets/clients/bhushan.jpeg";
 import godawariLogo from "@/assets/clients/godawari.png";
 import prakashLogo from "@/assets/clients/prakash.jpeg";
+import denLogo from "@/assets/clients/den.jpeg";
 import centuryLogo from "@/assets/clients/century.webp";
 import wowMomoLogo from "@/assets/clients/wow-momo.png";
 import parksonsLogo from "@/assets/clients/parksons.png";
@@ -17,6 +18,7 @@ import blueClientLogo from "@/assets/clients/client-blue-logo.png";
 import infinityLogo from "@/assets/clients/infinity-advertising.jpeg";
 import djsLogo from "@/assets/clients/djs-printers.png";
 import joveesLogo from "@/assets/clients/jovees-herbal.webp";
+import gopalaLogo from "@/assets/clients/gopala.png";
 
 /**
  * Automatic horizontal client logo carousel.
