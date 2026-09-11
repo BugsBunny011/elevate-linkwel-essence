@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import WhatsAppButton from "./WhatsAppButton";
 import MarqueeStrip from "./MarqueeStrip";
+import QuickEnquiryModal from "./QuickEnquiryModal";
 
 const Layout = ({ children, showMarquee = true }: { children: ReactNode; showMarquee?: boolean }) => (
   <div className="min-h-screen flex flex-col">
@@ -11,6 +12,7 @@ const Layout = ({ children, showMarquee = true }: { children: ReactNode; showMar
     {showMarquee && <MarqueeStrip />}
     <Footer />
     <WhatsAppButton />
+    <QuickEnquiryModal />
   </div>
 );
 
