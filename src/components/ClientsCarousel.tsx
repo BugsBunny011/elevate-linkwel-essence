@@ -2,6 +2,7 @@ import tvsLogo from "@/assets/clients/tvs.webp";
 import bhushanLogo from "@/assets/clients/bhushan.jpeg";
 import godawariLogo from "@/assets/clients/godawari.png";
 import prakashLogo from "@/assets/clients/prakash.jpeg";
+import denLogo from "@/assets/clients/den.jpeg";
 import centuryLogo from "@/assets/clients/century.webp";
 import wowMomoLogo from "@/assets/clients/wow-momo.png";
 import parksonsLogo from "@/assets/clients/parksons.png";
@@ -17,6 +18,7 @@ import blueClientLogo from "@/assets/clients/client-blue-logo.png";
 import infinityLogo from "@/assets/clients/infinity-advertising.jpeg";
 import djsLogo from "@/assets/clients/djs-printers.png";
 import joveesLogo from "@/assets/clients/jovees-herbal.webp";
+import gopalaLogo from "@/assets/clients/gopala.png";
 
 /**
  * Automatic horizontal client logo carousel.
@@ -35,6 +37,7 @@ export const clients: ClientLogo[] = [
   { src: bhushanLogo, name: "Bhushan Steel" },
   { src: godawariLogo, name: "Godawari Power & Ispat" },
   { src: prakashLogo, name: "Prakash Industries" },
+  { src: denLogo, name: "DEN Networks" },
   { src: centuryLogo, name: "Century Plyboards" },
   { src: wowMomoLogo, name: "Wow! Momo" },
   { src: parksonsLogo, name: "Parksons Packaging" },
@@ -46,6 +49,7 @@ export const clients: ClientLogo[] = [
   { src: infinityLogo, name: "Infinity Advertising Network" },
   { src: daffodilLogo, name: "Daffodil Tissues" },
   { src: beetaLogo, name: "Beeta" },
+  { src: gopalaLogo, name: "Gopala" },
   { src: novaLogo, name: "Nova Publication" },
   { src: rachitechLogo, name: "Rachitech" },
   { src: siddhivinayakLogo, name: "Siddhivinayak Plastic Wares" },
