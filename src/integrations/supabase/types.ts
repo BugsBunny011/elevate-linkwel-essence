@@ -94,30 +94,36 @@ export type Database = {
         Row: {
           audit_date: string
           audited_by: string | null
+          completed_at: string | null
           created_at: string
           flagged_issues: string[]
           id: string
           lift_id: string
+          maintenance_completed: boolean
           voltage_readings: Json
           zone: Database["public"]["Enums"]["audit_zone_name"]
         }
         Insert: {
           audit_date?: string
           audited_by?: string | null
+          completed_at?: string | null
           created_at?: string
           flagged_issues?: string[]
           id?: string
           lift_id: string
+          maintenance_completed?: boolean
           voltage_readings?: Json
           zone: Database["public"]["Enums"]["audit_zone_name"]
         }
         Update: {
           audit_date?: string
           audited_by?: string | null
+          completed_at?: string | null
           created_at?: string
           flagged_issues?: string[]
           id?: string
           lift_id?: string
+          maintenance_completed?: boolean
           voltage_readings?: Json
           zone?: Database["public"]["Enums"]["audit_zone_name"]
         }
@@ -308,6 +314,7 @@ export type Database = {
           id: string
           in_time: string | null
           lift_id: string
+          maintenance_completed: boolean
           next_due_date: string | null
           out_time: string | null
           problem_reported: string | null
@@ -328,6 +335,7 @@ export type Database = {
           id?: string
           in_time?: string | null
           lift_id: string
+          maintenance_completed?: boolean
           next_due_date?: string | null
           out_time?: string | null
           problem_reported?: string | null
@@ -348,6 +356,7 @@ export type Database = {
           id?: string
           in_time?: string | null
           lift_id?: string
+          maintenance_completed?: boolean
           next_due_date?: string | null
           out_time?: string | null
           problem_reported?: string | null
@@ -440,6 +449,63 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_public_liftpass_audit_items: {
+        Args: { _audit_zone_ids: string[] }
+        Returns: {
+          audit_zone_id: string
+          created_at: string
+          id: string
+          item_name: string
+          notes: string
+          status: Database["public"]["Enums"]["checklist_status"]
+        }[]
+      }
+      get_public_liftpass_audits: {
+        Args: { _lift_ids: string[] }
+        Returns: {
+          audit_date: string
+          audited_by: string
+          completed_at: string
+          created_at: string
+          flagged_issues: string[]
+          id: string
+          issue_count: number
+          lift_id: string
+          maintenance_completed: boolean
+          voltage_readings: Json
+          zone: Database["public"]["Enums"]["audit_zone_name"]
+        }[]
+      }
+      get_public_liftpass_visits: {
+        Args: { _lift_ids: string[] }
+        Returns: {
+          action_taken: string | null
+          breakdown_notes: string | null
+          checklist: Json
+          complaint_number: string | null
+          created_at: string
+          customer_remarks: string | null
+          engineer_mobile: string | null
+          engineer_name: string | null
+          id: string
+          in_time: string | null
+          lift_id: string
+          maintenance_completed: boolean
+          next_due_date: string | null
+          out_time: string | null
+          problem_reported: string | null
+          received_amount: number | null
+          serial_no: string | null
+          visit_date: string
+          visit_type: Database["public"]["Enums"]["visit_type"]
+        }[]
+        SetofOptions: {
+          from: "*"
+          to: "service_visits"
+          isOneToOne: false
+          isSetofReturn: true
+        }
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
