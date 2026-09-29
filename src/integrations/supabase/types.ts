@@ -500,6 +500,16 @@ export type Database = {
           lift_id: string
         }[]
       }
+      get_public_liftpass_visit_contacts: {
+        Args: { _lift_ids: string[] }
+        Returns: {
+          engineer_mobile: string
+          engineer_name: string
+          id: string
+          lift_id: string
+          visit_date: string
+        }[]
+      }
       get_public_liftpass_visits: {
         Args: { _lift_ids: string[] }
         Returns: {

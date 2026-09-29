@@ -22,6 +22,13 @@
       "when": 1790681305837,
       "tag": "0002_liftpass_public_issue_counts_only",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1790681638587,
+      "tag": "0003_liftpass_public_technician_visit_contacts",
+      "breakpoints": true
     }
   ]
 }
