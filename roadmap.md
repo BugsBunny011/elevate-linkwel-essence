@@ -5,3 +5,4 @@
 - [x] Add a LiftPass forgot-password link and a page to set a new password from the emailed link.
 - [x] Make QR pages show only issue counts; remove checklist, technical details, and service findings from public access.
 - [x] Show completed visit dates, technician names and phone numbers on QR pages; set LiftPass report and call links to 8287291886.
+- [x] Add site creation to the LiftPass admin dashboard and open the new site's details.
