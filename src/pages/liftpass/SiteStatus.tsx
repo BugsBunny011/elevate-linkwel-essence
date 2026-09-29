@@ -35,7 +35,7 @@ import {
 } from "@/lib/liftpass";
 
 interface LiftBundle {
-  lift: Lift;
+  lift: PublicLift;
   contract: AmcContract | null;
   zones: { zone: PublicAuditZone; items: AuditItem[] }[];
   visits: PublicVisit[];
@@ -43,6 +43,7 @@ interface LiftBundle {
 
 type PublicAuditZone = Omit<AuditZone, "zone"> & { zone: AuditZone["zone"] | null; issue_count: number };
 type PublicVisit = Pick<ServiceVisit, "id" | "lift_id" | "visit_date" | "visit_type" | "checklist" | "problem_reported" | "action_taken" | "customer_remarks" | "engineer_name" | "in_time" | "out_time" | "next_due_date">;
+type PublicLift = Pick<Lift, "id" | "site_id" | "lift_no" | "lift_type" | "lift_make" | "maintained_by" | "capacity_kg" | "capacity_persons" | "no_of_floors" | "speed_mps" | "installation_year" | "controller" | "drive_name" | "gear_name" | "no_of_ropes" | "rope_size" | "rescue_device_name" | "osg_switch_status" | "status">;
 
 const fetchSite = async (siteCode: string) => {
   const { data: site, error } = await supabase
@@ -63,13 +64,13 @@ const fetchSite = async (siteCode: string) => {
   const [contracts, zones, visits] = await Promise.all([
     liftIds.length
       ? supabase.from("amc_contracts").select("*").in("lift_id", liftIds)
-      : Promise.resolve({ data: [] as AmcContract[] }),
+      : Promise.resolve({ data: [] as AmcContract[], error: null }),
     liftIds.length
       ? supabase.rpc("get_public_liftpass_audits", { _lift_ids: liftIds })
-      : Promise.resolve({ data: [] as PublicAuditZone[] }),
+      : Promise.resolve({ data: [] as PublicAuditZone[], error: null }),
     liftIds.length
       ? supabase.rpc("get_public_liftpass_visits", { _lift_ids: liftIds })
-      : Promise.resolve({ data: [] as PublicVisit[] }),
+      : Promise.resolve({ data: [] as PublicVisit[], error: null }),
   ]);
 
   if (zones.error) throw zones.error;
@@ -78,7 +79,7 @@ const fetchSite = async (siteCode: string) => {
   const zoneIds = (zones.data ?? []).filter((z) => z.maintenance_completed).map((z) => z.id);
   const { data: items, error: itemsError } = zoneIds.length
     ? await supabase.rpc("get_public_liftpass_audit_items", { _audit_zone_ids: zoneIds })
-    : { data: [] as AuditItem[] };
+    : { data: [] as AuditItem[], error: null };
   if (itemsError) throw itemsError;
 
   const bundles: LiftBundle[] = (lifts ?? []).map((lift) => ({
