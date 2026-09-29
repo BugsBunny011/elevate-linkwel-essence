@@ -493,6 +493,13 @@ export type Database = {
           visit_type: Database["public"]["Enums"]["visit_type"]
         }[]
       }
+      get_public_liftpass_issue_counts: {
+        Args: { _lift_ids: string[] }
+        Returns: {
+          issue_count: number
+          lift_id: string
+        }[]
+      }
       get_public_liftpass_visits: {
         Args: { _lift_ids: string[] }
         Returns: {
