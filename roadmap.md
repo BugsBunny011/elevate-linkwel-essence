@@ -4,4 +4,4 @@
 - [x] Verify live QR status for hidden and completed reports (unfinished state previewed without changing records).
 - [x] Add a LiftPass forgot-password link and a page to set a new password from the emailed link.
 - [x] Make QR pages show only issue counts; remove checklist, technical details, and service findings from public access.
-- [ ] Show completed visit dates, technician names and phone numbers on QR pages; set LiftPass report and call links to 8287291886.
+- [x] Show completed visit dates, technician names and phone numbers on QR pages; set LiftPass report and call links to 8287291886.

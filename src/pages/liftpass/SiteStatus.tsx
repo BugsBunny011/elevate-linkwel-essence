@@ -11,9 +11,7 @@ import {
   LIFT_STATUS_LABEL,
   amcState,
   formatDate,
-  whatsappLink,
   worstStatus,
-  PHONE_NUMBER,
   type AmcContract,
   type Lift,
   type Site,
@@ -23,9 +21,14 @@ interface LiftBundle {
   lift: PublicLift;
   contract: AmcContract | null;
   issueCount: number;
+  visits: PublicVisitContact[];
 }
 
 type PublicLift = Pick<Lift, "id" | "site_id" | "lift_no" | "lift_type" | "status">;
+type PublicVisitContact = { id: string; lift_id: string; visit_date: string; engineer_name: string | null; engineer_mobile: string | null };
+const LIFTPASS_CONTACT_NUMBER = "8287291886";
+const liftpassWhatsappLink = (message: string) =>
+  `https://wa.me/91${LIFTPASS_CONTACT_NUMBER}?text=${encodeURIComponent(message)}`;
 
 const fetchSite = async (siteCode: string) => {
   const { data: site, error } = await supabase
@@ -43,21 +46,26 @@ const fetchSite = async (siteCode: string) => {
     .order("lift_no");
   const liftIds = (lifts ?? []).map((l) => l.id);
 
-  const [contracts, counts] = await Promise.all([
+  const [contracts, counts, visits] = await Promise.all([
     liftIds.length
       ? supabase.from("amc_contracts").select("*").in("lift_id", liftIds)
       : Promise.resolve({ data: [] as AmcContract[], error: null }),
     liftIds.length
       ? supabase.rpc("get_public_liftpass_issue_counts", { _lift_ids: liftIds })
       : Promise.resolve({ data: [] as { lift_id: string; issue_count: number }[], error: null }),
+    liftIds.length
+      ? supabase.rpc("get_public_liftpass_visit_contacts", { _lift_ids: liftIds })
+      : Promise.resolve({ data: [] as PublicVisitContact[], error: null }),
   ]);
 
   if (counts.error) throw counts.error;
+  if (visits.error) throw visits.error;
 
   const bundles: LiftBundle[] = (lifts ?? []).map((lift) => ({
     lift,
     contract: (contracts.data ?? []).find((c) => c.lift_id === lift.id) ?? null,
     issueCount: (counts.data ?? []).find((c) => c.lift_id === lift.id)?.issue_count ?? 0,
+    visits: (visits.data ?? []).filter((visit) => visit.lift_id === lift.id),
   }));
 
   return { site: site as Site, bundles };
@@ -71,7 +79,7 @@ const Badge = ({ className, children }: { className: string; children: React.Rea
 
 const LiftCard = ({ bundle, siteName }: { bundle: LiftBundle; siteName: string }) => {
   const [open, setOpen] = useState(false);
-  const { lift, contract, issueCount } = bundle;
+  const { lift, contract, issueCount, visits } = bundle;
   const amc = amcState(contract?.end_date);
 
   return (
@@ -107,7 +115,7 @@ const LiftCard = ({ bundle, siteName }: { bundle: LiftBundle; siteName: string }
                 <p><span className="text-muted-foreground">End </span>{formatDate(contract?.end_date)}</p>
               </div>
               <a
-                href={whatsappLink(`Hi Linkwel, I would like to discuss the AMC renewal for ${siteName}, ${lift.lift_no}.`)}
+                href={liftpassWhatsappLink(`Hi Linkwel, I would like to discuss the AMC renewal for ${siteName}, ${lift.lift_no}.`)}
                 target="_blank"
                 rel="noreferrer"
                 className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-md border border-primary px-3 py-2 text-xs font-semibold text-primary"
@@ -118,6 +126,26 @@ const LiftCard = ({ bundle, siteName }: { bundle: LiftBundle; siteName: string }
           </section>
 
           <p className="text-sm font-medium">{issueCount} issue{issueCount === 1 ? "" : "s"} noted</p>
+          <section>
+            <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Technician visits</h3>
+            {visits.length ? (
+              <ul className="divide-y divide-border rounded-lg border border-border bg-card px-3">
+                {visits.map((visit) => (
+                  <li key={visit.id} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-3 text-sm">
+                    <span className="font-medium">{visit.engineer_name?.trim() || "Technician"}</span>
+                    <span className="text-xs text-muted-foreground">{formatDate(visit.visit_date)}</span>
+                    {visit.engineer_mobile?.trim() && (
+                      <a className="w-full text-xs text-primary hover:underline" href={`tel:${visit.engineer_mobile.trim()}`}>
+                        {visit.engineer_mobile.trim()}
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-xs text-muted-foreground">No completed visits recorded yet.</p>
+            )}
+          </section>
         </div>
       )}
     </div>
@@ -220,7 +248,7 @@ const SiteStatus = () => {
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card/95 backdrop-blur">
         <div className="mx-auto flex max-w-2xl gap-3 px-4 py-3">
           <a
-            href={whatsappLink(`Hi Linkwel, I would like to report an issue at ${site?.name ?? siteCode}.`)}
+            href={liftpassWhatsappLink(`Hi Linkwel, I would like to report an issue at ${site?.name ?? siteCode}.`)}
             target="_blank"
             rel="noreferrer"
             className="flex flex-1 items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground"
@@ -228,7 +256,7 @@ const SiteStatus = () => {
             <MessageCircle size={16} /> Report an issue
           </a>
           <a
-            href={`tel:${PHONE_NUMBER}`}
+            href={`tel:+91${LIFTPASS_CONTACT_NUMBER}`}
             className="flex flex-1 items-center justify-center gap-2 rounded-md border border-primary px-4 py-3 text-sm font-semibold text-primary"
           >
             <Phone size={16} /> Call Linkwel
