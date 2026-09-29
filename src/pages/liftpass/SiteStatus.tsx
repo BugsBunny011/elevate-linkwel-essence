@@ -54,7 +54,7 @@ const fetchSite = async (siteCode: string) => {
 
   const { data: lifts } = await supabase
     .from("lifts")
-    .select("*")
+    .select("id, site_id, lift_no, lift_type, lift_make, maintained_by, capacity_kg, capacity_persons, no_of_floors, speed_mps, installation_year, controller, drive_name, gear_name, no_of_ropes, rope_size, rescue_device_name, osg_switch_status, status")
     .eq("site_id", site.id)
     .order("lift_no");
   const liftIds = (lifts ?? []).map((l) => l.id);

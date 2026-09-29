@@ -114,6 +114,13 @@ const TechnicianConsole = () => {
     });
     setSaving(false);
     if (error) return toast.error(error.message);
+    if (completeVisit) {
+      const { error: auditError } = await supabase.from("audit_zones")
+        .update({ maintenance_completed: true, completed_at: new Date().toISOString() })
+        .eq("lift_id", lift.id)
+        .eq("maintenance_completed", false);
+      if (auditError) return toast.error(`Visit saved, but audits remain private: ${auditError.message}`);
+    }
     toast.success("Service visit logged");
     setChecks({});
     setCompleteVisit(false);
@@ -361,7 +368,7 @@ const TechnicianConsole = () => {
 
                 <label className="flex items-center gap-3 rounded-md border border-border bg-card p-3 text-sm">
                   <input type="checkbox" checked={completeVisit} onChange={(e) => setCompleteVisit(e.target.checked)} className="size-4 accent-primary" />
-                  Maintenance completed. Show this visit to customers.
+                  Maintenance completed. Show this visit and pending audits to customers.
                 </label>
                 <Button className="h-12 w-full" onClick={saveVisit} disabled={saving}>
                   Save service visit
