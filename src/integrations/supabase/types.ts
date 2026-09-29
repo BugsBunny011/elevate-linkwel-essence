@@ -476,6 +476,23 @@ export type Database = {
           zone: Database["public"]["Enums"]["audit_zone_name"]
         }[]
       }
+      get_public_liftpass_completed_visits: {
+        Args: { _lift_ids: string[] }
+        Returns: {
+          action_taken: string
+          checklist: Json
+          customer_remarks: string
+          engineer_name: string
+          id: string
+          in_time: string
+          lift_id: string
+          next_due_date: string
+          out_time: string
+          problem_reported: string
+          visit_date: string
+          visit_type: Database["public"]["Enums"]["visit_type"]
+        }[]
+      }
       get_public_liftpass_visits: {
         Args: { _lift_ids: string[] }
         Returns: {
