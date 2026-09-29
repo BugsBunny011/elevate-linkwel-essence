@@ -38,10 +38,11 @@ interface LiftBundle {
   lift: Lift;
   contract: AmcContract | null;
   zones: { zone: PublicAuditZone; items: AuditItem[] }[];
-  visits: ServiceVisit[];
+  visits: PublicVisit[];
 }
 
 type PublicAuditZone = Omit<AuditZone, "zone"> & { zone: AuditZone["zone"] | null; issue_count: number };
+type PublicVisit = Pick<ServiceVisit, "id" | "lift_id" | "visit_date" | "visit_type" | "checklist" | "problem_reported" | "action_taken" | "customer_remarks" | "engineer_name" | "in_time" | "out_time" | "next_due_date">;
 
 const fetchSite = async (siteCode: string) => {
   const { data: site, error } = await supabase
@@ -68,7 +69,7 @@ const fetchSite = async (siteCode: string) => {
       : Promise.resolve({ data: [] as PublicAuditZone[] }),
     liftIds.length
       ? supabase.rpc("get_public_liftpass_visits", { _lift_ids: liftIds })
-      : Promise.resolve({ data: [] as ServiceVisit[] }),
+      : Promise.resolve({ data: [] as PublicVisit[] }),
   ]);
 
   if (zones.error) throw zones.error;
@@ -193,7 +194,7 @@ const ZoneCard = ({ zone, items }: { zone: PublicAuditZone; items: AuditItem[] }
   );
 };
 
-const VisitCard = ({ visit }: { visit: ServiceVisit }) => {
+const VisitCard = ({ visit }: { visit: PublicVisit }) => {
   const [open, setOpen] = useState(false);
   const checklist = (visit.checklist ?? {}) as Record<string, boolean>;
   const done = SERVICE_CHECKLIST_ITEMS.filter((i) => checklist[i.key]).length;
