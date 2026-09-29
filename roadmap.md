@@ -1,0 +1,4 @@
+- [x] Restrict direct public access to audit and service details; show an unfinished issue count only.
+- [x] Add technician controls to mark an audit or service visit complete and release pending findings.
+- [ ] Restrict completed service reports to customer-facing fields (blocked: Lovable Cloud is starting).
+- [ ] Verify live QR status for hidden and completed reports (blocked: Lovable Cloud is starting).
