@@ -1,11 +1,14 @@
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-import { QrCode, LogOut, Building2, Wrench } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { QrCode, LogOut, Building2, Wrench, Plus } from "lucide-react";
+import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { NoIndex, Logomark, LiftPassShell } from "@/components/liftpass/LiftPassChrome";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import {
   AMC_STATE_CLASS,
   AMC_STATE_LABEL,
@@ -75,9 +78,44 @@ const fetchOverview = async (): Promise<SiteRow[]> => {
 
 const AdminDashboard = () => {
   const { data = [], isLoading } = useQuery({ queryKey: ["liftpass-admin-overview"], queryFn: fetchOverview });
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const [city, setCity] = useState("all");
   const [amcFilter, setAmcFilter] = useState<"all" | AmcState>("all");
   const [search, setSearch] = useState("");
+  const [addOpen, setAddOpen] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const [newSite, setNewSite] = useState({ name: "", site_code: "", address: "", city: "" });
+
+  const addSite = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const name = newSite.name.trim();
+    const site_code = newSite.site_code.trim().toUpperCase();
+    if (!name || !site_code) return;
+    if (!/^[A-Z0-9-]+$/.test(site_code)) {
+      toast.error("Site code can contain only letters, numbers and hyphens.");
+      return;
+    }
+    setSaving(true);
+    const { data: site, error } = await supabase.from("sites").insert({
+      name,
+      site_code,
+      address: newSite.address.trim() || null,
+      city: newSite.city.trim() || null,
+    }).select("id").single();
+    setSaving(false);
+    if (error) {
+      toast.error(error.code === "23505" ? "That site code is already in use." : error.message);
+      return;
+    }
+    setAddOpen(false);
+    setNewSite({ name: "", site_code: "", address: "", city: "" });
+    queryClient.invalidateQueries({ queryKey: ["liftpass-admin-overview"] });
+    queryClient.invalidateQueries({ queryKey: ["liftpass-qr-sites"] });
+    queryClient.invalidateQueries({ queryKey: ["tech-sites"] });
+    toast.success("Site added");
+    navigate(`/admin/sites/${site.id}`);
+  };
 
   const cities = useMemo(() => Array.from(new Set(data.map((d) => d.city).filter(Boolean))) as string[], [data]);
 
@@ -128,6 +166,12 @@ const AdminDashboard = () => {
       </header>
 
       <main className="mx-auto max-w-5xl space-y-6 px-4 py-6">
+        <div className="flex items-center justify-between gap-3">
+          <h2 className="font-heading text-xl font-semibold">Sites</h2>
+          <Button onClick={() => setAddOpen(true)}>
+            <Plus size={16} /> Add site
+          </Button>
+        </div>
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
           {[
             ["Total sites", totals.sites],
@@ -222,6 +266,34 @@ const AdminDashboard = () => {
           </table>
         </div>
       </main>
+      <Dialog open={addOpen} onOpenChange={(open) => { if (!saving) setAddOpen(open); }}>
+        <DialogContent className="max-w-md">
+          <DialogHeader><DialogTitle>Add site</DialogTitle></DialogHeader>
+          <form id="add-site-form" onSubmit={addSite} className="space-y-4">
+            <div className="space-y-1.5">
+              <Label htmlFor="new-site-name">Site name</Label>
+              <Input id="new-site-name" required maxLength={120} value={newSite.name} onChange={(e) => setNewSite({ ...newSite, name: e.target.value })} placeholder="e.g. Ashoka Residency" />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="new-site-code">Site code</Label>
+              <Input id="new-site-code" required maxLength={40} value={newSite.site_code} onChange={(e) => setNewSite({ ...newSite, site_code: e.target.value.toUpperCase() })} placeholder="e.g. ST-0013" aria-describedby="site-code-hint" />
+              <p id="site-code-hint" className="text-xs text-muted-foreground">Used in the site's QR link. Letters, numbers and hyphens only.</p>
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="new-site-address">Address</Label>
+              <Input id="new-site-address" maxLength={250} value={newSite.address} onChange={(e) => setNewSite({ ...newSite, address: e.target.value })} />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="new-site-city">City</Label>
+              <Input id="new-site-city" maxLength={100} value={newSite.city} onChange={(e) => setNewSite({ ...newSite, city: e.target.value })} />
+            </div>
+          </form>
+          <DialogFooter>
+            <Button type="button" variant="outline" onClick={() => setAddOpen(false)} disabled={saving}>Cancel</Button>
+            <Button type="submit" form="add-site-form" disabled={saving}>{saving ? "Adding…" : "Add site"}</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </LiftPassShell>
   );
 };
