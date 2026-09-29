@@ -2,3 +2,4 @@
 - [x] Add technician controls to mark an audit or service visit complete and release pending findings.
 - [x] Restrict completed service reports to customer-facing fields.
 - [x] Verify live QR status for hidden and completed reports (unfinished state previewed without changing records).
+- [x] Add a LiftPass forgot-password link and a page to set a new password from the emailed link.

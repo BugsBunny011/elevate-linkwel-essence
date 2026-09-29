@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { NoIndex, Logomark, LiftPassShell } from "@/components/liftpass/LiftPassChrome";
 import { Button } from "@/components/ui/button";
@@ -10,16 +10,25 @@ import loginBackground from "@/assets/liftpass-login-building.jpg";
 
 const StaffAuth = () => {
   const navigate = useNavigate();
-  const [mode, setMode] = useState<"signin" | "signup">("signin");
+  const location = useLocation();
+  const [mode, setMode] = useState<"signin" | "signup" | "forgot">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [busy, setBusy] = useState(false);
+  const [resetSent, setResetSent] = useState(false);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setBusy(true);
-    if (mode === "signin") {
+    if (mode === "forgot") {
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/reset-password`,
+      });
+      setBusy(false);
+      if (error) return toast.error(error.message);
+      setResetSent(true);
+    } else if (mode === "signin") {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       setBusy(false);
       if (error) return toast.error(error.message);
@@ -62,6 +71,10 @@ const StaffAuth = () => {
             </div>
           </div>
 
+          {location.state?.passwordReset && <p role="status" className="mb-4 text-sm text-primary">Password updated. You can sign in now.</p>}
+          {resetSent ? (
+            <p role="status" className="text-sm text-muted-foreground">If this email has an account, you’ll receive a password reset link. Check your inbox and spam folder.</p>
+          ) : (
           <form onSubmit={submit} className="space-y-4">
             {mode === "signup" && (
               <div>
@@ -73,7 +86,7 @@ const StaffAuth = () => {
               <Label htmlFor="email">Email</Label>
               <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
             </div>
-            <div>
+            {mode !== "forgot" && <div>
               <Label htmlFor="password">Password</Label>
               <Input
                 id="password"
@@ -83,20 +96,22 @@ const StaffAuth = () => {
                 required
                 minLength={6}
               />
-            </div>
+            </div>}
             <Button type="submit" className="w-full" disabled={busy}>
-              {busy ? "Please wait..." : mode === "signin" ? "Sign in" : "Create account"}
+              {busy ? "Please wait..." : mode === "signin" ? "Sign in" : mode === "forgot" ? "Send reset link" : "Create account"}
             </Button>
           </form>
+          )}
 
           <Button
             type="button"
             variant="link"
-            onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
+            onClick={() => { setResetSent(false); setMode(mode === "signin" ? "signup" : "signin"); }}
             className="mt-3 h-auto w-full text-xs text-muted-foreground"
           >
             {mode === "signin" ? "Need an account? Register" : "Already registered? Sign in"}
           </Button>
+          {mode === "signin" && <Button type="button" variant="link" onClick={() => setMode("forgot")} className="h-auto w-full text-xs text-muted-foreground">Forgot password?</Button>}
         </div>
       </div>
     </LiftPassShell>
