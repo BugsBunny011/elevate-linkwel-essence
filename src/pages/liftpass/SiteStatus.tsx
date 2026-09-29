@@ -69,7 +69,7 @@ const fetchSite = async (siteCode: string) => {
       ? supabase.rpc("get_public_liftpass_audits", { _lift_ids: liftIds })
       : Promise.resolve({ data: [] as PublicAuditZone[], error: null }),
     liftIds.length
-      ? supabase.rpc("get_public_liftpass_visits", { _lift_ids: liftIds })
+      ? supabase.rpc("get_public_liftpass_completed_visits", { _lift_ids: liftIds })
       : Promise.resolve({ data: [] as PublicVisit[], error: null }),
   ]);
 
