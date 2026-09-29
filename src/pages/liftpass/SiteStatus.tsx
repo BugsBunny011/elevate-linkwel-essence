@@ -37,9 +37,11 @@ import {
 interface LiftBundle {
   lift: Lift;
   contract: AmcContract | null;
-  zones: { zone: AuditZone; items: AuditItem[] }[];
+  zones: { zone: PublicAuditZone; items: AuditItem[] }[];
   visits: ServiceVisit[];
 }
+
+type PublicAuditZone = Omit<AuditZone, "zone"> & { zone: AuditZone["zone"] | null; issue_count: number };
 
 const fetchSite = async (siteCode: string) => {
   const { data: site, error } = await supabase
@@ -62,17 +64,21 @@ const fetchSite = async (siteCode: string) => {
       ? supabase.from("amc_contracts").select("*").in("lift_id", liftIds)
       : Promise.resolve({ data: [] as AmcContract[] }),
     liftIds.length
-      ? supabase.from("audit_zones").select("*").in("lift_id", liftIds).order("audit_date", { ascending: false })
-      : Promise.resolve({ data: [] as AuditZone[] }),
+      ? supabase.rpc("get_public_liftpass_audits", { _lift_ids: liftIds })
+      : Promise.resolve({ data: [] as PublicAuditZone[] }),
     liftIds.length
-      ? supabase.from("service_visits").select("*").in("lift_id", liftIds).order("visit_date", { ascending: false })
+      ? supabase.rpc("get_public_liftpass_visits", { _lift_ids: liftIds })
       : Promise.resolve({ data: [] as ServiceVisit[] }),
   ]);
 
-  const zoneIds = (zones.data ?? []).map((z) => z.id);
-  const { data: items } = zoneIds.length
-    ? await supabase.from("audit_checklist_items").select("*").in("audit_zone_id", zoneIds)
+  if (zones.error) throw zones.error;
+  if (visits.error) throw visits.error;
+
+  const zoneIds = (zones.data ?? []).filter((z) => z.maintenance_completed).map((z) => z.id);
+  const { data: items, error: itemsError } = zoneIds.length
+    ? await supabase.rpc("get_public_liftpass_audit_items", { _audit_zone_ids: zoneIds })
     : { data: [] as AuditItem[] };
+  if (itemsError) throw itemsError;
 
   const bundles: LiftBundle[] = (lifts ?? []).map((lift) => ({
     lift,
@@ -92,10 +98,21 @@ const Badge = ({ className, children }: { className: string; children: React.Rea
   </span>
 );
 
-const ZoneCard = ({ zone, items }: { zone: AuditZone; items: AuditItem[] }) => {
+const ZoneCard = ({ zone, items }: { zone: PublicAuditZone; items: AuditItem[] }) => {
   const [open, setOpen] = useState(false);
-  const flagged = items.filter((i) => i.status === "needs_attention" || i.status === "not_working").length;
+  const flagged = zone.issue_count;
   const voltages = (zone.voltage_readings ?? {}) as Record<string, string>;
+
+  if (!zone.maintenance_completed) {
+    return (
+      <div className="rounded-lg border border-border bg-card px-4 py-3">
+        <p className="text-sm font-medium">Inspection in progress</p>
+        <p className="mt-1 text-xs text-muted-foreground">
+          {flagged} issue{flagged === 1 ? "" : "s"} identified · Details available after maintenance is completed
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="rounded-lg border border-border bg-card">
@@ -104,9 +121,9 @@ const ZoneCard = ({ zone, items }: { zone: AuditZone; items: AuditItem[] }) => {
         className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left"
       >
         <div>
-          <p className="text-sm font-medium">{ZONE_LABEL[zone.zone]}</p>
+          <p className="text-sm font-medium">{zone.zone ? ZONE_LABEL[zone.zone] : "Inspection"}</p>
           <p className="text-xs text-muted-foreground">
-            {items.length} checked{flagged > 0 ? `, ${flagged} flagged` : ""} · {formatDate(zone.audit_date)}
+            {items.length} checked{flagged > 0 ? `, ${flagged} addressed` : ""} · {formatDate(zone.audit_date)}
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -117,7 +134,7 @@ const ZoneCard = ({ zone, items }: { zone: AuditZone; items: AuditItem[] }) => {
                 : "bg-emerald-500/10 text-emerald-700 border-emerald-500/30"
             }
           >
-            {flagged > 0 ? `${flagged} flagged` : "All clear"}
+            {flagged > 0 ? `${flagged} addressed` : "All clear"}
           </Badge>
           <ChevronDown size={16} className={`text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`} />
         </div>

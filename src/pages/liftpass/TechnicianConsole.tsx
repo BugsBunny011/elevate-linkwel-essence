@@ -76,6 +76,7 @@ const TechnicianConsole = () => {
     next_due_date: "",
   });
   const [checks, setChecks] = useState<Record<string, boolean>>({});
+  const [completeVisit, setCompleteVisit] = useState(false);
 
   // Audit form state
   const [zone, setZone] = useState<ZoneName>("pit");
@@ -84,6 +85,7 @@ const TechnicianConsole = () => {
   const [voltages, setVoltages] = useState({ "L1-L2": "", "L1-L3": "", single_phase: "", "N-GND": "", control_dc: "" });
   const [flagged, setFlagged] = useState("");
   const [itemStatus, setItemStatus] = useState<Record<string, ChecklistStatus>>({});
+  const [completeAudit, setCompleteAudit] = useState(false);
   const [saving, setSaving] = useState(false);
 
   const template = ZONE_TEMPLATES[zone];
@@ -93,6 +95,7 @@ const TechnicianConsole = () => {
     setSaving(true);
     const { error } = await supabase.from("service_visits").insert({
       lift_id: lift.id,
+      maintenance_completed: completeVisit,
       serial_no: visit.serial_no || null,
       visit_type: visit.visit_type as "amc" | "guarantee" | "customer_call",
       visit_date: visit.visit_date,
@@ -113,6 +116,7 @@ const TechnicianConsole = () => {
     if (error) return toast.error(error.message);
     toast.success("Service visit logged");
     setChecks({});
+    setCompleteVisit(false);
     setVisit({ ...visit, problem_reported: "", action_taken: "", customer_remarks: "", breakdown_notes: "" });
   };
 
@@ -125,6 +129,7 @@ const TechnicianConsole = () => {
         lift_id: lift.id,
         zone,
         audit_date: auditDate,
+        maintenance_completed: false,
         audited_by: auditedBy || null,
         voltage_readings: Object.fromEntries(Object.entries(voltages).filter(([, v]) => v !== "")),
         flagged_issues: flagged
@@ -152,10 +157,20 @@ const TechnicianConsole = () => {
         return toast.error(itemError.message);
       }
     }
+    if (completeAudit) {
+      const { error: completionError } = await supabase.from("audit_zones")
+        .update({ maintenance_completed: true, completed_at: new Date().toISOString() })
+        .eq("id", zoneRow.id);
+      if (completionError) {
+        setSaving(false);
+        return toast.error(`Audit saved privately, but completion failed: ${completionError.message}`);
+      }
+    }
     setSaving(false);
     toast.success("Zone audit logged");
     setItemStatus({});
     setFlagged("");
+    setCompleteAudit(false);
   };
 
   return (
@@ -344,6 +359,10 @@ const TechnicianConsole = () => {
                   </div>
                 </div>
 
+                <label className="flex items-center gap-3 rounded-md border border-border bg-card p-3 text-sm">
+                  <input type="checkbox" checked={completeVisit} onChange={(e) => setCompleteVisit(e.target.checked)} className="size-4 accent-primary" />
+                  Maintenance completed. Show this visit to customers.
+                </label>
                 <Button className="h-12 w-full" onClick={saveVisit} disabled={saving}>
                   Save service visit
                 </Button>
@@ -430,6 +449,10 @@ const TechnicianConsole = () => {
                   <Textarea rows={4} value={flagged} onChange={(e) => setFlagged(e.target.value)} />
                 </div>
 
+                <label className="flex items-center gap-3 rounded-md border border-border bg-card p-3 text-sm">
+                  <input type="checkbox" checked={completeAudit} onChange={(e) => setCompleteAudit(e.target.checked)} className="size-4 accent-primary" />
+                  Maintenance completed. Show this audit to customers.
+                </label>
                 <Button className="h-12 w-full" onClick={saveAudit} disabled={saving}>
                   Save zone audit
                 </Button>
