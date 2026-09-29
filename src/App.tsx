@@ -29,6 +29,7 @@ const Locations = lazy(() => import("./pages/Locations"));
 const ElevatorStudio = lazy(() => import("./pages/ElevatorStudio"));
 const SiteStatus = lazy(() => import("./pages/liftpass/SiteStatus"));
 const StaffAuth = lazy(() => import("./pages/liftpass/StaffAuth"));
+const ResetPassword = lazy(() => import("./pages/liftpass/ResetPassword"));
 const AdminDashboard = lazy(() => import("./pages/liftpass/AdminDashboard"));
 const AdminSiteDetail = lazy(() => import("./pages/liftpass/AdminSiteDetail"));
 const AdminQr = lazy(() => import("./pages/liftpass/AdminQr"));
@@ -50,7 +51,7 @@ const isSSR = typeof window === "undefined";
 
 // LiftPass tools are utility screens: no brand preloader, they must open instantly on scan
 const isLiftPassRoute =
-  !isSSR && /^\/(liftpass|admin|technician)(\/|$)/.test(window.location.pathname);
+  !isSSR && /^\/(liftpass|admin|technician|reset-password)(\/|$)/.test(window.location.pathname);
 
 export const AppRoutes = () => (
   <Suspense fallback={null}>
@@ -73,6 +74,7 @@ export const AppRoutes = () => (
       <Route path="/locations" element={<Locations />} />
       <Route path="/elevator-studio" element={<ElevatorStudio />} />
       <Route path="/liftpass/login" element={<StaffAuth />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/liftpass/:siteCode" element={<SiteStatus />} />
       <Route
         path="/admin"
