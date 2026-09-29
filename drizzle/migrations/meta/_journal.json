@@ -15,6 +15,13 @@
       "when": 1790680256704,
       "tag": "0001_limit_public_liftpass_report_fields",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790681305837,
+      "tag": "0002_liftpass_public_issue_counts_only",
+      "breakpoints": true
     }
   ]
 }

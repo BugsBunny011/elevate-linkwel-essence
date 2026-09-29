@@ -1,49 +1,31 @@
 import { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import {
-  ChevronDown,
-  Phone,
-  MessageCircle,
-  MapPin,
-  AlertTriangle,
-  CheckCircle2,
-  Wrench,
-} from "lucide-react";
+import { ChevronDown, Phone, MessageCircle, MapPin, CheckCircle2, Wrench } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { NoIndex, Logomark, LiftPassShell } from "@/components/liftpass/LiftPassChrome";
 import {
   AMC_STATE_CLASS,
   AMC_STATE_LABEL,
-  CHECKLIST_STATUS_CLASS,
-  CHECKLIST_STATUS_LABEL,
   LIFT_STATUS_CLASS,
   LIFT_STATUS_LABEL,
-  SERVICE_CHECKLIST_ITEMS,
-  ZONE_LABEL,
   amcState,
   formatDate,
   whatsappLink,
   worstStatus,
   PHONE_NUMBER,
   type AmcContract,
-  type AuditItem,
-  type AuditZone,
   type Lift,
-  type ServiceVisit,
   type Site,
 } from "@/lib/liftpass";
 
 interface LiftBundle {
   lift: PublicLift;
   contract: AmcContract | null;
-  zones: { zone: PublicAuditZone; items: AuditItem[] }[];
-  visits: PublicVisit[];
+  issueCount: number;
 }
 
-type PublicAuditZone = Omit<AuditZone, "zone"> & { zone: AuditZone["zone"] | null; issue_count: number };
-type PublicVisit = Pick<ServiceVisit, "id" | "lift_id" | "visit_date" | "visit_type" | "checklist" | "problem_reported" | "action_taken" | "customer_remarks" | "engineer_name" | "in_time" | "out_time" | "next_due_date">;
-type PublicLift = Pick<Lift, "id" | "site_id" | "lift_no" | "lift_type" | "lift_make" | "maintained_by" | "capacity_kg" | "capacity_persons" | "no_of_floors" | "speed_mps" | "installation_year" | "controller" | "drive_name" | "gear_name" | "no_of_ropes" | "rope_size" | "rescue_device_name" | "osg_switch_status" | "status">;
+type PublicLift = Pick<Lift, "id" | "site_id" | "lift_no" | "lift_type" | "status">;
 
 const fetchSite = async (siteCode: string) => {
   const { data: site, error } = await supabase
@@ -56,39 +38,26 @@ const fetchSite = async (siteCode: string) => {
 
   const { data: lifts } = await supabase
     .from("lifts")
-    .select("id, site_id, lift_no, lift_type, lift_make, maintained_by, capacity_kg, capacity_persons, no_of_floors, speed_mps, installation_year, controller, drive_name, gear_name, no_of_ropes, rope_size, rescue_device_name, osg_switch_status, status")
+    .select("id, site_id, lift_no, lift_type, status")
     .eq("site_id", site.id)
     .order("lift_no");
   const liftIds = (lifts ?? []).map((l) => l.id);
 
-  const [contracts, zones, visits] = await Promise.all([
+  const [contracts, counts] = await Promise.all([
     liftIds.length
       ? supabase.from("amc_contracts").select("*").in("lift_id", liftIds)
       : Promise.resolve({ data: [] as AmcContract[], error: null }),
     liftIds.length
-      ? supabase.rpc("get_public_liftpass_audits", { _lift_ids: liftIds })
-      : Promise.resolve({ data: [] as PublicAuditZone[], error: null }),
-    liftIds.length
-      ? supabase.rpc("get_public_liftpass_completed_visits", { _lift_ids: liftIds })
-      : Promise.resolve({ data: [] as PublicVisit[], error: null }),
+      ? supabase.rpc("get_public_liftpass_issue_counts", { _lift_ids: liftIds })
+      : Promise.resolve({ data: [] as { lift_id: string; issue_count: number }[], error: null }),
   ]);
 
-  if (zones.error) throw zones.error;
-  if (visits.error) throw visits.error;
-
-  const zoneIds = (zones.data ?? []).filter((z) => z.maintenance_completed).map((z) => z.id);
-  const { data: items, error: itemsError } = zoneIds.length
-    ? await supabase.rpc("get_public_liftpass_audit_items", { _audit_zone_ids: zoneIds })
-    : { data: [] as AuditItem[], error: null };
-  if (itemsError) throw itemsError;
+  if (counts.error) throw counts.error;
 
   const bundles: LiftBundle[] = (lifts ?? []).map((lift) => ({
     lift,
     contract: (contracts.data ?? []).find((c) => c.lift_id === lift.id) ?? null,
-    zones: (zones.data ?? [])
-      .filter((z) => z.lift_id === lift.id)
-      .map((zone) => ({ zone, items: (items ?? []).filter((i) => i.audit_zone_id === zone.id) })),
-    visits: (visits.data ?? []).filter((v) => v.lift_id === lift.id),
+    issueCount: (counts.data ?? []).find((c) => c.lift_id === lift.id)?.issue_count ?? 0,
   }));
 
   return { site: site as Site, bundles };
@@ -100,182 +69,10 @@ const Badge = ({ className, children }: { className: string; children: React.Rea
   </span>
 );
 
-const ZoneCard = ({ zone, items }: { zone: PublicAuditZone; items: AuditItem[] }) => {
-  const [open, setOpen] = useState(false);
-  const flagged = zone.issue_count;
-  const voltages = (zone.voltage_readings ?? {}) as Record<string, string>;
-
-  if (!zone.maintenance_completed) {
-    return (
-      <div className="rounded-lg border border-border bg-card px-4 py-3">
-        <p className="text-sm font-medium">Inspection in progress</p>
-        <p className="mt-1 text-xs text-muted-foreground">
-          {flagged} issue{flagged === 1 ? "" : "s"} identified · Details available after maintenance is completed
-        </p>
-      </div>
-    );
-  }
-
-  return (
-    <div className="rounded-lg border border-border bg-card">
-      <button
-        onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left"
-      >
-        <div>
-          <p className="text-sm font-medium">{zone.zone ? ZONE_LABEL[zone.zone] : "Inspection"}</p>
-          <p className="text-xs text-muted-foreground">
-            {items.length} checked{flagged > 0 ? `, ${flagged} addressed` : ""} · {formatDate(zone.audit_date)}
-          </p>
-        </div>
-        <div className="flex items-center gap-2">
-          <Badge
-            className={
-              flagged > 0
-                ? "bg-amber-500/10 text-amber-700 border-amber-500/30"
-                : "bg-emerald-500/10 text-emerald-700 border-emerald-500/30"
-            }
-          >
-            {flagged > 0 ? `${flagged} addressed` : "All clear"}
-          </Badge>
-          <ChevronDown size={16} className={`text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`} />
-        </div>
-      </button>
-
-      {open && (
-        <div className="space-y-4 border-t border-border px-4 py-3">
-          {Object.keys(voltages).length > 0 && (
-            <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Voltage readings
-              </p>
-              <div className="grid grid-cols-2 gap-2">
-                {Object.entries(voltages).map(([key, value]) => (
-                  <div key={key} className="rounded-md bg-muted px-3 py-2 text-xs">
-                    <span className="text-muted-foreground">{key}</span>
-                    <p className="font-medium">{value}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {zone.flagged_issues?.length > 0 && (
-            <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Issues noted</p>
-              <ul className="space-y-1">
-                {zone.flagged_issues.map((issue, i) => (
-                  <li key={i} className="flex gap-2 text-xs text-foreground">
-                    <AlertTriangle size={14} className="mt-0.5 shrink-0 text-amber-600" />
-                    {issue}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          <div>
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Checklist</p>
-            <ul className="divide-y divide-border">
-              {items.map((item) => (
-                <li key={item.id} className="flex items-center justify-between gap-3 py-2">
-                  <span className="text-xs capitalize">{item.item_name}</span>
-                  <Badge className={CHECKLIST_STATUS_CLASS[item.status]}>
-                    {CHECKLIST_STATUS_LABEL[item.status]}
-                  </Badge>
-                </li>
-              ))}
-              {items.length === 0 && <li className="py-2 text-xs text-muted-foreground">No items recorded.</li>}
-            </ul>
-          </div>
-          {zone.audited_by && <p className="text-xs text-muted-foreground">Audited by {zone.audited_by}</p>}
-        </div>
-      )}
-    </div>
-  );
-};
-
-const VisitCard = ({ visit }: { visit: PublicVisit }) => {
-  const [open, setOpen] = useState(false);
-  const checklist = (visit.checklist ?? {}) as Record<string, boolean>;
-  const done = SERVICE_CHECKLIST_ITEMS.filter((i) => checklist[i.key]).length;
-
-  return (
-    <div className="rounded-lg border border-border bg-card">
-      <button onClick={() => setOpen(!open)} className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left">
-        <div>
-          <p className="text-sm font-medium">{formatDate(visit.visit_date)}</p>
-          <p className="text-xs capitalize text-muted-foreground">
-            {visit.visit_type.replace("_", " ")} visit · {done}/{SERVICE_CHECKLIST_ITEMS.length} checks done
-          </p>
-        </div>
-        <ChevronDown size={16} className={`text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`} />
-      </button>
-      {open && (
-        <div className="space-y-3 border-t border-border px-4 py-3">
-          <ul className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
-            {SERVICE_CHECKLIST_ITEMS.map((item) => (
-              <li key={item.key} className="flex items-center gap-2 text-xs">
-                {checklist[item.key] ? (
-                  <CheckCircle2 size={14} className="shrink-0 text-emerald-600" />
-                ) : (
-                  <AlertTriangle size={14} className="shrink-0 text-muted-foreground" />
-                )}
-                <span className={checklist[item.key] ? "" : "text-muted-foreground"}>{item.label}</span>
-              </li>
-            ))}
-          </ul>
-          {visit.problem_reported && (
-            <p className="text-xs">
-              <span className="text-muted-foreground">Problem reported: </span>
-              {visit.problem_reported}
-            </p>
-          )}
-          {visit.action_taken && (
-            <p className="text-xs">
-              <span className="text-muted-foreground">Action taken: </span>
-              {visit.action_taken}
-            </p>
-          )}
-          {visit.customer_remarks && (
-            <p className="text-xs">
-              <span className="text-muted-foreground">Customer remarks: </span>
-              {visit.customer_remarks}
-            </p>
-          )}
-          <p className="text-xs text-muted-foreground">
-            {visit.engineer_name ? `Engineer: ${visit.engineer_name}` : ""}
-            {visit.in_time ? ` · ${visit.in_time.slice(0, 5)}` : ""}
-            {visit.out_time ? ` to ${visit.out_time.slice(0, 5)}` : ""}
-          </p>
-        </div>
-      )}
-    </div>
-  );
-};
-
 const LiftCard = ({ bundle, siteName }: { bundle: LiftBundle; siteName: string }) => {
   const [open, setOpen] = useState(false);
-  const [showSpec, setShowSpec] = useState(false);
-  const { lift, contract, zones, visits } = bundle;
+  const { lift, contract, issueCount } = bundle;
   const amc = amcState(contract?.end_date);
-  const nextDue = visits.find((v) => v.next_due_date)?.next_due_date ?? null;
-
-  const spec: [string, string | number | null | undefined][] = [
-    ["Lift type", lift.lift_type],
-    ["Make", lift.lift_make],
-    ["Maintained by", lift.maintained_by],
-    ["Capacity", lift.capacity_kg ? `${lift.capacity_kg} kg${lift.capacity_persons ? ` / ${lift.capacity_persons} persons` : ""}` : null],
-    ["Floors", lift.no_of_floors],
-    ["Speed", lift.speed_mps ? `${lift.speed_mps} m/s` : null],
-    ["Installed", lift.installation_year],
-    ["Controller", lift.controller],
-    ["Drive", lift.drive_name],
-    ["Gear", lift.gear_name],
-    ["Ropes", lift.no_of_ropes ? `${lift.no_of_ropes} x ${lift.rope_size ?? ""}` : null],
-    ["Rescue device", lift.rescue_device_name],
-    ["OSG switch", lift.osg_switch_status],
-  ];
 
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
@@ -285,9 +82,7 @@ const LiftCard = ({ bundle, siteName }: { bundle: LiftBundle; siteName: string }
           <p className="text-xs capitalize text-muted-foreground">{lift.lift_type ?? "Lift"}</p>
           <div className="mt-3 flex flex-wrap gap-2">
             <Badge className={AMC_STATE_CLASS[amc]}>{AMC_STATE_LABEL[amc]}</Badge>
-            {nextDue && (
-              <Badge className="border-border bg-muted text-muted-foreground">Next service {formatDate(nextDue)}</Badge>
-            )}
+            <Badge className="border-border bg-muted text-muted-foreground">{issueCount} issue{issueCount === 1 ? "" : "s"} noted</Badge>
           </div>
         </div>
         <div className="flex shrink-0 flex-col items-end gap-2">
@@ -322,56 +117,7 @@ const LiftCard = ({ bundle, siteName }: { bundle: LiftBundle; siteName: string }
             </div>
           </section>
 
-          <section>
-            <div className="rounded-lg border border-border bg-card">
-              <button onClick={() => setShowSpec(!showSpec)} className="flex w-full items-center justify-between px-3 py-2.5 text-left text-xs font-semibold">
-                View technical details
-                <ChevronDown size={14} className={`transition-transform ${showSpec ? "rotate-180" : ""}`} />
-              </button>
-              {showSpec && (
-                <dl className="grid grid-cols-2 gap-x-3 gap-y-2 border-t border-border px-3 py-3 text-xs">
-                  {spec
-                    .filter(([, value]) => value !== null && value !== undefined && value !== "")
-                    .map(([label, value]) => (
-                      <div key={label}>
-                        <dt className="text-muted-foreground">{label}</dt>
-                        <dd className="font-medium capitalize">{String(value)}</dd>
-                      </div>
-                    ))}
-                </dl>
-              )}
-            </div>
-          </section>
-
-          <section>
-            <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Health by zone</h3>
-            <div className="space-y-2">
-              {zones.map(({ zone, items }) => (
-                <ZoneCard key={zone.id} zone={zone} items={items} />
-              ))}
-              {zones.length === 0 && (
-                <p className="rounded-lg border border-dashed border-border px-3 py-4 text-xs text-muted-foreground">
-                  No technical audit recorded yet for this lift.
-                </p>
-              )}
-            </div>
-          </section>
-
-          <section>
-            <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              Recent service visits
-            </h3>
-            <div className="space-y-2">
-              {visits.slice(0, 6).map((visit) => (
-                <VisitCard key={visit.id} visit={visit} />
-              ))}
-              {visits.length === 0 && (
-                <p className="rounded-lg border border-dashed border-border px-3 py-4 text-xs text-muted-foreground">
-                  No service visits logged yet.
-                </p>
-              )}
-            </div>
-          </section>
+          <p className="text-sm font-medium">{issueCount} issue{issueCount === 1 ? "" : "s"} noted</p>
         </div>
       )}
     </div>
