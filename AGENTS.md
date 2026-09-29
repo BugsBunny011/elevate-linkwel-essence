@@ -1,4 +1,4 @@
 # Project architecture
 
-- LiftPass public QR reports use database functions that mask unfinished audits and return only completed, customer-facing visit fields; this prevents premature disclosure even when requests bypass the page.
+- LiftPass public QR pages use a count-only database function and never expose checklists or technical issue details, even after maintenance; staff retain private audit records.
 - LiftPass password recovery uses a public, noindex reset page and email links rather than exposing or storing passwords; this keeps account recovery private.
