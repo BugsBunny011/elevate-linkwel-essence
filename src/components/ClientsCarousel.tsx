@@ -1,4 +1,4 @@
-import tataLogo from "@/assets/clients/tata.png.asset.json";
+import tataLogo from "@/assets/clients/tata.png";
 import tvsLogo from "@/assets/clients/tvs.webp";
 import bhushanLogo from "@/assets/clients/bhushan.jpeg";
 import godawariLogo from "@/assets/clients/godawari.png";
@@ -34,7 +34,7 @@ export interface ClientLogo {
 }
 
 export const clients: ClientLogo[] = [
-  { src: tataLogo.url, name: "Tata" },
+  { src: tataLogo, name: "Tata" },
   { src: tvsLogo, name: "TVS" },
   { src: bhushanLogo, name: "Bhushan Steel" },
   { src: godawariLogo, name: "Godawari Power & Ispat" },
