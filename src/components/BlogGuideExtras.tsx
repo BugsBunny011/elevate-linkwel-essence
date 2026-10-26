@@ -12,6 +12,7 @@ export const GuideContents = ({ post }: { post: BlogPost }) => (
       ] : [])}
       <li><a href="#frequently-asked-questions" className="underline underline-offset-4">Frequently Asked Questions</a></li>
       <li><a href="#get-a-quote" className="underline underline-offset-4">Get a Single Girder EOT Crane Quote from Linkwel Engineers</a></li>
+      <li><a href="#related-services" className="underline underline-offset-4">Related</a></li>
     </ul>
   </nav>
 );
@@ -43,7 +44,7 @@ export const GuideQuote = () => (
       </div>
     </section>
     <section className="mt-8 font-body">
-      <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Related</h2>
+      <h2 id="related-services" className="scroll-mt-28 font-heading text-2xl font-bold text-foreground mb-4">Related</h2>
       <ul className="space-y-3 text-accent">
         <li><Link to="/services/amc" className="underline underline-offset-4">AMC services</Link></li>
         <li><Link to="/products/overhead-cranes" className="underline underline-offset-4">EOT crane product page</Link></li>
