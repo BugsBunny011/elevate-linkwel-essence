@@ -6,15 +6,18 @@ import blogElevatorMaintenanceNearMe from "@/assets/blog-elevator-maintenance-ne
 import blogEotCraneManufacturersIndia from "@/assets/blog-eot-crane-manufacturers-india.jpg";
 import blogPassengerLiftDelhi from "@/assets/blog-passenger-lift-manufacturers-delhi.jpg";
 import blogCheapestLiftQuote from "@/assets/blog-cheapest-lift-quote-delhi.jpg";
+import { singleGirderCranePost } from "./singleGirderCranePost";
 
 
 
 export type BlogBlock =
   | { type: "p"; text: string }
   | { type: "html"; html: string }
-  | { type: "h2"; text: string }
+  | { type: "h2"; text: string; id?: string }
   | { type: "h3"; text: string }
   | { type: "ul"; items: string[] }
+  | { type: "ol"; items: string[] }
+  | { type: "table"; headers: string[]; rows: string[][] }
   | { type: "quote"; text: string };
 
 export interface BlogFaq {
@@ -43,6 +46,7 @@ export interface BlogPost {
   content: BlogBlock[];
   faqs?: BlogFaq[];
   authorBio?: string;
+  guideFeatures?: boolean;
 }
 
 const indiaPostFaqs: BlogFaq[] = [
@@ -119,6 +123,7 @@ const villaHomeLiftFaqs: BlogFaq[] = [
 ];
 
 export const blogPosts: BlogPost[] = [
+  singleGirderCranePost,
   {
     slug: "elevator-company-in-delhi-cheapest-lift-quote",
     title:

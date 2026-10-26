@@ -34,6 +34,16 @@ const QuickEnquiryModal = () => {
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
+  useEffect(() => {
+    const showEnquiry = () => {
+      setInterest("Crane");
+      setOpen(true);
+      sessionStorage.setItem("quick-enquiry-shown", "1");
+    };
+    window.addEventListener("open-quick-enquiry", showEnquiry);
+    return () => window.removeEventListener("open-quick-enquiry", showEnquiry);
+  }, []);
+
   const validate = () => {
     const next: typeof errors = {};
     if (!name.trim()) next.name = "Please enter your name.";

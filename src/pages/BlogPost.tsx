@@ -6,6 +6,7 @@ import ClientsCarousel from "@/components/ClientsCarousel";
 import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import ScrollReveal from "@/components/ScrollReveal";
 import { blogPosts, getPostBySlug } from "@/data/blogPosts";
+import { GuideContents, GuideFaqs, GuideQuote } from "@/components/BlogGuideExtras";
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("en-IN", {
@@ -70,6 +71,7 @@ const BlogPost = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.seoTitle ?? post.title} />
         <meta name="twitter:description" content={post.metaDesc ?? post.excerpt} />
+        {post.guideFeatures && <meta name="twitter:url" content={url} />}
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         {faqSchema && (
           <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -121,6 +123,7 @@ const BlogPost = () => {
             <img
               src={post.image}
               alt={post.imageAlt}
+              loading={post.guideFeatures ? "lazy" : undefined}
               width={1280}
               height={720}
               className="w-full h-auto object-cover"
@@ -132,6 +135,7 @@ const BlogPost = () => {
       {/* Article body */}
       <article className="py-16 bg-background">
         <div className="container mx-auto section-padding max-w-3xl">
+          {post.guideFeatures && <GuideContents post={post} />}
           <div className="flex flex-col gap-6">
             {post.content.map((block, i) => {
               switch (block.type) {
@@ -139,6 +143,7 @@ const BlogPost = () => {
                   return (
                     <h2
                       key={i}
+                      id={block.id}
                       className="text-2xl md:text-3xl font-heading font-bold text-foreground mt-6"
                     >
                       {block.text}
@@ -170,6 +175,17 @@ const BlogPost = () => {
                       dangerouslySetInnerHTML={{ __html: block.html }}
                     />
                   );
+                case "ol":
+                  return <ol key={i} className="list-decimal pl-6 flex flex-col gap-2 text-base md:text-lg font-body text-muted-foreground leading-relaxed marker:text-accent">{block.items.map((item, j) => <li key={j}>{item}</li>)}</ol>;
+                case "table":
+                  return (
+                    <div key={i} role="region" aria-label="Single girder and double girder comparison" tabIndex={0} className="max-w-full overflow-x-auto border border-border rounded-lg">
+                      <table className="w-full min-w-[600px] text-sm font-body text-muted-foreground text-left">
+                        <thead className="bg-muted text-foreground"><tr>{block.headers.map((header) => <th key={header} scope="col" className="p-4 font-semibold">{header}</th>)}</tr></thead>
+                        <tbody>{block.rows.map((row) => <tr key={row[0]} className="border-t border-border">{row.map((cell, j) => j === 0 ? <th key={j} scope="row" className="p-4 font-semibold text-foreground">{cell}</th> : <td key={j} className="p-4 leading-relaxed">{cell}</td>)}</tr>)}</tbody>
+                      </table>
+                    </div>
+                  );
                 case "ul":
                   return (
                     <ul
@@ -197,7 +213,7 @@ const BlogPost = () => {
           </div>
 
           {/* FAQ */}
-          {post.faqs && post.faqs.length > 0 && (
+          {post.guideFeatures ? <GuideFaqs post={post} /> : post.faqs && post.faqs.length > 0 && (
             <div className="mt-16">
               <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">
                 Frequently Asked Questions
@@ -233,7 +249,7 @@ const BlogPost = () => {
           )}
 
           {/* CTA */}
-          <div className="mt-16 p-8 md:p-10 rounded-lg navy-gradient border border-gold/20 text-center">
+          {post.guideFeatures ? <GuideQuote /> : <div className="mt-16 p-8 md:p-10 rounded-lg navy-gradient border border-gold/20 text-center">
             <h3 className="text-2xl md:text-3xl font-heading font-bold text-gold-light mb-3">
               Planning a project? Let's talk.
             </h3>
@@ -246,7 +262,7 @@ const BlogPost = () => {
             >
               Get a Quote from Linkwel Engineers <ArrowRight size={14} />
             </Link>
-          </div>
+          </div>}
         </div>
       </article>
 
