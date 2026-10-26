@@ -30,6 +30,7 @@ const productSlugs = [
 ];
 
 const blogSlugs = [
+  "single-girder-eot-crane",
   "passenger-lift-manufacturers-delhi",
   "eot-crane-manufacturers-india",
   "elevator-maintenance-near-me",

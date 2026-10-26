@@ -6,3 +6,4 @@
 - [x] Make QR pages show only issue counts; remove checklist, technical details, and service findings from public access.
 - [x] Show completed visit dates, technician names and phone numbers on QR pages; set LiftPass report and call links to 8287291886.
 - [x] Add site creation to the LiftPass admin dashboard and open the new site's details.
+- [x] Add the single girder EOT crane article using the existing blog template, links, FAQs, enquiry popup and sitemap; verify the page.
