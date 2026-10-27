@@ -1,4 +1,5 @@
 import type { BlogPost } from "./blogPosts";
+import singleGirderCraneImage from "@/assets/blog-single-girder-eot-crane.jpg";
 
 export const singleGirderCranePost: BlogPost = {
   slug: "single-girder-eot-crane",
@@ -11,7 +12,7 @@ export const singleGirderCranePost: BlogPost = {
   readTime: "7 min read",
   author: "Linkwel Engineers",
   category: "Industrial Cranes",
-  image: "/placeholder.svg",
+  image: singleGirderCraneImage,
   imageAlt: "Single girder EOT crane installed in an industrial workshop",
   keywords: "single girder EOT crane, single girder crane price, EOT crane Delhi NCR, single girder vs double girder crane",
   guideFeatures: true,
