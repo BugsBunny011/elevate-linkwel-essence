@@ -7,3 +7,5 @@
 - [x] Show completed visit dates, technician names and phone numbers on QR pages; set LiftPass report and call links to 8287291886.
 - [x] Add site creation to the LiftPass admin dashboard and open the new site's details.
 - [x] Add the single girder EOT crane article using the existing blog template, links, FAQs, enquiry popup and sitemap; verify the page.
+- [ ] Add admin-editable ongoing site stages and assigned-client sign-in access.
+- [ ] Verify site privacy rules and explain the verified limits of encryption.
