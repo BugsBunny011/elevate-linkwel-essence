@@ -1,9 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { ChevronDown, Phone, MessageCircle, MapPin, CheckCircle2, Wrench } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { NoIndex, Logomark, LiftPassShell } from "@/components/liftpass/LiftPassChrome";
+import { Button } from "@/components/ui/button";
+import { SiteProgress } from "@/components/liftpass/SiteProgress";
+import { needsClientSignIn } from "@/lib/liftpass-progress";
+import { useStaffAuth } from "@/hooks/useStaffAuth";
 import {
   AMC_STATE_CLASS,
   AMC_STATE_LABEL,
@@ -154,9 +158,12 @@ const LiftCard = ({ bundle, siteName }: { bundle: LiftBundle; siteName: string }
 
 const SiteStatus = () => {
   const { siteCode = "" } = useParams();
+  const { session, loading } = useStaffAuth();
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["liftpass-site", siteCode],
+    queryKey: ["liftpass-site", siteCode, session?.user.id ?? "public"],
     queryFn: () => fetchSite(siteCode),
+    enabled: !loading,
+    refetchInterval: 30000,
   });
 
   useEffect(() => {
@@ -181,7 +188,7 @@ const SiteStatus = () => {
           <div className="min-w-0">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">LiftPass</p>
             <h1 className="truncate font-heading text-lg font-semibold leading-tight">
-              {site?.name ?? (isLoading ? "Loading site" : "Site not found")}
+              {site?.name ?? (isLoading || loading ? "Loading site" : "Site access")}
             </h1>
             {site?.address && (
               <p className="flex items-center gap-1 truncate text-xs text-muted-foreground">
@@ -194,19 +201,21 @@ const SiteStatus = () => {
       </header>
 
       <main className="mx-auto max-w-2xl px-4 pb-32 pt-4">
-        {isLoading && <p className="py-10 text-center text-sm text-muted-foreground">Loading lift status...</p>}
+        {(isLoading || loading) && <p className="py-10 text-center text-sm text-muted-foreground">Loading lift status...</p>}
 
-        {(isError || (!isLoading && !site)) && (
+        {!loading && (isError || (!isLoading && !site)) && (
           <div className="rounded-xl border border-border bg-card p-6 text-center">
-            <h2 className="font-heading text-base font-semibold">Site not found</h2>
+            <h2 className="font-heading text-base font-semibold">{session ? "Site unavailable" : "Client sign-in required"}</h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              We could not find a site for code {siteCode}. Please check the tag or contact Linkwel.
+              {session ? "This site may not be assigned to your account. Contact Linkwel to confirm access and the site code." : "Sign in with your assigned client account to view private site progress."}
             </p>
+            <Button asChild className="mt-4"><Link to={`/liftpass/login?next=${encodeURIComponent(`/liftpass/${siteCode}`)}`}>{session ? "Use another account" : "Client sign in"}</Link></Button>
           </div>
         )}
 
         {site && data && (
           <>
+            {needsClientSignIn(site.work_status) && <SiteProgress site={site} />}
             <div
               className={`mb-4 flex items-center justify-between gap-3 rounded-xl border p-4 ${
                 rollup ? LIFT_STATUS_CLASS[rollup] : ""
@@ -214,7 +223,7 @@ const SiteStatus = () => {
             >
               <div>
                 <p className="text-sm font-semibold">
-                  {rollup === "operational"
+                  {data.bundles.length === 0 ? "No lifts registered yet" : rollup === "operational"
                     ? "All lifts operational"
                     : rollup === "under_maintenance"
                       ? "A lift needs attention"
