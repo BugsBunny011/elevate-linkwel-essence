@@ -40,7 +40,7 @@ const StaffAuth = () => {
         email,
         password,
         options: {
-          emailRedirectTo: `${window.location.origin}/liftpass/login`,
+          emailRedirectTo: `${window.location.origin}/liftpass/login${clientPath ? `?next=${encodeURIComponent(clientPath)}` : ""}`,
           data: { name },
         },
       });

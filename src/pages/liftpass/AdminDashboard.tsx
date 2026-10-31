@@ -91,7 +91,7 @@ const AdminDashboard = () => {
   const [workFilter, setWorkFilter] = useState("all");
   const [addOpen, setAddOpen] = useState(false);
   const [saving, setSaving] = useState(false);
-  const [newSite, setNewSite] = useState({ name: "", site_code: "", address: "", city: "" });
+  const [newSite, setNewSite] = useState({ name: "", site_code: "", address: "", city: "", work_status: "ongoing" });
 
   const addSite = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -108,6 +108,7 @@ const AdminDashboard = () => {
       site_code,
       address: newSite.address.trim() || null,
       city: newSite.city.trim() || null,
+      work_status: newSite.work_status,
     }).select("id").single();
     setSaving(false);
     if (error) {
@@ -115,7 +116,7 @@ const AdminDashboard = () => {
       return;
     }
     setAddOpen(false);
-    setNewSite({ name: "", site_code: "", address: "", city: "" });
+    setNewSite({ name: "", site_code: "", address: "", city: "", work_status: "ongoing" });
     queryClient.invalidateQueries({ queryKey: ["liftpass-admin-overview"] });
     queryClient.invalidateQueries({ queryKey: ["liftpass-qr-sites"] });
     queryClient.invalidateQueries({ queryKey: ["tech-sites"] });
@@ -280,6 +281,7 @@ const AdminDashboard = () => {
         <DialogContent className="max-w-md">
           <DialogHeader><DialogTitle>Add site</DialogTitle></DialogHeader>
           <form id="add-site-form" onSubmit={addSite} className="space-y-4">
+            <div className="space-y-1.5"><Label htmlFor="new-site-work-status">Work status</Label><select id="new-site-work-status" value={newSite.work_status} onChange={(e) => setNewSite({ ...newSite, work_status: e.target.value })} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm">{Object.entries(WORK_STATUSES).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></div>
             <div className="space-y-1.5">
               <Label htmlFor="new-site-name">Site name</Label>
               <Input id="new-site-name" required maxLength={120} value={newSite.name} onChange={(e) => setNewSite({ ...newSite, name: e.target.value })} placeholder="e.g. Ashoka Residency" />
