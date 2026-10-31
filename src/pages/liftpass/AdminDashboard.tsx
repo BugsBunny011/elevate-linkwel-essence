@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
+import { WORK_STAGES, WORK_STATUSES } from "@/lib/liftpass-progress";
 import {
   AMC_STATE_CLASS,
   AMC_STATE_LABEL,
@@ -27,6 +28,8 @@ interface SiteRow {
   site_code: string;
   name: string;
   city: string | null;
+  workStatus: string;
+  workStage: string;
   liftCount: number;
   amc: AmcState;
   status: LiftStatus;
@@ -66,6 +69,8 @@ const fetchOverview = async (): Promise<SiteRow[]> => {
       site_code: site.site_code,
       name: site.name,
       city: site.city,
+      workStatus: site.work_status,
+      workStage: site.work_stage,
       liftCount: siteLifts.length,
       amc: worstAmc(amcStates),
       status: worstStatus(siteLifts.map((l) => l.status)),
@@ -83,9 +88,10 @@ const AdminDashboard = () => {
   const [city, setCity] = useState("all");
   const [amcFilter, setAmcFilter] = useState<"all" | AmcState>("all");
   const [search, setSearch] = useState("");
+  const [workFilter, setWorkFilter] = useState("all");
   const [addOpen, setAddOpen] = useState(false);
   const [saving, setSaving] = useState(false);
-  const [newSite, setNewSite] = useState({ name: "", site_code: "", address: "", city: "" });
+  const [newSite, setNewSite] = useState({ name: "", site_code: "", address: "", city: "", work_status: "ongoing" });
 
   const addSite = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -102,6 +108,7 @@ const AdminDashboard = () => {
       site_code,
       address: newSite.address.trim() || null,
       city: newSite.city.trim() || null,
+      work_status: newSite.work_status,
     }).select("id").single();
     setSaving(false);
     if (error) {
@@ -109,7 +116,7 @@ const AdminDashboard = () => {
       return;
     }
     setAddOpen(false);
-    setNewSite({ name: "", site_code: "", address: "", city: "" });
+    setNewSite({ name: "", site_code: "", address: "", city: "", work_status: "ongoing" });
     queryClient.invalidateQueries({ queryKey: ["liftpass-admin-overview"] });
     queryClient.invalidateQueries({ queryKey: ["liftpass-qr-sites"] });
     queryClient.invalidateQueries({ queryKey: ["tech-sites"] });
@@ -122,6 +129,7 @@ const AdminDashboard = () => {
   const rows = data.filter(
     (r) =>
       (city === "all" || r.city === city) &&
+      (workFilter === "all" || r.workStatus === workFilter) &&
       (amcFilter === "all" || r.amc === amcFilter) &&
       (search === "" ||
         r.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -174,7 +182,7 @@ const AdminDashboard = () => {
         </div>
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
           {[
-            ["Total sites", totals.sites],
+            ["Ongoing sites", data.filter((site) => site.workStatus === "ongoing" || site.workStatus === "on_hold").length],
             ["Total lifts", totals.lifts],
             ["AMC expiring in 30 days", totals.expiring],
             ["Flagged audit items", totals.flagged],
@@ -187,6 +195,7 @@ const AdminDashboard = () => {
         </div>
 
         <div className="flex flex-wrap gap-3">
+          <select aria-label="Filter work status" value={workFilter} onChange={(e) => setWorkFilter(e.target.value)} className="h-10 rounded-md border border-input bg-background px-3 text-sm"><option value="all">All work statuses</option>{Object.entries(WORK_STATUSES).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select>
           <Input
             placeholder="Search site name or code"
             value={search}
@@ -224,6 +233,7 @@ const AdminDashboard = () => {
               <tr>
                 <th className="px-4 py-3">Site</th>
                 <th className="px-4 py-3">City</th>
+                <th className="px-4 py-3">Work progress</th>
                 <th className="px-4 py-3">Lifts</th>
                 <th className="px-4 py-3">AMC</th>
                 <th className="px-4 py-3">Health</th>
@@ -240,6 +250,7 @@ const AdminDashboard = () => {
                     <p className="text-xs text-muted-foreground">{r.site_code}</p>
                   </td>
                   <td className="px-4 py-3 text-muted-foreground">{r.city ?? "-"}</td>
+                  <td className="px-4 py-3"><p className="font-medium text-primary">{WORK_STATUSES[r.workStatus as keyof typeof WORK_STATUSES]}</p>{r.workStatus !== "operational" && <p className="text-xs text-muted-foreground">{WORK_STAGES.find((stage) => stage.value === r.workStage)?.label}</p>}</td>
                   <td className="px-4 py-3">{r.liftCount}</td>
                   <td className="px-4 py-3">
                     <span className={`rounded-full border px-2 py-1 text-xs ${AMC_STATE_CLASS[r.amc]}`}>
@@ -257,7 +268,7 @@ const AdminDashboard = () => {
               ))}
               {!isLoading && rows.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="px-4 py-10 text-center text-sm text-muted-foreground">
+                  <td colSpan={7} className="px-4 py-10 text-center text-sm text-muted-foreground">
                     <Building2 className="mx-auto mb-2" size={20} /> No sites match these filters.
                   </td>
                 </tr>
@@ -270,6 +281,7 @@ const AdminDashboard = () => {
         <DialogContent className="max-w-md">
           <DialogHeader><DialogTitle>Add site</DialogTitle></DialogHeader>
           <form id="add-site-form" onSubmit={addSite} className="space-y-4">
+            <div className="space-y-1.5"><Label htmlFor="new-site-work-status">Work status</Label><select id="new-site-work-status" value={newSite.work_status} onChange={(e) => setNewSite({ ...newSite, work_status: e.target.value })} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm">{Object.entries(WORK_STATUSES).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></div>
             <div className="space-y-1.5">
               <Label htmlFor="new-site-name">Site name</Label>
               <Input id="new-site-name" required maxLength={120} value={newSite.name} onChange={(e) => setNewSite({ ...newSite, name: e.target.value })} placeholder="e.g. Ashoka Residency" />

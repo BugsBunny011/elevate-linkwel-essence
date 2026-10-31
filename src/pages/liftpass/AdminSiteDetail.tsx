@@ -8,6 +8,7 @@ import { NoIndex, LiftPassShell } from "@/components/liftpass/LiftPassChrome";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { SiteProgressEditor } from "@/components/liftpass/SiteProgressEditor";
 import {
   LIFT_STATUS_LABEL,
   ZONE_LABEL,
@@ -307,6 +308,8 @@ const AdminSiteDetail = () => {
             </Button>
           )}
         </div>
+
+        {data?.site && <SiteProgressEditor key={`${data.site.id}-${data.site.progress_updated_at}`} site={data.site} onChanged={refresh} />}
 
         <div className="flex gap-2">
           <Input placeholder="New lift number, e.g. Lift 3" value={newLift} onChange={(e) => setNewLift(e.target.value)} className="max-w-xs" />

@@ -375,6 +375,35 @@ export type Database = {
           },
         ]
       }
+      site_client_access: {
+        Row: {
+          client_email: string
+          created_at: string
+          id: string
+          site_id: string
+        }
+        Insert: {
+          client_email: string
+          created_at?: string
+          id?: string
+          site_id: string
+        }
+        Update: {
+          client_email?: string
+          created_at?: string
+          id?: string
+          site_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "site_client_access_site_id_fkey"
+            columns: ["site_id"]
+            isOneToOne: false
+            referencedRelation: "sites"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       sites: {
         Row: {
           address: string | null
@@ -382,7 +411,10 @@ export type Database = {
           created_at: string
           id: string
           name: string
+          progress_updated_at: string | null
           site_code: string
+          work_stage: string
+          work_status: string
         }
         Insert: {
           address?: string | null
@@ -390,7 +422,10 @@ export type Database = {
           created_at?: string
           id?: string
           name: string
+          progress_updated_at?: string | null
           site_code: string
+          work_stage?: string
+          work_status?: string
         }
         Update: {
           address?: string | null
@@ -398,7 +433,10 @@ export type Database = {
           created_at?: string
           id?: string
           name?: string
+          progress_updated_at?: string | null
           site_code?: string
+          work_stage?: string
+          work_status?: string
         }
         Relationships: []
       }
@@ -449,6 +487,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      can_read_liftpass_site: { Args: { _site_id: string }; Returns: boolean }
       get_public_liftpass_audit_items: {
         Args: { _audit_zone_ids: string[] }
         Returns: {

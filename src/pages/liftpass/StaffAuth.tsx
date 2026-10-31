@@ -11,6 +11,8 @@ import loginBackground from "@/assets/liftpass-login-building.jpg";
 const StaffAuth = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const requestedPath = new URLSearchParams(location.search).get("next");
+  const clientPath = requestedPath?.startsWith("/liftpass/") && !requestedPath.startsWith("//") ? requestedPath : null;
   const [mode, setMode] = useState<"signin" | "signup" | "forgot">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,19 +34,19 @@ const StaffAuth = () => {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       setBusy(false);
       if (error) return toast.error(error.message);
-      navigate("/admin");
+      navigate(clientPath ?? "/admin");
     } else {
       const { error } = await supabase.auth.signUp({
         email,
         password,
         options: {
-          emailRedirectTo: `${window.location.origin}/liftpass/login`,
+          emailRedirectTo: `${window.location.origin}/liftpass/login${clientPath ? `?next=${encodeURIComponent(clientPath)}` : ""}`,
           data: { name },
         },
       });
       setBusy(false);
       if (error) return toast.error(error.message);
-      toast.success("Account created. An admin needs to grant you access.");
+      toast.success("Check your email to confirm your account. An admin must assign your site access.");
       setMode("signin");
     }
   };
@@ -67,7 +69,7 @@ const StaffAuth = () => {
             <Logomark />
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">LiftPass</p>
-              <h1 className="font-heading text-lg font-semibold">Staff access</h1>
+              <h1 className="font-heading text-lg font-semibold">{clientPath ? "Client access" : "Staff access"}</h1>
             </div>
           </div>
 
